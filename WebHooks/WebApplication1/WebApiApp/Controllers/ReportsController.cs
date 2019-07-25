@@ -8,7 +8,7 @@ namespace WebApiApp.Controllers
 
     public class ReportsController : ReportsControllerBase
     {
-        static ReportServiceConfiguration configurationInstance;
+        static readonly ReportServiceConfiguration configurationInstance;
 
         static ReportsController()
         {

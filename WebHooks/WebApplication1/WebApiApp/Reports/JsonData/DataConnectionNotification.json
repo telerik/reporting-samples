@@ -1,1 +1,0 @@
-[{"Action":"connections","UserAction":"create","Id":"001f317dae2","Name":"testNewConnection","Description":"test only","Provider":"System.Data.SqlClient","ConnectionString":"\"Data Source=(local)\\SQLEXPRESS;Initial Catalog=AdventureWorks;Integrated Security=SSPI\""}]

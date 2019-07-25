@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Web.Http;
@@ -13,16 +14,7 @@ namespace WebApiApp.Controllers
         [ActionName("report")]
         public IEnumerable<Notification> GetReportNotification()
         {
-            List<ReportNotification> reportNotification = new List<ReportNotification>();
-
-            string path = ResourceNames.ReportNotificationJsonDataFileName;
-            using (StreamReader streamReader = new StreamReader(path))
-            {
-                string jsonData = streamReader.ReadToEnd();
-                reportNotification = JsonConvert.DeserializeObject<List<ReportNotification>>(jsonData);
-            }
-
-            return reportNotification;
+            return Deserialize<List<ReportNotification>>(ResourceNames.ReportNotificationJsonDataFileName);
         }
 
         // GET api/notifications/category
@@ -30,16 +22,7 @@ namespace WebApiApp.Controllers
         [ActionName("category")]
         public IEnumerable<Notification> GetCategoryNotification()
         {
-            List<CategoryNotification> categoryNotification = new List<CategoryNotification>();
-
-            string path = ResourceNames.CategoryNotificationJsonDataFileName;
-            using (StreamReader streamReader = new StreamReader(path))
-            {
-                string jsonData = streamReader.ReadToEnd();
-                categoryNotification = JsonConvert.DeserializeObject<List<CategoryNotification>>(jsonData);
-            }
-
-            return categoryNotification;
+            return Deserialize<List<CategoryNotification>>(ResourceNames.CategoryNotificationJsonDataFileName);
         }
 
         // GET api/notifications/connection
@@ -47,16 +30,7 @@ namespace WebApiApp.Controllers
         [ActionName("connection")]
         public IEnumerable<Notification> GetDataConnectionNotification()
         {
-            List<ConnectionNotification> connectionNotification = new List<ConnectionNotification>();
-
-            string path = ResourceNames.DataConnectionNotificationJsonDataFileName;
-            using (StreamReader streamReader = new StreamReader(path))
-            {
-                string jsonData = streamReader.ReadToEnd();
-                connectionNotification = JsonConvert.DeserializeObject<List<ConnectionNotification>>(jsonData);
-            }
-
-            return connectionNotification;
+            return Deserialize<List<ConnectionNotification>>(ResourceNames.DataConnectionNotificationJsonDataFileName);
         }
 
         // GET api/notifications/task
@@ -64,16 +38,7 @@ namespace WebApiApp.Controllers
         [ActionName("task")]
         public IEnumerable<Notification> GetScheduledTaskNotification()
         {
-            List<TaskNotification> taskNotification = new List<TaskNotification>();
-
-            string path = ResourceNames.ScheduledTaskNotificationJsonDataFileName;
-            using (StreamReader streamReader = new StreamReader(path))
-            {
-                string jsonData = streamReader.ReadToEnd();
-                taskNotification = JsonConvert.DeserializeObject<List<TaskNotification>>(jsonData);
-            }
-
-            return taskNotification;
+            return Deserialize<List<TaskNotification>>(ResourceNames.ScheduledTaskNotificationJsonDataFileName);
         }
 
         // GET api/notifications/alert
@@ -81,16 +46,14 @@ namespace WebApiApp.Controllers
         [ActionName("alert")]
         public IEnumerable<Notification> GetDataAlertNotification()
         {
-            List<TaskNotification> alertNotification = new List<TaskNotification>();
+            return Deserialize<List<TaskNotification>>(ResourceNames.DataAlertNotificationJsonDataFileName);
+        }
 
-            string path = ResourceNames.DataAlertNotificationJsonDataFileName;
-            using (StreamReader streamReader = new StreamReader(path))
-            {
-                string jsonData = streamReader.ReadToEnd();
-                alertNotification = JsonConvert.DeserializeObject<List<TaskNotification>>(jsonData);
-            }
-
-            return alertNotification;
+        static T Deserialize<T>(string fileName) where T: ICollection
+        {
+            return File.Exists(fileName) 
+                ? JsonConvert.DeserializeObject<T>(File.ReadAllText(fileName)) 
+                : default(T);
         }
     }
 }

@@ -11,10 +11,6 @@ namespace WebApiApp
 {
     public class CustomWebHookHandler : WebHookHandler
     {
-        private const string NoSuchActionError = "No such action exception occurred";
-
-        private readonly string ReportsPath;
-        private readonly string JsonPath;
         private readonly string ReportNotificationDataFileName;
         private readonly string CategoryNotificationDataFileName;
         private readonly string DataAlertNotificationDataFileName;
@@ -25,9 +21,6 @@ namespace WebApiApp
         {
             this.Receiver = CustomWebHookReceiver.ReceiverName;
 
-            this.ReportsPath = ResourceNames.ReportsPath;
-            this.JsonPath = ResourceNames.JsonPath;
-
             this.ReportNotificationDataFileName = ResourceNames.ReportNotificationJsonDataFileName;
             this.CategoryNotificationDataFileName = ResourceNames.CategoryNotificationJsonDataFileName;
             this.DataAlertNotificationDataFileName = ResourceNames.DataAlertNotificationJsonDataFileName;
@@ -37,7 +30,7 @@ namespace WebApiApp
 
         public override Task ExecuteAsync(string generator, WebHookHandlerContext context)
         {
-            string webhooksFilePath = null;
+            string webhooksFilePath;
 
             // Get data from WebHook
             CustomNotifications data = context.GetDataOrDefault<CustomNotifications>();
@@ -64,7 +57,7 @@ namespace WebApiApp
                         webhooksFilePath = this.ScheduledTaskNotificationDataFileName;
                         break;
                     default:
-                        throw (new System.Exception(NoSuchActionError));
+                        throw new System.Exception($"Action \"{action}\" is not supported by this webhook handler.");
                 }
 
                 this.RecreateJsonDataFile(webhooksFilePath, notification);
@@ -75,26 +68,27 @@ namespace WebApiApp
 
         private void RecreateJsonDataFile(string webhooksFilePath, IDictionary<string, object> notification)
         {
-            if (!File.Exists(webhooksFilePath))
+            StringBuilder sb;
+            if (File.Exists(webhooksFilePath))
             {
-                File.WriteAllText(webhooksFilePath, String.Empty);
-            }
-
-            StringBuilder sb = new StringBuilder(File.ReadAllText(webhooksFilePath).Trim());
-            if (sb.Length > 0 && sb[0] == '[')
-            {
-                sb.Replace(']', ',', sb.Length - 1, 1);
+                //replace the closing bracket with comma to allow adding a new element to the collection
+                sb = new StringBuilder(File.ReadAllText(webhooksFilePath).Trim());
+                if (sb.Length > 0)
+                {
+                    sb.Replace(']', ',', sb.Length - 1, 1);
+                }
             }
             else
             {
-                sb.Append('[');
+                sb = new StringBuilder("[");
             }
 
             using (TextWriter tw = new StringWriter(sb))
             {
                 JsonSerializer serializer = new JsonSerializer()
                 {
-                    NullValueHandling = NullValueHandling.Ignore
+                    NullValueHandling = NullValueHandling.Ignore,
+                    Formatting = Formatting.Indented
                 };
 
                 serializer.Serialize(tw, notification);

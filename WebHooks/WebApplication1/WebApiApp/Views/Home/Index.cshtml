@@ -38,15 +38,17 @@
             $("#reportViewer1")
                 .telerik_ReportViewer({
 
+                    ////Provide URL to the ReportServer instance and valid login credentials.
                     //reportServer: {
-                    //	url: "http://arabadzhiev:83/",
-                    //	username: "todor (pass is todortodor)",
-                    //	password: "todortodor"
+                    //	url: "http://reportServerUri:port",
+                    //	username: "User", 
+                    //	password: "Password"
                     //},
                     //reportSource: {
-                    //    report: "Test/Web Hooks Report"
+                    //    report: "Samples/WebHooksReport"
                     //},
 
+                    //The configuration below is for local testing purposes.
                     serviceUrl: "api/reports",
                     reportSource: {
                         report: "WebHooksReport.trdp"

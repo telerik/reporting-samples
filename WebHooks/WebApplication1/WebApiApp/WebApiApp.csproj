@@ -236,11 +236,6 @@
     <Content Include="Reports\WebHooksReport.trdp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Reports\JsonData\ReportNotification.json" />
-    <Content Include="Reports\JsonData\CategoryNotification.json" />
-    <Content Include="Reports\JsonData\DataAlertNotification.json" />
-    <Content Include="Reports\JsonData\DataConnectionNotification.json" />
-    <Content Include="Reports\JsonData\ScheduledTaskNotification.json" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Views\Home\Index.cshtml" />
     <Content Include="resources\js\telerikReportViewer-13.1.19.618.min.js" />
@@ -285,7 +280,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Reports\JsonData\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
   </ItemGroup>
