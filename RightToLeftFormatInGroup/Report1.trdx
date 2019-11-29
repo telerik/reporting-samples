@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="csvDataSource1" Width="6.5in" Name="Report1" xmlns="http://schemas.telerik.com/reporting/2018/2.0">
+  <DataSources>
+    <CsvDataSource RecordSeparators="&#xD;&#xA;" FieldSeparators="," HasHeaders="True" Name="csvDataSource1">
+      <Source>
+        <String>R3JvdXAsSXRlbSxWYWx1ZQ0KQSxJdGVtMSxWYWx1ZTENCkEsSXRlbTIsVmFsdWUyDQpBLEl0ZW0zLFZhbHVlMw0KQixJdGVtMSxWYWx1ZTENCkIsSXRlbTIsVmFsdWUyDQpCLEl0ZW0zLFZhbHVlMw0KQyxJdGVtMSxWYWx1ZTENCkMsSXRlbTIsVmFsdWUyDQpDLEl0ZW0zLFZhbHVlMw==</String>
+      </Source>
+      <Columns>
+        <DataColumn Name="Group" />
+        <DataColumn Name="Item" />
+        <DataColumn Name="Value" />
+      </Columns>
+    </CsvDataSource>
+  </DataSources>
+  <Items>
+    <PageHeaderSection Height="1in" Name="pageHeaderSection1" />
+    <DetailSection Height="0.2in" Name="detailSection1">
+      <Items>
+        <TextBox Width="1.2in" Height="0.2in" Left="3.8in" Top="0in" Value="= Fields.Item" Name="textBox2" />
+        <TextBox Width="1.2in" Height="0.2in" Left="2.6in" Top="0in" Value="= Fields.Value" Name="textBox3" />
+      </Items>
+    </DetailSection>
+    <PageFooterSection Height="1in" Name="pageFooterSection1" />
+  </Items>
+  <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+    <Margins>
+      <MarginsU Left="1in" Right="1in" Top="1in" Bottom="1in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <Groups>
+    <Group Name="group">
+      <GroupHeader>
+        <GroupHeaderSection Height="0.2in" Name="groupHeaderSection">
+          <Items>
+            <TextBox Width="1.2in" Height="0.2in" Left="5in" Top="0in" Value="= Fields.Group" Name="textBox1">
+              <Style BackgroundColor="84, 142, 213" Color="White" />
+            </TextBox>
+          </Items>
+        </GroupHeaderSection>
+      </GroupHeader>
+      <GroupFooter>
+        <GroupFooterSection Height="1in" Name="groupFooterSection" />
+      </GroupFooter>
+      <Groupings>
+        <Grouping Expression="= Fields.Group" />
+      </Groupings>
+    </Group>
+  </Groups>
+</Report>
