@@ -156,19 +156,28 @@
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
-    <Reference Include="Telerik.Reporting, Version=13.2.19.1030, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Telerik.Reporting, Version=13.2.19.1114, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
       <SpecificVersion>True</SpecificVersion>
     </Reference>
-    <Reference Include="Telerik.Reporting.OpenXmlRendering.2.7.2, Version=13.2.19.1030, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
+    <Reference Include="Telerik.Reporting.OpenXmlRendering.2.7.2, Version=13.2.19.1114, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
       <SpecificVersion>True</SpecificVersion>
     </Reference>
-    <Reference Include="Telerik.Reporting.Services.WebApi, Version=13.2.19.1030, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
+    <Reference Include="Telerik.Reporting.Services.WebApi, Version=13.2.19.1114, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
       <SpecificVersion>True</SpecificVersion>
     </Reference>
-    <Reference Include="Telerik.Reporting.WebServiceDataSource, Version=13.2.19.1030, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
+    <Reference Include="Telerik.Reporting.WebServiceDataSource, Version=13.2.19.1114, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
       <SpecificVersion>True</SpecificVersion>
     </Reference>
-    <Reference Include="Telerik.Reporting.XpsRendering, Version=13.2.19.1030, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
+    <Reference Include="Telerik.Reporting.XpsRendering, Version=13.2.19.1114, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
       <SpecificVersion>True</SpecificVersion>
     </Reference>
   </ItemGroup>
@@ -244,8 +253,8 @@
     <Content Include="Global.asax" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <Content Include="Reports\WebHooksReport.trdp" />
-    <Content Include="resources\js\telerikReportViewer-13.2.19.1030.min.js" />
-    <Content Include="resources\js\telerikReportViewer.kendo-13.2.19.1030.min.js" />
+    <Content Include="resources\js\telerikReportViewer-13.2.19.1114.min.js" />
+    <Content Include="resources\js\telerikReportViewer.kendo-13.2.19.1114.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
