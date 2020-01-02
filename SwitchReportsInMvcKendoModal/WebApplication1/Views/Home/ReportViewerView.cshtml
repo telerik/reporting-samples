@@ -1,0 +1,24 @@
+@using WebApplication1
+@using Telerik.Reporting
+@using Telerik.ReportViewer.Mvc
+@model TenantPortal.Models.Reports.ReportModel
+
+@{
+    Layout = null;
+}
+
+<div>
+    @(Html.TelerikReporting().ReportViewer()
+            .Id("reportViewer1")
+            .ServiceUrl(Url.Content("~/api/reports"))
+            .ReportSource(Model.SelectedReportType)
+            // Interactive - Displays the report in its original width and height with no paging. Additionally interactivity is enabled.
+            .ViewMode(ViewMode.Interactive)
+            .ScaleMode(ScaleMode.Specific)
+            .Scale(1.0)
+            .PersistSession(false)
+            .PrintMode(PrintMode.AutoSelect)
+            .SendEmail(new SendEmail { Enabled = false })
+            .EnableAccessibility(false)
+    )
+</div>
