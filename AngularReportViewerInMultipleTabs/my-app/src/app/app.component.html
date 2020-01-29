@@ -1,0 +1,38 @@
+<div class="container"> 
+  <form>  
+    <div class="form-group">  
+      <h1 class="text-center text-primary">Test Report</h1>   
+      <!--button type="button" (click)="onLoadClick($event)">Load</button-->
+      <div class="input-group-prepend">       
+          <mat-tab-group [(selectedIndex)]="selectedTab">
+
+              <mat-tab label="Tab 1">
+                <ng-template matTabContent>
+                  <button type="button" (click)="onLoad1Click($event)">Load</button>
+                  <tr-viewer #rptViewer1
+                    [containerStyle]="viewerContainerStyle"
+                    [serviceUrl]="reportServerUrl"
+                    [viewMode]="'INTERACTIVE'"
+                    [scaleMode]="'SPECIFIC'"
+                    [scale]="1.0">
+                  </tr-viewer>
+                </ng-template>                
+              </mat-tab>  
+
+              <mat-tab label="Tab 2">
+                <ng-template matTabContent>
+                  <button type="button" (click)="onLoad2Click($event)">Load</button>
+                  <tr-viewer #rptViewer2
+                    [containerStyle]="viewerContainerStyle"
+                    [serviceUrl]="reportServerUrl"
+                    [viewMode]="'INTERACTIVE'"
+                    [scaleMode]="'SPECIFIC'"
+                    [scale]="1.0">
+                  </tr-viewer>
+                </ng-template>                
+              </mat-tab>  
+          </mat-tab-group>
+       </div>
+    </div> 
+  </form>
+</div>
