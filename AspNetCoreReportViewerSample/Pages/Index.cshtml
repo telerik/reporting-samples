@@ -1,0 +1,33 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+@section Head {
+    <link href="https://kendo.cdn.telerik.com/2020.1.114/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="https://kendo.cdn.telerik.com/2020.1.114/styles/kendo.default.min.css" rel="stylesheet" />
+}
+
+<div class="text-center">
+    <div id="reportViewer1" style="width:940px; height:1300px">
+    </div>
+</div>
+
+@section Scripts {
+    <script src="/api/reports/resources/js/telerikReportViewer"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#reportViewer1")
+                .telerik_ReportViewer({
+                    serviceUrl: "api/reports",
+                    reportSource: {
+                        report: "Report Catalog.trdp"
+                    },
+                    scaleMode: telerikReportViewer.ScaleModes.SPECIFIC,
+                    scale: 1.0
+                });
+        });
+    </script>
+}
