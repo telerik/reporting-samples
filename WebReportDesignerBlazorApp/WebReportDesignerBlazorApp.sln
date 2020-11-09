@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29521.150
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebReportDesignerBlazorApp", "WebReportDesignerBlazorApp\WebReportDesignerBlazorApp.csproj", "{2D12F49B-5192-497D-945A-757A6865012A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D12F49B-5192-497D-945A-757A6865012A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D12F49B-5192-497D-945A-757A6865012A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D12F49B-5192-497D-945A-757A6865012A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D12F49B-5192-497D-945A-757A6865012A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72FD3C82-B6BD-4C12-99F3-1E7D0BA79E22}
+	EndGlobalSection
+EndGlobal

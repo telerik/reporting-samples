@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HtmlChartAndReporting", "HtmlChartAndReporting\HtmlChartAndReporting.csproj", "{36DB1D18-8A27-467C-A8D1-22E86431DE40}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36DB1D18-8A27-467C-A8D1-22E86431DE40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36DB1D18-8A27-467C-A8D1-22E86431DE40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36DB1D18-8A27-467C-A8D1-22E86431DE40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36DB1D18-8A27-467C-A8D1-22E86431DE40}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
