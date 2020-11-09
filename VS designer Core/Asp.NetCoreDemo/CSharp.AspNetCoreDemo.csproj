@@ -1,0 +1,66 @@
+
+
+
+
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Authors>Telerik Reporting</Authors>
+    <Company>Progress</Company>
+    <Product>Telerik Reporting Demo</Product>
+    <Description>Telerik Reporting HTML5 Viewer and Telerik Reporting REST Service demo</Description>
+    <UserSecretsId>9ceee523-36b2-4764-8f4b-b6767ac4d82c</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="wwwroot\ReportViewer\**" />
+    <Compile Remove="wwwroot\Scripts\**" />
+    <Compile Remove="wwwroot\styles\**" />
+    <Compile Remove="wwwroot\templates\**" />
+    <Content Remove="wwwroot\ReportViewer\**" />
+    <Content Remove="wwwroot\Scripts\**" />
+    <Content Remove="wwwroot\styles\**" />
+    <Content Remove="wwwroot\templates\**" />
+    <EmbeddedResource Remove="wwwroot\ReportViewer\**" />
+    <EmbeddedResource Remove="wwwroot\Scripts\**" />
+    <EmbeddedResource Remove="wwwroot\styles\**" />
+    <EmbeddedResource Remove="wwwroot\templates\**" />
+    <None Remove="wwwroot\ReportViewer\**" />
+    <None Remove="wwwroot\Scripts\**" />
+    <None Remove="wwwroot\styles\**" />
+    <None Remove="wwwroot\templates\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\restApiServer.html" />
+    <Content Remove="wwwroot\ScriptsLicenseHeader.txt" />
+    <Content Remove="wwwroot\viewer.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <!--The following lines are replaced with package refs during the product build-->
+    <PackageReference Include="Telerik.Reporting.OpenXmlRendering" Version="14.2.20.1021" />
+    <PackageReference Include="Telerik.Reporting.Services.AspNetCore" Version="14.2.20.1021" />
+    <PackageReference Include="Telerik.WebReportDesigner.Services" Version="14.2.20.1021" />
+    <PackageReference Include="DocumentFormat.OpenXml" Version="2.7.2" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.1.6" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.1.1" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(AutomaticBuild)'!='true'">
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\favicon.ico" />
+    <None Include="wwwroot\Scripts\themeSwitcher.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CoreReportLibrary\CoreReportLibrary.csproj" />
+  </ItemGroup>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+  </Target>
+</Project>

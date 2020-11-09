@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\ReportLibrary\Barcodes\BarcodesReport.cs" Link="Barcodes\BarcodesReport.cs" />
+    <Compile Include="..\ReportLibrary\Barcodes\BarcodesReport.Designer.cs" Link="Barcodes\BarcodesReport.Designer.cs" />
+    <Compile Include="..\ReportLibrary\Crosstab\ProductSales.cs" Link="Crosstab\ProductSales.cs" />
+    <Compile Include="..\ReportLibrary\Crosstab\ProductSales.Designer.cs" Link="Crosstab\ProductSales.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="..\ReportLibrary\Crosstab\ProductSales.resx" Link="Crosstab\ProductSales.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Resources.Extensions" Version="5.0.0-rc.2.20475.5" />
+    <PackageReference Include="Telerik.Reporting" Version="14.2.20.1021" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Crosstab\" />
+  </ItemGroup>
+
+</Project>
