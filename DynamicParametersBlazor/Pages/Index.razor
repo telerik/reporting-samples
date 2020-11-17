@@ -1,0 +1,71 @@
+﻿@page "/"
+@using Telerik.ReportViewer.Blazor
+
+
+<style>
+    .trv-report-viewer {
+        width: 1200px;
+        height: 880px;
+        left: 5px;
+        right: 5px;
+        top: 40px;
+        bottom: 5px;
+        font-family: 'segoe ui', 'ms sans serif';
+        overflow: hidden;
+    }
+</style>
+
+@* Create the ReportViewerWidget *@
+
+<p>This Blazor Report Viewer instance displays reports hosted locally using the Reporting REST service. For more information, visit the <a target="_blank" href="https://docs.telerik.com/reporting/blazor-report-viewer">Blazor Report Viewer</a> article.</p>
+<button type="button" class="btn btn-light btn-sm" @onclick="RefreshReport">Refresh Report</button>
+<button type="button" class="btn btn-light btn-sm" @onclick="Print">Print Report</button>
+<div id="invoiceIdSelector">
+    <label for="invoiceId">Invoices</label>
+    <select name="invoiceId" title="Select the Invoice ID"  @onchange="(args) => changeId(args)">
+        <option value="SO51081" selected="selected">SO51081</option>
+        <option value="SO51082">SO51082</option>
+        <option value="SO51083">SO51083</option>
+    </select>
+
+    <input type="text" @onchange="(args) => changeId(args)" />
+</div>
+
+
+<ReportViewer @ref="reportViewer1"
+              ViewerId="rv1"
+              ServiceUrl="/api/reports"
+              ReportSource="@(new ReportSourceOptions
+                              {
+                                  Report = "Invoice.trdp",
+                              })"
+              Parameters="@(new ParametersOptions { Editors = new EditorsOptions { MultiSelect = EditorType.ComboBox, SingleSelect = EditorType.ComboBox } })"
+              ScaleMode="@(ScaleMode.Specific)"
+              Scale="1.0"
+              ClientEvents="@(new ClientEventsOptions() {
+                                  ExportBegin = "trvEventHandlers.exportBegin",
+                                  ExportEnd = "trvEventHandlers.exportEnd"
+                              })" />
+
+@code {
+
+    ReportViewer reportViewer1;
+
+    async void RefreshReport()
+    {
+        await reportViewer1.RefreshReportAsync();
+    }
+
+    async void Print()
+    {
+        await reportViewer1.Commands.Print.ExecuteAsync();
+    }
+
+    async void changeId(ChangeEventArgs e)
+    {
+        ReportSourceOptions rso = await reportViewer1.GetReportSourceAsync();
+        rso.Parameters["OrderNumber"] = e.Value;
+        await reportViewer1.SetReportSourceAsync(rso);
+    }
+
+}
