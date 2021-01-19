@@ -1,0 +1,218 @@
+﻿@page "/"
+
+@using BlazorGridAndReport.Models
+@using System.Dynamic
+@using Telerik.DataSource;
+@using Telerik.ReportViewer.Blazor
+
+<style>
+    #rv1 {
+        position: relative;
+        width: 1200px;
+        height: 600px;
+    }
+</style>
+
+<div class="mainContainer">
+    <h2 class="mainHeading">Telerik UI for Blazor & Telerik Reporting</h2>
+    <p class="mainText">
+        The example on this page demonstrates integration between the Telerik UI for Blazor and Telerik Reporting. Both the Blazor Grid and the Report Viewer is loaded into different
+        TabStrips. The grid is the first tab open and data is passed to the Grid and can be interacted with by applying filters, sorting and grouping which are stored in the state
+        of the Grid. This state is being read and converted to JSON together with the data, which the Report Viewer uses to request a rendered report from the Report REST Service.
+    </p>
+    <p class="takeaction">Try applying filtering, sorting and grouping to the grid, and click the Report tab!</p>
+
+</div>
+
+<TelerikTabStrip>
+    <TabStripTab Title="Grid">
+        <TelerikGrid Data=@GridData
+                     @ref="@Grid"
+                     Pageable="true"
+                     Groupable="true"
+                     Sortable="true"
+                     FilterMode="GridFilterMode.FilterMenu"
+                     Resizable="true"
+                     Reorderable="true"
+                     EditMode="GridEditMode.Popup"
+                     SelectionMode="GridSelectionMode.Multiple"
+                     OnStateInit="@((GridStateEventArgs<Products> args) => OnStateInit(args))"
+                     OnStateChanged="@((GridStateEventArgs<Products> args) => OnStateChangedHandler(args))"
+                     PageSize="5"
+                     Navigable="true">
+            <GridColumns>
+                <GridColumn Title="Image" Editable="false" Width="110px">
+                    <Template>
+                        @{
+                            var product = context as Products;
+                        }
+                        @if (product?.ThumbNailPhoto != null)
+                        {
+                            var base64Image = Convert.ToBase64String(product.ThumbNailPhoto);
+                            <img src="@($"data:image/gif;base64,{base64Image}")" alt="@product.Name" />
+                        }
+                    </Template>
+                </GridColumn>
+                <GridColumn Field="@nameof(Products.Name)" />
+                <GridColumn Field="@nameof(Products.StandardCost)" Title="Cost">
+                    <Template>
+                        @((context as Products).StandardCost.ToString("C2"))
+                    </Template>
+                </GridColumn>
+                <GridColumn Field="@nameof(Products.ActiveSelling)" Title="Active Selling" Editable="false" />
+                <GridColumn Field="@nameof(Products.ProductCategoryName)" Title="Category" Width="160px">
+                </GridColumn>
+                <GridColumn Field="@nameof(Products.SellStartDate)" Title="Start Selling">
+                    <Template>
+                        @((context as Products).SellStartDate.ToString("MMMM dd, yyyy"))
+                    </Template>
+                </GridColumn>
+            </GridColumns>
+        </TelerikGrid>
+
+    </TabStripTab>
+    <TabStripTab Title="Report">
+        <TelerikButton Primary="@(this.ReportName.Equals(GRIDREPORTNAME) ? false : true)" OnClick="@(() => OnReportSelect(GRIDREPORTNAME))">View Grid Report</TelerikButton>
+        <TelerikButton Primary="@(this.ReportName.Equals(SALESREPORTNAME) ? false : true)" OnClick="@(() => OnReportSelect(SALESREPORTNAME))">View Sales Report</TelerikButton>
+        <TelerikButton Primary="@(this.ReportName.Equals(PRESENTATIONREPORTNAME) ? false : true)" OnClick="@(() => OnReportSelect(PRESENTATIONREPORTNAME))">View Sales Presentation</TelerikButton>
+        <ReportViewer ViewerId="rv1"
+                      @ref="@reportViewer"
+                      ServiceUrl="/api/reports"
+                      ReportSource="@(new ReportSourceOptions()
+                      {
+                        Report = @ReportSourceJson
+                      })"
+                      ScaleMode="@(ScaleMode.Specific)"
+                      Scale="1.0" />
+    </TabStripTab>
+</TelerikTabStrip>
+
+<style>
+    #rv1 {
+        position: relative;
+        width: 1200px;
+        height: 600px;
+    }
+</style>
+
+
+
+@code {
+    // The three different reports the user can choose between
+    const string GRIDREPORTNAME = "DataGridExampleReport.trdx";
+    const string SALESREPORTNAME = "productSalesExampleReport.trdx";
+    const string PRESENTATIONREPORTNAME = "PresentationExampleReport.trdx";
+
+    public List<Products> GridData { get; set; }
+    public TelerikGrid<Products> Grid { get; set; }
+    public string ReportSourceJson { get; set; }
+    public GridState<Products> savedGridState { get; set; }
+    public string ReportName { get; set; } = GRIDREPORTNAME;
+    public ReportViewer reportViewer;
+
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        LoadData();
+
+        // Set initial json-data
+        dynamic jsonObject = new ExpandoObject();
+        jsonObject.name = ReportName;
+        jsonObject.data = this.GridData;
+        this.ReportSourceJson = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObject);
+
+    }
+
+    // sample Read operation
+    private void LoadData()
+    {
+        GridData = Products.GetProducts();
+    }
+
+    private void OnStateInit(GridStateEventArgs<Products> args)
+    {
+        // In case the user is switching back from Reporting tab and into the grid tab, the GridState is loaded
+        if (savedGridState != null) args.GridState = savedGridState;
+    }
+
+    public async void OnStateChangedHandler(GridStateEventArgs<Products> args)
+    {
+        // Because applying multiple groups would make the Report-Definition more complex, only 1 grouping
+        // is allowed for the grid. If another one is applied, the first one is removed/overwritten.
+        if (args.PropertyName == "GroupDescriptors")
+        {
+            if (args.GridState.GroupDescriptors.Count > 1)
+            {
+                var groups = args.GridState.GroupDescriptors;
+                groups.Remove(groups.First());
+                await Grid.SetState(args.GridState);
+            }
+        }
+
+        // Allowes the grid to be restored when switching tabs from Report back to Grid
+        this.savedGridState = args.GridState;
+
+        if (this.Grid != null)
+        {
+            SetReportSourceJson(args.GridState);
+        };
+    }
+
+    public void OnReportSelect(string reportName)
+    {
+        this.ReportName = reportName;
+        var gridState = this.Grid.GetState();
+        SetReportSourceJson(gridState);
+        reportViewer.SetReportSourceAsync(new ReportSourceOptions() { Report = this.ReportSourceJson });
+
+    }
+
+    public void SetReportSourceJson(GridState<Products> gridState)
+    {
+        dynamic jsonObject = new ExpandoObject();
+        jsonObject.name = this.ReportName;
+        jsonObject.data = this.GridData;
+
+        // Translating the filter applied to the grid to JSON data
+        List<dynamic> filters = new List<dynamic>();
+        foreach (CompositeFilterDescriptor fdb in gridState.FilterDescriptors)
+        {
+            foreach (FilterDescriptor fd in fdb.FilterDescriptors)
+            {
+                if (fd.ConvertedValue != null)
+                {
+                    dynamic filter = new ExpandoObject();
+                    filter.value = fd.ConvertedValue;
+                    filter.member = fd.Member;
+                    filter.operatorString = Enum.GetName(typeof(FilterOperator), fd.Operator);
+                    filters.Add(filter as dynamic);
+                }
+            }
+        }
+        jsonObject.filters = filters;
+
+        // Translating the sorting applied to the grid to JSON data
+        List<dynamic> sorts = new List<dynamic>();
+        foreach (SortDescriptor sd in gridState.SortDescriptors)
+        {
+            dynamic sort = new ExpandoObject();
+            sort.member = sd.Member;
+            sort.direction = Enum.GetName(typeof(ListSortDirection), sd.SortDirection);
+            sorts.Add(sort);
+        }
+        jsonObject.sorts = sorts;
+
+        // If there is grouping applied, translate it to JSON
+        if (gridState.GroupDescriptors.Count > 0)
+        {
+            jsonObject.groupParameter = gridState.GroupDescriptors.First().Member;
+        }
+
+        // Finally serializing the ExpandoObject to JSON
+        this.ReportSourceJson = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObject);
+
+
+    }
+}
+

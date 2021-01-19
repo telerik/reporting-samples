@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="jsonProductSalesData" Width="17cm" Name="productSales" SnapGridSize="0.1cm" xmlns="http://schemas.telerik.com/reporting/2020/2.0">
+  <DataSources>
+    <JsonDataSource Name="jsonProductSalesData">
+      <Source>
+        <Uri Path="productSales.json" />
+      </Source>
+    </JsonDataSource>
+  </DataSources>
+  <Items>
+    <PageHeaderSection Height="2cm" Name="pageHeaderSection1">
+      <Style BackgroundColor="64, 64, 64" />
+      <Items>
+        <PictureBox Image="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" Width="1.1cm" Height="1.4cm" Left="0.5cm" Top="0.3cm" Sizing="ScaleProportional" MimeType="image/png" Name="pictureBox2" />
+        <TextBox Width="11.9cm" Height="0.9cm" Left="2.2cm" Top="0.8cm" Value="Telerik UI for Blazor + Telerik Reporting" Name="textBox15">
+          <Style Color="White">
+            <Font Size="18pt" />
+          </Style>
+        </TextBox>
+        <TextBox Width="5.8cm" Height="0.4cm" Left="2.2cm" Top="0.4cm" Value="Sample Report" Name="textBox14">
+          <Style Color="White" />
+        </TextBox>
+      </Items>
+    </PageHeaderSection>
+    <DetailSection Height="0.2cm" Name="detailSection1">
+      <Style Visible="False" />
+    </DetailSection>
+    <PageFooterSection Height="0.768cm" Name="pageFooterSection1">
+      <Style BackgroundColor="64, 64, 64" />
+      <Items>
+        <TextBox Width="3.2cm" Height="0.4cm" Left="0.5cm" Top="0.168cm" Value="Sample Report" Name="textBox4">
+          <Style Color="White" />
+        </TextBox>
+        <TextBox Width="3.2cm" Height="0.4cm" Left="13.2cm" Top="0.168cm" Value="= &quot;PAGE: &quot; + PageNumber" Name="textBox5">
+          <Style Color="White" TextAlign="Right" />
+        </TextBox>
+      </Items>
+    </PageFooterSection>
+    <ReportHeaderSection Height="4.9cm" Name="reportHeaderSection1">
+      <Style BackgroundColor="ControlDarkDark" />
+      <Items>
+        <TextBox Width="9.7cm" Height="1.4cm" Left="1.3cm" Top="0.7cm" Value="Sales Report" Name="textBox1">
+          <Style Color="White">
+            <Font Size="28pt" Bold="True" />
+          </Style>
+        </TextBox>
+        <TextBox Width="13.3cm" Height="1.8cm" Left="1.3cm" Top="2.1cm" Value="The graph is based on the filtering applied to the Grid, and shows top 10 products of the filtered results. If no grouping is applied, only one graph displaying the total will show. If grouping is applied, the graph will repeat for each group showing top 10 products." Name="textBox3">
+          <Style Color="White" />
+        </TextBox>
+      </Items>
+    </ReportHeaderSection>
+  </Items>
+  <PageSettings PaperKind="A4" Landscape="False">
+    <Margins>
+      <MarginsU Left="2cm" Right="2cm" Top="2cm" Bottom="2cm" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <Groups>
+    <Group Name="group">
+      <GroupHeader>
+        <GroupHeaderSection Height="17.7cm" Name="groupHeaderSection">
+          <Style BackgroundColor="LightSteelBlue" />
+          <Items>
+            <Graph DataSourceName="jsonProductSalesData" Width="15.9cm" Height="7.9cm" Left="0.5cm" Top="1.1cm" Name="graph1">
+              <PlotAreaStyle LineWidth="0cm" LineColor="LightGray" />
+              <Axes>
+                <GraphAxis Name="graphAxis2">
+                  <MajorGridLineStyle LineWidth="1px" LineColor="LightGray" />
+                  <MinorGridLineStyle Visible="False" LineWidth="1px" LineColor="LightGray" />
+                  <Scale>
+                    <CategoryScale />
+                  </Scale>
+                </GraphAxis>
+                <GraphAxis Name="graphAxis1">
+                  <MajorGridLineStyle LineWidth="1px" LineColor="LightGray" />
+                  <MinorGridLineStyle Visible="False" LineWidth="1px" LineColor="LightGray" />
+                  <Scale>
+                    <NumericalScale />
+                  </Scale>
+                </GraphAxis>
+              </Axes>
+              <CoordinateSystems>
+                <CartesianCoordinateSystem XAxis="graphAxis2" YAxis="graphAxis1" Name="cartesianCoordinateSystem1" />
+              </CoordinateSystems>
+              <Legend>
+                <Style LineWidth="0cm" LineColor="LightGray" />
+              </Legend>
+              <Style>
+                <Padding Left="10px" Right="10px" Top="10px" Bottom="10px" />
+              </Style>
+              <SeriesGroups>
+                <GraphGroup Name="nameGroup">
+                  <Groupings>
+                    <Grouping Expression="= Fields.Name" />
+                  </Groupings>
+                  <Sortings>
+                    <Sorting Expression="= Fields.Name" Direction="Asc" />
+                  </Sortings>
+                  <Filters>
+                    <Filter Expression="= Fields.Revenue" Operator="TopN" Value="10" />
+                  </Filters>
+                </GraphGroup>
+              </SeriesGroups>
+              <CategoryGroups>
+                <GraphGroup Name="monthSoldGroup">
+                  <Groupings>
+                    <Grouping Expression="= Fields.MonthSold" />
+                  </Groupings>
+                  <Sortings>
+                    <Sorting Expression="= Fields.MonthSold" Direction="Asc" />
+                  </Sortings>
+                </GraphGroup>
+              </CategoryGroups>
+              <Series>
+                <LineSeries CoordinateSystem="cartesianCoordinateSystem1" CategoryGroup="monthSoldGroup" SeriesGroup="nameGroup" Size="null" MarkerSize="5px" MarkerMinSize="5px" MarkerMaxSize="50px" Y="= Sum(Fields.Revenue)" DataPointLabel="= Sum(Fields.Revenue)" Name="lineSeries1">
+                  <LineStyle LineWidth="1px" />
+                  <DataPointStyle Visible="False" />
+                  <DataPointLabelStyle Visible="False" />
+                  <LegendItem Value="= Fields.Name" />
+                  <MissingValuesLineStyle Visible="False" LineWidth="1px" />
+                  <ToolTip Title="= Fields.Name" Text="= Sum(Fields.Revenue)" />
+                </LineSeries>
+              </Series>
+              <Titles>
+                <GraphTitle Text="Revenue" Position="TopCenter">
+                  <Style LineWidth="0cm" LineColor="LightGray" />
+                </GraphTitle>
+              </Titles>
+              <Bindings>
+                <Binding Path="DataSource" Expression="= ReportItem.DataObject" />
+              </Bindings>
+            </Graph>
+            <TextBox Width="12.9cm" Height="0.6cm" Left="0.5cm" Top="0.5cm" Value="= IIf(Parameters.groupedBy.Value Like &quot;1&quot;, &quot;No grouping applied&quot;, Parameters.groupName.Value + &quot;: &quot; + Fields(Parameters.groupedBy.Value))" Name="textBox2">
+              <Style>
+                <Font Bold="True" />
+              </Style>
+            </TextBox>
+            <Graph DataSourceName="jsonProductSalesData" Width="15.9cm" Height="7.9cm" Left="0.5cm" Top="9.3cm" Name="graph2">
+              <PlotAreaStyle LineWidth="0cm" LineColor="LightGray" />
+              <Axes>
+                <GraphAxis Name="graphAxis4">
+                  <MajorGridLineStyle LineWidth="1px" LineColor="LightGray" />
+                  <MinorGridLineStyle Visible="False" LineWidth="1px" LineColor="LightGray" />
+                  <Scale>
+                    <CategoryScale />
+                  </Scale>
+                </GraphAxis>
+                <GraphAxis Name="graphAxis3">
+                  <MajorGridLineStyle LineWidth="1px" LineColor="LightGray" />
+                  <MinorGridLineStyle Visible="False" LineWidth="1px" LineColor="LightGray" />
+                  <Scale>
+                    <NumericalScale />
+                  </Scale>
+                </GraphAxis>
+              </Axes>
+              <CoordinateSystems>
+                <CartesianCoordinateSystem XAxis="graphAxis4" YAxis="graphAxis3" Name="cartesianCoordinateSystem2" />
+              </CoordinateSystems>
+              <Legend>
+                <Style LineWidth="0cm" LineColor="LightGray" />
+              </Legend>
+              <Style>
+                <Padding Left="10px" Right="10px" Top="10px" Bottom="10px" />
+              </Style>
+              <SeriesGroups>
+                <GraphGroup Name="nameGroup1">
+                  <Groupings>
+                    <Grouping Expression="= Fields.Name" />
+                  </Groupings>
+                  <Sortings>
+                    <Sorting Expression="= Fields.Name" Direction="Asc" />
+                  </Sortings>
+                  <Filters>
+                    <Filter Expression="= Fields.Revenue" Operator="TopN" Value="= 10" />
+                  </Filters>
+                </GraphGroup>
+              </SeriesGroups>
+              <CategoryGroups>
+                <GraphGroup Name="monthSoldGroup1">
+                  <Groupings>
+                    <Grouping Expression="= Fields.MonthSold" />
+                  </Groupings>
+                  <Sortings>
+                    <Sorting Expression="= Fields.MonthSold" Direction="Asc" />
+                  </Sortings>
+                </GraphGroup>
+              </CategoryGroups>
+              <Series>
+                <LineSeries CoordinateSystem="cartesianCoordinateSystem2" CategoryGroup="monthSoldGroup1" SeriesGroup="nameGroup1" Size="null" MarkerSize="5px" MarkerMinSize="5px" MarkerMaxSize="50px" Y="= Sum(Fields.TotalOrderQty)" DataPointLabel="= Sum(Fields.TotalOrderQty)" Name="lineSeries2">
+                  <LineStyle LineWidth="1px" />
+                  <DataPointStyle Visible="False" />
+                  <DataPointLabelStyle Visible="False" />
+                  <LegendItem Value="= Fields.Name" />
+                  <MissingValuesLineStyle Visible="False" LineWidth="1px" />
+                  <ToolTip Title="= Fields.Name" Text="= Sum(Fields.TotalOrderQty)" />
+                </LineSeries>
+              </Series>
+              <Titles>
+                <GraphTitle Text="Total Quantity Sold" Position="TopCenter">
+                  <Style LineWidth="0cm" LineColor="LightGray" />
+                </GraphTitle>
+              </Titles>
+              <Bindings>
+                <Binding Path="DataSource" Expression="= ReportItem.DataObject" />
+              </Bindings>
+            </Graph>
+          </Items>
+        </GroupHeaderSection>
+      </GroupHeader>
+      <GroupFooter>
+        <GroupFooterSection Height="0.132cm" Name="groupFooterSection">
+          <Style Visible="True" BackgroundColor="64, 64, 64" />
+        </GroupFooterSection>
+      </GroupFooter>
+      <Groupings>
+        <Grouping Expression="= Fields(Parameters.groupedBy.Value)" />
+      </Groupings>
+      <Sortings>
+        <Sorting Expression="= Fields(Parameters.groupedBy.Value)" Direction="Asc" />
+      </Sortings>
+    </Group>
+  </Groups>
+  <ReportParameters>
+    <ReportParameter Name="groupedBy">
+      <Value>
+        <String>1</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="groupName" AllowNull="True" />
+  </ReportParameters>
+</Report>

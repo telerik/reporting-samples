@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="datagridJson" Width="17cm" Name="DataGridExampleReport" Zoom="1.5" SnapGridSize="0.1cm" xmlns="http://schemas.telerik.com/reporting/2020/2.0">
+  <DataSources>
+    <JsonDataSource Name="datagridJson">
+      <Source>
+        <String>Ww0KICAgICAgICB7DQogICAgICAgICAgICANCiAgICAgICAgfQ0KICAgIF0=</String>
+      </Source>
+    </JsonDataSource>
+  </DataSources>
+  <Items>
+    <PageHeaderSection Height="3.4cm" Name="pageHeaderSection1">
+      <Style BackgroundColor="64, 64, 64" />
+      <Items>
+        <Panel Width="17cm" Height="0.7cm" Left="0cm" Top="2.692cm" Name="panel2">
+          <Style BackgroundColor="LightSkyBlue" />
+          <Items>
+            <TextBox Width="2.3cm" Height="0.5cm" Left="14.1cm" Top="0.108cm" Value="List Price" Name="textBox10" />
+            <TextBox Width="2.3cm" Height="0.5cm" Left="11.6cm" Top="0.108cm" Value="Active Selling" Name="textBox8" />
+            <TextBox Width="3.3cm" Height="0.5cm" Left="8.1cm" Top="0.108cm" Value="Category" Name="textBox7" />
+            <TextBox Width="5.6cm" Height="0.5cm" Left="2.2cm" Top="0.108cm" Value="Name" Name="textBox6" />
+            <TextBox Width="1cm" Height="0.5cm" Left="0.9cm" Top="0.108cm" Value="ID" Name="textBox5" />
+          </Items>
+        </Panel>
+        <TextBox Width="5.8cm" Height="0.5cm" Left="2.2cm" Top="0.4cm" Value="Sample Report" Name="textBox14">
+          <Style Color="White" />
+        </TextBox>
+        <TextBox Width="11.9cm" Height="0.9cm" Left="2.2cm" Top="0.9cm" Value="Telerik UI for Blazor + Telerik Reporting" Name="textBox15">
+          <Style Color="White">
+            <Font Size="18pt" />
+          </Style>
+        </TextBox>
+        <PictureBox Image="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" Width="1.1cm" Height="1.4cm" Left="0.5cm" Top="0.4cm" Sizing="ScaleProportional" MimeType="image/png" Name="pictureBox2" />
+      </Items>
+    </PageHeaderSection>
+    <DetailSection CanShrink="True" Height="3.5cm" Name="detailSection1">
+      <Items>
+        <TextBox Width="1cm" Height="0.5cm" Left="0.9cm" Top="0.092cm" Value="= Fields.ProductId" Name="textBox1" />
+        <TextBox Width="5.6cm" Height="0.5cm" Left="2.2cm" Top="0.092cm" Value="= Fields.Name" Name="textBox2" />
+        <TextBox Width="3.3cm" Height="0.5cm" Left="8.1cm" Top="0.092cm" Value="= Fields.ProductCategoryName" Name="textBox3" />
+        <TextBox Width="1.9cm" Height="0.5cm" Left="11.6cm" Top="0.092cm" Value="= Fields.ActiveSelling" Name="textBox4" />
+        <TextBox Width="2.6cm" Height="0.5cm" Left="14.1cm" Top="0.092cm" Value="= Fields.ListPrice + &quot;$&quot;" Format="{0:N2}" Name="textBox9" />
+        <TextBox Width="0.9cm" Height="0.7cm" Left="0cm" Top="0cm" Value="" Name="textBox11">
+          <Action>
+            <ToggleVisibilityAction DisplayExpandedMark="False">
+              <Targets>
+                <Target ItemName="panel1" />
+              </Targets>
+            </ToggleVisibilityAction>
+          </Action>
+        </TextBox>
+        <Panel Width="17cm" Height="2.8cm" Left="0cm" Top="0.7cm" Name="panel1">
+          <Style Visible="False" BackgroundColor="SteelBlue" />
+          <Items>
+            <PictureBox Value="= Fields.ThumbNailPhoto" Width="4.5cm" Height="2.4cm" Left="0.2cm" Top="0.2cm" Sizing="ScaleProportional" MimeType="" Name="pictureBox1" />
+            <TextBox Width="3.2cm" Height="0.5cm" Left="6.9cm" Top="0.4cm" Value="= Fields.Color" Name="textBox17" />
+            <TextBox Width="3.2cm" Height="0.5cm" Left="13.5cm" Top="1.1cm" Value="= Round(Fields.StandardCost, 2) + &quot;$&quot;" Format="{0:C2}" Name="textBox18" />
+            <TextBox Width="3.2cm" Height="0.5cm" Left="13.5cm" Top="0.4cm" Value="= Fields.SellStartDate" Format="{0:dd.MM.yyyy}" Name="textBox19" />
+            <TextBox Width="3.2cm" Height="0.5cm" Left="6.9cm" Top="1.1cm" Value="= Fields.Size" Name="textBox20" />
+            <TextBox Width="3.2cm" Height="0.5cm" Left="6.9cm" Top="1.8cm" Value="= Fields.Weight" Name="textBox21" />
+            <TextBox Width="1.9cm" Height="0.5cm" Left="5cm" Top="0.4cm" Value="Color:" Name="textBox22">
+              <Style TextAlign="Right" />
+            </TextBox>
+            <TextBox Width="1.9cm" Height="0.5cm" Left="5cm" Top="1.1cm" Value="Size:" Name="textBox23">
+              <Style TextAlign="Right" />
+            </TextBox>
+            <TextBox Width="1.9cm" Height="0.5cm" Left="5cm" Top="1.8cm" Value="Weight:" Name="textBox24">
+              <Style TextAlign="Right" />
+            </TextBox>
+            <TextBox Width="2.2cm" Height="0.5cm" Left="11.3cm" Top="0.4cm" Value="Sold from:" Name="textBox25">
+              <Style TextAlign="Right" />
+            </TextBox>
+            <TextBox Width="2.8cm" Height="0.9cm" Left="10.7cm" Top="1.1cm" Value="Standard cost:" Name="textBox26">
+              <Style TextAlign="Right" />
+            </TextBox>
+          </Items>
+        </Panel>
+      </Items>
+      <ConditionalFormatting>
+        <FormattingRule StopIfTrue="True">
+          <Style BackgroundColor="234, 242, 255" />
+          <Filters>
+            <Filter Expression="= RowNumber()%2" Operator="Equal" Value="0" />
+          </Filters>
+        </FormattingRule>
+        <FormattingRule>
+          <Style BackgroundColor="198, 226, 255" />
+          <Filters>
+            <Filter Expression="= RowNumber()%2" Operator="Equal" Value="1" />
+          </Filters>
+        </FormattingRule>
+      </ConditionalFormatting>
+    </DetailSection>
+    <PageFooterSection Height="0.8cm" Name="pageFooterSection1">
+      <Style BackgroundColor="64, 64, 64" />
+      <Items>
+        <TextBox Width="3cm" Height="0.6cm" Left="13.7cm" Top="0.2cm" Value="= PageNumber + &quot; of &quot; + PageCount&#xD;&#xA;" Name="textBox16">
+          <Style TextAlign="Right" />
+        </TextBox>
+      </Items>
+    </PageFooterSection>
+  </Items>
+  <PageSettings PaperKind="A4" Landscape="False">
+    <Margins>
+      <MarginsU Left="2cm" Right="2cm" Top="2cm" Bottom="2cm" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <Groups>
+    <Group Name="group">
+      <GroupHeader>
+        <GroupHeaderSection Height="0.8cm" Name="groupHeaderSection">
+          <Style BackgroundColor="SteelBlue" />
+          <Items>
+            <TextBox Width="11.9cm" Height="0.4cm" Left="0.5cm" Top="0.2cm" Value="= Parameters.groupName.Value + &quot;: &quot; + Fields(Parameters.groupedBy.Value)" Name="textBox12">
+              <Style Color="White">
+                <Font Bold="True" />
+              </Style>
+            </TextBox>
+            <TextBox Width="3cm" Height="0.4cm" Left="13.4cm" Top="0.2cm" Value="= &quot;Total products: &quot; + Count(Fields.Name)" Name="textBox13">
+              <Style Color="White" />
+            </TextBox>
+          </Items>
+          <ConditionalFormatting>
+            <FormattingRule>
+              <Style Visible="False" />
+              <Filters>
+                <Filter Expression="= Parameters.groupedBy.Value" Operator="Equal" Value="1" />
+              </Filters>
+            </FormattingRule>
+          </ConditionalFormatting>
+        </GroupHeaderSection>
+      </GroupHeader>
+      <GroupFooter>
+        <GroupFooterSection Height="0.6cm" Name="groupFooterSection">
+          <Style Visible="False" BackgroundColor="AliceBlue" />
+        </GroupFooterSection>
+      </GroupFooter>
+      <Groupings>
+        <Grouping Expression="= Fields(Parameters.groupedBy.Value)" />
+      </Groupings>
+      <Sortings>
+        <Sorting Expression="= Fields(Parameters.groupedBy.Value)" Direction="Asc" />
+      </Sortings>
+    </Group>
+  </Groups>
+  <ReportParameters>
+    <ReportParameter Name="groupedBy" AllowNull="True" AutoRefresh="True">
+      <Value>
+        <String>1</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="groupName" AllowNull="True" />
+  </ReportParameters>
+</Report>
