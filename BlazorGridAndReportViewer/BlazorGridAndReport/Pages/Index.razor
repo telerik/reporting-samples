@@ -1,7 +1,8 @@
 ﻿@page "/"
 
 @using BlazorGridAndReport.Models
-@using System.Dynamic
+@using BlazorGridAndReport.Models.json
+@using System.Text.Json;
 @using Telerik.DataSource;
 @using Telerik.ReportViewer.Blazor
 
@@ -31,7 +32,7 @@
                      Pageable="true"
                      Groupable="true"
                      Sortable="true"
-                     FilterMode="GridFilterMode.FilterMenu"
+                     FilterMode="GridFilterMode.FilterRow"
                      Resizable="true"
                      Reorderable="true"
                      EditMode="GridEditMode.Popup"
@@ -56,7 +57,7 @@
                 <GridColumn Field="@nameof(Products.Name)" />
                 <GridColumn Field="@nameof(Products.StandardCost)" Title="Cost">
                     <Template>
-                        @((context as Products).StandardCost.ToString("C2"))
+                        <div style="text-align:right;">@((context as Products).StandardCost.ToString("C2"))</div>
                     </Template>
                 </GridColumn>
                 <GridColumn Field="@nameof(Products.ActiveSelling)" Title="Active Selling" Editable="false" />
@@ -117,10 +118,10 @@
         LoadData();
 
         // Set initial json-data
-        dynamic jsonObject = new ExpandoObject();
-        jsonObject.name = ReportName;
-        jsonObject.data = this.GridData;
-        this.ReportSourceJson = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObject);
+        var reportSourceObject = new ReportSourceModel();
+        reportSourceObject.Name = this.ReportName;
+        reportSourceObject.Data = this.GridData;
+        this.ReportSourceJson = Newtonsoft.Json.JsonConvert.SerializeObject(reportSourceObject);
 
     }
 
@@ -153,7 +154,7 @@
         // Allowes the grid to be restored when switching tabs from Report back to Grid
         this.savedGridState = args.GridState;
 
-        if (this.Grid != null)
+        if (args.GridState != null)
         {
             SetReportSourceJson(args.GridState);
         };
@@ -170,47 +171,58 @@
 
     public void SetReportSourceJson(GridState<Products> gridState)
     {
-        dynamic jsonObject = new ExpandoObject();
-        jsonObject.name = this.ReportName;
-        jsonObject.data = this.GridData;
+        var reportSourceObject = new ReportSourceModel();
+        reportSourceObject.Name = this.ReportName;
+        reportSourceObject.Data = this.GridData;
 
-        // Translating the filter applied to the grid to JSON data
-        List<dynamic> filters = new List<dynamic>();
+        @*// Translating the filter applied to the grid to JSON data
         foreach (CompositeFilterDescriptor fdb in gridState.FilterDescriptors)
         {
             foreach (FilterDescriptor fd in fdb.FilterDescriptors)
             {
                 if (fd.ConvertedValue != null)
                 {
-                    dynamic filter = new ExpandoObject();
-                    filter.value = fd.ConvertedValue;
-                    filter.member = fd.Member;
-                    filter.operatorString = Enum.GetName(typeof(FilterOperator), fd.Operator);
-                    filters.Add(filter as dynamic);
+                    var filter = new ReportSourceFilter();
+                    filter.Member = fd.Member;
+                    filter.Value = fd.ConvertedValue;
+                    filter.OperatorString = Enum.GetName(typeof(FilterOperator), fd.Operator);
+                    if (reportSourceObject.Filters == null) reportSourceObject.Filters = new List<ReportSourceFilter>();
+                    reportSourceObject.Filters.Add(filter);
                 }
             }
+        }*@
+        // Translating the filter applied to the grid to JSON data
+        foreach (FilterDescriptor fd in gridState.FilterDescriptors)
+        {
+            if (fd.ConvertedValue != null)
+            {
+                var filter = new ReportSourceFilter();
+                filter.Member = fd.Member;
+                filter.Value = fd.ConvertedValue;
+                filter.OperatorString = Enum.GetName(typeof(FilterOperator), fd.Operator);
+                if (reportSourceObject.Filters == null) reportSourceObject.Filters = new List<ReportSourceFilter>();
+                reportSourceObject.Filters.Add(filter);
+            }
         }
-        jsonObject.filters = filters;
 
         // Translating the sorting applied to the grid to JSON data
-        List<dynamic> sorts = new List<dynamic>();
-        foreach (SortDescriptor sd in gridState.SortDescriptors)
+        if (gridState.SortDescriptors.Count != 0)
         {
-            dynamic sort = new ExpandoObject();
-            sort.member = sd.Member;
-            sort.direction = Enum.GetName(typeof(ListSortDirection), sd.SortDirection);
-            sorts.Add(sort);
+            SortDescriptor sd = gridState.SortDescriptors.First();
+            var sorting = new ReportSourceSorting();
+            sorting.Direction = Enum.GetName(typeof(ListSortDirection), sd.SortDirection);
+            sorting.Member = sd.Member;
+            reportSourceObject.Sortings = sorting;
         }
-        jsonObject.sorts = sorts;
 
         // If there is grouping applied, translate it to JSON
         if (gridState.GroupDescriptors.Count > 0)
         {
-            jsonObject.groupParameter = gridState.GroupDescriptors.First().Member;
+            reportSourceObject.Grouping = gridState.GroupDescriptors.First().Member;
         }
 
         // Finally serializing the ExpandoObject to JSON
-        this.ReportSourceJson = Newtonsoft.Json.JsonConvert.SerializeObject(jsonObject);
+        this.ReportSourceJson = Newtonsoft.Json.JsonConvert.SerializeObject(reportSourceObject);
 
 
     }

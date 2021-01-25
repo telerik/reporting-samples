@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
 	  <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+	  <UserSecretsId>cbafb15d-396f-40c3-b3dc-763aed6c8e00</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,6 +13,18 @@
     <PackageReference Include="Telerik.Reporting.WebServiceDataSource" Version="14.2.20.1021" />
     <PackageReference Include="Telerik.ReportViewer.Blazor" Version="14.2.20.1021" />
     <PackageReference Include="Telerik.UI.for.Blazor" Version="2.20.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DataGridExampleReport.trdx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="PresentationExampleReport.trdx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="productSalesExampleReport.trdx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

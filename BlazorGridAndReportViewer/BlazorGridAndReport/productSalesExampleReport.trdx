@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Report DataSourceName="jsonProductSalesData" Width="17cm" Name="productSales" SnapGridSize="0.1cm" xmlns="http://schemas.telerik.com/reporting/2020/2.0">
+<Report DataSourceName="jsonProductSalesData" Width="17cm" Name="productSales" Zoom="2" SnapGridSize="0.1cm" xmlns="http://schemas.telerik.com/reporting/2020/2.0">
   <DataSources>
     <JsonDataSource Name="jsonProductSalesData">
       <Source>
@@ -11,14 +11,16 @@
     <PageHeaderSection Height="2cm" Name="pageHeaderSection1">
       <Style BackgroundColor="64, 64, 64" />
       <Items>
-        <PictureBox Image="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" Width="1.1cm" Height="1.4cm" Left="0.5cm" Top="0.3cm" Sizing="ScaleProportional" MimeType="image/png" Name="pictureBox2" />
-        <TextBox Width="11.9cm" Height="0.9cm" Left="2.2cm" Top="0.8cm" Value="Telerik UI for Blazor + Telerik Reporting" Name="textBox15">
+        <PictureBox Image="iVBORw0KGgoAAAANSUhEUgAAAKkAAACwCAYAAAB0DE58AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAOvgAADr4B6kKxwAAABkZJREFUeF7tmdGtHDcMRV9JKSUFuJK4iPThvvzhj/y4ASeC+eDNM3dHlMgRKZ0DXMBwvLMS50Bzd/IGAAAAAGa+fP/8Q/4IkIe/vv3x49PXt9/y9z9/IiyspUmoyfkxnK5wO006TcaryMcBYnn2aO9N+7xcCsCXWTk/hr4KbvT2ztHQV2EKTaqIUAHAjPejvTdUALgk+tHeGyoA/MboK6XoyPLgdDQ5MoW+ejCreudo6KsHkaV3joa+ujFZe+dIqAAbot3oHYKsG1Ctd46GClCQ6r1zNLJ9yMxOvXM0VIDEnPJo7w2vrBKBnK9DX13Iqb1zJFSAm6F3jgdZb4BHu0/oqwEgZ0xkvDAL3TM2VABHOE1jQwVwRBsw8QuvrJzgF358ZNQwCxUgNvRVR5A1NvRVJ6gA8aGvOsErq9hQARyhAsQGWR1B1tjQV52gr8aHvuoEfTU2VABHqACxQVZHtAETv1ABnKCvxgdZnaCvxoYK4Ah9NTbI6gQVID5UACeoAPGRUcMsVIDYUAEcQdbY8L9YnaCvxoZT1RH6akyQNAAqgH9ktDVpp1dLxtcX2rDJWGSkdbjqgPLPUkBf9YmMswa9j9JsPYa+OhcZY25Gb3L7nFwiBfTVscj4cuL1uMzWWbU1kueRseVDW+xs5NIpoK/2R0aWh+hHYra+SgW4joxqPXf/uKCv1omMaB2rH3uZ+ioVQI+MZw1ZTo9sFYBXVv+PjOVesj7asslKBfgZGcc9VDkhsr2yOl1WGUMsVbsWfTVHZARxVD8FslWAE/uqbN2f3YbJK6t1kS37sftjKVtf1da4W2SrPmhfsGtkyynY/WCQbc5x6q9P+uo9ke2NcWKJ10JfjY1sy8bJr0NeJVNf3ekeyZb60S5CfoUK4B/ZyjWn9s7RZJO18v2TLbxG+yDpS7a+qq0xe2Tp13CSziVLX614H2Xp/SDreDJUgCMkbfDrfi4rK8Axkr7De9K5rKgAx0n6DhVgLjLGWzhW0ne0LyB9afLIGEM5XtIGfXUu0bIi6QP01blE9VUkVag4lEyRMbqBpC/Qvpz0xbMCIOkFVIDxeD3+kbQTKoA9SLoIZO0Pki6EV1Z9QdIE0FdfB0kTQQXQg6QJ0RZ7cpA0KfTVX0HS5NBXkbQMJ/dVJC2GtpHdg6QFOa2vImlhTqkASLoBu8uKpJuwcwVA0s3Y8ZUVkm7KThUASTdnB1mR9ACq91UkPYiqfRVJD6TazULSg9GGkjFIejgV+iqSQvquiqSApIkjSwckzRtZOiBp3sjSAUnzRpYOSJo3snRA0ryRpQOS5o0sHZA0b2TpgKR5I0sHJM0bWXo93qXyunlImjey9Fo8bgBJbSBpMNqAkdQGkgbxarBIagNJnWk3Rlv0Y5DUBpI6oi1WC5LaQFIHrENEUhtIOsGoJEhqA0kHaMPXFtYbJLWBpEY8BoakNpC0E89BIakNJL0gQgQktYGkT2gD1r7cI0hqA0kVooeCpDaQ9IG7hoGkNpD0P9owtS+KCpLaOF5S7Quig6Q2jpV05caR1MZxkma4sUhq4xhJ28C0i60Ikto4QlLtIiuDpDaqSdruiyz9mqybQ1Ib1SSVZV+jfThLkNRGJUlNp2iDk3RtTpO0rVOWbEe74MogqY0KkrrstV1Eu/iKIKmNzJJOnZ7PyHBjkdRGRklD5PzIyo0jqY1sknrtqxttEdFBUhtZJG3zliXdTxumtqioIKmN1ZLe8mjv5a5hnCKpLHOalZLKEvIRPRQktbFCUq97FEpbpLZ4j5wgqWd/u1NSz3XfRoQIu0vapJIlunCHpN5rXoLnoHaWNOIkipZUvmYfPAa2o6SRJ1GUpF73ISVtc9qme7ObpNE321vSiNM+LaOS7CLpXTfbS9LI0z491iFWl/Tum+0hqVwKtOFoqSypfPWtzEgaXUVK0oaiDesxFSVdebNHJL37tC/JK4EqSdq+Q75uGRZJkXMAbcAVJM10s3slXXnab0HEMKMklcun4UrSDKf9NjQ521CzSpr1JHomaabTHp7gJWn2k0iTVP4TZGdW0ion0aOkPNqLMSNppR8ZTVIe7UUZkZSTCG7FIiknESyhR1LkhKVcSVqpd8KmPJOU3glp+Cgpj3ZIx6Ok8lcAuWiS0jsBYJK3t38BgM+sL0Mgt5EAAAAASUVORK5CYII=" Width="0.9cm" Height="1cm" Left="0.539cm" Top="0.5cm" Sizing="ScaleProportional" MimeType="image/png" Name="pictureBox2" />
+        <TextBox Width="13.6cm" Height="0.9cm" Left="2.2cm" Top="0.739cm" Value="Telerik UI for Blazor + Telerik Reporting" Name="textBox15">
           <Style Color="White">
-            <Font Size="18pt" />
+            <Font Name="Verdana" Size="16pt" />
           </Style>
         </TextBox>
         <TextBox Width="5.8cm" Height="0.4cm" Left="2.2cm" Top="0.4cm" Value="Sample Report" Name="textBox14">
-          <Style Color="White" />
+          <Style Color="White">
+            <Font Name="Verdana" />
+          </Style>
         </TextBox>
       </Items>
     </PageHeaderSection>
@@ -28,24 +30,30 @@
     <PageFooterSection Height="0.768cm" Name="pageFooterSection1">
       <Style BackgroundColor="64, 64, 64" />
       <Items>
-        <TextBox Width="3.2cm" Height="0.4cm" Left="0.5cm" Top="0.168cm" Value="Sample Report" Name="textBox4">
-          <Style Color="White" />
+        <TextBox Width="3.2cm" Height="0.568cm" Left="0.339cm" Top="0.086cm" Value="Sample Report" Name="textBox4">
+          <Style Color="White">
+            <Font Name="Verdana" />
+          </Style>
         </TextBox>
-        <TextBox Width="3.2cm" Height="0.4cm" Left="13.2cm" Top="0.168cm" Value="= &quot;PAGE: &quot; + PageNumber" Name="textBox5">
-          <Style Color="White" TextAlign="Right" />
+        <TextBox Width="3.2cm" Height="0.486cm" Left="13.6cm" Top="0.086cm" Value="= &quot;PAGE: &quot; + PageNumber" Name="textBox5">
+          <Style Color="White" TextAlign="Right">
+            <Font Name="Verdana" />
+          </Style>
         </TextBox>
       </Items>
     </PageFooterSection>
     <ReportHeaderSection Height="4.9cm" Name="reportHeaderSection1">
       <Style BackgroundColor="ControlDarkDark" />
       <Items>
-        <TextBox Width="9.7cm" Height="1.4cm" Left="1.3cm" Top="0.7cm" Value="Sales Report" Name="textBox1">
+        <TextBox Width="9.7cm" Height="1.2cm" Left="1.3cm" Top="0.9cm" Value="Sales Report" Name="textBox1">
           <Style Color="White">
-            <Font Size="28pt" Bold="True" />
+            <Font Name="Verdana" Size="22pt" Bold="False" />
           </Style>
         </TextBox>
         <TextBox Width="13.3cm" Height="1.8cm" Left="1.3cm" Top="2.1cm" Value="The graph is based on the filtering applied to the Grid, and shows top 10 products of the filtered results. If no grouping is applied, only one graph displaying the total will show. If grouping is applied, the graph will repeat for each group showing top 10 products." Name="textBox3">
-          <Style Color="White" />
+          <Style Color="White">
+            <Font Name="Verdana" Size="9pt" />
+          </Style>
         </TextBox>
       </Items>
     </ReportHeaderSection>
@@ -82,7 +90,7 @@
                     <CategoryScale />
                   </Scale>
                 </GraphAxis>
-                <GraphAxis Name="graphAxis1">
+                <GraphAxis Name="graphAxis1" LabelFormat="{0:# ##0$}">
                   <MajorGridLineStyle LineWidth="1px" LineColor="LightGray" />
                   <MinorGridLineStyle Visible="False" LineWidth="1px" LineColor="LightGray" />
                   <Scale>

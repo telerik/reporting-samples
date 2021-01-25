@@ -7,6 +7,10 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Telerik.Reporting;
 using Telerik.Reporting.Services;
+using System.Text.Json;
+using System.Web;
+using BlazorGridAndReport.Models.json;
+using System.Text;
 
 namespace BlazorGridAndReport
 {
@@ -25,12 +29,11 @@ namespace BlazorGridAndReport
 
         public ReportSource Resolve(string report, OperationOrigin operationOrigin, IDictionary<string, object> currentParameterValues)
         {
+            // Converts the JSON data into a dynamic object and reads the reportName field
+            ReportSourceModel reportSourceData = Newtonsoft.Json.JsonConvert.DeserializeObject<ReportSourceModel>(report);
+            var reportName = reportSourceData.Name;
             try
             {
-                // Converts the JSON data into a dynamic object and reads the reportName field
-                dynamic reportSourceData = Newtonsoft.Json.JsonConvert.DeserializeObject(report);
-                var reportName = (string)reportSourceData.name;
-
                 // If the passed report name is not DataGridExample.trdx, return null so the fallback file resolver will try to resolve the report.
                 if (!string.Equals(reportName, DATAGRID_EXAMPLE_REPORT, System.StringComparison.OrdinalIgnoreCase) &&
                     !string.Equals(reportName, SALES_EXAMPLE_REPORT, System.StringComparison.OrdinalIgnoreCase) &&
@@ -44,35 +47,28 @@ namespace BlazorGridAndReport
                 this.gridReportInstance = (Report)new Telerik.Reporting.XmlSerialization.ReportXmlSerializer().Deserialize(gridReportPath);
 
                 // Set the JSON datasource
-                var productJson = Newtonsoft.Json.JsonConvert.SerializeObject(reportSourceData.data);
                 if (string.Equals(reportName, DATAGRID_EXAMPLE_REPORT, System.StringComparison.OrdinalIgnoreCase))
                 {
                     // This is only done for the DATAGRID_EXAMPLE_REPORT
                     // The two other reports have the JSON data embedded
-                    // The data-source within the report can be whatever, but needs to have the fields available to
-                    //  apply the filters, sorting and grouping on
-                    this.BindData(productJson);
+                    this.BindData(Newtonsoft.Json.JsonConvert.SerializeObject(reportSourceData.Data));
                 }
 
                 // Set the filters
-                var filters = new List<dynamic>();
-                if (reportSourceData.filters != null)
+                if (reportSourceData.Filters != null)
                 {
-                    filters.AddRange(reportSourceData.filters);
-                    this.BindFilters(filters);
+                    this.BindFilters(reportSourceData.Filters);
                 }
 
                 // Set the sorting
-                var sorts = new List<dynamic>();
-                if (reportSourceData.sorts != null)
+                if (reportSourceData.Sortings != null)
                 {
-                    sorts.AddRange(reportSourceData.sorts);
-                    this.BindSorts(sorts);
+                    this.BindSorts(reportSourceData.Sortings);
                 }
 
                 // The grouping is applied by updating the parameter. By default, the parameter is "1".
                 // The groupheader in the DATAGRID report will be hidden if the parameter is still "1".
-                this.BindGroupByParameter(reportSourceData.groupParameter);
+                this.BindGroupByParameter(reportSourceData.Grouping);
 
                 return new InstanceReportSource()
                 {
@@ -94,41 +90,38 @@ namespace BlazorGridAndReport
             reportDataSource.Source = productJson;
         }
 
-        private void BindFilters(List<dynamic> filters)
+        private void BindFilters(List<ReportSourceFilter> filters)
         {
             // Clears any previous filters and adds them using the ToReportingFilter method
             var reportFilters = this.gridReportInstance.Filters;
             reportFilters.Clear();
-            foreach (dynamic filter in filters)
+            foreach (ReportSourceFilter filter in filters)
             {
                 reportFilters.Add(this.ToReportingFilter(filter));
             }
         }
 
-        private void BindSorts(List<dynamic> sorts)
+        private void BindSorts(ReportSourceSorting sort)
         {
             // Clears previous sortings and adds them
             var reportSorts = this.gridReportInstance.Sortings;
             reportSorts.Clear();
-            foreach (dynamic sort in sorts)
-            {
-                var dir = "Ascending".Equals(sort.direction) ? SortDirection.Asc : SortDirection.Desc;
-                var field = "= Fields." + sort.member.Value;
-                reportSorts.Add(field, dir);
-            }
+            var dir = "Ascending".Equals(sort.Direction) ? SortDirection.Asc : SortDirection.Desc;
+            var field = "= Fields." + sort.Member;
+            reportSorts.Add(field, dir);
         }
 
-        private void BindGroupByParameter(dynamic groupParameter)
+        private void BindGroupByParameter(string groupParameter)
         {
             if (groupParameter != null)
             {
                 // The first parameter is used to tell the report what field the group should be based on
                 var param = this.gridReportInstance.ReportParameters[0];
-                param.Value = groupParameter.Value;
+                param.Value = groupParameter;
                 // A second parameter is passed where a space is added before each captial letter
                 // This is to provide a value to display in the report for what field the grouping is set to
                 var param2 = this.gridReportInstance.ReportParameters[1];
-                param2.Value = Regex.Replace(groupParameter.Value, "(\\B[A-Z])", " $1");
+                param2.Value = Regex.Replace(groupParameter, "(\\B[A-Z])", " $1");
             }
             else
             {
@@ -138,44 +131,44 @@ namespace BlazorGridAndReport
         }
 
         // Because the filters work differently in Blazor UI and Reporting, some translation is needed, which is done in this method
-        private Filter ToReportingFilter(dynamic filter)
+        private Filter ToReportingFilter(ReportSourceFilter filter)
         {
-            switch (filter.operatorString.Value)
+            switch (filter.OperatorString)
             {
                 case "IsLessThan":
-                    return new Filter("= Fields." + filter.member.Value, FilterOperator.LessThan, filter.value.Value.ToString());
+                    return new Filter("= Fields." + filter.Member, FilterOperator.LessThan, Convert.ToString(filter.Value));
                 case "IsLessThanOrEqualTo":
-                    return new Filter("= Fields." + filter.member.Value, FilterOperator.LessOrEqual, filter.value.Value.ToString());
+                    return new Filter("= Fields." + filter.Member, FilterOperator.LessOrEqual, Convert.ToString(filter.Value));
                 case "IsGreaterThan":
-                    return new Filter("= Fields." + filter.member.Value, FilterOperator.GreaterThan, filter.value.Value.ToString());
+                    return new Filter("= Fields." + filter.Member, FilterOperator.GreaterThan, Convert.ToString(filter.Value));
                 case "IsGreaterThanOrEqualTo":
-                    return new Filter("= Fields." + filter.member.Value, FilterOperator.GreaterOrEqual, filter.value.Value.ToString());
+                    return new Filter("= Fields." + filter.Member, FilterOperator.GreaterOrEqual, Convert.ToString(filter.Value));
                 case "IsEqualTo":
-                    return new Filter("= Fields." + filter.member.Value, FilterOperator.Equal, filter.value.Value.ToString());
+                    return new Filter("= Fields." + filter.Member, FilterOperator.Equal, Convert.ToString(filter.Value));
                 case "IsNotEqualTo":
-                    return new Filter("= Fields." + filter.member.Value, FilterOperator.NotEqual, filter.value.Value.ToString());
+                    return new Filter("= Fields." + filter.Member, FilterOperator.NotEqual, Convert.ToString(filter.Value));
                 case "StartsWith":
-                    return new Filter("= Fields." + filter.member.Value, FilterOperator.Like, filter.value.Value + "%");
+                    return new Filter("= ToLower(Fields." + filter.Member + ")", FilterOperator.Like, Convert.ToString(filter.Value).ToLower() + "%");
                 case "EndsWith":
-                    return new Filter("= Fields." + filter.member.Value, FilterOperator.Like, "%" + filter.value.Value);
+                    return new Filter("= ToLower(Fields." + filter.Member + ")", FilterOperator.Like, "%" + Convert.ToString(filter.Value).ToLower());
                 case "Contains":
-                    return new Filter("= Fields." + filter.member.Value, FilterOperator.Like, "%" + filter.value.Value + "%");
+                    return new Filter("= ToLower(Fields." + filter.Member + ")", FilterOperator.Like, "%" + Convert.ToString(filter.Value).ToLower() + "%");
                 case "IsContainedIn":
-                    return new Filter("= Fields." + filter.member.Value, FilterOperator.In, filter.value.Value);
+                    return new Filter("= Fields." + filter.Member, FilterOperator.In, Convert.ToString(filter.Value));
                 case "DoesNotContain":
-                    return new Filter("= Fields." + filter.member.Value, FilterOperator.NotLike, "%" + filter.value.Value + "%");
+                    return new Filter("= ToLower(Fields." + filter.Member + ")", FilterOperator.NotLike, "%" + Convert.ToString(filter.Value).ToLower() + "%");
                 case "IsNull":
-                    return new Filter("= Fields." + filter.member.Value, FilterOperator.Equal, "Null");
+                    return new Filter("= Fields." + filter.Member, FilterOperator.Equal, "Null");
                 case "IsNotNull":
-                    return new Filter("= Fields." + filter.member.Value, FilterOperator.NotEqual, "Null");
+                    return new Filter("= Fields." + filter.Member, FilterOperator.NotEqual, "Null");
                 case "IsEmpty":
-                    return new Filter("= Fields." + filter.member.Value, FilterOperator.Like, string.Empty);
+                    return new Filter("= Fields." + filter.Member, FilterOperator.Like, string.Empty);
                 case "IsNotEmpty":
-                    return new Filter("= Fields." + filter.member.Value, FilterOperator.NotLike, string.Empty);
+                    return new Filter("= Fields." + filter.Member, FilterOperator.NotLike, string.Empty);
                 case "IsNullOrEmpty":
-                    return new Filter("= (Fields." + filter.member.Value + " Is Null) ? True : (Fields." + filter.member.Value + " = \"\" ? True : False)", FilterOperator.Equal, "True");
+                    return new Filter("= (Fields." + filter.Member + " Is Null) ? True : (Fields." + filter.Member + " = \"\" ? True : False)", FilterOperator.Equal, "True");
                 case "IsNotNullOrEmpty":
-                    return new Filter("= (Fields." + filter.member.Value + " Is Null) ? True : (Fields." + filter.member.Value + " = \"\" ? True : False)", FilterOperator.Equal, "False");
+                    return new Filter("= (Fields." + filter.Member + " Is Null) ? True : (Fields." + filter.Member + " = \"\" ? True : False)", FilterOperator.Equal, "False");
 
                 default:
                     throw new ArgumentException();
