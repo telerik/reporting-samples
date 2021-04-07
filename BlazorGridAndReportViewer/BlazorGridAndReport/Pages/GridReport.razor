@@ -48,7 +48,7 @@
         <TelerikButton Class="mt-2 mb-2" Enabled="@(!this.ReportName.Equals(PRESENTATIONREPORTNAME))" OnClick="@(() => OnReportSelect(PRESENTATIONREPORTNAME))">View Sales Presentation</TelerikButton>
         <ReportViewer ViewerId="rv1"
                       @ref="@reportViewer"
-                      ServiceUrl="/api/reports"
+                      ServiceUrl="/blazor-reporting/api/reports"
                       ReportSource="@(new ReportSourceOptions()
                       {
                         Report = @ReportSourceJson
@@ -69,47 +69,47 @@
     }
 </style>
 
-@code {// The three different reports the user can choose between
-            const string GRIDREPORTNAME = "DataGridExampleReport.trdx";
-            const string SALESREPORTNAME = "productSalesExampleReport.trdx";
-            const string PRESENTATIONREPORTNAME = "PresentationExampleReport.trdx";
+@code {
+    // The three different reports the user can choose between
+    const string GRIDREPORTNAME = "DataGridExampleReport.trdx";
+    const string SALESREPORTNAME = "productSalesExampleReport.trdx";
+    const string PRESENTATIONREPORTNAME = "PresentationExampleReport.trdx";
 
-            public List<Products> GridData { get; set; }
-            public TelerikGrid<Products> Grid { get; set; }
-            public string ReportSourceJson { get; set; }
-            public GridState<Products> savedGridState { get; set; }
-            public string ReportName { get; set; } = GRIDREPORTNAME;
-            public ReportViewer reportViewer;
+    public List<Products> GridData { get; set; }
+    public TelerikGrid<Products> Grid { get; set; }
+    public string ReportSourceJson { get; set; }
+    public GridState<Products> savedGridState { get; set; }
+    public string ReportName { get; set; } = GRIDREPORTNAME;
+    public ReportViewer reportViewer;
 
-            protected override async Task OnInitializedAsync()
+    protected override void OnInitialized()
+    {
+        LoadData();
+
+        // Set initial json-data
+        var reportSourceObject = new ReportSourceModel();
+        reportSourceObject.Name = this.ReportName;
+        reportSourceObject.Data = this.GridData;
+        this.ReportSourceJson = Newtonsoft.Json.JsonConvert.SerializeObject(reportSourceObject);
+    }
+
+    // sample Read operation
+    private void LoadData()
+    {
+        GridData = Products.GetProducts();
+    }
+
+    private void OnStateInit(GridStateEventArgs<Products> args)
+    {
+        // In case the user is switching back from Reporting tab and into the grid tab, the GridState is loaded
+        if (savedGridState != null)
+        {
+            args.GridState = savedGridState;
+        }
+        else
+        {
+            args.GridState.GroupDescriptors = new List<GroupDescriptor>()
             {
-                LoadData();
-
-                // Set initial json-data
-                var reportSourceObject = new ReportSourceModel();
-                reportSourceObject.Name = this.ReportName;
-                reportSourceObject.Data = this.GridData;
-                this.ReportSourceJson = Newtonsoft.Json.JsonConvert.SerializeObject(reportSourceObject);
-
-            }
-
-            // sample Read operation
-            private void LoadData()
-            {
-                GridData = Products.GetProducts();
-            }
-
-            private void OnStateInit(GridStateEventArgs<Products> args)
-            {
-                // In case the user is switching back from Reporting tab and into the grid tab, the GridState is loaded
-                if (savedGridState != null)
-                {
-                    args.GridState = savedGridState;
-                }
-                else
-                {
-                    args.GridState.GroupDescriptors = new List<GroupDescriptor>()
-                {
                 new GroupDescriptor()
                 {
                     Member = nameof(Products.ProductCategoryName),
@@ -117,95 +117,80 @@
                 }
             };
 
-                    SetReportSourceJson(args.GridState);
-                }
-            }
+            SetReportSourceJson(args.GridState);
+        }
+    }
 
-            public async void OnStateChangedHandler(GridStateEventArgs<Products> args)
-            {
-                // Because applying multiple groups would make the Report-Definition more complex, only 1 grouping
-                // is allowed for the grid. If another one is applied, the first one is removed/overwritten.
-                if (args.PropertyName == "GroupDescriptors")
-                {
-                    if (args.GridState.GroupDescriptors.Count > 1)
-                    {
-                        var groups = args.GridState.GroupDescriptors;
-                        groups.Remove(groups.First());
-                        await Grid.SetState(args.GridState);
-                    }
-                }
-
-                // Allowes the grid to be restored when switching tabs from Report back to Grid
-                this.savedGridState = args.GridState;
-
-                if (args.GridState != null)
-                {
-                    SetReportSourceJson(args.GridState);
-                };
-            }
-
-            public void OnReportSelect(string reportName)
-            {
-                this.ReportName = reportName;
-                var gridState = this.Grid.GetState();
-                SetReportSourceJson(gridState);
-                reportViewer.SetReportSourceAsync(new ReportSourceOptions() { Report = this.ReportSourceJson });
-
-            }
-
-            public void SetReportSourceJson(GridState<Products> gridState)
-            {
-                var reportSourceObject = new ReportSourceModel();
-                reportSourceObject.Name = this.ReportName;
-                reportSourceObject.Data = this.GridData;@*// Translating the filter applied to the grid to JSON data
-        foreach (CompositeFilterDescriptor fdb in gridState.FilterDescriptors)
+    public async void OnStateChangedHandler(GridStateEventArgs<Products> args)
+    {
+        // Because applying multiple groups would make the Report-Definition more complex, only 1 grouping
+        // is allowed for the grid. If another one is applied, the first one is removed/overwritten.
+        if (args.PropertyName == "GroupDescriptors")
         {
-            foreach (FilterDescriptor fd in fdb.FilterDescriptors)
+            if (args.GridState.GroupDescriptors.Count > 1)
             {
-                if (fd.ConvertedValue != null)
-                {
-                    var filter = new ReportSourceFilter();
-                    filter.Member = fd.Member;
-                    filter.Value = fd.ConvertedValue;
-                    filter.OperatorString = Enum.GetName(typeof(FilterOperator), fd.Operator);
-                    if (reportSourceObject.Filters == null) reportSourceObject.Filters = new List<ReportSourceFilter>();
-                    reportSourceObject.Filters.Add(filter);
-                }
+                var groups = args.GridState.GroupDescriptors;
+                groups.Remove(groups.First());
+                await Grid.SetState(args.GridState);
             }
-        }*@// Translating the filter applied to the grid to JSON data
-                            foreach (FilterDescriptor fd in gridState.FilterDescriptors)
-                            {
-                                if (fd.ConvertedValue != null)
-                                {
-                                    var filter = new ReportSourceFilter();
-                                    filter.Member = fd.Member;
-                                    filter.Value = fd.ConvertedValue;
-                                    filter.OperatorString = Enum.GetName(typeof(FilterOperator), fd.Operator);
-                                    if (reportSourceObject.Filters == null) reportSourceObject.Filters = new List<ReportSourceFilter>();
-                                    reportSourceObject.Filters.Add(filter);
-                                }
-                            }
+        }
 
-                            // Translating the sorting applied to the grid to JSON data
-                            if (gridState.SortDescriptors.Count != 0)
-                            {
-                                SortDescriptor sd = gridState.SortDescriptors.First();
-                                var sorting = new ReportSourceSorting();
-                                sorting.Direction = Enum.GetName(typeof(ListSortDirection), sd.SortDirection);
-                                sorting.Member = sd.Member;
-                                reportSourceObject.Sortings = sorting;
-                            }
+        // Allowes the grid to be restored when switching tabs from Report back to Grid
+        this.savedGridState = args.GridState;
 
-                            // If there is grouping applied, translate it to JSON
-                            if (gridState.GroupDescriptors.Count > 0)
-                            {
-                                reportSourceObject.Grouping = gridState.GroupDescriptors.First().Member;
-                            }
+        if (args.GridState != null)
+        {
+            SetReportSourceJson(args.GridState);
+        };
+    }
 
-                            // Finally serializing the ExpandoObject to JSON
-                            this.ReportSourceJson = Newtonsoft.Json.JsonConvert.SerializeObject(reportSourceObject);
+    public void OnReportSelect(string reportName)
+    {
+        this.ReportName = reportName;
+        var gridState = this.Grid.GetState();
+        SetReportSourceJson(gridState);
+        reportViewer.SetReportSourceAsync(new ReportSourceOptions() { Report = this.ReportSourceJson });
 
+    }
 
-                        }
+    public void SetReportSourceJson(GridState<Products> gridState)
+    {
+        var reportSourceObject = new ReportSourceModel();
+        reportSourceObject.Name = this.ReportName;
+        reportSourceObject.Data = this.GridData;
+
+        // Translating the filter applied to the grid to JSON data
+        foreach (FilterDescriptor fd in gridState.FilterDescriptors)
+        {
+            if (fd.ConvertedValue != null)
+            {
+                var filter = new ReportSourceFilter();
+                filter.Member = fd.Member;
+                filter.Value = fd.ConvertedValue;
+                filter.OperatorString = Enum.GetName(typeof(FilterOperator), fd.Operator);
+                if (reportSourceObject.Filters == null) reportSourceObject.Filters = new List<ReportSourceFilter>();
+                reportSourceObject.Filters.Add(filter);
+            }
+        }
+
+        // Translating the sorting applied to the grid to JSON data
+        if (gridState.SortDescriptors.Count != 0)
+        {
+            SortDescriptor sd = gridState.SortDescriptors.First();
+            var sorting = new ReportSourceSorting();
+            sorting.Direction = Enum.GetName(typeof(ListSortDirection), sd.SortDirection);
+            sorting.Member = sd.Member;
+            reportSourceObject.Sortings = sorting;
+        }
+
+        // If there is grouping applied, translate it to JSON
+        if (gridState.GroupDescriptors.Count > 0)
+        {
+            reportSourceObject.Grouping = gridState.GroupDescriptors.First().Member;
+        }
+
+        // Finally serializing the ExpandoObject to JSON
+        this.ReportSourceJson = Newtonsoft.Json.JsonConvert.SerializeObject(reportSourceObject);
+    }
 }
 
