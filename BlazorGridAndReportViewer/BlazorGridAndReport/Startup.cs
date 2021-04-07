@@ -51,7 +51,7 @@ namespace BlazorGridAndReport
             {
                 options.AllowSynchronousIO = true;
             });
-            
+
 
             services.AddSingleton<IReportServiceConfiguration>(sp =>
                 new ReportServiceConfiguration
@@ -79,6 +79,9 @@ namespace BlazorGridAndReport
             }
 
             app.UseHttpsRedirection();
+
+            app.UsePathBase("/blazor-reporting/");
+
             app.UseStaticFiles();
 
             app.UseRouting();
