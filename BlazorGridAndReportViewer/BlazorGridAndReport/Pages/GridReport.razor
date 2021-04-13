@@ -1,0 +1,196 @@
+﻿@page "/grid-report"
+
+@layout TelerikLayout
+
+@using BlazorGridAndReport.Models
+@using BlazorGridAndReport.Models.json
+@using Telerik.DataSource;
+@using Telerik.ReportViewer.Blazor
+
+<TelerikTabStrip Class="tbs">
+    <TabStripTab Title="Grid">
+        <TelerikGrid Data=@GridData
+                     @ref="@Grid"
+                     Pageable="true"
+                     Groupable="true"
+                     Sortable="true"
+                     FilterMode="GridFilterMode.FilterRow"
+                     Resizable="true"
+                     Reorderable="true"
+                     EditMode="GridEditMode.Popup"
+                     SelectionMode="GridSelectionMode.Multiple"
+                     OnStateInit="@((GridStateEventArgs<Products> args) => OnStateInit(args))"
+                     OnStateChanged="@((GridStateEventArgs<Products> args) => OnStateChangedHandler(args))"
+                     PageSize="5"
+                     Navigable="true">
+            <GridColumns>
+                <GridColumn Field="@nameof(Products.Name)" Width="200px" />
+                <GridColumn Field="@nameof(Products.StandardCost)" Width="150px" Title="Cost">
+                    <Template>
+                        <div style="text-align:right;">@((context as Products).StandardCost.ToString("C2"))</div>
+                    </Template>
+                </GridColumn>
+                <GridColumn Field="@nameof(Products.ActiveSelling)" Width="120px" Title="Active Selling" Editable="false" />
+                <GridColumn Field="@nameof(Products.ProductCategoryName)" Title="Category" Width="160px">
+                </GridColumn>
+                <GridColumn Field="@nameof(Products.SellStartDate)" Width="200px" Title="Start Selling">
+                    <Template>
+                        @((context as Products).SellStartDate.ToString("MMMM dd, yyyy"))
+                    </Template>
+                </GridColumn>
+            </GridColumns>
+        </TelerikGrid>
+
+    </TabStripTab>
+    <TabStripTab Title="Report">
+        <TelerikButton Class="mt-2 mb-2" Enabled="@(!this.ReportName.Equals(GRIDREPORTNAME))" OnClick="@(() => OnReportSelect(GRIDREPORTNAME))">View Grid Report</TelerikButton>
+        <TelerikButton Class="mt-2 mb-2" Enabled="@(!this.ReportName.Equals(SALESREPORTNAME))" OnClick="@(() => OnReportSelect(SALESREPORTNAME))">View Sales Report</TelerikButton>
+        <TelerikButton Class="mt-2 mb-2" Enabled="@(!this.ReportName.Equals(PRESENTATIONREPORTNAME))" OnClick="@(() => OnReportSelect(PRESENTATIONREPORTNAME))">View Sales Presentation</TelerikButton>
+        <ReportViewer ViewerId="rv1"
+                      @ref="@reportViewer"
+                      ServiceUrl="/blazor-reporting/api/reports"
+                      ReportSource="@(new ReportSourceOptions()
+                      {
+                        Report = @ReportSourceJson
+                      })"
+                      ScaleMode="@(ScaleMode.Specific)"
+                      Scale="1.0" />
+    </TabStripTab>
+</TelerikTabStrip>
+
+<style>
+    #rv1 {
+        position: relative;
+        width: 100%;
+        height: 600px;
+    }
+    .tbs {
+        width: 100%;
+    }
+</style>
+
+@code {
+    // The three different reports the user can choose between
+    const string GRIDREPORTNAME = "DataGridExampleReport.trdx";
+    const string SALESREPORTNAME = "productSalesExampleReport.trdx";
+    const string PRESENTATIONREPORTNAME = "PresentationExampleReport.trdx";
+
+    public List<Products> GridData { get; set; }
+    public TelerikGrid<Products> Grid { get; set; }
+    public string ReportSourceJson { get; set; }
+    public GridState<Products> savedGridState { get; set; }
+    public string ReportName { get; set; } = GRIDREPORTNAME;
+    public ReportViewer reportViewer;
+
+    protected override void OnInitialized()
+    {
+        LoadData();
+
+        // Set initial json-data
+        var reportSourceObject = new ReportSourceModel();
+        reportSourceObject.Name = this.ReportName;
+        reportSourceObject.Data = this.GridData;
+        this.ReportSourceJson = Newtonsoft.Json.JsonConvert.SerializeObject(reportSourceObject);
+    }
+
+    // sample Read operation
+    private void LoadData()
+    {
+        GridData = Products.GetProducts();
+    }
+
+    private void OnStateInit(GridStateEventArgs<Products> args)
+    {
+        // In case the user is switching back from Reporting tab and into the grid tab, the GridState is loaded
+        if (savedGridState != null)
+        {
+            args.GridState = savedGridState;
+        }
+        else
+        {
+            args.GridState.GroupDescriptors = new List<GroupDescriptor>()
+            {
+                new GroupDescriptor()
+                {
+                    Member = nameof(Products.ProductCategoryName),
+                    MemberType = typeof(string)
+                }
+            };
+
+            SetReportSourceJson(args.GridState);
+        }
+    }
+
+    public async void OnStateChangedHandler(GridStateEventArgs<Products> args)
+    {
+        // Because applying multiple groups would make the Report-Definition more complex, only 1 grouping
+        // is allowed for the grid. If another one is applied, the first one is removed/overwritten.
+        if (args.PropertyName == "GroupDescriptors")
+        {
+            if (args.GridState.GroupDescriptors.Count > 1)
+            {
+                var groups = args.GridState.GroupDescriptors;
+                groups.Remove(groups.First());
+                await Grid.SetState(args.GridState);
+            }
+        }
+
+        // Allowes the grid to be restored when switching tabs from Report back to Grid
+        this.savedGridState = args.GridState;
+
+        if (args.GridState != null)
+        {
+            SetReportSourceJson(args.GridState);
+        };
+    }
+
+    public void OnReportSelect(string reportName)
+    {
+        this.ReportName = reportName;
+        var gridState = this.Grid.GetState();
+        SetReportSourceJson(gridState);
+        reportViewer.SetReportSourceAsync(new ReportSourceOptions() { Report = this.ReportSourceJson });
+
+    }
+
+    public void SetReportSourceJson(GridState<Products> gridState)
+    {
+        var reportSourceObject = new ReportSourceModel();
+        reportSourceObject.Name = this.ReportName;
+        reportSourceObject.Data = this.GridData;
+
+        // Translating the filter applied to the grid to JSON data
+        foreach (FilterDescriptor fd in gridState.FilterDescriptors)
+        {
+            if (fd.ConvertedValue != null)
+            {
+                var filter = new ReportSourceFilter();
+                filter.Member = fd.Member;
+                filter.Value = fd.ConvertedValue;
+                filter.OperatorString = Enum.GetName(typeof(FilterOperator), fd.Operator);
+                if (reportSourceObject.Filters == null) reportSourceObject.Filters = new List<ReportSourceFilter>();
+                reportSourceObject.Filters.Add(filter);
+            }
+        }
+
+        // Translating the sorting applied to the grid to JSON data
+        if (gridState.SortDescriptors.Count != 0)
+        {
+            SortDescriptor sd = gridState.SortDescriptors.First();
+            var sorting = new ReportSourceSorting();
+            sorting.Direction = Enum.GetName(typeof(ListSortDirection), sd.SortDirection);
+            sorting.Member = sd.Member;
+            reportSourceObject.Sortings = sorting;
+        }
+
+        // If there is grouping applied, translate it to JSON
+        if (gridState.GroupDescriptors.Count > 0)
+        {
+            reportSourceObject.Grouping = gridState.GroupDescriptors.First().Member;
+        }
+
+        // Finally serializing the ExpandoObject to JSON
+        this.ReportSourceJson = Newtonsoft.Json.JsonConvert.SerializeObject(reportSourceObject);
+    }
+}
+

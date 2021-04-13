@@ -1,0 +1,58 @@
+
+@page "/"
+@namespace CSharp.BlazorHtml5Demo.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Telerik Reporting & Blazor</title>
+    <base href="~/" />
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link href="css/site.css" rel="stylesheet" />
+
+
+    @* Report Viewer dependencies *@
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+    <script src="/api/reports/resources/js/telerikReportViewer"></script>
+
+    <link href="https://kendo.cdn.telerik.com/2020.1.114/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="https://kendo.cdn.telerik.com/2020.1.114/styles/kendo.blueopal.min.css" rel="stylesheet" />
+</head>
+<body>
+    <app>
+        <component type="typeof(App)" render-mode="ServerPrerendered" />
+    </app>
+
+    <div id="blazor-error-ui">
+        <environment include="Staging,Production">
+            An error has occurred. This application may no longer respond until reloaded.
+        </environment>
+        <environment include="Development">
+            An unhandled exception has occurred. See browser dev tools for details.
+        </environment>
+        <a href class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+    <script src="_framework/blazor.server.js"></script>
+
+    @* Our Blazor app JS Interop file for working with the ReportViewer widget *@
+    <script src="_content/telerik.reportviewer.blazor/interop.js" defer></script>
+
+    <script>
+        window.trvEventHandlers = {
+            exportBegin: function (e, args) {
+                console.log("This event handler will be called before exporting the report in " + args.format + " format.");
+            },
+            exportEnd: function (e, args) {
+                console.log("This event handler will be called after exporting the report.");
+                console.log("The exported report can be found at: " + window.location.origin + args.url);
+            }
+        }
+    </script>
+</body>
+</html>
