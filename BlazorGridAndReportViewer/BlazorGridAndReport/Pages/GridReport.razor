@@ -46,15 +46,27 @@
         <TelerikButton Class="mt-2 mb-2" Enabled="@(!this.ReportName.Equals(GRIDREPORTNAME))" OnClick="@(() => OnReportSelect(GRIDREPORTNAME))">View Grid Report</TelerikButton>
         <TelerikButton Class="mt-2 mb-2" Enabled="@(!this.ReportName.Equals(SALESREPORTNAME))" OnClick="@(() => OnReportSelect(SALESREPORTNAME))">View Sales Report</TelerikButton>
         <TelerikButton Class="mt-2 mb-2" Enabled="@(!this.ReportName.Equals(PRESENTATIONREPORTNAME))" OnClick="@(() => OnReportSelect(PRESENTATIONREPORTNAME))">View Sales Presentation</TelerikButton>
-        <ReportViewer ViewerId="rv1"
-                      @ref="@reportViewer"
-                      ServiceUrl="/blazor-reporting/api/reports"
-                      ReportSource="@(new ReportSourceOptions()
+        <div id="viewer-container">
+            <div id="loading">
+                <div class="loader-container">
+                    <span class="loader-size-title">Loading</span>
+                    <TelerikLoader Class="loader-indicator" Type="@LoaderType.Pulsing" Size="@LoaderSize.Medium"></TelerikLoader>
+                </div>
+            </div>
+            <ReportViewer ViewerId="rv1"
+                          @ref="@reportViewer"
+                          ServiceUrl="/blazor-reporting/api/reports"
+                          ReportSource="@(new ReportSourceOptions()
                       {
                         Report = @ReportSourceJson
                       })"
-                      ScaleMode="@(ScaleMode.Specific)"
-                      Scale="1.0" />
+                          ScaleMode="@(ScaleMode.Specific)"
+                          Scale="1.0" 
+                          ClientEvents="@(new ClientEventsOptions() {
+                                          PageReady = "trvEventHandlers.pageReady"
+                                          })"
+                          />
+        </div>
     </TabStripTab>
 </TelerikTabStrip>
 
@@ -64,8 +76,38 @@
         width: 100%;
         height: 600px;
     }
+
+    #loading {
+        width: 100%;
+        height: 600px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .tbs {
         width: 100%;
+    }
+
+    .loader-size-title {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .loader-container {
+        text-align: center;
+        width: 150px;
+        display: inline-table;
+        padding-top: 10px;
+    }
+
+    #viewer-container {
+        position: relative;
     }
 </style>
 
@@ -109,7 +151,7 @@
         else
         {
             args.GridState.GroupDescriptors = new List<GroupDescriptor>()
-            {
+        {
                 new GroupDescriptor()
                 {
                     Member = nameof(Products.ProductCategoryName),
