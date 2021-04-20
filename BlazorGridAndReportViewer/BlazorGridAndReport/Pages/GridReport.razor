@@ -16,7 +16,6 @@
                      Sortable="true"
                      FilterMode="GridFilterMode.FilterRow"
                      Resizable="true"
-                     Reorderable="true"
                      EditMode="GridEditMode.Popup"
                      SelectionMode="GridSelectionMode.Multiple"
                      OnStateInit="@((GridStateEventArgs<Products> args) => OnStateInit(args))"
@@ -62,7 +61,7 @@
                       })"
                           TemplateUrl="/blazor-reporting/telerikReportViewerTemplate.html"
                           ScaleMode="@(ScaleMode.Specific)"
-                          Scale="1.0" 
+                          Scale="1.0"
                           ClientEvents="@(new ClientEventsOptions() {
                                           PageReady = "trvEventHandlers.pageReady"
                                           })"
