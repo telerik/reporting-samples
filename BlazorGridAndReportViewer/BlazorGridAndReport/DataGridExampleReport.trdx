@@ -31,7 +31,7 @@
             <Font Name="Verdana" Size="16pt" />
           </Style>
         </TextBox>
-        <PictureBox Image="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" Width="0.9cm" Height="1.1cm" Left="0.6cm" Top="0.6cm" Sizing="ScaleProportional" MimeType="image/png" Name="pictureBox2" />
+        <PictureBox Image="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" Width="0.9cm" Height="1.1cm" Left="0.6cm" Top="0.6cm" Sizing="ScaleProportional" MimeType="image/png" Name="pictureBox2" />
       </Items>
     </PageHeaderSection>
     <DetailSection CanShrink="True" Height="3.5cm" Name="detailSection1">
@@ -52,16 +52,46 @@
           </Action>
         </TextBox>
         <Panel Width="17cm" Height="2.8cm" Left="0cm" Top="0.7cm" Name="panel1">
-          <Style Visible="False" BackgroundColor="SteelBlue" />
+          <Style Visible="False" BackgroundColor="SteelBlue">
+            <BorderStyle Bottom="Solid" />
+            <BorderWidth Default="1pt" />
+          </Style>
           <Items>
             <PictureBox Value="= Fields.ThumbNailPhoto" Width="4.5cm" Height="2.4cm" Left="0.2cm" Top="0.2cm" Sizing="ScaleProportional" MimeType="" Name="pictureBox1" />
-            <TextBox Width="3.2cm" Height="0.5cm" Left="6.9cm" Top="0.4cm" Value="= Fields.Color" Name="textBox17" />
+            <TextBox Width="3.2cm" Height="0.5cm" Left="6.9cm" Top="0.4cm" Value="= IIf(Fields.Color Is Null, &quot;N/A&quot;, Fields.Color)" Name="textBox17">
+              <ConditionalFormatting>
+                <FormattingRule>
+                  <Style Color="65, 65, 65" />
+                  <Filters>
+                    <Filter Expression="= Fields.Color Is Null" Operator="Equal" Value="= True" />
+                  </Filters>
+                </FormattingRule>
+              </ConditionalFormatting>
+            </TextBox>
             <TextBox Width="3.2cm" Height="0.5cm" Left="13.5cm" Top="1.1cm" Value="= Fields.ProductId" Format="{0}" Culture="en-US" Name="textBox18">
               <Style TextAlign="Right" />
             </TextBox>
             <TextBox Width="3.2cm" Height="0.5cm" Left="13.5cm" Top="0.4cm" Value="= Fields.SellStartDate" Format="{0:dd.MM.yyyy}" Name="textBox19" />
-            <TextBox Width="3.2cm" Height="0.5cm" Left="6.9cm" Top="1.1cm" Value="= Fields.Size" Name="textBox20" />
-            <TextBox Width="3.2cm" Height="0.5cm" Left="6.9cm" Top="1.8cm" Value="= Fields.Weight" Name="textBox21" />
+            <TextBox Width="3.2cm" Height="0.5cm" Left="6.9cm" Top="1.1cm" Value="= IIf(Fields.Size Is Null, &quot;N/A&quot;, Fields.Size)" Name="textBox20">
+              <ConditionalFormatting>
+                <FormattingRule>
+                  <Style Color="65, 65, 65" />
+                  <Filters>
+                    <Filter Expression="= Fields.Size Is Null" Operator="Equal" Value="= True" />
+                  </Filters>
+                </FormattingRule>
+              </ConditionalFormatting>
+            </TextBox>
+            <TextBox Width="3.2cm" Height="0.5cm" Left="6.9cm" Top="1.8cm" Value="= IIf(Fields.Weight Is Null, &quot;N/A&quot;, Fields.Weight + &quot;g&quot;)" Name="textBox21">
+              <ConditionalFormatting>
+                <FormattingRule>
+                  <Style Color="65, 65, 65" />
+                  <Filters>
+                    <Filter Expression="= Fields.Weight Is Null" Operator="Equal" Value="= True" />
+                  </Filters>
+                </FormattingRule>
+              </ConditionalFormatting>
+            </TextBox>
             <TextBox Width="1.9cm" Height="0.5cm" Left="5cm" Top="0.4cm" Value="Color:" Name="textBox22">
               <Style TextAlign="Right" />
             </TextBox>
@@ -78,6 +108,20 @@
               <Style TextAlign="Right" />
             </TextBox>
           </Items>
+          <ConditionalFormatting>
+            <FormattingRule StopIfTrue="True">
+              <Style BackgroundColor="234, 242, 255" />
+              <Filters>
+                <Filter Expression="= RowNumber()%2" Operator="Equal" Value="0" />
+              </Filters>
+            </FormattingRule>
+            <FormattingRule>
+              <Style BackgroundColor="198, 226, 255" />
+              <Filters>
+                <Filter Expression="= RowNumber()%2" Operator="Equal" Value="1" />
+              </Filters>
+            </FormattingRule>
+          </ConditionalFormatting>
         </Panel>
         <TextBox Width="1.5cm" Height="0.5cm" Left="6.1cm" Top="0.092cm" Value="=Fields.StandardCost" Format="{0:C2}" Name="textBox5" />
       </Items>

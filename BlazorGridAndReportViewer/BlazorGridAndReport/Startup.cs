@@ -60,6 +60,7 @@ namespace BlazorGridAndReport
                     HostAppId = "ReportingCore3App",
                     Storage = new FileStorage(),
                     ReportSourceResolver = new GridReportSourceResolver(System.IO.Path.Combine(sp.GetService<IWebHostEnvironment>().ContentRootPath)),
+                    ReportSharingTimeout = 1400
                 });
         }
 
