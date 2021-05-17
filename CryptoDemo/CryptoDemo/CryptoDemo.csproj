@@ -15,4 +15,7 @@
   <ItemGroup>
     <PackageReference Include="Telerik.WebReportDesigner.Services" Version="15.1.21.512" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
 </Project>
