@@ -4,16 +4,16 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Telerik.Reporting.OpenXmlRendering" Version="15.1.21.512" />
+    <PackageReference Include="Telerik.Reporting.OpenXmlRendering" Version="15.1.21.616" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Telerik.Reporting.OpenXmlRendering" Version="15.1.21.512" />
+    <PackageReference Include="Telerik.Reporting.OpenXmlRendering" Version="15.1.21.616" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Telerik.WebReportDesigner.Services" Version="15.1.21.512" />
+    <PackageReference Include="Telerik.WebReportDesigner.Services" Version="15.1.21.616" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Telerik.WebReportDesigner.Services" Version="15.1.21.512" />
+    <PackageReference Include="Telerik.WebReportDesigner.Services" Version="15.1.21.616 />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
