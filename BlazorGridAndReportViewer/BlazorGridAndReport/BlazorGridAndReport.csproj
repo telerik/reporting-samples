@@ -8,10 +8,10 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.10" />
-    <PackageReference Include="Telerik.Reporting.OpenXmlRendering" Version="*" />
-    <PackageReference Include="Telerik.Reporting.Services.AspNetCore" Version="*" />
-    <PackageReference Include="Telerik.Reporting.WebServiceDataSource" Version="*" />
-    <PackageReference Include="Telerik.ReportViewer.Blazor" Version="*" />
+    <PackageReference Include="Telerik.Reporting.OpenXmlRendering" Version="14.2.20.1021" />
+    <PackageReference Include="Telerik.Reporting.Services.AspNetCore" Version="14.2.20.1021" />
+    <PackageReference Include="Telerik.Reporting.WebServiceDataSource" Version="14.2.20.1021" />
+    <PackageReference Include="Telerik.ReportViewer.Blazor" Version="14.2.20.1021" />
     <PackageReference Include="Telerik.UI.for.Blazor" Version="2.27.0" />
   </ItemGroup>
 
