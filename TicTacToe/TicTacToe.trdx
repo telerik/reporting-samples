@@ -47,7 +47,7 @@
                     <Action>
                       <NavigateToReportAction>
                         <ReportSource>
-                          <UriReportSource Uri="DuckDuckGo.trdx">
+                          <UriReportSource Uri="TicTacToe.trdx">
                             <Parameters>
                               <Parameter Name="paramState">
                                 <Value>
@@ -82,7 +82,7 @@ Len(Parameters.paramState.Value))</String>
                     <Action>
                       <NavigateToReportAction>
                         <ReportSource>
-                          <UriReportSource Uri="DuckDuckGo.trdx">
+                          <UriReportSource Uri="TicTacToe.trdx">
                             <Parameters>
                               <Parameter Name="paramState">
                                 <Value>
@@ -117,7 +117,7 @@ Len(Parameters.paramState.Value))</String>
                     <Action>
                       <NavigateToReportAction>
                         <ReportSource>
-                          <UriReportSource Uri="DuckDuckGo.trdx">
+                          <UriReportSource Uri="TicTacToe.trdx">
                             <Parameters>
                               <Parameter Name="paramState">
                                 <Value>
