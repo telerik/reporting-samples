@@ -1,0 +1,39 @@
+﻿@using WebApplication1.Models;
+
+@{
+
+    ViewBag.Title = "Telerik Web Report Designer";
+    var designer = ViewBag.Message;
+}
+
+<div id="webReportDesigner">
+    loading...
+</div>
+
+
+
+
+@section scripts {
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2020.3.1118/js/kendo.all.min.js"></script>
+
+    <script src="/api/reportdesigner/resources/js/telerikReportViewer/"></script>
+    <script src="/api/reportdesigner/designerresources/js/webReportDesigner/"></script>
+
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#webReportDesigner").telerik_WebReportDesigner({
+                toolboxArea: {
+                    layout: "list" //Change to "grid" to display the contents of the Components area in a flow grid layout.
+                },
+                serviceUrl: "/api/reportdesigner",
+                report: "@designer.ReportName",
+            }).data("telerik_WebDesigner");
+        });
+    </script>
+}
+

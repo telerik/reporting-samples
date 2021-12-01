@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <input type="text" id="reportName" value='SampleReport.trdp' />
+    <input type="button" value="Edit" onclick="location.href='@Url.Action("ReportDesigner", "Reporting")?name=' + $('#reportName').val()" />
+</div>

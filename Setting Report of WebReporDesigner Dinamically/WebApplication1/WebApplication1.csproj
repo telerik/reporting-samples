@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Reports\SampleReport.trdp" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Reports\SampleReport.trdp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Telerik.Reporting.OpenXmlRendering" Version="15.1.21.616" />
+    <PackageReference Include="Telerik.WebReportDesigner.Services" Version="15.1.21.616" />
+  </ItemGroup>
+
+</Project>
