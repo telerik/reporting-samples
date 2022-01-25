@@ -2,8 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-	  <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
-	  <UserSecretsId>cbafb15d-396f-40c3-b3dc-763aed6c8e00</UserSecretsId>
+        <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+        <UserSecretsId>cbafb15d-396f-40c3-b3dc-763aed6c8e00</UserSecretsId>
+	      <UseRazorSourceGenerator>false</UseRazorSourceGenerator>
   </PropertyGroup>
 
   <ItemGroup>

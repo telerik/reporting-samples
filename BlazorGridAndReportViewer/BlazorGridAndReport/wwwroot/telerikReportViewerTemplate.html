@@ -125,7 +125,9 @@
                         <li aria-label="ariaLabelMenuPreviousPage"><a data-command="telerik_ReportViewer_goToPrevPage" title="menuPreviousPageTitle" href="#"><i class="t-font-icon k-icon t-i-seek-w"></i></a></li>
 
                         <li aria-label="ariaLabelMenuPageNumber" title="menuPageNumberTitle" class="trv-report-pager">
-                            <input class="k-textbox" data-role="telerik_ReportViewer_PageNumberInput" type="number" />
+                            <span class="k-textbox k-input k-valid telerik-blazor k-input-solid k-rounded-md k-input-md">
+                                <input class="k-input-inner" data-role="telerik_ReportViewer_PageNumberInput" type="number" />
+                            </span>                            
                             <span>&nbsp;/&nbsp;</span>
                             <span data-role="telerik_ReportViewer_PageCountLabel"></span>
                         </li>
