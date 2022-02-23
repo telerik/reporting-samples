@@ -6,21 +6,20 @@ class ViewerComponent extends Component {
 
     // make a request each time the data is changed
     componentDidUpdate() {
-        let reportdata = JSON.stringify(this.props.data.data);
-        let rs = {
+        const reportdata = JSON.stringify(this.props.data.data);
+        const rs = {
             report: 'Speakers Report.trdp',
             parameters: { DataParameter: reportdata }
         };
         this.viewer.setReportSource(rs);
-    }
+    };
 
     render() {
+        const speakerObjects = JSON.stringify(this.props.data.data);
 
-        let speakerObjects = JSON.stringify(this.props.data.data);
         return (
             <TelerikReportViewer
                 ref={el => this.viewer = el}
-
                 serviceUrl="http://localhost:59655/api/reports/"
                 reportSource={{
                     report: 'Speakers Report.trdp',
@@ -41,7 +40,7 @@ class ViewerComponent extends Component {
                 scale={1.2}
                 enableAccessibility={false} />
         );
-    }
+    };
 }
 
 export default ViewerComponent;

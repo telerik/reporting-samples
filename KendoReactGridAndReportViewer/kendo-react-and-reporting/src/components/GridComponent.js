@@ -3,6 +3,7 @@ import { Grid, GridColumn } from '@progress/kendo-react-grid';
 import { MultiSelect } from '@progress/kendo-react-dropdowns';
 import { categories } from "../data/categories";
 
+
 class GridComponent extends Component {
     constructor(props) {
         super(props);
@@ -10,39 +11,47 @@ class GridComponent extends Component {
         this.state = {
             dropdownlistCategory: null,
             gridClickedRow: {}
-        }
+        };
     }
+
+    replaceCategoriesInState(e, newDataState) {
+        const expressions = e.value.map((item) => ({
+            field: 'CategoryID',
+            operator: 'eq',
+            value: item.CategoryID
+        }));
+
+        newDataState.filter = {
+            logic: 'or',
+            filters: expressions
+        };
+
+        newDataState.skip = 0;
+    }
+
+    removeCategoriesFromState(newDataState) {
+        newDataState.filter = [];
+        newDataState.skip = 0;
+    }
+
     handleMultiSelectChange = (e) => {
-        let newDataState = { ...this.props.dataState }
+        const newDataState = { ...this.props.dataState };
 
-        if (e.value.length > 0) {
-            let expressions = [];
-            e.value.forEach((item) => {
-                console.log(item)
-                expressions.push({ field: 'CategoryID', operator: 'eq', value: item.CategoryID });
-            });
+        e.value.length > 0
+            ? this.replaceCategoriesInState(e, newDataState) 
+            : this.removeCategoriesFromState(newDataState);      
 
-            newDataState.filter = {
-                logic: 'or',
-                filters: expressions
-            }
-            newDataState.skip = 0
-
-        } else {
-            newDataState.filter = []
-            newDataState.skip = 0
-        }
         this.setState({
             dropdownlistCategory: e.target.value.CategoryID
         });
 
         //Update the parent component
-        this.props.handleDataStateChange(newDataState)
+        this.props.handleDataStateChange(newDataState);
     }
 
     handleGridDataStateChange = (e) => {
         //Update the parent component
-        this.props.handleDataStateChange(e.dataState)
+        this.props.handleDataStateChange(e.dataState);
     }
 
     handleGridRowClick = (e) => {
@@ -60,8 +69,7 @@ class GridComponent extends Component {
                     textField="CategoryName"
                     defaultValue={categories}
                     style={{ width: "22%", left: "57%" }}
-                    onChange={this.handleMultiSelectChange}
-                />
+                    onChange={this.handleMultiSelectChange} />
 
                 <Grid
                     data={this.props.data}
@@ -74,10 +82,8 @@ class GridComponent extends Component {
                         width="75%"
                         cell={props => (
                             <td>
-                                <img
-                                    style={{ width: 50, height: 50 }}
-                                    src={props.dataItem.ImageUrl}
-                                />
+                                <img style={{ width: 50, height: 50 }}
+                                    src={props.dataItem.ImageUrl} />
                             </td>
                         )}
                     />
