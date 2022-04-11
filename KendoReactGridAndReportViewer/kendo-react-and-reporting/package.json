@@ -17,7 +17,7 @@
     "@progress/kendo-react-intl": "^3.18.0",
     "@progress/kendo-theme-default": "^5.1.1",
     "@progress/kendo-theme-material": "^3.17.0",
-    "@progress/telerik-react-report-viewer": "^15.22.119",
+    "@progress/telerik-react-report-viewer": "^15.22.225",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
