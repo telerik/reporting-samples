@@ -1,0 +1,87 @@
+[
+    {
+       "Group":"Program",
+       "Title":"The Premier  Dev Conference",
+       "Subtitle":"In-person or online this event is never ordinary. Spread over five days, we are welcoming Blazor, Angular, React, and Xamarin experts to speak and live-code on twitch.tv/CodeItLive.",
+       "Data":[
+           {
+               "Day": "19 Oct",
+               "Day of week" : "Monday",
+               "Time" : "3pm - 7pm",
+               "Topic" : "Blazor day",
+               "Description" : "Who wants to break free from JavaScript? Join Let’s chat and build a magic Blazor app with industry experts like Daniel Roth, Jeremy Likness and Chris Sainty."
+           },
+           {
+             "Day": "20 Oct",
+             "Day of week" : "Tuesday",
+             "Time" : "3pm - 7pm",
+             "Topic" : "React day",
+             "Description" : "Take a walk on the wild side with The React insiders. Throughout the day, they built an app together – each took a chance to add their favorite feature."
+         },
+         {
+             "Day": "21 Oct",
+             "Day of week" : "Wednesday",
+             "Time" : "3pm - 7pm",
+             "Topic" : "Xamarin Day",
+             "Description" : "There is plenty of excitement in the present Xamarin ecosystem - matured tooling, feature-rich releases and wide platform/device support."
+         },
+         {
+             "Day": "22 Oct",
+             "Day of week" : "Tuesday",
+             "Time" : "3pm - 7pm",
+             "Topic" : "Angular Day",
+             "Description" : "Take a walk on the wild side with TJ VanToll and React insiders. It was fast-paced, fun, and resulted in an app – built by some of the best in the industry."
+         },
+         {
+             "Day": "23 Oct",
+             "Day of week" : "Friday",
+             "Topic" : "#CodeParty",
+             "Time" : "7pm - 10pm",
+             "Description" : "In the immortal words of Kool and the Gang, we’ll get together to “celebrate good times!” The #CodeParty is all about fun, trivia, prizes and interesting people."
+         }
+       ]
+    },
+    {
+     "Group":"Speakers",
+     "Title":"Meet the Speakers",
+     "Subtitle":"",
+     "Data":[
+         {
+            "Name": "Allysa Nicol",
+             "Position" : "Developer Advocate",
+             "Company" : "Progress",
+             "Image" : "https://www.telerik.com/sfimages/default-source/reporting/allysa.png",
+             "Biography" : "Alyssa is an Angular Developer Advocate & GDE. Her two degrees (Web Design & Development and Psychology) feed her speaking career. ",
+             "Topic" : "Angular"
+ 
+         },
+         {
+          "Name": "John Adams",
+            "Position" : "Software Engineer",
+             "Company" : "Chef",
+             "Image" : "https://www.telerik.com/sfimages/default-source/reporting/john.png",
+             "Biography" : "John is a Principal Software Engineer at Progress Chef with more than 12 years of experience. He holds a master degree in Software Technologies.",
+             "Topic" : "Blazor"
+ 
+         },
+         {
+           "Name": "Sara Jameson",
+            "Position" : "Technical Support Engineer",
+             "Company" : "Optimus IT",
+             "Image" : "https://www.telerik.com/sfimages/default-source/reporting/sara.png",
+             "Biography" : "Sara has been working on the Optimus IT support resources since 2017, part of the Xamarin + MAUI team. She holds a master's degree in Computer Systems.",
+             "Topic" : "Xamarin"
+ 
+         },
+         {
+            "Name": "Emily Simpson",
+            "Position" : "Frontend Developer",
+             "Company" : "TeQ Pros",
+             "Image" : "https://www.telerik.com/sfimages/default-source/reporting/emily.png",
+             "Biography" : "Emily is a React Frontend Developer. She has worked in various software development and product marketing roles. Sara has a Bachelor's and Master's in Computer Science.",
+             "Topic" : "React"
+ 
+         }
+     ]
+  }
+ ]
