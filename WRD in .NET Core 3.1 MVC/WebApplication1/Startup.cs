@@ -52,7 +52,7 @@ namespace WebApplication1
                 DefinitionStorage = new FileDefinitionStorage(
                     Path.Combine(sp.GetService<Microsoft.AspNetCore.Hosting.IHostingEnvironment>().ContentRootPath, "Reports")),
                 SettingsStorage = new FileSettingsStorage(
-                    Path.Combine(sp.GetService<Microsoft.AspNetCore.Hosting.IHostingEnvironment>().ContentRootPath, "Reports")),
+                    Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Telerik Reporting")),
             });
         }
 
