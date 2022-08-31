@@ -47,13 +47,14 @@ namespace WebApplication1
                         System.IO.Path.Combine(sp.GetService<IWebHostEnvironment>().ContentRootPath, "Reports"))
                 });
 
-              services.TryAddSingleton<IReportDesignerServiceConfiguration>(sp => new ReportDesignerServiceConfiguration
-            {
-                DefinitionStorage = new FileDefinitionStorage(
-                    Path.Combine(sp.GetService<Microsoft.AspNetCore.Hosting.IHostingEnvironment>().ContentRootPath, "Reports")),
-                SettingsStorage = new FileSettingsStorage(
-                    Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Telerik Reporting")),
-            });
+            services.TryAddSingleton<IReportDesignerServiceConfiguration>(sp => 
+                new ReportDesignerServiceConfiguration
+                {
+                    DefinitionStorage = new FileDefinitionStorage(
+                        Path.Combine(sp.GetService<Microsoft.AspNetCore.Hosting.IHostingEnvironment>().ContentRootPath, "Reports")),
+                    SettingsStorage = new FileSettingsStorage(
+                        Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Telerik Reporting")),
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
