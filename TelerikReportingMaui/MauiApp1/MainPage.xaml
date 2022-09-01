@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
+             x:Class="MauiApp1.MainPage">
+
+    <ScrollView>
+        <Frame>
+            <WebView HeightRequest="600"
+                     WidthRequest="800">
+                <WebView.Source>
+                    <HtmlWebViewSource>
+                        <HtmlWebViewSource.Html>
+                            <![CDATA[
+                <html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Telerik HTML5 Report Viewer Demo</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link href="https://kendo.cdn.telerik.com/2022.1.301/styles/kendo.common.min.css" rel="stylesheet" id="common-css" />
+    <link href="https://kendo.cdn.telerik.com/2022.1.301/styles/kendo.blueopal.min.css" rel="stylesheet" id="skin-css" />
+
+    <script src="https://demos.telerik.com/reporting/api/reports/resources/js/telerikReportViewer"></script>
+
+    <style>
+        body {
+            font-family: Verdana, Arial, sans-serif;
+            margin: 5px;
+        }
+
+        #reportViewer1 {
+            position: absolute;
+            left: 5px;
+            right: 5px;
+            top: 40px;
+            bottom: 5px;
+            overflow: hidden;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="reportViewer1">
+        loading...
+    </div>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#reportViewer1")
+                .telerik_ReportViewer({
+                    // For a complete overview over all the parameters check https://docs.telerik.com/reporting/html5-report-viewer-jquery-fn-telerik-reportviewer
+                    // In this template there are examples included of the most common parameters
+
+                    // The URL of the service which will serve reports.
+                    // The URL corresponds to the name of the controller class (ReportsController).
+                    // For more information on how to configure the service please check http://www.telerik.com/help/reporting/telerik-reporting-rest-conception.html.
+                    serviceUrl: "https://demos.telerik.com/reporting/api/reports/",
+
+                    // The URL for the report viewer template. The template can be edited -
+                    // new functionalities can be added and unneeded ones can be removed.
+                    // For more information please check http://www.telerik.com/help/reporting/html5-report-viewer-templates.html.
+                    //
+
+                    //ReportSource - report description used with REST service.
+                    reportSource: {
+
+                        // The report can be set to a report file name (.trdx or .trdp report definition)
+                        // or CLR type name (report class definition).
+                        report: "Conference report.trdx",
+
+                        // Parameters name value dictionary
+                        //parameters: {}
+                        // Example of passing an array [] of parameters-values to the parameter 'Year'
+                        //parameters: { Year: [2001, 2003, 2004] }
+                    },
+
+                    //parameters: {
+                    //    editors: {
+                    //        singleSelect: telerikReportViewer.ParameterEditorTypes.COMBO_BOX,
+                    //        multiSelect: telerikReportViewer.ParameterEditorTypes.COMBO_BOX,
+                    //    }
+                    //},
+
+                    // Report Server connection configuration
+                    // If Report Server is used instead of hosting a REST Service, comment out 'serviceUrl' and 'reportSource' above
+                    // uncomment 'reportServer' and 'reportSource' below
+                    //reportServer: {
+                    //    url: "http://report-server-host:83",
+                    //    username: "admin",
+                    //    password: "adminpass"
+                    //},
+                    //reportSource: {
+                    //    // For Report Server, use "{Category}/{ReportName}"
+                    //    report: "Samples/Dashboard"
+                    //},
+
+                    // Specifies whether the viewer is in interactive or print preview mode.
+                    // PRINT_PREVIEW - Displays the paginated report as if it is printed on paper. Interactivity is not enabled.
+                    // INTERACTIVE - Displays the report in its original width and height without paging. Additionally interactivity is enabled.
+                    viewMode: telerikReportViewer.ViewModes.INTERACTIVE,
+
+                    // Sets the scale mode of the viewer.
+                    // Three modes exist currently:
+                    // FIT_PAGE - The whole report will fit on the page (will zoom in or out), regardless of its width and height.
+                    // FIT_PAGE_WIDTH - The report will be zoomed in or out so that the width of the screen and the width of the report match.
+                    // SPECIFIC - Uses the scale to zoom in and out the report.
+                    scaleMode: telerikReportViewer.ScaleModes.SPECIFIC,
+
+                    // Zoom in and out the report using the scale
+                    // 1.0 is equal to 100%, i.e. the original size of the report
+                    scale: 1.0,
+
+                    //Enables or disables the accessibility features of the report viewer and its contents.
+                    enableAccessibility: false,
+
+                    //If set to true shows the Send Mail Message toolbar button
+                    sendEmail: { enabled: true }
+                });
+        });
+    </script>
+
+</body>
+</html>
+                ]]>
+                        </HtmlWebViewSource.Html>
+                    </HtmlWebViewSource>
+                </WebView.Source>
+            </WebView>
+        </Frame>
+    </ScrollView>
+ 
+</ContentPage>

@@ -1,0 +1,38 @@
+﻿@page "/"
+@using Telerik.ReportViewer.Blazor
+
+
+<h1>Telerik Reporting Blazor Report Viewer</h1>
+
+<style>
+    .trv-report-viewer {
+        width: 85%;
+        height: 600px;
+        padding-right: 50px;
+    }
+</style>
+
+<link rel="stylesheet" href="https://unpkg.com/@@progress/kendo-theme-default@5.0.1/dist/all.css" />
+
+<ReportViewer @ref="reportViewer1"
+              ViewerId="rv1"
+              ServiceUrl="https://demos.telerik.com/reporting/api/reports"
+              ReportSource="@(new ReportSourceOptions
+                              {
+                                  Report = "Conference report.trdx",
+                                  //Parameters = new Dictionary<string, object>
+                                  //{
+                                  //    { "ProductCategory", "Clothing" },
+                                  //    { "ProductSubcategory", new [] { "Caps", "Gloves" } }
+                                  //}
+                              })"
+              Parameters="@(new ParametersOptions { Editors = new EditorsOptions { MultiSelect = EditorType.ComboBox, SingleSelect = EditorType.ComboBox } })"
+              ScaleMode="@(ScaleMode.FitPage)"
+              Scale="1.0" />
+
+
+                              @code {
+    ReportViewer reportViewer1;
+
+
+}
