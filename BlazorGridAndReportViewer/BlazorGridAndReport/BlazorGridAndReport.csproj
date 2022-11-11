@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.0" />
     <PackageReference Include="Telerik.Reporting.OpenXmlRendering.Trial" Version="*" />
     <PackageReference Include="Telerik.Reporting.Services.AspNetCore.Trial" Version="*" />
     <PackageReference Include="Telerik.Reporting.WebServiceDataSource.Trial" Version="*" />
