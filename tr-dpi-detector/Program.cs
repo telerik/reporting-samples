@@ -37,7 +37,7 @@
                 Height = Unit.Cm(2),
                 Left = Unit.Cm(1),
                 Top = Unit.Cm(1),
-                Value = string.Concat("DPI: ", Program.GetDpi().ToString())
+                Value = $"DPI (from Bitmap): {Program.GetDpi()}; DPI (from Unit): {Unit.DotsPerInch}"
             };
             
             textBox1.Style.Font.Size = Unit.Point(36);
