@@ -1,0 +1,75 @@
+﻿@using HTML5ViewerParametersDemo.Models
+@model ReportSourceModel
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Telerik HTML5 Report Viewer Demo</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link href="https://kendo.cdn.telerik.com/2022.3.913/styles/kendo.common.min.css" rel="stylesheet" id="common-css" />
+    <link href="https://kendo.cdn.telerik.com/2022.3.913/styles/kendo.blueopal.min.css" rel="stylesheet" id="skin-css" />
+
+    <script src="/Scripts/themeSwitcher.js"></script>
+
+    <script src="/api/reports/resources/js/telerikReportViewer"></script>
+
+    <style>
+        body {
+            font-family: Verdana, Arial, sans-serif;
+            margin: 5px;
+        }
+
+        #reportViewer1 {
+            position: absolute;
+            left: 5px;
+            right: 5px;
+            top: 40px;
+            bottom: 5px;
+            overflow: hidden;
+            clear: both;
+        }
+
+        #theme-switcher {
+            float: right;
+            width: 12em;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <select id="theme-switcher"></select>
+
+    <div id="reportViewer1">
+        loading...
+    </div>
+
+    @{
+        var reportSource = Html.Raw(Json.Serialize(Model));
+    }
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            //Theme switcher
+            themeSwitcher(
+                '#theme-switcher',
+                '#common-css',
+                '#skin-css');
+
+            $("#reportViewer1")
+                .telerik_ReportViewer({
+                    id: "reportviewer1",
+                    serviceUrl: "/api/reports/",
+                    reportSource: @reportSource
+                        });
+        });
+    </script>
+
+</body>
+</html>
