@@ -56,9 +56,9 @@
                           @ref="@reportViewer"
                           ServiceUrl="/blazor-reporting/api/reports"
                           ReportSource="@(new ReportSourceOptions()
-                      {
-                        Report = @ReportSourceJson
-                      })"
+                          {
+                            Report = @ReportSourceJson
+                          })"
                           TemplateUrl="/blazor-reporting/telerikReportViewerTemplate.html"
                           ScaleMode="@(ScaleMode.Specific)"
                           Scale="1.0"
@@ -173,7 +173,7 @@
             {
                 var groups = args.GridState.GroupDescriptors;
                 groups.Remove(groups.First());
-                await Grid.SetState(args.GridState);
+                await Grid.SetStateAsync(args.GridState);
             }
         }
 
