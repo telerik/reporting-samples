@@ -202,16 +202,19 @@
         reportSourceObject.Data = this.GridData;
 
         // Translating the filter applied to the grid to JSON data
-        foreach (FilterDescriptor fd in gridState.FilterDescriptors)
+        foreach (CompositeFilterDescriptor cfd in gridState.FilterDescriptors)
         {
-            if (fd.ConvertedValue != null)
+            foreach (FilterDescriptor fd in cfd.FilterDescriptors)
             {
-                var filter = new ReportSourceFilter();
-                filter.Member = fd.Member;
-                filter.Value = fd.ConvertedValue;
-                filter.OperatorString = Enum.GetName(typeof(FilterOperator), fd.Operator);
-                if (reportSourceObject.Filters == null) reportSourceObject.Filters = new List<ReportSourceFilter>();
-                reportSourceObject.Filters.Add(filter);
+                if (fd.ConvertedValue != null)
+                {
+                    var filter = new ReportSourceFilter();
+                    filter.Member = fd.Member;
+                    filter.Value = fd.ConvertedValue;
+                    filter.OperatorString = Enum.GetName(typeof(FilterOperator), fd.Operator);
+                    if (reportSourceObject.Filters == null) reportSourceObject.Filters = new List<ReportSourceFilter>();
+                    reportSourceObject.Filters.Add(filter);
+                }
             }
         }
 
