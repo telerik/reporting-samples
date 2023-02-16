@@ -5,7 +5,7 @@
 @using BlazorGridAndReport.Models
 @using BlazorGridAndReport.Models.json
 @using Telerik.DataSource;
-@using Telerik.ReportViewer.Blazor
+@using Telerik.ReportViewer.BlazorNative;
 
 <TelerikTabStrip Class="tbs">
     <TabStripTab Title="Grid">
@@ -52,19 +52,14 @@
                     <TelerikLoader Class="loader-indicator" Type="@LoaderType.Pulsing" Size="@ThemeConstants.Loader.Size.Medium"></TelerikLoader>
                 </div>
             </div>
-            <ReportViewer ViewerId="rv1"
-                          @ref="@reportViewer"
+            <ReportViewer
                           ServiceUrl="/blazor-reporting/api/reports"
                           ReportSource="@(new ReportSourceOptions()
                           {
                             Report = @ReportSourceJson
                           })"
-                          TemplateUrl="/blazor-reporting/telerikReportViewerTemplate.html"
                           ScaleMode="@(ScaleMode.Specific)"
                           Scale="1.0"
-                          ClientEvents="@(new ClientEventsOptions() {
-                                          PageReady = "trvEventHandlers.pageReady"
-                                          })"
                           />
         </div>
     </TabStripTab>
@@ -191,8 +186,7 @@
         this.ReportName = reportName;
         var gridState = this.Grid.GetState();
         SetReportSourceJson(gridState);
-        reportViewer.SetReportSourceAsync(new ReportSourceOptions() { Report = this.ReportSourceJson });
-
+        ////reportViewer.SetReportSourceAsync(new ReportSourceOptions() { Report = this.ReportSourceJson });
     }
 
     public void SetReportSourceJson(GridState<Products> gridState)
