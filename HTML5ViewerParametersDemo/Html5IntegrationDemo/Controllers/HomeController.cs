@@ -1,6 +1,5 @@
-﻿using HTML5ViewerParametersDemo.Models;
+using HTML5ViewerParametersDemo.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Generic;
 
 namespace HTML5ViewerParametersDemo.Controllers
@@ -11,11 +10,11 @@ namespace HTML5ViewerParametersDemo.Controllers
         {
             var reportSourceModel = new ReportSourceModel()
             {
-                Report = "Barcodes Report.trdp",
+                Report = "Product Line Sales.trdp",
                 Parameters = new Dictionary<string, object>()
             };
-            reportSourceModel.Parameters.Add("MyParameter1", DateTime.Now);
-            reportSourceModel.Parameters.Add("MyParameter2", 42);
+            reportSourceModel.Parameters.Add("ProductCategory", "Clothing");
+            reportSourceModel.Parameters.Add("ProductSubcategory", new string[] { "Caps", "Gloves", "Vests" });
 
             return View(reportSourceModel);
         }
