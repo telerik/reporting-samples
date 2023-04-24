@@ -22,11 +22,12 @@ builder.Services.AddRazorPages()
 
 builder.Services.AddDbContext<SqlDefinitionStorageContext>();
 builder.Services.AddScoped<IDefinitionStorage, CustomDefinitionStorage>();
+builder.Services.AddScoped<IReportSourceResolver, CustomReportSourceResolver>();
 
 var reportsPath = Path.Combine(builder.Environment.ContentRootPath, "Reports");
 
 // Configure dependencies for ReportsController.
-builder.Services.TryAddSingleton<IReportServiceConfiguration>(sp =>
+builder.Services.TryAddScoped<IReportServiceConfiguration>(sp =>
     new ReportServiceConfiguration
     {
         // The default ReportingEngineConfiguration will be initialized from appsettings.json or appsettings.{EnvironmentName}.json:
@@ -36,15 +37,13 @@ builder.Services.TryAddSingleton<IReportServiceConfiguration>(sp =>
         //ReportingEngineConfiguration = ResolveSpecificReportingConfiguration(sp.GetService<IWebHostEnvironment>()),
         HostAppId = "SqlDefinitionStorageExample",
         Storage = new FileStorage(),
-        ReportSourceResolver = new TypeReportSourceResolver()
-                                    .AddFallbackResolver(
-                                        new UriReportSourceResolver(reportsPath))
+        ReportSourceResolver = sp.GetRequiredService<IReportSourceResolver>(),
     });
 
 // Configure dependencies for ReportDesignerController.
 builder.Services.TryAddScoped<IReportDesignerServiceConfiguration>(sp => new ReportDesignerServiceConfiguration
 {
-    DefinitionStorage =sp.GetRequiredService<IDefinitionStorage>(),
+    DefinitionStorage = sp.GetRequiredService<IDefinitionStorage>(),
     ResourceStorage = new ResourceStorage(Path.Combine(reportsPath, "Resources")),
     SharedDataSourceStorage = new FileSharedDataSourceStorage(Path.Combine(reportsPath, "Shared Data Sources")),
     SettingsStorage = new FileSettingsStorage(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Telerik Reporting"))

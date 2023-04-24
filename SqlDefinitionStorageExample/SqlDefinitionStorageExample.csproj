@@ -21,6 +21,11 @@
     <PackageReference Include="Telerik.Reporting.Services.AspNetCore" Version="17.0.23.315" />
     <PackageReference Include="Telerik.WebReportDesigner.Services" Version="17.0.23.315" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="SampleReport.trdp">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
   </Target>
 </Project>
