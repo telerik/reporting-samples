@@ -83,8 +83,6 @@ namespace SqlDefinitionStorageExample
 
         public Task<byte[]> GetAsync(string resourceName)
         {
-            if (!_dbContext.Reports.Any()) AddSampleReportToDatabase();
-
             var reportBytes = this.GetDbReportModel(this.PrepareResourceUri(resourceName))?.Bytes;
             return reportBytes == null ? throw new ReportNotFoundException() : Task.FromResult(reportBytes);
         }
@@ -252,21 +250,5 @@ namespace SqlDefinitionStorageExample
                     f.ParentUri = f.ParentUri.Replace(oldName, model.Name);
                 });
         }
-
-        void AddSampleReportToDatabase()
-        {
-            var saveResourceModel = new SaveResourceModel() 
-            { 
-                Name = "SampleReport.trdp", 
-                ParentUri = string.Empty 
-            };
-
-            var reportBytes = System.IO.File.ReadAllBytes("SampleReport.trdp");
-            var entity = saveResourceModel.ToDbReportModel(reportBytes);
-
-            this._dbContext.Reports.Add(entity);
-            this._dbContext.SaveChanges();
-        }
-
     }
 }

@@ -84,6 +84,9 @@ CustomResourceResolver.Configuration.Instance.Init(reportsPath,
 CustomSharedDataSourceResolver.Configuration.Instance.Init(reportsPath,
                                                    Path.Combine(reportsPath, "Shared Data Sources"));
 
+// Add initial data to database
+app.Seed();
+
 app.Run();
 
 /// <summary>
