@@ -1,0 +1,26 @@
+﻿@page "/"
+
+<PageTitle>Report Viewer</PageTitle>
+
+<ReportViewer ServiceType="@ReportViewerServiceType.REST"
+              ServiceUrl="/api/reportdesigner"
+              @bind-ReportSource="@ReportSource"
+              @bind-ScaleMode="@ScaleMode"
+              @bind-ViewMode="@ViewMode"
+              @bind-ParametersAreaVisible="@ParametersAreaVisible"
+              @bind-DocumentMapVisible="@DocumentMapVisible"
+              @bind-Scale="@Scale">
+</ReportViewer>
+
+@code {
+    public ScaleMode ScaleMode { get; set; } = ScaleMode.Specific;
+    public ViewMode ViewMode { get; set; } = ViewMode.Interactive;
+    public bool ParametersAreaVisible { get; set; }
+    public bool DocumentMapVisible { get; set; }
+    public double Scale { get; set; } = 1.0;
+
+    public ReportSourceOptions ReportSource { get; set; } = new ReportSourceOptions("WeatherReport.trdp", new Dictionary<string, object>
+    {
+        // Add parameters if applicable
+    });
+}
