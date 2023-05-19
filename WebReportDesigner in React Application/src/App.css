@@ -35,3 +35,7 @@ body {
   font-family: Verdana, Arial;
   margin: 5px;
 }
+
+.treeview__text {
+  text-align: left;
+}
