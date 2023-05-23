@@ -8,14 +8,14 @@ The `WeatherReport.trdp` report in the project uses the [WebServiceDataSource](h
 
 ## Elements
 
-- [Telerik Reporting R1 SP1 2023](https://www.telerik.com/support/whats-new/reporting/release-history/progress-telerik-reporting-r1-2023-sp1-17-0-23-315)
+- [Telerik Reporting R1 2023 SP1](https://www.telerik.com/support/whats-new/reporting/release-history/progress-telerik-reporting-r1-2023-sp1-17-0-23-315)
 - ASP.Net Core Hosted 7 Blazor Client / Server Application
 - Shows the `WeatherReport.trdp`report in the [native Blazor Report viewer](https://docs.telerik.com/reporting/embedding-reports/display-reports-in-applications/web-application/native-blazor-report-viewer/overview)
 - Edits the `WeatherReport.trdp` report in the [Web Report Designer](https://docs.telerik.com/reporting/designing-reports/report-designer-tools/web-report-designer/overview)
 
 ## Trial / Dev NuGet Packages
 
-This sample solution is setup for the Telerik Reporting `Trial` version.</br>
+This sample solution is set up for the Telerik Reporting `Trial` version.</br>
 To make this sample work for the licensed Telerik Reporting, remove the `.Trial` suffix from the package, script, stylesheet, etc. references.
 
 Additionally, please make sure that you have set up the private Telerik feed before attempting to run the project - [Adding the Telerik Private NuGet Feed to Visual Studio](https://docs.telerik.com/reporting/getting-started/installation/adding-private-nuget-feed)
