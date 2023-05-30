@@ -3,3 +3,5 @@ obj/
 .vs/
 !packages/repositories.config
 packages/
+node_modules/
+.angular/
