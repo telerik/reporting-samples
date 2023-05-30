@@ -1,0 +1,81 @@
+CSharp.AspNetCoreDemo Information: 0 : Creating extension info for typeName "Telerik.Reporting.ImageRendering.PhysicalImageReport, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : Successfully resolved typeName "Telerik.Reporting.ImageRendering.PhysicalImageReport, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : ExtensionInfo IMAGE successfully created.
+CSharp.AspNetCoreDemo Information: 0 : Creating extension info for typeName "Telerik.Reporting.ImageRendering.ImageReportInteractive, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : Successfully resolved typeName "Telerik.Reporting.ImageRendering.ImageReportInteractive, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : ExtensionInfo IMAGEInteractive successfully created.
+CSharp.AspNetCoreDemo Information: 0 : Creating extension info for typeName "Telerik.Reporting.ImageRendering.PrintImageReport, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : Successfully resolved typeName "Telerik.Reporting.ImageRendering.PrintImageReport, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : ExtensionInfo IMAGEPrint successfully created.
+CSharp.AspNetCoreDemo Information: 0 : Creating extension info for typeName "Telerik.Reporting.ImageRendering.PrintPreviewImageReport, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : Successfully resolved typeName "Telerik.Reporting.ImageRendering.PrintPreviewImageReport, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : ExtensionInfo IMAGEPrintPreview successfully created.
+CSharp.AspNetCoreDemo Information: 0 : Creating extension info for typeName "Telerik.Reporting.ImageRendering.PdfReport, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : Successfully resolved typeName "Telerik.Reporting.ImageRendering.PdfReport, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : ExtensionInfo PDF successfully created.
+CSharp.AspNetCoreDemo Information: 0 : Creating extension info for typeName "Telerik.Reporting.RtfRendering.RtfReport, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : Successfully resolved typeName "Telerik.Reporting.RtfRendering.RtfReport, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : ExtensionInfo RTF successfully created.
+CSharp.AspNetCoreDemo Information: 0 : Creating extension info for typeName "Telerik.Reporting.HtmlRendering2.HtmlReport, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : Creating extension info for typeName "Telerik.Reporting.HtmlRendering2.HtmlReportInteractive, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : Creating extension info for typeName "Telerik.Reporting.HtmlRendering2.MHtmlReport, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : Creating extension info for typeName "Telerik.Reporting.Html5Rendering.Html5ReportInteractive, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : Successfully resolved typeName "Telerik.Reporting.Html5Rendering.Html5ReportInteractive, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : ExtensionInfo HTML5Interactive successfully created.
+CSharp.AspNetCoreDemo Information: 0 : Creating extension info for typeName "Telerik.Reporting.Html5Rendering.Html5Report, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : Successfully resolved typeName "Telerik.Reporting.Html5Rendering.Html5Report, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : ExtensionInfo HTML5 successfully created.
+CSharp.AspNetCoreDemo Information: 0 : Creating extension info for typeName "Telerik.Reporting.ExcelRendering.Excel97.ExcelReport, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : Successfully resolved typeName "Telerik.Reporting.ExcelRendering.Excel97.ExcelReport, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : ExtensionInfo XLS successfully created.
+CSharp.AspNetCoreDemo Information: 0 : Creating extension info for typeName "Telerik.Reporting.CsvRendering.CsvRenderingExtension, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : Successfully resolved typeName "Telerik.Reporting.CsvRendering.CsvRenderingExtension, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : ExtensionInfo CSV successfully created.
+CSharp.AspNetCoreDemo Information: 0 : Creating extension info for typeName "Telerik.Reporting.XamlRendering.SilverlightReport, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : Successfully resolved typeName "Telerik.Reporting.XamlRendering.SilverlightReport, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : ExtensionInfo XAML successfully created.
+CSharp.AspNetCoreDemo Information: 0 : Creating extension info for typeName "Telerik.Reporting.XamlRendering.SilverlightReportInteractive, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : Successfully resolved typeName "Telerik.Reporting.XamlRendering.SilverlightReportInteractive, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : ExtensionInfo XAMLInteractive successfully created.
+CSharp.AspNetCoreDemo Information: 0 : Creating extension info for typeName "Telerik.Reporting.XamlRendering.WpfReport, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : Successfully resolved typeName "Telerik.Reporting.XamlRendering.WpfReport, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : ExtensionInfo WPFXAML successfully created.
+CSharp.AspNetCoreDemo Information: 0 : Creating extension info for typeName "Telerik.Reporting.XamlRendering.WpfReportInteractive, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : Successfully resolved typeName "Telerik.Reporting.XamlRendering.WpfReportInteractive, Telerik.Reporting, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : ExtensionInfo WPFXAMLInteractive successfully created.
+CSharp.AspNetCoreDemo Information: 0 : Creating extension info for typeName "Telerik.Reporting.XpsRendering.XpsReport, Telerik.Reporting.XpsRendering, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : Creating extension info for typeName "Telerik.Reporting.OpenXmlRendering.Wordprocessing.WordprocessingReport, Telerik.Reporting.OpenXmlRendering.2.7.2, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : Creating extension info for typeName "Telerik.Reporting.OpenXmlRendering.Presentation.PresentationReport, Telerik.Reporting.OpenXmlRendering.2.7.2, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+CSharp.AspNetCoreDemo Information: 0 : Creating extension info for typeName "Telerik.Reporting.OpenXmlRendering.Spreadsheet.SpreadsheetReport, Telerik.Reporting.OpenXmlRendering.2.7.2, Version=13.0.19.116, Culture=neutral, PublicKeyToken=a9d7983dfcc261be", extensionName ""
+Worker rendering threads count: 8
+CSharp.AspNetCoreDemo Information: 0 : Unit.DotsPerInch = 96
+Rendering thread 15 starts work.
+Pending rendering operation for document with id 57d5ae936da2051975b2ec retrieved.
+
+*** ReportProcessor.ProcessReport STARTED ***
+
+*** ProcessReport #0 STARTED ***
+*** ProcessReport #0 DONE in 00:00:00.3807528 ***
+
+*** ReportProcessor.ProcessReport DONE in 00:00:00.4299219 ***
+
+
+*** RenderReport #0 STARTED ***
+*** RenderReport #0 DONE in 00:00:00.3231917 ***
+
+Rendering thread 15 finishes work.
+Rendering thread 15 starts work.
+Pending rendering operation for document with id 4be57b2dd7778e5ae2aaeb retrieved.
+
+*** ReportProcessor.ProcessReport STARTED ***
+
+*** ProcessReport #0 STARTED ***
+*** ProcessReport #0 DONE in 00:00:00.4266050 ***
+
+*** ReportProcessor.ProcessReport DONE in 00:00:00.4345851 ***
+
+
+*** RenderReport #0 STARTED ***
+*** RenderReport #0 DONE in 00:00:00.2194149 ***
+
+Rendering thread 15 finishes work.
