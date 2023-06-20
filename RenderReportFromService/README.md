@@ -16,3 +16,7 @@ The project requires a running [Reporting REST Service](https://docs.telerik.com
 The Example demos shipped with the installation of Telerik Reporting can be used as the service. With a default installation, the demo projects can be found at:
 
 `C:\Program Files (x86)\Progress\Telerik Reporting <Release>\Examples`
+
+## Exported Location
+
+Exported documents will be saved in the `C:\temp` directory.
