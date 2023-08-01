@@ -1,12 +1,12 @@
 <div id="components">
-    <kendo-grid [data]="gridData" style="width:40%; height:50%" [filter]="filter" filterable="menu"
+    <kendo-grid [filterable]="true" [data]="gridData" style="width:80%; height:50%" [filter]="filter"
         (filterChange)="filterChange($event)">
 
         <kendo-grid-column field="DaySpeaking" title="Technology" width="80">
             <ng-template kendoGridFilterMenuTemplate let-column="column" let-filter="filter"
                 let-filterService="filterService">
-                <my-filter-wrapper [filter]="filter" [data]="categories" [filterService]="filterService">
-                </my-filter-wrapper>
+                <!-- <my-filter-wrapper [filter]="filter" [data]="categories" [filterService]="filterService">
+                </my-filter-wrapper> -->
             </ng-template>
             <ng-template kendoGridCellTemplate let-dataItem>
                 {{dataItem.DaySpeaking}}

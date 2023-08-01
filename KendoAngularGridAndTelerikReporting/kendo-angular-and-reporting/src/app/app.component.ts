@@ -1,4 +1,5 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
+import { ViewChild } from '@angular/core';
 import { filterBy, CompositeFilterDescriptor } from '@progress/kendo-data-query';
 import { speakersData } from '../data/speakers';
 import { ReportViewerComponent } from '../app/report-viewer/report-viewer.component'
@@ -7,12 +8,11 @@ const distinctCategories = data => data
     .filter((x, idx, xs) => xs.findIndex(y => y.DaySpeaking === x.DaySpeaking) === idx);
 
 @Component({
-    selector: 'my-app',
+    selector: 'app-root',
     templateUrl: './app.component.html'
-}
-)
-
+})
 export class AppComponent {
+    title = 'app';
 
     @ViewChild('reportViewer1', {}) viewer: ReportViewerComponent;
 
@@ -37,6 +37,4 @@ export class AppComponent {
         this.gridData = filteredData;
         this.setViewerData(JSON.stringify(filteredData));
     }
-
 }
-
