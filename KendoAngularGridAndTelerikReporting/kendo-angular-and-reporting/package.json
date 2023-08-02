@@ -2,9 +2,15 @@
   "name": "cli",
   "version": "0.0.0",
   "license": "MIT",
+  "config": {
+    "path": "../ReportingRESTService/CSharp.Net6.ReportingRestServiceCorsDemo.csproj"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "prepare-service": "dotnet build %npm_package_config_path%",
+    "run-service": "dotnet run --project %npm_package_config_path%",
+    "start": "start npm run run-service && start npm run start-angular",
+    "start-angular": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
