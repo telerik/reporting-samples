@@ -23,6 +23,7 @@ builder.Services.AddRazorPages()
 builder.Services.AddDbContext<SqlDefinitionStorageContext>();
 builder.Services.AddScoped<IDefinitionStorage, CustomDefinitionStorage>();
 builder.Services.AddScoped<IReportSourceResolver, CustomReportSourceResolver>();
+builder.Services.AddScoped<IReportDocumentResolver, CustomReportDocumentResolver>();
 
 var reportsPath = Path.Combine(builder.Environment.ContentRootPath, "Reports");
 
@@ -38,6 +39,7 @@ builder.Services.TryAddScoped<IReportServiceConfiguration>(sp =>
         HostAppId = "SqlDefinitionStorageExample",
         Storage = new FileStorage(),
         ReportSourceResolver = sp.GetRequiredService<IReportSourceResolver>(),
+        ReportDocumentResolver = sp.GetRequiredService<IReportDocumentResolver>()
     });
 
 // Configure dependencies for ReportDesignerController.
