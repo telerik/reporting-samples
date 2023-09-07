@@ -1,0 +1,70 @@
+﻿@page "/"
+@inject HttpClient WebClient
+@using Telerik.Blazor
+@using Telerik.Blazor.Components
+@using Telerik.FontIcons
+@using Telerik.SvgIcons
+
+<TelerikDropDownList @ref="@DropDownListRef"
+                     Data="@MyReports"
+                     Value="@SelectedReport"
+                     DefaultText="@( SelectedReport == null ? "<Select Report>" : null )"
+                     ValueChanged="@((string newValue) => OnDropDownValueChanged(newValue))">
+</TelerikDropDownList>
+
+@* 'TelerikPdfViewer'is wrapped in 'if'' to avoid Data being Null *@
+@* Possibly related to bug https://feedback.telerik.com/blazor/1595340-the-pdf-viewer-does-not-render-the-document-as-expected-when-calling-the-readallbytesasync-method-from-grid-s-async-onrowclick-event-handler *@
+@if (FileData != null)
+{
+    <TelerikPdfViewer @ref="@PdfViewerRef"
+                      Data="@FileData">
+        <PdfViewerToolBar>
+            <PdfViewerToolBarPagerTool />
+            <PdfViewerToolBarSpacer />
+            <PdfViewerToolBarZoomTool />
+            <PdfViewerToolBarSelectionTool />
+        </PdfViewerToolBar>
+    </TelerikPdfViewer>
+}
+else
+{
+    <TelerikLoaderContainer />
+}
+
+<style>
+    .viewer {
+        max-height: 500px;
+        min-height: 300px;
+    }
+</style>
+
+@code {
+    // https://learn.microsoft.com/en-us/dotnet/maui/data-cloud/local-web-services - local service is different in Android
+    public static string BaseAddress = DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:5186" : "http://localhost:5186";
+
+    string SelectedReport { get; set; }
+    protected string[] MyReports;
+    public TelerikDropDownList<string, string> DropDownListRef { get; set; }
+    public TelerikPdfViewer PdfViewerRef { get; set; }
+    public byte[] FileData { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        // The blazor web view for Android requires newer Android. It works with emulator Pixel 5 - API 33 -> Android 13 - API 33 and DOESN'T work with Pixex 5 - API 31
+        // For Android check https://stackoverflow.com/questions/67071052/how-to-fix-cleartext-http-traffic-to-x-not-permitted-in-xamarin-android
+        var response = await WebClient.GetStringAsync($"{BaseAddress}/GetAvailableReports");
+        MyReports = response.Split("---");
+
+        SelectedReport = MyReports[0];
+
+        FileData = await WebClient.GetByteArrayAsync($"{BaseAddress}/{SelectedReport}");
+
+        await base.OnInitializedAsync();
+    }
+
+    private async Task OnDropDownValueChanged(string newValue)
+    {
+        SelectedReport = newValue;
+        FileData = await WebClient.GetByteArrayAsync($"{BaseAddress}/{newValue}");
+    }
+}
