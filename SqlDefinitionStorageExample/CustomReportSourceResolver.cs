@@ -26,7 +26,7 @@ namespace SqlDefinitionStorageExample
             }
 
             MemoryStream stream = new(report.Bytes);
-            Report report1 = (Report)reportPackager.UnpackageDocument(stream);
+            Telerik.Reporting.Report report1 = (Telerik.Reporting.Report)reportPackager.UnpackageDocument(stream);
             
             var instanceReportSource = new InstanceReportSource
             {
