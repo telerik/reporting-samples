@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -13,6 +13,7 @@
 
     <link rel="stylesheet" href="https://blazor.cdn.telerik.com/blazor/4.0.1/kendo-theme-default/all.css" />
     <link href="_content/Telerik.ReportViewer.BlazorNative.Trial/css/reporting-blazor-viewer.css" rel="stylesheet" />
+    <HeadOutlet @rendermode="@RenderMode.InteractiveWebAssembly" />
 </head>
 
 <body>
@@ -39,7 +40,7 @@
     <script src="_content/Telerik.UI.for.Blazor.Trial/js/telerik-blazor.js" defer></script>
     <script src="_content/Telerik.ReportViewer.BlazorNative.Trial/js/reporting-blazor-viewer.js" defer></script>
 
-    <script src="_framework/blazor.webassembly.js"></script>
+    <script src="_framework/blazor.web.js"></script>
 </body>
 
 </html>
