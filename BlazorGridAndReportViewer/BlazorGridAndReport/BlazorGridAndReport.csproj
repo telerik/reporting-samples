@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
         <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
         <UserSecretsId>cbafb15d-396f-40c3-b3dc-763aed6c8e00</UserSecretsId>
 	      <UseRazorSourceGenerator>false</UseRazorSourceGenerator>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.0" />
     <PackageReference Include="Telerik.Drawing.Skia" Version="17.2.23.1010" />
     <PackageReference Include="Telerik.Reporting.OpenXmlRendering" Version="17.2.23.1010" />
     <PackageReference Include="Telerik.Reporting.Services.AspNetCore" Version="17.2.23.1010" />

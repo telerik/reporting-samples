@@ -52,6 +52,7 @@ namespace BlazorGridAndReport
                 options.AllowSynchronousIO = true;
             });
 
+            services.AddRazorComponents().AddInteractiveServerComponents();
 
             services.AddSingleton<IReportServiceConfiguration>(sp =>
                 new ReportServiceConfiguration
@@ -87,11 +88,12 @@ namespace BlazorGridAndReport
 
             app.UseRouting();
 
+            app.UseAntiforgery();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.MapBlazorHub();
-                endpoints.MapFallbackToPage("/_Host");
+                endpoints.MapRazorComponents<App>().AddInteractiveServerRenderMode();
             });
         }
     }
