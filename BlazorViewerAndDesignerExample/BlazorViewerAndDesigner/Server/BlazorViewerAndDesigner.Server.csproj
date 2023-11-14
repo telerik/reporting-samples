@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.0-rc.2.23480.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.0" />
     <PackageReference Include="Telerik.Reporting.OpenXmlRendering.Trial" Version="17.0.23.315" />
     <PackageReference Include="Telerik.WebReportDesigner.Services.Trial" Version="17.0.23.315" />
   </ItemGroup>
