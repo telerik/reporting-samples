@@ -47,6 +47,7 @@ namespace BlazorGridAndReport
             services.AddRazorPages().AddNewtonsoftJson(); ;
             services.AddServerSideBlazor();
             services.AddTelerikBlazor();
+            services.AddAntiforgery(options => options.SuppressXFrameOptionsHeader = true);
             services.Configure<IISServerOptions>(options =>
             {
                 options.AllowSynchronousIO = true;
