@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp.Net6.Html5IntegrationDemo", "Html5IntegrationDemo\CSharp.Net6.Html5IntegrationDemo.csproj", "{0DECA0DC-6FA5-4482-B0DC-FBA41878D414}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0DECA0DC-6FA5-4482-B0DC-FBA41878D414}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DECA0DC-6FA5-4482-B0DC-FBA41878D414}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DECA0DC-6FA5-4482-B0DC-FBA41878D414}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DECA0DC-6FA5-4482-B0DC-FBA41878D414}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AD229EAC-B97D-4475-B9A7-2493705F70A2}
+	EndGlobalSection
+EndGlobal
