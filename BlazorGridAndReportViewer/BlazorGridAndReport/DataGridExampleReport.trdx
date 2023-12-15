@@ -12,7 +12,7 @@
       <Style BackgroundColor="64, 64, 64" />
       <Items>
         <Panel Width="17cm" Height="0.7cm" Left="0cm" Top="2.692cm" Name="panel2">
-          <Style BackgroundColor="LightSkyBlue" />
+          <Style BackgroundColor="135, 206, 250" />
           <Items>
             <TextBox Width="2.5cm" Height="0.5cm" Left="13.9cm" Top="0.108cm" Value="Started Selling" Name="textBox10" />
             <TextBox Width="2.3cm" Height="0.5cm" Left="7.6cm" Top="0.108cm" Value="Active Selling" Name="textBox8" />
@@ -22,12 +22,12 @@
           </Items>
         </Panel>
         <TextBox Width="5.8cm" Height="0.5cm" Left="2.2cm" Top="0.5cm" Value="Sample Report" Name="textBox14">
-          <Style Color="White">
+          <Style Color="255, 255, 255">
             <Font Name="Verdana" />
           </Style>
         </TextBox>
         <TextBox Width="13.359cm" Height="0.9cm" Left="2.2cm" Top="0.9cm" Value="Telerik UI for Blazor + Telerik Reporting" Name="textBox15">
-          <Style Color="White">
+          <Style Color="255, 255, 255">
             <Font Name="Verdana" Size="16pt" />
           </Style>
         </TextBox>
@@ -52,7 +52,7 @@
           </Action>
         </TextBox>
         <Panel Width="17cm" Height="2.8cm" Left="0cm" Top="0.7cm" Name="panel1">
-          <Style Visible="False" BackgroundColor="SteelBlue">
+          <Style Visible="False" BackgroundColor="70, 130, 180">
             <BorderStyle Bottom="Solid" />
             <BorderWidth Default="1pt" />
           </Style>
@@ -144,12 +144,12 @@
       <Style BackgroundColor="64, 64, 64" />
       <Items>
         <TextBox Width="3cm" Height="0.6cm" Left="13.7cm" Top="0.161cm" Value="= PageNumber + &quot; of &quot; + PageCount&#xD;&#xA;" Name="textBox16">
-          <Style Color="White" TextAlign="Right">
+          <Style Color="255, 255, 255" TextAlign="Right">
             <Font Name="Verdana" Size="8pt" />
           </Style>
         </TextBox>
         <TextBox Width="3.3cm" Height="0.6cm" Left="0.2cm" Top="0.161cm" Value="= &quot;TOTAL ITEMS: &quot; + Count(Fields.Name)&#xD;&#xA;" Name="textBox27">
-          <Style Color="White">
+          <Style Color="255, 255, 255">
             <Font Name="Verdana" Size="8pt" />
           </Style>
         </TextBox>
@@ -176,15 +176,15 @@
     <Group Name="group">
       <GroupHeader>
         <GroupHeaderSection Height="0.8cm" Name="groupHeaderSection">
-          <Style BackgroundColor="SteelBlue" />
+          <Style BackgroundColor="70, 130, 180" />
           <Items>
             <TextBox Width="11.9cm" Height="0.611cm" Left="0.5cm" Top="0.189cm" Value="= Parameters.groupName.Value + &quot;: &quot; + Fields(Parameters.groupedBy.Value)" Name="textBox12">
-              <Style Color="White">
+              <Style Color="255, 255, 255">
                 <Font Bold="True" />
               </Style>
             </TextBox>
             <TextBox Width="3cm" Height="0.6cm" Left="13.4cm" Top="0.2cm" Value="= &quot;Total products: &quot; + Count(Fields.Name)" Name="textBox13">
-              <Style Color="White" />
+              <Style Color="255, 255, 255" />
             </TextBox>
           </Items>
           <ConditionalFormatting>
@@ -199,7 +199,7 @@
       </GroupHeader>
       <GroupFooter>
         <GroupFooterSection Height="0.6cm" Name="groupFooterSection">
-          <Style Visible="False" BackgroundColor="AliceBlue" />
+          <Style Visible="False" BackgroundColor="240, 248, 255" />
         </GroupFooterSection>
       </GroupFooter>
       <Groupings>
