@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report Width="17cm" Name="MainReport" xmlns="http://schemas.telerik.com/reporting/2023/3.0">
+  <DataSources>
+    <CsvDataSource RecordSeparators="&#xD;&#xA;" FieldSeparators="," HasHeaders="True" Name="csvDataSource1">
+      <Source>
+        <String>VmFsdWUNCjENCjINCjMNCjQNCjUNCjYNCjcNCjgNCjkNCjEw</String>
+      </Source>
+      <Columns>
+        <DataColumn Name="Value" Type="Integer" />
+      </Columns>
+    </CsvDataSource>
+    <CsvDataSource RecordSeparators="&#xD;&#xA;" FieldSeparators="," HasHeaders="True" Name="csvDataSource2">
+      <Source>
+        <String>T3RoZXJWYWx1ZQ0KMTENCjEyDQoxMw0KMTQNCjE1DQoxNg0KMTcNCjE4</String>
+      </Source>
+      <Columns>
+        <DataColumn Name="OtherValue" Type="Integer" />
+      </Columns>
+    </CsvDataSource>
+  </DataSources>
+  <Items>
+    <DetailSection Height="2.424cm" Name="detailSection1">
+      <Items>
+        <Table DataSourceName="csvDataSource1" Width="4cm" Height="1.924cm" Left="0.5cm" Top="0.5cm" Name="table1" StyleName="Normal.TableNormal">
+          <Body>
+            <Cells>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="4cm" Height="0.5cm" Left="0cm" Top="0cm" Value="= Fields.Value" Name="textBox2" StyleName="Normal.TableBody" />
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="4cm" Height="0.5cm" Left="0cm" Top="0cm" Value="Total: {Sum(Fields.Value)}" Name="textBox3" StyleName="Normal.TableBody">
+                    <Style>
+                      <Font Bold="True" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="2" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <SubReport DataSourceName="csvDataSource2" Width="4cm" Height="0.167in" Left="0.803in" Top="0.703in" Name="subReport1" StyleName="Normal.TableBody">
+                    <Style BackgroundColor="192, 255, 192">
+                      <Font Bold="True" />
+                    </Style>
+                    <ReportSource>
+                      <UriReportSource Uri="SubReport.trdx">
+                        <Parameters>
+                          <Parameter Name="PassedValue">
+                            <Value>
+                              <String>= Sum(Fields.Value)</String>
+                            </Value>
+                          </Parameter>
+                        </Parameters>
+                      </UriReportSource>
+                    </ReportSource>
+                  </SubReport>
+                </ReportItem>
+              </TableCell>
+            </Cells>
+            <Columns>
+              <Column Width="4cm" />
+            </Columns>
+            <Rows>
+              <Row Height="0.5cm" />
+              <Row Height="0.5cm" />
+              <Row Height="0.167in" />
+            </Rows>
+          </Body>
+          <Corner />
+          <RowGroups>
+            <TableGroup Name="detail">
+              <Groupings>
+                <Grouping />
+              </Groupings>
+            </TableGroup>
+            <TableGroup Name="group" />
+            <TableGroup Name="group2" />
+          </RowGroups>
+          <ColumnGroups>
+            <TableGroup Name="value">
+              <ReportItem>
+                <TextBox Width="4cm" Height="0.5cm" Left="0cm" Top="0cm" Value="Value" Name="textBox1" StyleName="Normal.TableHeader" />
+              </ReportItem>
+            </TableGroup>
+          </ColumnGroups>
+        </Table>
+        <Table DataSourceName="csvDataSource2" Width="4cm" Height="1.5cm" Left="12.5cm" Top="0.5cm" Name="table2" StyleName="Normal.TableNormal">
+          <Body>
+            <Cells>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="4cm" Height="0.5cm" Left="0cm" Top="0cm" Value="= Fields.OtherValue" Name="textBox5" StyleName="Normal.TableBody" />
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="4cm" Height="0.5cm" Left="0cm" Top="0cm" Value="Total: {Sum(Fields.OtherValue)}" Name="textBox6" StyleName="Normal.TableBody">
+                    <Style>
+                      <Font Bold="True" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+            </Cells>
+            <Columns>
+              <Column Width="4cm" />
+            </Columns>
+            <Rows>
+              <Row Height="0.5cm" />
+              <Row Height="0.5cm" />
+            </Rows>
+          </Body>
+          <Corner />
+          <RowGroups>
+            <TableGroup Name="detail">
+              <Groupings>
+                <Grouping />
+              </Groupings>
+            </TableGroup>
+            <TableGroup Name="group1" />
+          </RowGroups>
+          <ColumnGroups>
+            <TableGroup Name="otherValue">
+              <ReportItem>
+                <TextBox Width="4cm" Height="0.5cm" Left="0cm" Top="0cm" Value="Other Value" Name="textBox4" StyleName="Normal.TableHeader" />
+              </ReportItem>
+            </TableGroup>
+          </ColumnGroups>
+        </Table>
+      </Items>
+    </DetailSection>
+  </Items>
+  <PageSettings PaperKind="A4" Landscape="False">
+    <Margins>
+      <MarginsU Left="2cm" Right="2cm" Top="2cm" Bottom="2cm" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black">
+        <Font Name="Tahoma" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="Table" StyleName="Normal.TableNormal" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <Font Name="Tahoma" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableBody" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="10pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableHeader" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+</Report>

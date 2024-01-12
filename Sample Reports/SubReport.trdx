@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report Width="1.2in" Name="SubReport" xmlns="http://schemas.telerik.com/reporting/2023/3.0">
+  <Items>
+    <DetailSection Height="0.1in" Name="detailSection1">
+      <Style Visible="False" />
+    </DetailSection>
+    <ReportHeaderSection CanShrink="True" Height="0.2in" Name="reportHeaderSection1">
+      <Items>
+        <TextBox Width="1.2in" Height="0.2in" Left="0in" Top="0in" Value="Difference: {Abs(Parameters.PassedValue.Value - Sum(Fields.OtherValue))}" Name="textBox1" />
+      </Items>
+    </ReportHeaderSection>
+  </Items>
+  <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+    <Margins>
+      <MarginsU Left="1in" Right="1in" Top="1in" Bottom="1in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <ReportParameters>
+    <ReportParameter Name="PassedValue" Type="Integer" AutoRefresh="True">
+      <Value>
+        <String>0</String>
+      </Value>
+    </ReportParameter>
+  </ReportParameters>
+</Report>
