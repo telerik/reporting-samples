@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Report DataSourceName="jsonProductSalesData" Width="17cm" Name="productSales" Zoom="2" SnapGridSize="0.1cm" xmlns="http://schemas.telerik.com/reporting/2020/2.0">
+<Report DataSourceName="jsonProductSalesData" Width="17cm" Name="ProductSales" Zoom="2" SnapGridSize="0.1cm" xmlns="http://schemas.telerik.com/reporting/2020/2.0">
   <DataSources>
     <JsonDataSource Name="jsonProductSalesData">
       <Source>
