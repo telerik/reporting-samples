@@ -68,14 +68,14 @@ class GridComponent extends Component {
                     dataItemKey="CategoryID"
                     textField="CategoryName"
                     defaultValue={categories}
-                    style={{ width: "22%", left: "57%" }}
+                    style={{ width: "22%", left: "57%", marginTop: "42px" }}
                     onChange={this.handleMultiSelectChange} />
 
                 <Grid
                     data={this.props.data}
                     {...this.props.dataState}
                     onDataStateChange={this.handleGridDataStateChange}
-                    style={{ height: "50%", width: "30%", left: "57%", top: "10%" }}>
+                    style={{ height: "50%", width: "30%", left: "57%", top: "6%" }}>
                     <GridColumn
                         field="ImageUrl"
                         title="Photo"
