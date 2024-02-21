@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report Width="6.5in" Name="Report" xmlns="http://schemas.telerik.com/reporting/2021/2.0">
+  <DataSources>
+    <SqlDataSource QueryDesignerState="null" ParameterValues="null" ConnectionString="Telerik.Reporting.Examples.CSharp.Properties.Settings.TelerikConnectionString" SelectCommand="SELECT&#xD;&#xA;    (row_number() over (order by EmployeeID) -1)/10 as 'GroupId',&#xD;&#xA;    [HumanResources].[vEmployee].[EmployeeID] ,&#xD;&#xA;    [HumanResources].[vEmployee].[FirstName],&#xD;&#xA;    [HumanResources].[vEmployee].[LastName],&#xD;&#xA;    [HumanResources].[vEmployee].[JobTitle],&#xD;&#xA;    [HumanResources].[vEmployee].[Phone]&#xD;&#xA;FROM [HumanResources].[vEmployee]&#xD;&#xA;WHERE [HumanResources].[vEmployee].[EmployeeID] &lt;= 30&#xD;&#xA;ORDER BY 1 ASC" Name="sqlDataSource1" />
+  </DataSources>
+  <Items>
+    <PageHeaderSection Height="1in" Name="pageHeaderSection1" />
+    <DetailSection Height="2in" Name="detailSection1">
+      <Items>
+        <Table DataSourceName="sqlDataSource1" Width="5.101in" Height="0.5in" Left="0.1in" Top="0.2in" ColumnHeadersPrintOnEveryPage="True" Name="table1" StyleName="Normal.TableNormal">
+          <Body>
+            <Cells>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.367in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.EmployeeID" Name="textBox10" StyleName="Normal.TableBody" />
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.367in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.FirstName" Name="textBox11" StyleName="Normal.TableBody" />
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.367in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.LastName" Name="textBox12" StyleName="Normal.TableBody" />
+                </ReportItem>
+              </TableCell>
+            </Cells>
+            <Columns>
+              <Column Width="1.367in" />
+              <Column Width="1.367in" />
+              <Column Width="1.367in" />
+            </Columns>
+            <Rows>
+              <Row Height="0.2in" />
+            </Rows>
+          </Body>
+          <Corner>
+            <Cells>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1in" Height="0.3in" Left="0in" Top="0in" Value="group Id" Name="textBox5" StyleName="Normal.TableHeader" />
+                </ReportItem>
+              </TableCell>
+            </Cells>
+          </Corner>
+          <Style>
+            <BorderStyle Default="None" />
+          </Style>
+          <RowGroups>
+            <TableGroup PageBreak="After" Name="groupId">
+              <ReportItem>
+                <TextBox Width="1in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.GroupId" Name="textBox4" StyleName="">
+                  <Style>
+                    <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+              <ChildGroups>
+                <TableGroup Name="detail1">
+                  <ChildGroups>
+                    <TableGroup Name="group" />
+                  </ChildGroups>
+                  <Groupings>
+                    <Grouping />
+                  </Groupings>
+                </TableGroup>
+              </ChildGroups>
+              <Groupings>
+                <Grouping Expression="= Fields.GroupId" />
+              </Groupings>
+              <Sortings>
+                <Sorting Expression="= Fields.GroupId" Direction="Asc" />
+              </Sortings>
+            </TableGroup>
+          </RowGroups>
+          <ColumnGroups>
+            <TableGroup Name="employeeID">
+              <ReportItem>
+                <TextBox Width="1.367in" Height="0.3in" Left="0in" Top="0in" Value="Employee ID" Name="textBox1" StyleName="Normal.TableHeader" />
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="firstName">
+              <ReportItem>
+                <TextBox Width="1.367in" Height="0.3in" Left="0in" Top="0in" Value="First Name" Name="textBox2" StyleName="Normal.TableHeader" />
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="lastName">
+              <ReportItem>
+                <TextBox Width="1.367in" Height="0.3in" Left="0in" Top="0in" Value="Last Name" Name="textBox3" StyleName="Normal.TableHeader" />
+              </ReportItem>
+            </TableGroup>
+          </ColumnGroups>
+        </Table>
+      </Items>
+    </DetailSection>
+    <PageFooterSection Height="1in" Name="pageFooterSection1" />
+  </Items>
+  <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+    <Margins>
+      <MarginsU Left="1in" Right="1in" Top="1in" Bottom="1in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black">
+        <Font Name="Tahoma" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="Table" StyleName="Normal.TableNormal" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <Font Name="Tahoma" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableBody" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="10pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableHeader" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+</Report>
