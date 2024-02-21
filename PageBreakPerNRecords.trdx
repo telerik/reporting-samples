@@ -44,12 +44,15 @@
               </TableCell>
             </Cells>
           </Corner>
+          <Style>
+            <BorderStyle Default="None" />
+          </Style>
           <RowGroups>
             <TableGroup PageBreak="After" Name="groupId">
               <ReportItem>
                 <TextBox Width="1in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.GroupId" Name="textBox4" StyleName="">
                   <Style>
-                    <BorderStyle Top="Solid" Bottom="Solid" />
+                    <BorderStyle Top="Solid" Bottom="Solid" Left="Solid" />
                   </Style>
                 </TextBox>
               </ReportItem>
