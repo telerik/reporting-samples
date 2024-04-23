@@ -24,7 +24,7 @@
     "jquery": "^3.6.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3",
+    "react-scripts": "5.0.1",
     "socks": ">=2.7.3"
   },
   "scripts": {
