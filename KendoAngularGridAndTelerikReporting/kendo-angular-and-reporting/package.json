@@ -55,7 +55,7 @@
     "socks": ">=2.7.3"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^16.0.2",
+    "@angular-devkit/build-angular": "^16.1.6",
     "@angular/language-service": "^16.0.2",
     "@angular/localize": "^16.0.2",
     "@types/jasmine": "~3.8.0",
