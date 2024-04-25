@@ -48,16 +48,19 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="Telerik.Reporting, Version=14.0.20.115, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.Reporting.Trial.14.0.20.115\lib\net40\Telerik.Reporting.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Reporting.OpenXmlRendering.2.7.2, Version=14.0.20.115, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.Reporting.Trial.14.0.20.115\lib\net40\Telerik.Reporting.OpenXmlRendering.2.7.2.dll</HintPath>
-    </Reference>
-    <Reference Include="Telerik.Reporting.XpsRendering, Version=14.0.20.115, Culture=neutral, PublicKeyToken=a9d7983dfcc261be, processorArchitecture=MSIL">
-      <HintPath>..\packages\Telerik.Reporting.Trial.14.0.20.115\lib\net40\Telerik.Reporting.XpsRendering.dll</HintPath>
-    </Reference>
     <Reference Include="WindowsBase" />
+    <Reference Include="Telerik.Reporting, Version=18.0.24.305, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
+      <HintPath>D:\Program Files\Progress\Telerik Reporting 2024 Q1\bin\Telerik.Reporting.dll</HintPath>
+      <SpecificVersion>True</SpecificVersion>
+    </Reference>
+    <Reference Include="Telerik.Reporting.OpenXmlRendering.2.7.2, Version=18.0.24.305, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
+      <HintPath>D:\Program Files\Progress\Telerik Reporting 2024 Q1\bin\Telerik.Reporting.OpenXmlRendering.2.7.2.dll</HintPath>
+      <SpecificVersion>True</SpecificVersion>
+    </Reference>
+    <Reference Include="Telerik.Reporting.XpsRendering, Version=18.0.24.305, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
+      <HintPath>D:\Program Files\Progress\Telerik Reporting 2024 Q1\bin\Telerik.Reporting.XpsRendering.dll</HintPath>
+      <SpecificVersion>True</SpecificVersion>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
