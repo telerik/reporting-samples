@@ -12,8 +12,8 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
-    <PackageReference Include="Telerik.Reporting.OpenXmlRendering.Trial" Version="17.1.23.718" />
-    <PackageReference Include="Telerik.WebReportDesigner.Services.Trial" Version="17.1.23.718" />
+    <PackageReference Include="Telerik.Reporting.OpenXmlRendering" Version="18.0.24.305" />
+    <PackageReference Include="Telerik.WebReportDesigner.Services" Version="18.0.24.305" />
     <!--The following lines are replaced with package refs during the product build-->
   </ItemGroup>
   <ItemGroup>
