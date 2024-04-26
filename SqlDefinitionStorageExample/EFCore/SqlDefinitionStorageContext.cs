@@ -6,9 +6,11 @@ namespace SqlDefinitionStorageExample.EFCore
     public class SqlDefinitionStorageContext : DbContext
     {
 
-        public DbSet<Report> Reports { get; set; }
+        public DbSet<Resource> Resources { get; set; }
 
-        public DbSet<ReportFolder> ReportFolders { get; set; }
+        public DbSet<ResourceFolder> ResourceFolders { get; set; }
+
+        public DbSet<SharedDataSource> SharedDataSources { get; set; }
 
         public SqlDefinitionStorageContext(DbContextOptions<SqlDefinitionStorageContext> options) : base(options) { }
 

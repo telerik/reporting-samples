@@ -18,7 +18,7 @@ namespace SqlDefinitionStorageExample
 
             try {
 
-                if (!context.Reports.Any())
+                if (!context.Resources.Any())
                 {
                         var saveResourceModel = new SaveResourceModel()
                         {
@@ -27,9 +27,9 @@ namespace SqlDefinitionStorageExample
                         };
 
                         var reportBytes = System.IO.File.ReadAllBytes("SampleReport.trdp");
-                        var entity = saveResourceModel.ToDbReportModel(reportBytes);
+                        var entity = saveResourceModel.ToDbResourceModel(reportBytes);
 
-                        context.Reports.Add(entity);
+                        context.Resources.Add(entity);
                         context.SaveChanges();
                 }
 

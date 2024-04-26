@@ -26,7 +26,7 @@ namespace SqlDefinitionStorageExample
 
                 // It is necessary to initialize a new dbContent because this code will be executed in a new thread
                 using SqlDefinitionStorageContext dbContext = new(optionsBuilder.Options);
-                var report = dbContext.Reports.FirstOrDefault(r => r.Uri == uri) ?? throw new FileNotFoundException();
+                var report = dbContext.Resources.FirstOrDefault(r => r.Uri == uri) ?? throw new FileNotFoundException();
                 MemoryStream stream = new(report.Bytes);
                 return reportPackager.UnpackageDocument(stream);
             }

@@ -1,7 +1,10 @@
 ﻿namespace SqlDefinitionStorageExample
 {
+    using Microsoft.EntityFrameworkCore;
+    using SqlDefinitionStorageExample.EFCore;
     using System;
     using System.IO;
+    using System.Linq;
     using Telerik.Reporting.Processing;
     using Telerik.WebReportDesigner.Services;
     using Data = Telerik.Reporting.Processing.Data;
@@ -21,22 +24,35 @@
         /// <returns></returns>
         Telerik.Reporting.DataSource Data.ISharedDataSourceResolver.Resolve(string sharedDataSourcePath)
         {
-            ValidateConfiguration();
+            var context = (SqlDefinitionStorageContext)Configuration.Instance.DbContext;
 
-            var absolutePathToSharedDataSourceDefinition =
-                GetExistingFilePath(Configuration.Instance.ReportsPath, sharedDataSourcePath)
-                ?? GetExistingFilePath(Configuration.Instance.SharedDataSourcesPath, sharedDataSourcePath);
-
-            if (string.IsNullOrEmpty(absolutePathToSharedDataSourceDefinition))
-            {
+            if (context == null) {
                 throw new NullReferenceException($"The path {sharedDataSourcePath} cannot be resolved.");
             }
 
-            using (var fs = new FileStream(absolutePathToSharedDataSourceDefinition, FileMode.Open, FileAccess.Read, FileShare.Read))
+            var sds = context.SharedDataSources.FirstOrDefault(m => m.Uri == sharedDataSourcePath);
+            using (var ms = new MemoryStream(sds.Bytes))
             {
-                return (Telerik.Reporting.DataSource)new Telerik.Reporting.XmlSerialization.ReportXmlSerializer()
-                    .Deserialize(fs);
+                    return (Telerik.Reporting.DataSource)new Telerik.Reporting.XmlSerialization.ReportXmlSerializer()
+                        .Deserialize(ms);
             }
+
+            //ValidateConfiguration();
+
+            //var absolutePathToSharedDataSourceDefinition =
+            //    GetExistingFilePath(Configuration.Instance.ReportsPath, sharedDataSourcePath)
+            //    ?? GetExistingFilePath(Configuration.Instance.SharedDataSourcesPath, sharedDataSourcePath);
+
+            //if (string.IsNullOrEmpty(absolutePathToSharedDataSourceDefinition))
+            //{
+            //    throw new NullReferenceException($"The path {sharedDataSourcePath} cannot be resolved.");
+            //}
+
+            //using (var fs = new FileStream(absolutePathToSharedDataSourceDefinition, FileMode.Open, FileAccess.Read, FileShare.Read))
+            //{
+            //    return (Telerik.Reporting.DataSource)new Telerik.Reporting.XmlSerialization.ReportXmlSerializer()
+            //        .Deserialize(fs);
+            //}
         }
 
         static string GetExistingFilePath(string basePath, string sharedDataSourcePath)
@@ -71,10 +87,13 @@
 
             public string SharedDataSourcesPath { get; private set; }
 
-            public void Init(string reportsPath, string sharedDataSourcesPath)
+            public DbContext DbContext { get; private set; }
+
+            public void Init(string reportsPath, string sharedDataSourcesPath, DbContext dbContext)
             {
                 this.ReportsPath = reportsPath;
                 this.SharedDataSourcesPath = sharedDataSourcesPath;
+                this.DbContext = dbContext;
             }
         }
     }
