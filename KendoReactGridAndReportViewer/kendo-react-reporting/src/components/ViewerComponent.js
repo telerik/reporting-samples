@@ -30,9 +30,8 @@ class ViewerComponent extends Component {
                 viewerContainerStyle={{
                     position: 'absolute',
                     height: '90%',
-                    width: '55%',
+                    width: '50%',
                     top: '6%',
-                    overflow: 'hidden',
                     clear: 'both',
                     fontFamily: 'ms sans serif'
                 }}
