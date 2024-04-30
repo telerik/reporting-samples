@@ -17,4 +17,3 @@ export default class ReportDesigner extends Component {
         return <div id="reportDesigner1"></div>
     }
 }
-
