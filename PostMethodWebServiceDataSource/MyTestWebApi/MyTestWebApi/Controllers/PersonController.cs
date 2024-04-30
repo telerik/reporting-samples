@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
-using Newtonsoft.Json;
-
-
+﻿using System.Web.Http;
 
 namespace MyTestWebApi.Controllers
 {
-
-        public class Person
+    public class Person
         {
             public string Name { get; set; }
             public string[] Surname { get; set; }
@@ -29,7 +20,4 @@ namespace MyTestWebApi.Controllers
             return  new Person() { Name = "Kiki", Surname = new string[] { "Jameson", "Another surname" } };
             }
         }
-
-    
-
 }
