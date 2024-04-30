@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Telerik HTML5 Report Viewer Demo</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link href="https://kendo.cdn.telerik.com/2022.3.913/styles/kendo.common.min.css" rel="stylesheet" id="common-css" />
+    <link href="https://kendo.cdn.telerik.com/2022.3.913/styles/kendo.blueopal.min.css" rel="stylesheet" id="skin-css" />
+
+    <script src="/Scripts/themeSwitcher.js"></script>
+
+    <script src="/api/reports/resources/js/telerikReportViewer"></script>
+
+    <style>
+        body {
+            font-family: Verdana, Arial, sans-serif;
+            margin: 5px;
+        }
+
+        #reportViewer1 {
+            position: absolute;
+            left: 5px;
+            right: 5px;
+            top: 40px;
+            bottom: 5px;
+            overflow: hidden;
+            clear: both;
+        }
+
+        #theme-switcher {
+            float: right;
+            width: 12em;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <select id="theme-switcher"></select>
+
+    <div id="reportViewer1">
+        loading...
+    </div>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            //Theme switcher
+            themeSwitcher(
+                '#theme-switcher',
+                '#common-css',
+                '#skin-css');
+
+            $("#reportViewer1")
+                .telerik_ReportViewer({
+                    // For a complete overview over all the parameters check https://docs.telerik.com/reporting/html5-report-viewer-jquery-fn-telerik-reportviewer
+                    // In this template there are examples included of the most common parameters
+
+                    // The URL of the service which will serve reports.
+                    // The URL corresponds to the name of the controller class (ReportsController).
+                    // For more information on how to configure the service please check https://docs.telerik.com/reporting/embedding-reports/host-the-report-engine-remotely/telerik-reporting-rest-services/overview.
+                    serviceUrl: "api/reports/",
+
+                    // The URL for the report viewer template. The template can be edited -
+                    // new functionalities can be added and unneeded ones can be removed.
+                    // For more information please check https://docs.telerik.com/reporting/embedding-reports/display-reports-in-applications/web-application/html5-report-viewer/customizing/styling-and-appearance/templates-structure.
+                    // templateUrl: 'ReportViewer/templates/telerikReportViewerTemplate.html',
+
+                    //ReportSource - report description used with REST service.
+                    reportSource: {
+
+                        // The report can be set to a report file name (.trdx or .trdp report definition)
+                        // or CLR type name (report class definition).
+                        report: "Report Catalog.trdp",
+
+                        // Parameters name value dictionary
+                        //parameters: {}
+                        // Example of passing an array [] of parameters-values to the parameter 'Year'
+                        //parameters: { Year: [2001, 2003, 2004] }
+                    },
+
+                    //parameters: {
+                    //    editors: {
+                    //        singleSelect: telerikReportViewer.ParameterEditorTypes.COMBO_BOX,
+                    //        multiSelect: telerikReportViewer.ParameterEditorTypes.COMBO_BOX,
+                    //    }
+                    //},
+
+                    // Report Server connection configuration
+                    // If Report Server is used instead of hosting a REST Service, comment out 'serviceUrl' and 'reportSource' above
+                    // uncomment 'reportServer' and 'reportSource' below
+                    //reportServer: {
+                    //    url: "http://report-server-host:83",
+                    //    username: "admin",
+                    //    password: "adminpass"
+                    //},
+                    //reportSource: {
+                    //    // For Report Server, use "{Category}/{ReportName}"
+                    //    report: "Samples/Dashboard"
+                    //},
+
+                    // Specifies whether the viewer is in interactive or print preview mode.
+                    // PRINT_PREVIEW - Displays the paginated report as if it is printed on paper. Interactivity is not enabled.
+                    // INTERACTIVE - Displays the report in its original width and height without paging. Additionally interactivity is enabled.
+                    viewMode: telerikReportViewer.ViewModes.INTERACTIVE,
+
+                    // Sets the scale mode of the viewer.
+                    // Three modes exist currently:
+                    // FIT_PAGE - The whole report will fit on the page (will zoom in or out), regardless of its width and height.
+                    // FIT_PAGE_WIDTH - The report will be zoomed in or out so that the width of the screen and the width of the report match.
+                    // SPECIFIC - Uses the scale to zoom in and out the report.
+                    scaleMode: telerikReportViewer.ScaleModes.SPECIFIC,
+
+                    // Zoom in and out the report using the scale
+                    // 1.0 is equal to 100%, i.e. the original size of the report
+                    scale: 1.0,
+
+                    //Enables or disables the accessibility features of the report viewer and its contents.
+                    enableAccessibility: false,
+
+                    //If set to true shows the Send Mail Message toolbar button
+                    sendEmail: { enabled: true }
+                });
+        });
+    </script>
+
+</body>
+</html>

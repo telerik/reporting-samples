@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://demos.telerik.com/reporting/api/reports/resources/js/telerikReportViewer"></script>
+
+    <link href="https://kendo.cdn.telerik.com/2022.3.913/styles/kendo.common.min.css" rel="stylesheet" id="common-css" />
+    <link href="https://kendo.cdn.telerik.com/2022.3.913/styles/kendo.blueopal.min.css" rel="stylesheet" id="skin-css" />
+
+    <style>
+        body {
+            font-family: Verdana, Arial, sans-serif;
+            margin: 5px;
+        }
+
+        #reportViewer1 {
+            width: 80vw;
+            margin-left: 10vw;
+            height: 1000px
+        }
+    </style>
+</head>
+<body>
+    <div id="reportViewer1">
+        Loading...
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#reportViewer1")
+                .telerik_ReportViewer({
+                    serviceUrl: "https://demos.telerik.com/reporting/api/reports/",
+                    reportSource: {
+                        report: "ReportBook.trbp",
+                    },
+                    renderingEnd: function (e, args) {
+                            document.title = args.bookmarkNodes[0].text;
+                    }
+                });
+        });
+    </script>
+</body>
+</html>

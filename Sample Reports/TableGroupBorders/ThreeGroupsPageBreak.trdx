@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report Width="6.5in" Name="ThreeGroupsPageBreak" xmlns="http://schemas.telerik.com/reporting/2023/3.0">
+  <DataSources>
+    <CsvDataSource RecordSeparators="&#xD;&#xA;" FieldSeparators="," HasHeaders="True" Name="csvDataSource1">
+      <Source>
+        <String>Z3JvdXAwLGdyb3VwMSxncm91cDIsdmFsdWUNCmcwLDAwLGFhLDExMTANCmcwLDAwLGFhLDEyMjANCmcwLDAwLGJiLDExMTENCmcwLDAwLGJiLDEyMjENCmcwLDAwLGNjLDExMTINCmcwLDAwLGNjLDEyMjINCmcwLDExLGFhLDIxMTANCmcwLDExLGFhLDIyMjANCmcwLDExLGJiLDIxMTENCmcwLDExLGJiLDIyMjENCmcwLDExLGNjLDIxMTINCmcwLDExLGNjLDIyMjINCmcwLDIyLGFhLDMxMTANCmcwLDIyLGFhLDMyMjANCmcwLDIyLGJiLDMxMTENCmcwLDIyLGJiLDMyMjENCmcwLDIyLGNjLDMxMTINCmcwLDIyLGNjLDMyMjINCmcxLDAwMjIsYWEsMTExMA0KZzEsMDAyMixhYSwxMjIwDQpnMSwwMDIyLGJiLDExMTENCmcxLDAwMjIsYmIsMTIyMQ0KZzEsMDAyMixjYywxMTEyDQpnMSwwMDIyLGNjLDEyMjINCmcxLDExMjIsYWEsMjExMA0KZzEsMTEyMixhYSwyMjIwDQpnMSwxMTIyLGJiLDIxMTENCmcxLDExMjIsYmIsMjIyMQ0KZzEsMTEyMixjYywyMTEyDQpnMSwxMTIyLGNjLDIyMjINCmcxLDIyMjIsYWEsMzExMA0KZzEsMjIyMixhYSwzMjIwDQpnMSwyMjIyLGJiLDMxMTENCmcxLDIyMjIsYmIsMzIyMQ0KZzEsMjIyMixjYywzMTEyDQpnMSwyMjIyLGNjLDMyMjINCmcyLDAwMjIsYWEsMTExMA0KZzIsMDAyMixhYSwxMjIwDQpnMiwwMDIyLGJiLDExMTENCmcyLDAwMjIsYmIsMTIyMQ0KZzIsMDAyMixjYywxMTEyDQpnMiwwMDIyLGNjLDEyMjINCmcyLDExMjIsYWEsMjExMA0KZzIsMTEyMixhYSwyMjIwDQpnMiwxMTIyLGJiLDIxMTENCmcyLDExMjIsYmIsMjIyMQ0KZzIsMTEyMixjYywyMTEyDQpnMiwxMTIyLGNjLDIyMjINCmcyLDIyMjIsYWEsMzExMA0KZzIsMjIyMixhYSwzMjIwDQpnMiwyMjIyLGJiLDMxMTENCmcyLDIyMjIsYmIsMzIyMQ0KZzIsMjIyMixjYywzMTEyDQpnMiwyMjIyLGNjLDMyMjI=</String>
+      </Source>
+      <Columns>
+        <DataColumn Name="group0" />
+        <DataColumn Name="group1" />
+        <DataColumn Name="group2" />
+        <DataColumn Name="value" Type="Integer" />
+      </Columns>
+    </CsvDataSource>
+  </DataSources>
+  <Items>
+    <DetailSection Height="0.504in" Name="detailSection1">
+      <Items>
+        <Crosstab DataSourceName="csvDataSource1" Width="3.4in" Height="0.504in" Left="0in" Top="0in" Name="crosstab1" StyleName="Office.TableNormal">
+          <Body>
+            <Cells>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.8in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.value" Name="textBox6" StyleName="Office.TableBody">
+                    <Style>
+                      <BorderStyle Default="None" Right="Solid" />
+                    </Style>
+                    <Bindings>
+                      <Binding Path="Style.BorderStyle.Top" Expression="= (Previous(Fields.group0) = Fields.group0) Or (Previous('group2', Fields.group0) = Fields.group0) Or (Previous('group1', Fields.group0) = Fields.group0) ? &quot;None&quot; : &quot;Solid&quot;" />
+                    </Bindings>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.8in" Height="0.104in" Left="0in" Top="0in" Name="textBox11" StyleName="Office.TableBody">
+                    <Style>
+                      <BorderStyle Top="None" Left="None" Right="Solid" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+            </Cells>
+            <Columns>
+              <Column Width="0.8in" />
+            </Columns>
+            <Rows>
+              <Row Height="0.2in" />
+              <Row Height="0.104in" />
+            </Rows>
+          </Body>
+          <Corner>
+            <Cells>
+              <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.8in" Height="0.2in" Left="0in" Top="0in" Value="group1" Name="textBox4" StyleName="Office.TableHeader">
+                    <Style>
+                      <BorderStyle Default="None" Top="Solid" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.8in" Height="0.2in" Left="0in" Top="0in" Value="group2" Name="textBox5" StyleName="Office.TableHeader">
+                    <Style>
+                      <BorderStyle Default="None" Top="Solid" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1in" Height="0.2in" Left="0in" Top="0in" Value="group0" Name="textBox8" StyleName="Office.TableHeader">
+                    <Style>
+                      <BorderStyle Default="None" Top="Solid" Left="Solid" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+            </Cells>
+          </Corner>
+          <Style>
+            <BorderStyle Default="None" />
+          </Style>
+          <RowGroups>
+            <TableGroup GroupKeepTogether="True" Name="group0">
+              <ReportItem>
+                <TextBox Width="1in" Height="0.304in" Left="0in" Top="0in" Value="= Fields.group0" Name="textBox7" StyleName="Office.TableGroup">
+                  <Style>
+                    <BorderStyle Default="None" Bottom="Solid" Left="Solid" />
+                  </Style>
+                  <Bindings>
+                    <Binding Path="Style.BorderStyle.Top" Expression="= Previous(Fields.group0) = Fields.group0 ? &quot;None&quot; : &quot;Solid&quot;" />
+                  </Bindings>
+                </TextBox>
+              </ReportItem>
+              <ChildGroups>
+                <TableGroup Name="group1">
+                  <ReportItem>
+                    <TextBox Width="0.8in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.group1" Name="textBox2" StyleName="Office.TableGroup">
+                      <Style>
+                        <BorderStyle Default="None" />
+                      </Style>
+                      <Bindings>
+                        <Binding Path="Style.BorderStyle.Top" Expression="= Previous(Fields.group0) = Fields.group0 ? &quot;None&quot; : &quot;Solid&quot;" />
+                      </Bindings>
+                    </TextBox>
+                  </ReportItem>
+                  <ChildGroups>
+                    <TableGroup Name="group2">
+                      <ReportItem>
+                        <TextBox Width="0.8in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.group2" Name="textBox3" StyleName="Office.TableGroup">
+                          <Style>
+                            <BorderStyle Default="None" />
+                          </Style>
+                          <Bindings>
+                            <Binding Path="Style.BorderStyle.Top" Expression="= (Previous(Fields.group0) = Fields.group0) Or (Previous('group1', Fields.group0) = Fields.group0) ? &quot;None&quot; : &quot;Solid&quot;" />
+                          </Bindings>
+                        </TextBox>
+                      </ReportItem>
+                      <ChildGroups>
+                        <TableGroup Name="detail">
+                          <Groupings>
+                            <Grouping />
+                          </Groupings>
+                        </TableGroup>
+                      </ChildGroups>
+                      <Groupings>
+                        <Grouping Expression="= Fields.group2" />
+                      </Groupings>
+                      <Sortings>
+                        <Sorting Expression="= Fields.group2" Direction="Asc" />
+                      </Sortings>
+                    </TableGroup>
+                  </ChildGroups>
+                  <Groupings>
+                    <Grouping Expression="= Fields.group1" />
+                  </Groupings>
+                  <Sortings>
+                    <Sorting Expression="= Fields.group1" Direction="Asc" />
+                  </Sortings>
+                </TableGroup>
+                <TableGroup Name="group">
+                  <ReportItem>
+                    <TextBox Width="0.8in" Height="0.104in" Left="0in" Top="0in" Name="textBox9" StyleName="Office.TableGroup">
+                      <Style>
+                        <BorderStyle Top="None" Left="None" Right="None" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                  <ChildGroups>
+                    <TableGroup Name="group3">
+                      <ReportItem>
+                        <TextBox Width="0.8in" Height="0.104in" Left="0in" Top="0in" Name="textBox10" StyleName="Office.TableGroup">
+                          <Style>
+                            <BorderStyle Top="None" Left="None" Right="None" />
+                          </Style>
+                        </TextBox>
+                      </ReportItem>
+                      <ChildGroups>
+                        <TableGroup Name="group4" />
+                      </ChildGroups>
+                    </TableGroup>
+                  </ChildGroups>
+                </TableGroup>
+              </ChildGroups>
+              <Groupings>
+                <Grouping Expression="= Fields.group0" />
+              </Groupings>
+              <Sortings>
+                <Sorting Expression="= Fields.group0" Direction="Asc" />
+              </Sortings>
+            </TableGroup>
+          </RowGroups>
+          <ColumnGroups>
+            <TableGroup Name="value">
+              <ReportItem>
+                <TextBox Width="0.8in" Height="0.2in" Left="0in" Top="0in" Value="value" Name="textBox1" StyleName="Office.TableHeader">
+                  <Style>
+                    <BorderStyle Default="None" Top="Solid" Right="Solid" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+          </ColumnGroups>
+        </Crosstab>
+      </Items>
+    </DetailSection>
+  </Items>
+  <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+    <Margins>
+      <MarginsU Left="1in" Right="1in" Top="1in" Bottom="1in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="20, 34, 77">
+        <Font Name="Calibri" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="Table" StyleName="Office.TableNormal" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <Font Name="Calibri" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Office.TableBody" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style BackgroundColor="121, 167, 227" Color="20, 34, 77" VerticalAlign="Middle">
+        <Font Name="Calibri" Size="10pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Office.TableHeader" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style BackgroundColor="238, 244, 251" Color="20, 34, 77">
+        <Font Name="Calibri" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Office.TableGroup" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+</Report>
