@@ -1,0 +1,1636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report Width="8.53in" Name="SampleReport" SnapGridSize="0.1cm" xmlns="http://schemas.telerik.com/reporting/2023/3.0">
+  <DataSources>
+    <CsvDataSource RecordSeparators="&#xD;&#xA;" FieldSeparators="," HasHeaders="True" Name="csvDataSource1">
+      <Source>
+        <String>Tm90aWZpY2F0aW9uVHlwZQ0KUmVwb3J0DQpDYXRlZ29yeQ0KRGF0YSBDb25uZWN0aW9uDQpEYXRhIEFsZXJ0DQpTY2hlZHVsZWQgVGFzaw==</String>
+      </Source>
+      <Columns>
+        <DataColumn Name="NotificationType" />
+      </Columns>
+    </CsvDataSource>
+    <WebServiceDataSource ParameterValues="{&quot;@webServiceUrl&quot;:&quot;http://localhost/api/notifications/report&quot;,&quot;@ReceivedBefore&quot;:&quot;2019-11-29T16:29:27.9106415+02:00&quot;,&quot;@ReceivedAfter&quot;:&quot;2019-11-29T16:29:27.9106415+02:00&quot;}" AuthParameterValues="null" ServiceUrl="@webServiceUrl" DataSelector="$[?(@.Received&lt;='@ReceivedBefore'&amp;&amp;@.Received&gt;='@ReceivedAfter')]" Name="reportNotificationWebServiceDataSource">
+      <Source>
+        <String></String>
+      </Source>
+      <Parameters>
+        <WebServiceParameter WebServiceParameterType="Inline" Name="@webServiceUrl">
+          <Value>
+            <String>= Parameters.webServiceUrl.Value + "report"</String>
+          </Value>
+        </WebServiceParameter>
+        <WebServiceParameter WebServiceParameterType="Inline" Name="@ReceivedBefore">
+          <Value>
+            <String>= Parameters.ReceivedBefore.Value</String>
+          </Value>
+        </WebServiceParameter>
+        <WebServiceParameter WebServiceParameterType="Inline" Name="@ReceivedAfter">
+          <Value>
+            <String>= Parameters.ReceivedAfter.Value</String>
+          </Value>
+        </WebServiceParameter>
+      </Parameters>
+    </WebServiceDataSource>
+    <WebServiceDataSource ParameterValues="{&quot;@webServiceUrl&quot;:&quot;http://localhost/api/notifications/category&quot;,&quot;@ReceivedBefore&quot;:&quot;2019-11-29T16:29:27.9106415+02:00&quot;,&quot;@ReceivedAfter&quot;:&quot;2019-11-29T16:29:27.9106415+02:00&quot;}" AuthParameterValues="null" ServiceUrl="@webServiceUrl" DataSelector="$[?(@.Received&lt;='@ReceivedBefore'&amp;&amp;@.Received&gt;='@ReceivedAfter')]" Name="categpryNotificationWebServiceDataSource">
+      <Parameters>
+        <WebServiceParameter WebServiceParameterType="Inline" Name="@webServiceUrl">
+          <Value>
+            <String>= Parameters.webServiceUrl.Value + "category"</String>
+          </Value>
+        </WebServiceParameter>
+        <WebServiceParameter WebServiceParameterType="Inline" Name="@ReceivedBefore">
+          <Value>
+            <String>= Parameters.ReceivedBefore.Value</String>
+          </Value>
+        </WebServiceParameter>
+        <WebServiceParameter WebServiceParameterType="Inline" Name="@ReceivedAfter">
+          <Value>
+            <String>= Parameters.ReceivedAfter.Value</String>
+          </Value>
+        </WebServiceParameter>
+      </Parameters>
+    </WebServiceDataSource>
+    <WebServiceDataSource ParameterValues="{&quot;@webServiceUrl&quot;:&quot;http://localhost/api/notifications/alert&quot;,&quot;@ReceivedBefore&quot;:&quot;2019-11-29T16:29:27.9106415+02:00&quot;,&quot;@ReceivedAfter&quot;:&quot;2019-11-29T16:29:27.9106415+02:00&quot;}" AuthParameterValues="null" ServiceUrl="@webServiceUrl" DataSelector="$[?(@.Received&lt;='@ReceivedBefore'&amp;&amp;@.Received&gt;='@ReceivedAfter')]" Name="alertNotificationWebServiceDataSource">
+      <Parameters>
+        <WebServiceParameter WebServiceParameterType="Inline" Name="@webServiceUrl">
+          <Value>
+            <String>= Parameters.webServiceUrl.Value + "alert"</String>
+          </Value>
+        </WebServiceParameter>
+        <WebServiceParameter WebServiceParameterType="Inline" Name="@ReceivedBefore">
+          <Value>
+            <String>= Parameters.ReceivedBefore.Value</String>
+          </Value>
+        </WebServiceParameter>
+        <WebServiceParameter WebServiceParameterType="Inline" Name="@ReceivedAfter">
+          <Value>
+            <String>= Parameters.ReceivedAfter.Value</String>
+          </Value>
+        </WebServiceParameter>
+      </Parameters>
+    </WebServiceDataSource>
+    <WebServiceDataSource ParameterValues="{&quot;@webServiceUrl&quot;:&quot;http://localhost/api/notifications/connection&quot;,&quot;@ReceivedBefore&quot;:&quot;2019-11-29T16:29:27.9106415+02:00&quot;,&quot;@ReceivedAfter&quot;:&quot;2019-11-29T16:29:27.9106415+02:00&quot;}" AuthParameterValues="null" ServiceUrl="@webServiceUrl" DataSelector="$[?(@.Received&lt;='@ReceivedBefore'&amp;&amp;@.Received&gt;='@ReceivedAfter')]" Name="connectionNotificationWebServiceDataSource">
+      <Parameters>
+        <WebServiceParameter WebServiceParameterType="Inline" Name="@webServiceUrl">
+          <Value>
+            <String>= Parameters.webServiceUrl.Value +"connection"</String>
+          </Value>
+        </WebServiceParameter>
+        <WebServiceParameter WebServiceParameterType="Inline" Name="@ReceivedBefore">
+          <Value>
+            <String>= Parameters.ReceivedBefore.Value</String>
+          </Value>
+        </WebServiceParameter>
+        <WebServiceParameter WebServiceParameterType="Inline" Name="@ReceivedAfter">
+          <Value>
+            <String>= Parameters.ReceivedAfter.Value</String>
+          </Value>
+        </WebServiceParameter>
+      </Parameters>
+    </WebServiceDataSource>
+    <WebServiceDataSource ParameterValues="{&quot;@webServiceUrl&quot;:&quot;http://localhost/api/notifications/task&quot;,&quot;@ReceivedBefore&quot;:&quot;2019-11-29T16:29:27.9106415+02:00&quot;,&quot;@ReceivedAfter&quot;:&quot;2019-11-29T16:29:27.9106415+02:00&quot;}" AuthParameterValues="null" ServiceUrl="@webServiceUrl" DataSelector="$[?(@.Received&lt;='@ReceivedBefore'&amp;&amp;@.Received&gt;='@ReceivedAfter')]" Name="taskNotificationWebServiceDataSource">
+      <Parameters>
+        <WebServiceParameter WebServiceParameterType="Inline" Name="@webServiceUrl">
+          <Value>
+            <String>= Parameters.webServiceUrl.Value + "task"</String>
+          </Value>
+        </WebServiceParameter>
+        <WebServiceParameter WebServiceParameterType="Inline" Name="@ReceivedBefore">
+          <Value>
+            <String>= Parameters.ReceivedBefore.Value</String>
+          </Value>
+        </WebServiceParameter>
+        <WebServiceParameter WebServiceParameterType="Inline" Name="@ReceivedAfter">
+          <Value>
+            <String>= Parameters.ReceivedAfter.Value</String>
+          </Value>
+        </WebServiceParameter>
+      </Parameters>
+    </WebServiceDataSource>
+  </DataSources>
+  <Items>
+    <DetailSection Height="6.614in" Name="detailSection1">
+      <Items>
+        <Panel Width="8.53in" Height="1in" Left="0in" Top="0in" Name="panel1">
+          <Items>
+            <Table DataSourceName="reportNotificationWebServiceDataSource" Width="8.527in" Height="0.502in" Left="0in" Top="0.275in" Name="reportNotificationTable" StyleName="Civic.TableNormal">
+              <Body>
+                <Cells>
+                  <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.771in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.Name" Name="textBox11" StyleName="Civic.TableBody">
+                        <Style VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.6in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.Extension" Name="textBox12" StyleName="Civic.TableBody">
+                        <Style VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.722in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.Description" Name="textBox13" StyleName="Civic.TableBody">
+                        <Style VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="4" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.681in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.UserAction" Name="textBox14" StyleName="Civic.TableBody">
+                        <Style VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="5" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="1.003in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.Id" Name="textBox15" StyleName="Civic.TableBody">
+                        <Style VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="6" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.882in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.CategoryId" Name="textBox16" StyleName="Civic.TableBody">
+                        <Style VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="7" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.902in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.CreatedByUserId" Name="textBox17" StyleName="Civic.TableBody">
+                        <Style VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="8" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.611in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.IsDraft" Name="textBox18" StyleName="Civic.TableBody">
+                        <Style VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="9" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.771in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.LockedByUserId" Name="textBox19" StyleName="Civic.TableBody">
+                        <Style VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="10" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.771in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.Revision" Name="textBox20" StyleName="Civic.TableBody">
+                        <Style VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.813in" Height="0.2in" Left="0in" Top="0in" Value="=Fields.Received" Name="textBox44" StyleName="Civic.TableBody">
+                        <Style VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                </Cells>
+                <Columns>
+                  <Column Width="0.813in" />
+                  <Column Width="0.771in" />
+                  <Column Width="0.6in" />
+                  <Column Width="0.722in" />
+                  <Column Width="0.681in" />
+                  <Column Width="1.003in" />
+                  <Column Width="0.882in" />
+                  <Column Width="0.902in" />
+                  <Column Width="0.611in" />
+                  <Column Width="0.771in" />
+                  <Column Width="0.771in" />
+                </Columns>
+                <Rows>
+                  <Row Height="0.2in" />
+                </Rows>
+              </Body>
+              <Corner />
+              <Style>
+                <BorderColor Default="235, 235, 235" />
+              </Style>
+              <RowGroups>
+                <TableGroup Name="detail">
+                  <Groupings>
+                    <Grouping />
+                  </Groupings>
+                </TableGroup>
+              </RowGroups>
+              <ColumnGroups>
+                <TableGroup Name="group">
+                  <ReportItem>
+                    <TextBox Width="0.813in" Height="29px" Left="0in" Top="0in" Value="Received on" Name="textBox27" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101" VerticalAlign="Middle">
+                        <Font Size="12px" />
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="name">
+                  <ReportItem>
+                    <TextBox Width="0.771in" Height="29px" Left="0in" Top="0in" Value="Name" Name="textBox1" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101" VerticalAlign="Middle">
+                        <Font Size="12px" />
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="extension">
+                  <ReportItem>
+                    <TextBox Width="0.6in" Height="29px" Left="0in" Top="0in" Value="Extension" Name="textBox2" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101" VerticalAlign="Middle">
+                        <Font Size="12px" />
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="description">
+                  <ReportItem>
+                    <TextBox Width="0.722in" Height="29px" Left="0in" Top="0in" Value="Description" Name="textBox3" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101" VerticalAlign="Middle">
+                        <Font Size="12px" />
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="userAction">
+                  <ReportItem>
+                    <TextBox Width="0.681in" Height="29px" Left="0in" Top="0in" Value="User action" Name="textBox4" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101" VerticalAlign="Middle">
+                        <Font Size="12px" />
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="id">
+                  <ReportItem>
+                    <TextBox Width="1.003in" Height="29px" Left="0in" Top="0in" Value="ID" Name="textBox5" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101" VerticalAlign="Middle">
+                        <Font Size="12px" />
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="categoryId">
+                  <ReportItem>
+                    <TextBox Width="0.882in" Height="29px" Left="0in" Top="0in" Value="Category ID" Name="textBox6" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101" VerticalAlign="Middle">
+                        <Font Size="12px" />
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="createdByUserId">
+                  <ReportItem>
+                    <TextBox Width="0.902in" Height="29px" Left="0in" Top="0in" Value="Created by User ID" Name="textBox7" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101" VerticalAlign="Middle">
+                        <Font Size="12px" />
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="isDraft">
+                  <ReportItem>
+                    <TextBox Width="0.611in" Height="29px" Left="0in" Top="0in" Value="Is Draft" Name="textBox8" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101" VerticalAlign="Middle">
+                        <Font Size="12px" />
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="lockedByUserId">
+                  <ReportItem>
+                    <TextBox Width="0.771in" Height="29px" Left="0in" Top="0in" Value="Locked by User ID" Name="textBox9" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101" VerticalAlign="Middle">
+                        <Font Size="12px" />
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="revision">
+                  <ReportItem>
+                    <TextBox Width="0.771in" Height="29px" Left="0in" Top="0in" Value="Revision" Name="textBox10" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101" VerticalAlign="Middle">
+                        <Font Size="12px" />
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+              </ColumnGroups>
+              <Filters>
+                <Filter Expression="=Fields.Received" Operator="LessOrEqual" Value="= Parameters.ReceivedBefore.Value" />
+                <Filter Expression="=Fields.Received" Operator="GreaterOrEqual" Value="= Parameters.ReceivedAfter.Value" />
+              </Filters>
+            </Table>
+            <TextBox Width="2.165in" Height="0.275in" Left="0in" Top="0in" Value="Report Notifications" Name="textBox21">
+              <Style Color="101, 101, 101" VerticalAlign="Middle">
+                <Font Size="14px" Bold="True" />
+              </Style>
+            </TextBox>
+            <Panel Width="8.53in" Height="0.223in" Left="0in" Top="0.777in" Name="panel4" />
+          </Items>
+          <Bindings>
+            <Binding Path="Visible" Expression="= &quot;Report&quot; In Parameters.NotificationType.Value" />
+          </Bindings>
+        </Panel>
+        <Panel Width="8.53in" Height="1in" Left="0in" Top="1in" Name="panel2">
+          <Items>
+            <Table DataSourceName="categpryNotificationWebServiceDataSource" Width="8.53in" Height="0.502in" Left="0in" Top="0.275in" Name="table1" StyleName="Civic.TableNormal">
+              <Body>
+                <Cells>
+                  <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="2.857in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.Name" Name="textBox26" StyleName="Civic.TableBody">
+                        <Style>
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="2.14in" Height="0.2in" Left="0in" Top="0in" Value="=Fields.Id" Name="textBox28" StyleName="Civic.TableBody">
+                        <Style>
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="2.725in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.UserAction" Name="textBox24" StyleName="Civic.TableBody">
+                        <Style>
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.808in" Height="0.2in" Left="0in" Top="0in" Value="=Fields.Received" Name="textBox46" StyleName="Civic.TableBody">
+                        <Style>
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                </Cells>
+                <Columns>
+                  <Column Width="0.808in" />
+                  <Column Width="2.857in" />
+                  <Column Width="2.725in" />
+                  <Column Width="2.14in" />
+                </Columns>
+                <Rows>
+                  <Row Height="0.2in" />
+                </Rows>
+              </Body>
+              <Corner />
+              <Style VerticalAlign="Middle">
+                <Font Size="12px" />
+                <BorderColor Default="235, 235, 235" />
+              </Style>
+              <RowGroups>
+                <TableGroup Name="detail">
+                  <Groupings>
+                    <Grouping />
+                  </Groupings>
+                </TableGroup>
+              </RowGroups>
+              <ColumnGroups>
+                <TableGroup Name="group1">
+                  <ReportItem>
+                    <TextBox Width="0.808in" Height="29px" Left="0in" Top="0in" Value="Received on" Name="textBox45" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="name1">
+                  <ReportItem>
+                    <TextBox Width="2.857in" Height="29px" Left="0in" Top="0in" Value="Name" Name="textBox23" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="id1">
+                  <ReportItem>
+                    <TextBox Width="2.725in" Height="29px" Left="0in" Top="0in" Value="User action" Name="textBox29" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="userAction1">
+                  <ReportItem>
+                    <TextBox Width="2.14in" Height="29px" Left="0in" Top="0in" Value="ID" Name="textBox25" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+              </ColumnGroups>
+            </Table>
+            <TextBox Width="2.165in" Height="0.275in" Left="0in" Top="0in" Value="Category Notifications" Name="textBox22">
+              <Style Color="101, 101, 101" VerticalAlign="Middle">
+                <Font Size="14px" Bold="True" />
+              </Style>
+            </TextBox>
+            <Panel Width="8.53in" Height="0.223in" Left="0in" Top="0.777in" Name="panel7" />
+          </Items>
+          <Bindings>
+            <Binding Path="Visible" Expression="= &quot;Category&quot; In Parameters.NotificationType.Value" />
+          </Bindings>
+        </Panel>
+        <Panel Width="8.639in" Height="1.912in" Left="0in" Top="3in" Name="panel5">
+          <Items>
+            <TextBox Width="2.165in" Height="0.275in" Left="0in" Top="0in" Value="Data Alert Notifications" Name="textBox30">
+              <Style Color="101, 101, 101" VerticalAlign="Middle">
+                <Font Size="14px" Bold="True" />
+              </Style>
+            </TextBox>
+            <Table DataSourceName="alertNotificationWebServiceDataSource" Width="8.639in" Height="1.414in" Left="0in" Top="0.275in" Name="table4" StyleName="Civic.TableNormal">
+              <Body>
+                <Cells>
+                  <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.964in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.Id" Name="textBox88" StyleName="">
+                        <Style VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderStyle Default="Solid" />
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="1.728in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.CreatedByUserId" Name="textBox89" StyleName="">
+                        <Style VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderStyle Default="Solid" />
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.964in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.DateCreated" Name="textBox90" StyleName="">
+                        <Style VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderStyle Default="Solid" />
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="4" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.964in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.Enabled" Name="textBox91" StyleName="">
+                        <Style VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderStyle Default="Solid" />
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="5" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.964in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.ExecuteImmediately" Name="textBox92" StyleName="">
+                        <Style VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderStyle Default="Solid" />
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="6" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.964in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.StartDate" Name="textBox93" StyleName="">
+                        <Style VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderStyle Default="Solid" />
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="2" ColumnIndex="0" RowSpan="1" ColumnSpan="8">
+                    <ReportItem>
+                      <Table Width="8.531in" Height="0.606in" Left="0in" Top="0in" Name="table7" StyleName="Civic.TableBody">
+                        <Body>
+                          <Cells>
+                            <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                              <ReportItem>
+                                <TextBox Width="0.827in" Height="0.2in" Left="0in" Top="0in" Value="=Fields.ReportId" Name="textBox78" StyleName="Civic.TableBody">
+                                  <Style>
+                                    <BorderColor Default="235, 235, 235" />
+                                  </Style>
+                                </TextBox>
+                              </ReportItem>
+                            </TableCell>
+                            <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                              <ReportItem>
+                                <TextBox Width="1.773in" Height="0.2in" Left="0in" Top="0in" Value="=Fields.Parameters" Name="textBox80" StyleName="Civic.TableBody">
+                                  <Style>
+                                    <BorderColor Default="235, 235, 235" />
+                                  </Style>
+                                </TextBox>
+                              </ReportItem>
+                            </TableCell>
+                            <TableCell RowIndex="0" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                              <ReportItem>
+                                <TextBox Width="0.753in" Height="0.2in" Left="0in" Top="0in" Value="=Fields.DocumentFormat" Name="textBox81" StyleName="Civic.TableBody">
+                                  <Style>
+                                    <BorderColor Default="235, 235, 235" />
+                                  </Style>
+                                </TextBox>
+                              </ReportItem>
+                            </TableCell>
+                            <TableCell RowIndex="0" ColumnIndex="4" RowSpan="1" ColumnSpan="1">
+                              <ReportItem>
+                                <TextBox Width="0.885in" Height="0.2in" Left="0in" Top="0in" Value="=Fields.DocumentId" Name="textBox82" StyleName="Civic.TableBody">
+                                  <Style>
+                                    <BorderColor Default="235, 235, 235" />
+                                  </Style>
+                                </TextBox>
+                              </ReportItem>
+                            </TableCell>
+                            <TableCell RowIndex="0" ColumnIndex="5" RowSpan="1" ColumnSpan="1">
+                              <ReportItem>
+                                <TextBox Width="4.031in" Height="0.2in" Left="0in" Top="0in" Value="=Fields.Link" Name="textBox83" StyleName="Civic.TableBody">
+                                  <Style>
+                                    <BorderColor Default="235, 235, 235" />
+                                  </Style>
+                                </TextBox>
+                              </ReportItem>
+                            </TableCell>
+                            <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                              <ReportItem>
+                                <TextBox Width="0.158in" Height="0.2in" Left="0in" Top="0in" Name="textBox57" StyleName="Civic.TableBody">
+                                  <Style>
+                                    <BorderStyle Default="None" />
+                                    <BorderColor Default="235, 235, 235" />
+                                  </Style>
+                                </TextBox>
+                              </ReportItem>
+                            </TableCell>
+                          </Cells>
+                          <Columns>
+                            <Column Width="0.158in" />
+                            <Column Width="0.827in" />
+                            <Column Width="1.773in" />
+                            <Column Width="0.753in" />
+                            <Column Width="0.885in" />
+                            <Column Width="4.031in" />
+                          </Columns>
+                          <Rows>
+                            <Row Height="0.2in" />
+                          </Rows>
+                        </Body>
+                        <Corner />
+                        <Style VerticalAlign="Middle">
+                          <BorderStyle Default="None" />
+                          <BorderColor Default="235, 235, 235" />
+                          <Padding Right="10px" Bottom="10px" />
+                        </Style>
+                        <RowGroups>
+                          <TableGroup Name="detailTableGroup1">
+                            <Groupings>
+                              <Grouping />
+                            </Groupings>
+                          </TableGroup>
+                        </RowGroups>
+                        <ColumnGroups>
+                          <TableGroup Name="group12">
+                            <ReportItem>
+                              <TextBox Width="0.158in" Height="29px" Left="0in" Top="0in" Name="textBox56" StyleName="">
+                                <Style Color="101, 101, 101" VerticalAlign="Middle">
+                                  <Font Size="12px" />
+                                  <BorderStyle Default="None" />
+                                  <BorderColor Default="235, 235, 235" />
+                                </Style>
+                              </TextBox>
+                            </ReportItem>
+                          </TableGroup>
+                          <TableGroup Name="tableGroup3">
+                            <ReportItem>
+                              <TextBox Width="0.827in" Height="29px" Left="0in" Top="0in" Value="Repot ID" Name="textBox84" StyleName="">
+                                <Style BackgroundColor="244, 244, 244" Color="101, 101, 101" TextAlign="Left" VerticalAlign="Middle">
+                                  <Font Size="12px" />
+                                  <BorderStyle Default="Solid" />
+                                  <BorderColor Default="235, 235, 235" />
+                                </Style>
+                              </TextBox>
+                            </ReportItem>
+                          </TableGroup>
+                          <TableGroup Name="tableGroup4">
+                            <ReportItem>
+                              <TextBox Width="1.773in" Height="29px" Left="0in" Top="0in" Value="Parameters" Name="textBox85" StyleName="">
+                                <Style BackgroundColor="244, 244, 244" Color="101, 101, 101" TextAlign="Left" VerticalAlign="Middle">
+                                  <Font Size="12px" />
+                                  <BorderStyle Default="Solid" />
+                                  <BorderColor Default="235, 235, 235" />
+                                </Style>
+                              </TextBox>
+                            </ReportItem>
+                          </TableGroup>
+                          <TableGroup Name="tableGroup5">
+                            <ReportItem>
+                              <TextBox Width="0.753in" Height="29px" Left="0in" Top="0in" Value="Document format" Name="textBox94" StyleName="">
+                                <Style BackgroundColor="244, 244, 244" Color="101, 101, 101" TextAlign="Left" VerticalAlign="Middle">
+                                  <Font Size="12px" />
+                                  <BorderStyle Default="Solid" />
+                                  <BorderColor Default="235, 235, 235" />
+                                </Style>
+                              </TextBox>
+                            </ReportItem>
+                          </TableGroup>
+                          <TableGroup Name="group5">
+                            <ReportItem>
+                              <TextBox Width="0.885in" Height="29px" Left="0in" Top="0in" Value="Document ID" Name="textBox109" StyleName="">
+                                <Style BackgroundColor="244, 244, 244" Color="101, 101, 101" TextAlign="Left" VerticalAlign="Middle">
+                                  <Font Size="12px" />
+                                  <BorderStyle Default="Solid" />
+                                  <BorderColor Default="235, 235, 235" />
+                                </Style>
+                              </TextBox>
+                            </ReportItem>
+                          </TableGroup>
+                          <TableGroup Name="group6">
+                            <ReportItem>
+                              <TextBox Width="4.031in" Height="29px" Left="0in" Top="0in" Value="Link" Name="textBox128" StyleName="">
+                                <Style BackgroundColor="244, 244, 244" Color="101, 101, 101" TextAlign="Left" VerticalAlign="Middle">
+                                  <Font Size="12px" />
+                                  <BorderStyle Default="Solid" />
+                                  <BorderColor Default="235, 235, 235" />
+                                </Style>
+                              </TextBox>
+                            </ReportItem>
+                          </TableGroup>
+                        </ColumnGroups>
+                        <Bindings>
+                          <Binding Path="DataSource" Expression="=Fields.Reports" />
+                        </Bindings>
+                      </Table>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="7" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.964in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.RecurrenceRule" Name="textBox53" StyleName="Civic.TableBody">
+                        <Style VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="1" ColumnIndex="0" RowSpan="1" ColumnSpan="8">
+                    <ReportItem>
+                      <TextBox Width="8.531in" Height="0.3in" Left="3.896in" Top="0.414in" Value="= &quot;   &quot; + Fields.UserAction + &quot;d on &quot; + Fields.Received" Name="textBox79" StyleName="Civic.TableBody">
+                        <Style Color="101, 101, 101" VerticalAlign="Middle">
+                          <BorderStyle Default="None" />
+                          <BorderColor Default="235, 235, 235" />
+                          <Padding Top="10px" Bottom="5px" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="1.019in" Height="0.2in" Left="0in" Top="0in" Value="=Fields.Name" Name="textBox50" StyleName="Civic.TableBody">
+                        <Style VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                </Cells>
+                <Columns>
+                  <Column Width="1.019in" />
+                  <Column Width="0.964in" />
+                  <Column Width="1.728in" />
+                  <Column Width="0.964in" />
+                  <Column Width="0.964in" />
+                  <Column Width="0.964in" />
+                  <Column Width="0.964in" />
+                  <Column Width="0.964in" />
+                </Columns>
+                <Rows>
+                  <Row Height="0.2in" />
+                  <Row Height="0.3in" />
+                  <Row Height="0.612in" />
+                </Rows>
+              </Body>
+              <Corner>
+                <Cells>
+                  <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.108in" Height="29px" Left="0in" Top="0in" Value="id6" Name="textBox87">
+                        <Style Visible="False" BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                          <BorderColor Default="235, 235, 235" />
+                          <Padding Top="5px" Bottom="5px" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                </Cells>
+              </Corner>
+              <Style VerticalAlign="Middle">
+                <Font Size="12px" />
+                <BorderColor Default="235, 235, 235" />
+              </Style>
+              <RowGroups>
+                <TableGroup Name="id6">
+                  <ReportItem>
+                    <TextBox Width="0.108in" Height="1.112in" Left="0in" Top="0in" Value="= Fields.Id" Name="textBox86" StyleName="">
+                      <Style Visible="False" VerticalAlign="Middle">
+                        <Font Size="12px" />
+                        <BorderStyle Default="Solid" />
+                        <BorderColor Default="235, 235, 235" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                  <ChildGroups>
+                    <TableGroup Name="group7" />
+                    <TableGroup Name="detail">
+                      <Groupings>
+                        <Grouping />
+                      </Groupings>
+                    </TableGroup>
+                    <TableGroup Name="group8" />
+                  </ChildGroups>
+                  <Groupings>
+                    <Grouping Expression="= Fields.Id" />
+                  </Groupings>
+                  <Sortings>
+                    <Sorting Expression="= Fields.Id" Direction="Asc" />
+                  </Sortings>
+                </TableGroup>
+              </RowGroups>
+              <ColumnGroups>
+                <TableGroup Name="name4">
+                  <ReportItem>
+                    <TextBox Width="1.019in" Height="29px" Left="0in" Top="0in" Value="Name" Name="textBox70" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="id5">
+                  <ReportItem>
+                    <TextBox Width="0.964in" Height="29px" Left="0in" Top="0in" Value="ID" Name="textBox71" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="createdByUserId2">
+                  <ReportItem>
+                    <TextBox Width="1.728in" Height="29px" Left="0in" Top="0in" Value="Created by User ID" Name="textBox72" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="dateCreated1">
+                  <ReportItem>
+                    <TextBox Width="0.964in" Height="29px" Left="0in" Top="0in" Value="Date created" Name="textBox73" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="enabled1">
+                  <ReportItem>
+                    <TextBox Width="0.964in" Height="29px" Left="0in" Top="0in" Value="Enabled" Name="textBox74" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="executeImmediately1">
+                  <ReportItem>
+                    <TextBox Width="0.964in" Height="29px" Left="0in" Top="0in" Value="Execute immediately" Name="textBox75" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="startDate1">
+                  <ReportItem>
+                    <TextBox Width="0.964in" Height="29px" Left="0in" Top="0in" Value="Start date" Name="textBox76" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="recurrenceRule1">
+                  <ReportItem>
+                    <TextBox Width="0.964in" Height="29px" Left="0in" Top="0in" Value="Recurrence rule" Name="textBox77" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+              </ColumnGroups>
+            </Table>
+            <Panel Width="8.639in" Height="0.223in" Left="0in" Top="1.689in" Name="panel9" />
+          </Items>
+          <Bindings>
+            <Binding Path="Visible" Expression="= &quot;Data Alert&quot; In Parameters.NotificationType.Value" />
+          </Bindings>
+        </Panel>
+        <Panel Width="8.53in" Height="1in" Left="0in" Top="2in" Name="panel3">
+          <Items>
+            <TextBox Width="2.165in" Height="0.275in" Left="0in" Top="0in" Value="Data Connection Notifications" Name="textBox31">
+              <Style Color="101, 101, 101" VerticalAlign="Middle">
+                <Font Size="14px" Bold="True" />
+              </Style>
+            </TextBox>
+            <Table DataSourceName="connectionNotificationWebServiceDataSource" Width="8.529in" Height="0.502in" Left="0in" Top="0.275in" Name="table2" StyleName="Civic.TableNormal">
+              <Body>
+                <Cells>
+                  <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="1.285in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.Name" Name="textBox38" StyleName="Civic.TableBody">
+                        <Style>
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="1.285in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.Description" Name="textBox39" StyleName="Civic.TableBody">
+                        <Style>
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="1.285in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.Provider" Name="textBox40" StyleName="Civic.TableBody">
+                        <Style>
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="4" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="2.255in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.ConnectionString" Name="textBox41" StyleName="Civic.TableBody">
+                        <Style>
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="5" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.8in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.Id" Name="textBox42" StyleName="Civic.TableBody">
+                        <Style>
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="6" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.8in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.UserAction" Name="textBox43" StyleName="Civic.TableBody">
+                        <Style>
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.819in" Height="0.2in" Left="0in" Top="0in" Value="=Fields.Received" Name="textBox48" StyleName="Civic.TableBody">
+                        <Style>
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                </Cells>
+                <Columns>
+                  <Column Width="0.819in" />
+                  <Column Width="1.285in" />
+                  <Column Width="1.285in" />
+                  <Column Width="1.285in" />
+                  <Column Width="2.255in" />
+                  <Column Width="0.8in" />
+                  <Column Width="0.8in" />
+                </Columns>
+                <Rows>
+                  <Row Height="0.2in" />
+                </Rows>
+              </Body>
+              <Corner />
+              <Style VerticalAlign="Middle">
+                <Font Size="12px" />
+                <BorderColor Default="235, 235, 235" />
+              </Style>
+              <RowGroups>
+                <TableGroup Name="detail">
+                  <Groupings>
+                    <Grouping />
+                  </Groupings>
+                </TableGroup>
+              </RowGroups>
+              <ColumnGroups>
+                <TableGroup Name="group2">
+                  <ReportItem>
+                    <TextBox Width="0.819in" Height="29px" Left="0in" Top="0in" Value="Received on" Name="textBox47" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="name2">
+                  <ReportItem>
+                    <TextBox Width="1.285in" Height="29px" Left="0in" Top="0in" Value="Name" Name="textBox32" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="description1">
+                  <ReportItem>
+                    <TextBox Width="1.285in" Height="29px" Left="0in" Top="0in" Value="Description" Name="textBox33" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="provider">
+                  <ReportItem>
+                    <TextBox Width="1.285in" Height="29px" Left="0in" Top="0in" Value="Provider" Name="textBox34" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="connectionString">
+                  <ReportItem>
+                    <TextBox Width="2.255in" Height="29px" Left="0in" Top="0in" Value="Connection string" Name="textBox35" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="id2">
+                  <ReportItem>
+                    <TextBox Width="0.8in" Height="29px" Left="0in" Top="0in" Value="ID" Name="textBox36" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="userAction2">
+                  <ReportItem>
+                    <TextBox Width="0.8in" Height="29px" Left="0in" Top="0in" Value="User action" Name="textBox37" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+              </ColumnGroups>
+            </Table>
+            <Panel Width="8.53in" Height="0.223in" Left="0in" Top="0.777in" Name="panel8" />
+          </Items>
+          <Bindings>
+            <Binding Path="Visible" Expression="= &quot;Data Connection&quot; In Parameters.NotificationType.Value" />
+          </Bindings>
+        </Panel>
+        <Panel Width="8.639in" Height="1.689in" Left="0in" Top="4.912in" Name="panel6">
+          <Items>
+            <TextBox Width="2.165in" Height="0.275in" Left="0in" Top="0in" Value="Scheduled Task Notifications" Name="textBox98">
+              <Style Color="101, 101, 101" VerticalAlign="Middle">
+                <Font Size="14px" Bold="True" />
+              </Style>
+            </TextBox>
+            <Table DataSourceName="taskNotificationWebServiceDataSource" Width="8.639in" Height="1.414in" Left="0in" Top="0.275in" Name="table5" StyleName="Civic.TableNormal">
+              <Body>
+                <Cells>
+                  <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.964in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.Id" Name="textBox117" StyleName="Civic.TableBody">
+                        <Style VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="1.728in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.CreatedByUserId" Name="textBox118" StyleName="Civic.TableBody">
+                        <Style VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.964in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.DateCreated" Name="textBox119" StyleName="Civic.TableBody">
+                        <Style VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="4" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.964in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.Enabled" Name="textBox120" StyleName="Civic.TableBody">
+                        <Style VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="5" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.964in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.ExecuteImmediately" Name="textBox121" StyleName="Civic.TableBody">
+                        <Style VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="6" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.964in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.StartDate" Name="textBox122" StyleName="Civic.TableBody">
+                        <Style VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="7" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.964in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.RecurrenceRule" Name="textBox123" StyleName="Civic.TableBody">
+                        <Style VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="1" ColumnIndex="0" RowSpan="1" ColumnSpan="8">
+                    <ReportItem>
+                      <TextBox Width="8.531in" Height="0.3in" Left="3.709in" Top="0.379in" Value="= &quot;   &quot; + Fields.UserAction + &quot;d on &quot; + Fields.Received" Name="textBox110" StyleName="Civic.TableBody">
+                        <Style Color="101, 101, 101" TextAlign="Left" VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderStyle Default="None" />
+                          <BorderColor Default="235, 235, 235" />
+                          <Padding Top="10px" Bottom="5px" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="2" ColumnIndex="0" RowSpan="1" ColumnSpan="8">
+                    <ReportItem>
+                      <Table Width="8.531in" Height="0.612in" Left="0in" Top="0in" Name="table6" StyleName="Civic.TableBody">
+                        <Body>
+                          <Cells>
+                            <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                              <ReportItem>
+                                <TextBox Width="0.827in" Height="0.202in" Left="0in" Top="0in" Value="=Fields.ReportId" Name="textBox116" StyleName="Civic.TableBody">
+                                  <Style>
+                                    <BorderColor Default="235, 235, 235" />
+                                  </Style>
+                                </TextBox>
+                              </ReportItem>
+                            </TableCell>
+                            <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                              <ReportItem>
+                                <TextBox Width="1.773in" Height="0.202in" Left="0in" Top="0in" Value="=Fields.Parameters" Name="textBox111" StyleName="Civic.TableBody">
+                                  <Style>
+                                    <BorderColor Default="235, 235, 235" />
+                                  </Style>
+                                </TextBox>
+                              </ReportItem>
+                            </TableCell>
+                            <TableCell RowIndex="0" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                              <ReportItem>
+                                <TextBox Width="0.753in" Height="0.202in" Left="0in" Top="0in" Value="=Fields.DocumentFormat" Name="textBox113" StyleName="Civic.TableBody">
+                                  <Style>
+                                    <BorderColor Default="235, 235, 235" />
+                                  </Style>
+                                </TextBox>
+                              </ReportItem>
+                            </TableCell>
+                            <TableCell RowIndex="0" ColumnIndex="4" RowSpan="1" ColumnSpan="1">
+                              <ReportItem>
+                                <TextBox Width="0.885in" Height="0.202in" Left="0in" Top="0in" Value="=Fields.DocumentId" Name="textBox115" StyleName="Civic.TableBody">
+                                  <Style>
+                                    <BorderColor Default="235, 235, 235" />
+                                  </Style>
+                                </TextBox>
+                              </ReportItem>
+                            </TableCell>
+                            <TableCell RowIndex="0" ColumnIndex="5" RowSpan="1" ColumnSpan="1">
+                              <ReportItem>
+                                <TextBox Width="4.031in" Height="0.202in" Left="0in" Top="0in" Value="=Fields.Link" Name="textBox124" StyleName="Civic.TableBody">
+                                  <Style>
+                                    <BorderColor Default="235, 235, 235" />
+                                  </Style>
+                                </TextBox>
+                              </ReportItem>
+                            </TableCell>
+                            <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                              <ReportItem>
+                                <TextBox Width="0.158in" Height="0.202in" Left="0in" Top="0in" Name="textBox55" StyleName="Civic.TableBody">
+                                  <Style>
+                                    <BorderStyle Default="None" />
+                                  </Style>
+                                </TextBox>
+                              </ReportItem>
+                            </TableCell>
+                          </Cells>
+                          <Columns>
+                            <Column Width="0.158in" />
+                            <Column Width="0.827in" />
+                            <Column Width="1.773in" />
+                            <Column Width="0.753in" />
+                            <Column Width="0.885in" />
+                            <Column Width="4.031in" />
+                          </Columns>
+                          <Rows>
+                            <Row Height="0.202in" />
+                          </Rows>
+                        </Body>
+                        <Corner />
+                        <Style VerticalAlign="Middle">
+                          <BorderStyle Default="None" />
+                          <BorderColor Default="235, 235, 235" />
+                          <Padding Right="10px" Bottom="10px" />
+                        </Style>
+                        <RowGroups>
+                          <TableGroup Name="detailTableGroup1">
+                            <Groupings>
+                              <Grouping />
+                            </Groupings>
+                          </TableGroup>
+                        </RowGroups>
+                        <ColumnGroups>
+                          <TableGroup Name="group11">
+                            <ReportItem>
+                              <TextBox Width="0.158in" Height="29.33px" Left="0in" Top="0in" Name="textBox54" StyleName="">
+                                <Style Color="101, 101, 101" VerticalAlign="Middle">
+                                  <Font Size="12px" />
+                                  <BorderStyle Default="None" />
+                                  <Padding Top="5px" Bottom="5px" />
+                                </Style>
+                              </TextBox>
+                            </ReportItem>
+                          </TableGroup>
+                          <TableGroup Name="tableGroup3">
+                            <ReportItem>
+                              <TextBox Width="0.827in" Height="29.33px" Left="0in" Top="0in" Value="Repot ID" Name="textBox112" StyleName="">
+                                <Style BackgroundColor="244, 244, 244" Color="101, 101, 101" VerticalAlign="Middle">
+                                  <Font Size="12px" />
+                                  <BorderStyle Default="Solid" />
+                                  <BorderColor Default="235, 235, 235" />
+                                  <Padding Top="5px" Bottom="5px" />
+                                </Style>
+                              </TextBox>
+                            </ReportItem>
+                          </TableGroup>
+                          <TableGroup Name="tableGroup4">
+                            <ReportItem>
+                              <TextBox Width="1.773in" Height="29.33px" Left="0in" Top="0in" Value="Parameters" Name="textBox127" StyleName="">
+                                <Style BackgroundColor="244, 244, 244" Color="101, 101, 101" VerticalAlign="Middle">
+                                  <Font Size="12px" />
+                                  <BorderStyle Default="Solid" />
+                                  <BorderColor Default="235, 235, 235" />
+                                  <Padding Top="5px" Bottom="5px" />
+                                </Style>
+                              </TextBox>
+                            </ReportItem>
+                          </TableGroup>
+                          <TableGroup Name="tableGroup5">
+                            <ReportItem>
+                              <TextBox Width="0.753in" Height="29.33px" Left="0in" Top="0in" Value="Document format" Name="textBox114" StyleName="">
+                                <Style BackgroundColor="244, 244, 244" Color="101, 101, 101" VerticalAlign="Middle">
+                                  <Font Size="12px" />
+                                  <BorderStyle Default="Solid" />
+                                  <BorderColor Default="235, 235, 235" />
+                                  <Padding Top="5px" Bottom="5px" />
+                                </Style>
+                              </TextBox>
+                            </ReportItem>
+                          </TableGroup>
+                          <TableGroup Name="group5">
+                            <ReportItem>
+                              <TextBox Width="0.885in" Height="29.33px" Left="0in" Top="0in" Value="Document ID" Name="textBox125" StyleName="">
+                                <Style BackgroundColor="244, 244, 244" Color="101, 101, 101" VerticalAlign="Middle">
+                                  <Font Size="12px" />
+                                  <BorderStyle Default="Solid" />
+                                  <BorderColor Default="235, 235, 235" />
+                                  <Padding Top="5px" Bottom="5px" />
+                                </Style>
+                              </TextBox>
+                            </ReportItem>
+                          </TableGroup>
+                          <TableGroup Name="group6">
+                            <ReportItem>
+                              <TextBox Width="4.031in" Height="29.33px" Left="0in" Top="0in" Value="Link" Name="textBox126" StyleName="">
+                                <Style BackgroundColor="244, 244, 244" Color="101, 101, 101" VerticalAlign="Middle">
+                                  <Font Size="12px" />
+                                  <BorderStyle Default="Solid" />
+                                  <BorderColor Default="235, 235, 235" />
+                                  <Padding Top="5px" Bottom="5px" />
+                                </Style>
+                              </TextBox>
+                            </ReportItem>
+                          </TableGroup>
+                        </ColumnGroups>
+                        <Bindings>
+                          <Binding Path="DataSource" Expression="=Fields.Reports" />
+                        </Bindings>
+                      </Table>
+                    </ReportItem>
+                  </TableCell>
+                  <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="1.019in" Height="0.2in" Left="0in" Top="0in" Value="=Fields.Name" Name="textBox49" StyleName="Civic.TableBody">
+                        <Style VerticalAlign="Middle">
+                          <Font Size="12px" />
+                          <BorderColor Default="235, 235, 235" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                </Cells>
+                <Columns>
+                  <Column Width="1.019in" />
+                  <Column Width="0.964in" />
+                  <Column Width="1.728in" />
+                  <Column Width="0.964in" />
+                  <Column Width="0.964in" />
+                  <Column Width="0.964in" />
+                  <Column Width="0.964in" />
+                  <Column Width="0.964in" />
+                </Columns>
+                <Rows>
+                  <Row Height="0.2in" />
+                  <Row Height="0.3in" />
+                  <Row Height="0.612in" />
+                </Rows>
+              </Body>
+              <Corner>
+                <Cells>
+                  <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <TextBox Width="0.108in" Height="29px" Left="0in" Top="0in" Value="id4" Name="textBox108">
+                        <Style Visible="False" BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                          <BorderColor Default="235, 235, 235" />
+                          <Padding Top="5px" Bottom="5px" />
+                        </Style>
+                      </TextBox>
+                    </ReportItem>
+                  </TableCell>
+                </Cells>
+              </Corner>
+              <Style VerticalAlign="Middle">
+                <Font Size="12px" />
+                <BorderColor Default="235, 235, 235" />
+              </Style>
+              <RowGroups>
+                <TableGroup Name="id4">
+                  <ReportItem>
+                    <TextBox Width="0.108in" Height="1.112in" Left="0in" Top="0in" Value="= Fields.Id" Name="textBox99" StyleName="">
+                      <Style Visible="False" VerticalAlign="Middle">
+                        <Font Size="12px" />
+                        <BorderColor Default="235, 235, 235" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                  <ChildGroups>
+                    <TableGroup Name="group3" />
+                    <TableGroup Name="detail">
+                      <Groupings>
+                        <Grouping />
+                      </Groupings>
+                    </TableGroup>
+                    <TableGroup Name="group4" />
+                  </ChildGroups>
+                  <Groupings>
+                    <Grouping Expression="= Fields.Id" />
+                  </Groupings>
+                  <Sortings>
+                    <Sorting Expression="= Fields.Id" Direction="Asc" />
+                  </Sortings>
+                </TableGroup>
+              </RowGroups>
+              <ColumnGroups>
+                <TableGroup Name="name3">
+                  <ReportItem>
+                    <TextBox Width="1.019in" Height="29px" Left="0in" Top="0in" Value="Name" Name="textBox100" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="id3">
+                  <ReportItem>
+                    <TextBox Width="0.964in" Height="29px" Left="0in" Top="0in" Value="ID" Name="textBox101" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="createdByUserId1">
+                  <ReportItem>
+                    <TextBox Width="1.728in" Height="29px" Left="0in" Top="0in" Value="Created by User ID" Name="textBox102" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="dateCreated">
+                  <ReportItem>
+                    <TextBox Width="0.964in" Height="29px" Left="0in" Top="0in" Value="Date created" Name="textBox103" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="enabled">
+                  <ReportItem>
+                    <TextBox Width="0.964in" Height="29px" Left="0in" Top="0in" Value="Enabled" Name="textBox104" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="executeImmediately">
+                  <ReportItem>
+                    <TextBox Width="0.964in" Height="29px" Left="0in" Top="0in" Value="Execute immediately" Name="textBox105" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="startDate">
+                  <ReportItem>
+                    <TextBox Width="0.964in" Height="29px" Left="0in" Top="0in" Value="Start date" Name="textBox106" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+                <TableGroup Name="recurrenceRule">
+                  <ReportItem>
+                    <TextBox Width="0.964in" Height="29px" Left="0in" Top="0in" Value="Recurrence rule" Name="textBox107" StyleName="Civic.TableHeader">
+                      <Style BackgroundColor="244, 244, 244" Color="101, 101, 101">
+                        <BorderColor Default="235, 235, 235" />
+                        <Padding Top="5px" Bottom="5px" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                </TableGroup>
+              </ColumnGroups>
+            </Table>
+          </Items>
+          <Bindings>
+            <Binding Path="Visible" Expression="= &quot;Scheduled Task&quot; In Parameters.NotificationType.Value" />
+          </Bindings>
+        </Panel>
+      </Items>
+      <Bindings>
+        <Binding Path="Height" Expression="=&quot;1in&quot;" />
+      </Bindings>
+    </DetailSection>
+    <PageFooterSection Height="0.63in" Name="pageFooterSection1" />
+  </Items>
+  <PageSettings PaperKind="Custom" PaperSize="8.53in, 11in" Landscape="False">
+    <Margins>
+      <MarginsU Left="0in" Right="0in" Top="0in" Bottom="0in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Font Name="Segoe UI" />
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <Font Name="Segoe UI" Size="11pt" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="h2" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <BorderStyle Top="None" Bottom="Solid" />
+        <BorderWidth Bottom="1px" />
+        <Padding Top="3px" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="ReportItemBase" StyleName="Description" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black">
+        <Font Name="Georgia" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="Table" StyleName="Civic.TableNormal" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <Font Name="Georgia" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Civic.TableBody" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style BackgroundColor="140, 174, 173" Color="228, 238, 243" VerticalAlign="Middle">
+        <Font Name="Georgia" Size="10pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Civic.TableHeader" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <ReportParameters>
+    <ReportParameter Name="webServiceUrl">
+      <Value>
+        <String>http://localhost:54472/api/notifications/</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="ReceivedAfter" Type="DateTime" Text="Received After" Visible="True" AllowNull="True" AutoRefresh="True">
+      <Value>
+        <String>= AddDays(Now(), -2)</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="ReceivedBefore" Type="DateTime" Text="Received Before" Visible="True" AllowNull="True" AutoRefresh="True">
+      <Value>
+        <String>=Now()</String>
+      </Value>
+    </ReportParameter>
+    <ReportParameter Name="NotificationType" Text="Notification Type" Visible="True" MultiValue="True" AutoRefresh="True">
+      <AvailableValues DataSourceName="csvDataSource1" DisplayMember="= Fields.NotificationType" ValueMember="= Fields.NotificationType" />
+      <Value>
+        <String>= AllValues(Fields.NotificationType, false)</String>
+      </Value>
+    </ReportParameter>
+  </ReportParameters>
+</Report>
