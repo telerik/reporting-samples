@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
-    <link href="http://kendo.cdn.telerik.com/2018.2.620/styles/kendo.common.min.css" rel="stylesheet" />
-    <link href="http://kendo.cdn.telerik.com/2018.2.620/styles/kendo.blueopal.min.css" rel="stylesheet" />
+    <link href="https://kendo.cdn.telerik.com/2022.3.913/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="https://kendo.cdn.telerik.com/2022.3.913/styles/kendo.blueopal.min.css" rel="stylesheet" />
 
-    <script src="/api/reports/resources/js/telerikReportViewer"></script>
+    <script src="~/api/reports/resources/js/telerikReportViewer"></script>
 
     <style>
         #reportViewer1 {
@@ -31,8 +31,9 @@
         loading...
     </div>
     @{ 
-        var baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
+        var baseUrl = Request.Url.GetLeftPart(UriPartial.Authority) + @Url.Content("~/");
         var webServiceUrl = $"{baseUrl}/api/notifications/";
+        var reportingServiceUrl = $"{baseUrl}/api/reports/";
     }
     <script type="text/javascript">
         $(document).ready(function () {
@@ -48,17 +49,11 @@
                     //    report: "Test/Web Hooks Report"
                     //},
 
-                    serviceUrl: "api/reports",
+                    serviceUrl: "@reportingServiceUrl",
                     reportSource: {
-                        report: "WebHooksReport.trdp",
+                        report: "WebHooksReport.trdx",
                         parameters: { webServiceUrl : "@webServiceUrl" }
-                    },
-
-                    viewMode: telerikReportViewer.ViewModes.INTERACTIVE,
-                    scaleMode: telerikReportViewer.ScaleModes.SPECIFIC,
-                    scale: 1.0,
-                    enableAccessibility: false,
-                    sendEmail: { enabled: false },
+                    }
                 });
         });
     </script>

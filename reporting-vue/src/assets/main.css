@@ -1,0 +1,28 @@
+@import './base.css';
+
+#app {
+  width: 100vw;
+  margin: 0 auto;
+  padding: 2rem;
+
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.4s;
+  color: black;
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 0 2rem;
+  }
+}

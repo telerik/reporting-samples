@@ -47,11 +47,13 @@ namespace BlazorGridAndReport
             services.AddRazorPages().AddNewtonsoftJson(); ;
             services.AddServerSideBlazor();
             services.AddTelerikBlazor();
+            services.AddAntiforgery(options => options.SuppressXFrameOptionsHeader = true);
             services.Configure<IISServerOptions>(options =>
             {
                 options.AllowSynchronousIO = true;
             });
 
+            services.AddRazorComponents().AddInteractiveServerComponents();
 
             services.AddSingleton<IReportServiceConfiguration>(sp =>
                 new ReportServiceConfiguration
@@ -87,11 +89,12 @@ namespace BlazorGridAndReport
 
             app.UseRouting();
 
+            app.UseAntiforgery();
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.MapBlazorHub();
-                endpoints.MapFallbackToPage("/_Host");
+                endpoints.MapRazorComponents<App>().AddInteractiveServerRenderMode();
             });
         }
     }

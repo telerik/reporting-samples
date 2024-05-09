@@ -15,14 +15,14 @@ namespace WebApiApp.Controllers
             var appPath = HttpContext.Current.Server.MapPath("~/");
             var reportsPath = Path.Combine(appPath, "Reports");
 
-            var resolver = new ReportFileResolver(reportsPath)
-                .AddFallbackResolver(new ReportTypeResolver());
+            var resolver = new UriReportSourceResolver(reportsPath)
+                .AddFallbackResolver(new TypeReportSourceResolver());
 
             configurationInstance = new ReportServiceConfiguration
             {
                 HostAppId = "Html5App",
                 Storage = new FileStorage("c:\\temp"),
-                ReportResolver = resolver,
+                ReportSourceResolver = resolver,
                 // ReportSharingTimeout = 0,
                 // ClientSessionTimeout = 15,
             };

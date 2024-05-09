@@ -1,50 +1,53 @@
 import { Component, OnInit, Input, OnDestroy, ViewChild, ElementRef } from '@angular/core';
-import { TelerikReportViewerComponent } from '@progress/telerik-angular-report-viewer';
+import { RouterOutlet } from '@angular/router';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatButtonModule } from '@angular/material/button';
+import { TelerikReportViewerComponent, TelerikReportingModule } from '@progress/telerik-angular-report-viewer';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet, MatTabsModule, MatButtonModule, TelerikReportingModule],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrl: './app.component.css'
 })
 
 export class AppComponent {
+  //@ts-ignore
+  @ViewChild('rptViewer1', { static: false }) rptViewer1: TelerikReportViewerComponent;
+  //@ts-ignore
+  @ViewChild('rptViewer2', { static: false }) rptViewer2: TelerikReportViewerComponent;
+
   title = 'my-app';
-  
-  selectedTab: number;
+  selectedTab: number = 0;
   reportServerUrl: string;
   viewerContainerStyle: any;
 
-  @ViewChild('rptViewer1', {static: false}) rptViewer1: TelerikReportViewerComponent;
-  @ViewChild('rptViewer2', {static: false}) rptViewer2: TelerikReportViewerComponent;
-
   constructor() {
-    //super();
-      
-    this.reportServerUrl = 'http://localhost:12345/api/reports';
+    this.reportServerUrl = 'https://demos.telerik.com/reporting/api/reports';
     this.viewerContainerStyle = {
       "position": 'relative',
-      "width": '1000px',
-      "height": '1500px',
+      "width": '75vw',
+      "height": '90vh',
       ['font-family']: 'ms sans serif'
     };
-  } 
+  }
 
+  onLoad1Click() {
 
-  onLoad1Click(event) {
- 
     var reportSource = {
-      report: "BarcodesReport.trdp", 
+      report: "Report Catalog.trdx",
     };
 
     if (this.rptViewer1) {
       this.rptViewer1.setReportSource(reportSource);
-    }  
+    }
   }
 
-  onLoad2Click(event) {
- 
+  onLoad2Click() {
+
     var reportSource = {
-        report: "BarcodesReport.trdp", 
+      report: "Dashboard.trdx",
     };
 
     if (this.rptViewer2) {

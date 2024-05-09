@@ -1,16 +1,16 @@
 <tr-viewer #viewer1
- [containerStyle]="viewerContainerStyle" 
- [serviceUrl]="'http://localhost:59655/api/reports/'"
- [reportSource]="{
+  [containerStyle]="viewerContainerStyle"
+  [serviceUrl]="'http://localhost:59655/api/reports/'"
+  [reportSource]="{
         report: 'Speakers Report.trdp',
         parameters: {
             'DataParameter' : speakerObjects
         }
-    }" 
- [viewMode]="'INTERACTIVE'"
- [scaleMode]="'SPECIFIC'"
- [scale]="1.0"
- [ready]="ready"
- [viewerToolTipOpening]="viewerToolTipOpening"
- [enableAccessibility]="false">
+    }"
+  [viewMode]="'INTERACTIVE'"
+  [scaleMode]="'SPECIFIC'"
+  [scale]="1.0"
+  [ready]="ready"
+  [viewerToolTipOpening]="viewerToolTipOpening"
+  [enableAccessibility]="false">
 </tr-viewer>

@@ -1,42 +1,45 @@
 import { Component, ViewChild } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { GridModule } from '@progress/kendo-angular-grid';
 import { filterBy, CompositeFilterDescriptor } from '@progress/kendo-data-query';
 import { speakersData } from '../data/speakers';
-import { ReportViewerComponent } from '../app/report-viewer/report-viewer.component'
+import { ReportViewerComponent } from './report-viewer/report-viewer.component';
 
-const distinctCategories = data => data
-    .filter((x, idx, xs) => xs.findIndex(y => y.DaySpeaking === x.DaySpeaking) === idx);
+const distinctCategories = (data: any[]) => data
+  .filter((x, idx, xs) => xs.findIndex(y => y.DaySpeaking === x.DaySpeaking) === idx);
 
 @Component({
-    selector: 'my-app',
-    templateUrl: './app.component.html'
-}
-)
-
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet, GridModule, ReportViewerComponent],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})
 export class AppComponent {
+  title = 'app';
+  //@ts-ignore
+  @ViewChild('reportViewer1', {}) viewer: ReportViewerComponent;
 
-    @ViewChild('reportViewer1', {}) viewer: ReportViewerComponent;
+  public get telerikReportViewer() {
+    return this.viewer.viewer;
+  }
+  //@ts-ignore
+  public filter: CompositeFilterDescriptor = null;
+  public gridData: any[] = filterBy(speakersData, this.filter);
+  public categories: any[] = distinctCategories(speakersData);
 
-    public get telerikReportViewer() {
-        return this.viewer.viewer;
-    }
-    public filter: CompositeFilterDescriptor = null;
-    public gridData: any[] = filterBy(speakersData, this.filter);
-    public categories: any[] = distinctCategories(speakersData);
+  public setViewerData(data: string) {
+    var rs = {
+      report: this.telerikReportViewer.reportSource.report,
+      parameters: { DataParameter: data }
+    };
+    this.telerikReportViewer.setReportSource(rs);
+  }
 
-    public setViewerData(data) {
-        var rs = {
-            report: this.telerikReportViewer.reportSource.report,
-            parameters: { DataParameter: data }
-        };
-        this.telerikReportViewer.setReportSource(rs);
-    }
-
-    public filterChange(filter: CompositeFilterDescriptor): void {
-        this.filter = filter;
-        var filteredData = filterBy(speakersData, filter);
-        this.gridData = filteredData;
-        this.setViewerData(JSON.stringify(filteredData));
-    }
-
+  public filterChange(filter: CompositeFilterDescriptor): void {
+    this.filter = filter;
+    var filteredData = filterBy(speakersData, filter);
+    this.gridData = filteredData;
+    this.setViewerData(JSON.stringify(filteredData));
+  }
 }
-

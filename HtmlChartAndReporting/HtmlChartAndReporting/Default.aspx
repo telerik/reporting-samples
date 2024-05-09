@@ -7,10 +7,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head runat="server">
-    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2019.3.1023/styles/kendo.default-v2.min.css" />
+    
+    <link href="https://kendo.cdn.telerik.com/2022.3.913/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="https://kendo.cdn.telerik.com/2022.3.913/styles/kendo.blueopal.min.css" rel="stylesheet" />
 
-    <script src="https://kendo.cdn.telerik.com/2019.3.1023/js/jquery.min.js"></script>
-    <script src="https://kendo.cdn.telerik.com/2019.3.1023/js/kendo.all.min.js"></script>
+    <script src="https://kendo.cdn.telerik.com/2022.3.913/js/jquery.min.js" type="text/javascript"></script>
+    <script src="https://kendo.cdn.telerik.com/2022.3.913/js/kendo.all.min.js" type="text/javascript"></script>
 
     <style>
         #reportViewer1 {

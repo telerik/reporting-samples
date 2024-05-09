@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report Width="17cm" Name="Funnerl Chart" xmlns="http://schemas.telerik.com/reporting/2021/2.0">
+  <DataSources>
+    <CsvDataSource RecordSeparators="&#xD;&#xA;" FieldSeparators="," HasHeaders="True" Name="csvDataSource1">
+      <Source>
+        <String>Q2F0ZWdvcnksVmFsdWUNCkNhdGVnb3J5IDEsMTAwDQpDYXRlZ29yeSAyLDgwDQpDYXRlZ29yeSAzLDYwDQpDYXRlZ29yeSA0LDQwDQpDYXRlZ29yeSA1LDIw</String>
+      </Source>
+      <Columns>
+        <DataColumn Name="Category" />
+        <DataColumn Name="Value" Type="Integer" />
+      </Columns>
+    </CsvDataSource>
+  </DataSources>
+  <Items>
+    <DetailSection Height="7.9cm" Name="detailSection1">
+      <Items>
+        <Graph DataSourceName="csvDataSource1" Width="17cm" Height="7.9cm" Left="0cm" Top="0cm" Name="graph1">
+          <PlotAreaStyle LineWidth="0cm" LineColor="LightGray" />
+          <Axes>
+            <GraphAxis Name="graphAxis1" LabelFormat="">
+              <Style Visible="False" />
+              <MajorGridLineStyle Visible="False" LineWidth="1px" LineColor="LightGray" />
+              <MinorGridLineStyle Visible="False" LineWidth="1px" LineColor="LightGray" />
+              <Scale>
+                <NumericalScale>
+                  <CrossAxisPositions>
+                    <NumericalScaleCrossAxisPosition Value="0" Position="Specific" />
+                  </CrossAxisPositions>
+                </NumericalScale>
+              </Scale>
+            </GraphAxis>
+            <GraphAxis Name="graphAxis2" MajorTickMarkDisplayType="None" LabelPlacement="AtMinimum">
+              <Style Visible="True" LineColor="Transparent">
+                <Font Size="14pt" Bold="True" />
+              </Style>
+              <MajorGridLineStyle Visible="False" LineWidth="1px" LineColor="LightGray" />
+              <MinorGridLineStyle Visible="False" LineWidth="1px" LineColor="LightGray" />
+              <Scale>
+                <CategoryScale SpacingSlotCount="0" />
+              </Scale>
+            </GraphAxis>
+          </Axes>
+          <CoordinateSystems>
+            <CartesianCoordinateSystem XAxis="graphAxis1" YAxis="graphAxis2" Name="cartesianCoordinateSystem1" />
+          </CoordinateSystems>
+          <Legend>
+            <Style Visible="False" LineWidth="0cm" LineColor="LightGray" />
+          </Legend>
+          <Style>
+            <Padding Left="10px" Right="10px" Top="10px" Bottom="10px" />
+          </Style>
+          <SeriesGroups>
+            <GraphGroup Name="seriesGroup" />
+          </SeriesGroups>
+          <CategoryGroups>
+            <GraphGroup Name="categoryGroup">
+              <Groupings>
+                <Grouping Expression="= Fields.Category" />
+              </Groupings>
+              <Sortings>
+                <Sorting Expression="= Sum(Fields.Value)" Direction="Asc" />
+              </Sortings>
+            </GraphGroup>
+          </CategoryGroups>
+          <Series>
+            <BarSeries CoordinateSystem="cartesianCoordinateSystem1" CategoryGroup="categoryGroup" SeriesGroup="seriesGroup" X="= - Sum(Fields.Value) / 2.0" ArrangeMode="Stacked" Name="series1">
+              <DataPointStyle Visible="True" LineWidth="0cm" />
+              <DataPointLabelStyle Visible="True" Color="Gray">
+                <Font Bold="True" />
+              </DataPointLabelStyle>
+              <LegendItem Value="Value" />
+              <DataPointLabelConnectorStyle Visible="False">
+                <Padding Top="2pt" Bottom="2pt" />
+              </DataPointLabelConnectorStyle>
+              <MergedDataPoints />
+              <ToolTip Title="Value" Text="= Sum(Fields.Value)" />
+              <DataPointConditionalFormatting>
+                <FormattingRule>
+                  <Style BackgroundColor="128, 0, 255" />
+                  <Filters>
+                    <Filter Expression="= Fields.Category" Operator="Equal" Value="Category 1" />
+                  </Filters>
+                </FormattingRule>
+                <FormattingRule>
+                  <Style BackgroundColor="128, 128, 255" />
+                  <Filters>
+                    <Filter Expression="= Fields.Category" Operator="Equal" Value="Category 2" />
+                  </Filters>
+                </FormattingRule>
+                <FormattingRule>
+                  <Style BackgroundColor="0, 0, 160" />
+                  <Filters>
+                    <Filter Expression="= Fields.Category" Operator="Equal" Value="Category 3" />
+                  </Filters>
+                </FormattingRule>
+                <FormattingRule>
+                  <Style BackgroundColor="0, 128, 255" />
+                  <Filters>
+                    <Filter Expression="= Fields.Category" Operator="Equal" Value="Category 4" />
+                  </Filters>
+                </FormattingRule>
+                <FormattingRule>
+                  <Style BackgroundColor="255, 128, 64" />
+                  <Filters>
+                    <Filter Expression="= Fields.Category" Operator="Equal" Value="Category 5" />
+                  </Filters>
+                </FormattingRule>
+              </DataPointConditionalFormatting>
+            </BarSeries>
+            <BarSeries CoordinateSystem="cartesianCoordinateSystem1" CategoryGroup="categoryGroup" SeriesGroup="seriesGroup" DataPointLabelAlignment="InsideBase" DataPointLabelOffset="-0.2cm" X="= Sum(Fields.Value) / 2.0" ArrangeMode="Stacked" DataPointLabel="= Sum(Fields.Value)" Name="series2">
+              <DataPointStyle LineWidth="0cm" />
+              <DataPointLabelStyle Visible="True" Color="WhiteSmoke">
+                <Font Size="14pt" Bold="True" />
+              </DataPointLabelStyle>
+              <LegendItem Value="Value" />
+              <DataPointLabelConnectorStyle Visible="False">
+                <Padding Top="2pt" Bottom="2pt" />
+              </DataPointLabelConnectorStyle>
+              <MergedDataPoints />
+              <ToolTip Title="Value" Text="= Sum(Fields.Value)" />
+              <DataPointConditionalFormatting>
+                <FormattingRule>
+                  <Style BackgroundColor="128, 0, 255" />
+                  <Filters>
+                    <Filter Expression="= Fields.Category" Operator="Equal" Value="Category 1" />
+                  </Filters>
+                </FormattingRule>
+                <FormattingRule>
+                  <Style BackgroundColor="128, 128, 255" />
+                  <Filters>
+                    <Filter Expression="= Fields.Category" Operator="Equal" Value="Category 2" />
+                  </Filters>
+                </FormattingRule>
+                <FormattingRule>
+                  <Style BackgroundColor="0, 0, 160" />
+                  <Filters>
+                    <Filter Expression="= Fields.Category" Operator="Equal" Value="Category 3" />
+                  </Filters>
+                </FormattingRule>
+                <FormattingRule>
+                  <Style BackgroundColor="0, 128, 255" />
+                  <Filters>
+                    <Filter Expression="= Fields.Category" Operator="Equal" Value="Category 4" />
+                  </Filters>
+                </FormattingRule>
+                <FormattingRule>
+                  <Style BackgroundColor="255, 128, 64" />
+                  <Filters>
+                    <Filter Expression="= Fields.Category" Operator="Equal" Value="Category 5" />
+                  </Filters>
+                </FormattingRule>
+              </DataPointConditionalFormatting>
+            </BarSeries>
+          </Series>
+          <Titles>
+            <GraphTitle Text="graph1" Position="TopCenter">
+              <Style Visible="False" LineWidth="0cm" LineColor="LightGray" />
+            </GraphTitle>
+          </Titles>
+        </Graph>
+      </Items>
+    </DetailSection>
+  </Items>
+  <PageSettings PaperKind="A4" Landscape="False">
+    <Margins>
+      <MarginsU Left="2cm" Right="2cm" Top="2cm" Bottom="2cm" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+</Report>
