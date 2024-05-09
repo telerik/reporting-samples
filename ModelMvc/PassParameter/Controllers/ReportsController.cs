@@ -22,15 +22,15 @@ namespace PassParameter.Controllers
 			//Add resolver for trdx/trdp report definitions, 
 			//then add resolver for class report definitions as fallback resolver; 
 			//finally create the resolver and use it in the ReportServiceConfiguration instance.
-            var resolver = new ReportFileResolver(reportsPath)
-                .AddFallbackResolver(new ReportTypeResolver());
+            var resolver = new UriReportSourceResolver(reportsPath)
+                .AddFallbackResolver(new TypeReportSourceResolver());
 
 			//Setup the ReportServiceConfiguration
             configurationInstance = new ReportServiceConfiguration
             {
                 HostAppId = "Html5App",
                 Storage = new FileStorage(),
-                ReportResolver = resolver,
+                ReportSourceResolver = resolver,
                 // ReportSharingTimeout = 0,
                 // ClientSessionTimeout = 15,
             };

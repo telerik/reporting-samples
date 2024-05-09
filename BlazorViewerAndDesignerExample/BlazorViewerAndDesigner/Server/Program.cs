@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddMvc();
+builder.Services.AddRazorComponents().AddInteractiveWebAssemblyComponents();
 builder.Services.TryAddSingleton((Func<IServiceProvider, IReportServiceConfiguration>)(sp =>
 	new ReportServiceConfiguration
 	{
@@ -50,10 +51,12 @@ else
 
 app.UseHttpsRedirection();
 
-app.UseBlazorFrameworkFiles();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseAntiforgery();
+
 app.UseEndpoints(endpoints =>
 {
 	endpoints.MapControllers();
@@ -62,7 +65,7 @@ app.UseEndpoints(endpoints =>
 
 app.MapRazorPages();
 app.MapControllers();
-app.MapFallbackToFile("index.html");
+app.MapRazorComponents<BlazorViewerAndDesigner.Client.Host>().AddInteractiveWebAssemblyRenderMode();
 
 app.Run();
 

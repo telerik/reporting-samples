@@ -13,8 +13,8 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
     <!--The following lines are replaced with package refs during the product build-->
-    <PackageReference Include="Telerik.Reporting.OpenXmlRendering" Version="16.0.22.225" />
-    <PackageReference Include="Telerik.WebReportDesigner.Services" Version="16.0.22.225" />
+    <PackageReference Include="Telerik.Reporting.OpenXmlRendering" Version="18.0.24.305" />
+    <PackageReference Include="Telerik.WebReportDesigner.Services" Version="18.0.24.305" />
   </ItemGroup>
   <ItemGroup>
     <None Update="Reports\Speakers Report.trdp">

@@ -1,0 +1,194 @@
+﻿@page "/"
+@inject HttpClient WebClient
+@using MauiBlazorViewer.Models;
+@using System.Text.Json.Nodes
+@using Telerik.Blazor
+@using Telerik.Blazor.Components
+@using Telerik.FontIcons
+@using Telerik.SvgIcons
+
+<TelerikDropDownList @ref="@DropDownListRef"
+                     Data="@MyReports"
+                     Value="@SelectedReport"
+                     DefaultText="@( SelectedReport == null ? "<Select Report>" : null )"
+                     ValueChanged="@((string newValue) => OnDropDownValueChanged(newValue))">
+</TelerikDropDownList>
+
+@* 'TelerikPdfViewer'is wrapped in 'if'' to avoid Data being Null *@
+@* Possibly related to bug https://feedback.telerik.com/blazor/1595340-the-pdf-viewer-does-not-render-the-document-as-expected-when-calling-the-readallbytesasync-method-from-grid-s-async-onrowclick-event-handler *@
+@if (FileData != null)
+{
+    <TelerikPdfViewer @ref="@PdfViewerRef"
+                      Data="@FileData">
+        <PdfViewerToolBar>
+            <PdfViewerToolBarPagerTool />
+            <PdfViewerToolBarSpacer />
+            <PdfViewerToolBarZoomTool />
+            <PdfViewerToolBarSelectionTool />
+        </PdfViewerToolBar>
+    </TelerikPdfViewer>
+}
+else
+{
+    <TelerikLoaderContainer />
+}
+
+<style>
+    .viewer {
+        max-height: 500px;
+        min-height: 300px;
+    }
+</style>
+
+@code {
+    private const string BaseOnlineUrl = "https://demos.telerik.com/reporting/api/";
+    public ReportService ReportingService { get; set; } = ReportService.ReportingOnlineDemo;
+    public string BaseAddress;
+
+    string SelectedReport { get; set; }
+    protected string[] MyReports;
+    public TelerikDropDownList<string, string> DropDownListRef { get; set; }
+    public TelerikPdfViewer PdfViewerRef { get; set; }
+    public byte[] FileData { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await ConfigureForService();
+        SelectedReport = MyReports[0];
+        await GetPdfAsync(SelectedReport);
+
+        await base.OnInitializedAsync();
+    }
+
+    private async Task OnDropDownValueChanged(string newValue)
+    {
+        SelectedReport = newValue;
+        await GetPdfAsync(newValue);
+
+    }
+
+    private async Task GetPdfAsync(string reportName)
+    {
+        switch (ReportingService)
+        {
+            // Render report in the project RenderReports
+            case ReportService.ReportingWebApi:
+                {
+                    FileData = await WebClient.GetByteArrayAsync($"{BaseAddress}/{reportName}");
+                    return;
+                }
+
+            // Render report in the Reporting online demo
+            case ReportService.ReportingOnlineDemo:
+                {
+                    FileData = await ExportReportFromServiceAsync(reportName);
+                    return;
+                }
+        }
+    }
+
+    private async Task<byte[]> ExportReportFromServiceAsync(string reportName)
+    {
+        // 1. Register client
+        ReportClient reportClient = new ReportClient(BaseAddress);
+        await reportClient.RegisterClient();
+
+        // 2. Create Report Instance
+        ReportSourceModel reportSourceModel = new ReportSourceModel()
+            {
+                Report = reportName
+            };
+
+        string reportSource = System.Text.Json.JsonSerializer.Serialize(reportSourceModel);
+        string reportInstanceId = await reportClient.CreateInstance(reportSource);
+
+
+        // 3. Create Document
+        string reportDocumentId = await reportClient.CreateDocument(reportInstanceId, "PDF");
+
+        bool documentProcessing;
+        do
+        {
+            Thread.Sleep(500);// wait before next Info request
+            documentProcessing = await reportClient.DocumentIsProcessing(reportInstanceId, reportDocumentId);
+        } while (documentProcessing);
+
+        // 4. Get Document
+        byte[] result = await reportClient.GetDocument(reportInstanceId, reportDocumentId);
+
+        return result;
+    }
+
+    private async Task ConfigureForService()
+    {
+        switch (ReportingService)
+        {
+            // Get available reports from the project RenderReports
+            case ReportService.ReportingWebApi:
+                {
+                    // The blazor web view for Android requires newer Android. It works with emulator Pixel 5 - API 33 -> Android 13 - API 33 and DOESN'T work with Pixex 5 - API 31
+                    // For Android check https://stackoverflow.com/questions/67071052/how-to-fix-cleartext-http-traffic-to-x-not-permitted-in-xamarin-android
+                    // https://learn.microsoft.com/en-us/dotnet/maui/data-cloud/local-web-services - local service is different in Android
+                    BaseAddress = DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:5186" : "http://localhost:5186";
+                    var response = await WebClient.GetStringAsync($"{BaseAddress}/GetAvailableReports");
+                    MyReports = response.Split("---");
+
+                    return;
+                }
+
+            // Reports from the Reporting online demo - no endpoint for list of reports available
+            case ReportService.ReportingOnlineDemo:
+                {
+                    BaseAddress = $"{BaseOnlineUrl}reports";
+                    MyReports = this.GetAvailableOnlineServiceReports();
+
+                    return;
+                }
+        }
+    }
+
+    private string[] GetAvailableOnlineServiceReports()
+    {
+        var jsonResponse = WebClient.GetStringAsync($"{BaseOnlineUrl}reportdesigner/reports/folders/contents?uri=").Result;
+
+        var doc = JsonNode.Parse(jsonResponse)!;
+        var root = doc.Root;
+        var files = root["files"]!.AsArray();
+
+        List<string> onlineDemoReports = new List<string>();
+        foreach (var file in files)
+        {
+            if (file?["fileName"] is JsonNode fileNameNode)
+            {
+                onlineDemoReports.Add(fileNameNode.ToString());
+            }
+        }
+        
+        return onlineDemoReports.ToArray();
+    }
+
+    //Not used, for test purposes only
+    private string[] GetHardcodedOnlineServiceReports()
+    {
+        return new string[]
+                    {
+                        "Conference Report.trdx",
+                        "Dashboard.trdx",
+                        "CryptoCurrencyInfo.trdx",
+                        "Invoice.trdx",
+                        "SwissQRBill.trdx",
+                        "Barcodes Report.trdx",
+                        "Product Sales.trdx",
+                        "Employee Sales Summary.trdx",
+                        "Product Line Sales.trdx",
+                        "SalesByRegionDashboard.trdx",
+                        "ReportBook.trbp",
+                        "CryptoCurrencies.trdx",
+                        "ListBoundReport.trdx",
+                        "Product Catalog.trdx",
+                        "Product Tag Report.trdx",
+                        "OlympicMedalsByNationalTeams.trdx",
+                        "PopulationDensity.trdx"
+                    };
+    }
+}
