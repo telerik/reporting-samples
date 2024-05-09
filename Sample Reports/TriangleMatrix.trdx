@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report Width="6.5in" Name="Report1" xmlns="http://schemas.telerik.com/reporting/2023/3.0">
+  <DataSources>
+    <CsvDataSource RecordSeparators="&#xD;&#xA;" FieldSeparators="," HasHeaders="True" Name="csvDataSource1">
+      <Source>
+        <String>Um93U2l6ZSxDb2x1bW5TaXplLFZhbHVlDQoxaW4sMWluLDExMA0KMWluLDJpbiwNCjFpbiwzaW4sDQoxaW4sNGluLA0KMWluLDVpbiwNCjFpbiw2aW4sDQoxaW4sN2luLA0KMWluLDhpbiwNCjFpbiw5aW4sDQoxaW4sMTBpbiwNCjJpbiwxaW4sMjEwDQoyaW4sMmluLDIyMA0KMmluLDNpbiwNCjJpbiw0aW4sDQoyaW4sNWluLA0KMmluLDZpbiwNCjJpbiw3aW4sDQoyaW4sOGluLA0KMmluLDlpbiwNCjJpbiwxMGluLA0KM2luLDFpbiwzMTANCjNpbiwyaW4sMzIwDQozaW4sM2luLDMzMA0KM2luLDRpbiwNCjNpbiw1aW4sDQozaW4sNmluLA0KM2luLDdpbiwNCjNpbiw4aW4sDQozaW4sOWluLA0KM2luLDEwaW4sDQo0aW4sMWluLDQxMA0KNGluLDJpbiw0MjANCjRpbiwzaW4sNDMwDQo0aW4sNGluLDQ0MA0KNGluLDVpbiwNCjRpbiw2aW4sDQo0aW4sN2luLA0KNGluLDhpbiwNCjRpbiw5aW4sDQo0aW4sMTBpbiwNCjVpbiwxaW4sNTEwDQo1aW4sMmluLDUyMA0KNWluLDNpbiw1MzANCjVpbiw0aW4sNTQwDQo1aW4sNWluLDU1MA0KNWluLDZpbiwNCjVpbiw3aW4sDQo1aW4sOGluLA0KNWluLDlpbiwNCjVpbiwxMGluLA0KNmluLDFpbiw2MTANCjZpbiwyaW4sNjIwDQo2aW4sM2luLDYzMA0KNmluLDRpbiw2NDANCjZpbiw1aW4sNjUwDQo2aW4sNmluLDY2MA0KNmluLDdpbiwNCjZpbiw4aW4sDQo2aW4sOWluLA0KNmluLDEwaW4sDQo3aW4sMWluLDcxMA0KN2luLDJpbiw3MjANCjdpbiwzaW4sNzMwDQo3aW4sNGluLDc0MA0KN2luLDVpbiw3NTANCjdpbiw2aW4sNzYwDQo3aW4sN2luLDc3MA0KN2luLDhpbiwNCjdpbiw5aW4sDQo3aW4sMTBpbiwNCjhpbiwxaW4sODEwDQo4aW4sMmluLDgyMA0KOGluLDNpbiw4MzANCjhpbiw0aW4sODQwDQo4aW4sNWluLDg1MA0KOGluLDZpbiw4NjANCjhpbiw3aW4sODcwDQo4aW4sOGluLDg4MA0KOGluLDlpbiwNCjhpbiwxMGluLA0KOWluLDFpbiw5MTANCjlpbiwyaW4sOTIwDQo5aW4sM2luLDkzMA0KOWluLDRpbiw5NDANCjlpbiw1aW4sOTUwDQo5aW4sNmluLDk2MA0KOWluLDdpbiw5NzANCjlpbiw4aW4sOTgwDQo5aW4sOWluLDk5MA0KOWluLDEwaW4sDQoxMGluLDFpbiwxMDEwDQoxMGluLDJpbiwxMDIwDQoxMGluLDNpbiwxMDMwDQoxMGluLDRpbiwxMDQwDQoxMGluLDVpbiwxMDUwDQoxMGluLDZpbiwxMDYwDQoxMGluLDdpbiwxMDcwDQoxMGluLDhpbiwxMDgwDQoxMGluLDlpbiwxMDkwDQoxMGluLDEwaW4sMTAxMA==</String>
+      </Source>
+      <Columns>
+        <DataColumn Name="RowSize" />
+        <DataColumn Name="ColumnSize" />
+        <DataColumn Name="Value" />
+      </Columns>
+    </CsvDataSource>
+  </DataSources>
+  <Items>
+    <DetailSection Height="0.6in" Name="detailSection1">
+      <Items>
+        <Crosstab DataSourceName="csvDataSource1" Width="0.875in" Height="0.6in" Left="0in" Top="0in" Name="crosstab1">
+          <Body>
+            <Cells>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.483in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.Value" Name="textBox4" StyleName="Office.TableBody">
+                    <Bindings>
+                      <Binding Path="Style.BorderStyle.Default" Expression="= (Fields.Value is Null) Or (Fields.Value = &quot;&quot;) ? &quot;None&quot; : &quot;Solid&quot;" />
+                      <Binding Path="Style.Color" Expression="= (Fields.Value is Null) Or (Fields.Value = &quot;&quot;) ? &quot;white&quot; : Ifs(&#xD;&#xA;Fields.Value &lt; 150, &quot;green&quot;, &#xD;&#xA;Fields.Value &lt; 250, &quot;red&quot;, &#xD;&#xA;Fields.Value &lt; 350, &quot;yellow&quot;,&#xD;&#xA;Fields.Value &lt; 450, &quot;blue&quot;,&#xD;&#xA;Fields.Value &lt; 550, &quot;brown&quot;,&#xD;&#xA;Fields.Value &lt; 650, &quot;pink&quot;,&#xD;&#xA;Fields.Value &lt; 750, &quot;black&quot;,&#xD;&#xA;Fields.Value &lt; 850, &quot;light green&quot;,&#xD;&#xA;Fields.Value &lt; 950, &quot;violet&quot;,&#xD;&#xA;&quot;gray&quot;)" />
+                    </Bindings>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.483in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.ColumnSize" Name="textBox7">
+                    <Style>
+                      <BorderStyle Default="Solid" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+            </Cells>
+            <Columns>
+              <Column Width="0.483in" />
+            </Columns>
+            <Rows>
+              <Row Height="0.2in" />
+              <Row Height="0.2in" />
+            </Rows>
+          </Body>
+          <Corner>
+            <Cells>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.392in" Height="0.2in" Left="0in" Top="0in" Value="Row Size" Name="textBox3">
+                    <Style Visible="False" />
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+            </Cells>
+          </Corner>
+          <RowGroups>
+            <TableGroup Name="rowSize">
+              <ReportItem>
+                <TextBox Width="0.392in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.RowSize" Name="textBox2">
+                  <Style>
+                    <BorderStyle Default="Solid" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+              <Groupings>
+                <Grouping Expression="= Fields.RowSize" />
+              </Groupings>
+            </TableGroup>
+            <TableGroup Name="group">
+              <ReportItem>
+                <TextBox Width="0.392in" Height="0.2in" Left="0in" Top="0in" Name="textBox5">
+                  <Style>
+                    <BorderStyle Default="None" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+          </RowGroups>
+          <ColumnGroups>
+            <TableGroup Name="columnSize">
+              <ReportItem>
+                <TextBox Width="0.483in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.ColumnSize" Name="textBox1">
+                  <Style Visible="False" />
+                </TextBox>
+              </ReportItem>
+              <Groupings>
+                <Grouping Expression="= Fields.ColumnSize" />
+              </Groupings>
+            </TableGroup>
+          </ColumnGroups>
+        </Crosstab>
+      </Items>
+    </DetailSection>
+  </Items>
+  <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+    <Margins>
+      <MarginsU Left="1in" Right="1in" Top="1in" Bottom="1in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="20, 34, 77">
+        <Font Name="Calibri" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="Table" StyleName="Office.TableNormal" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <Font Name="Calibri" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Office.TableBody" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style BackgroundColor="121, 167, 227" Color="20, 34, 77" VerticalAlign="Middle">
+        <Font Name="Calibri" Size="10pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Office.TableHeader" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style BackgroundColor="238, 244, 251" Color="20, 34, 77">
+        <Font Name="Calibri" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Office.TableGroup" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+</Report>

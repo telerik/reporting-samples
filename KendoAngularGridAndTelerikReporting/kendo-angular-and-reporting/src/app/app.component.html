@@ -1,27 +1,27 @@
 <div id="components">
-    <kendo-grid [data]="gridData" style="width:40%; height:50%" [filter]="filter" filterable="menu"
-        (filterChange)="filterChange($event)">
+  <kendo-grid [filterable]="true" [data]="gridData" style="width:80%; height:50%" [filter]="filter"
+      (filterChange)="filterChange($event)">
 
-        <kendo-grid-column field="DaySpeaking" title="Technology" width="80">
-            <ng-template kendoGridFilterMenuTemplate let-column="column" let-filter="filter"
-                let-filterService="filterService">
-                <my-filter-wrapper [filter]="filter" [data]="categories" [filterService]="filterService">
-                </my-filter-wrapper>
-            </ng-template>
-            <ng-template kendoGridCellTemplate let-dataItem>
-                {{dataItem.DaySpeaking}}
-            </ng-template>
-        </kendo-grid-column>
+      <kendo-grid-column field="DaySpeaking" title="Technology" [width]="80">
+          <ng-template kendoGridFilterMenuTemplate let-column="column" let-filter="filter"
+              let-filterService="filterService">
+              <!-- <my-filter-wrapper [filter]="filter" [data]="categories" [filterService]="filterService">
+              </my-filter-wrapper> -->
+          </ng-template>
+          <ng-template kendoGridCellTemplate let-dataItem>
+              {{dataItem.DaySpeaking}}
+          </ng-template>
+      </kendo-grid-column>
 
-        <kendo-grid-column field="Name" title="Name" width="80">
-        </kendo-grid-column>
+      <kendo-grid-column field="Name" title="Name" [width]="80">
+      </kendo-grid-column>
 
-        <kendo-grid-column field="Company" title="Company" width="80">
-        </kendo-grid-column>
+      <kendo-grid-column field="Company" title="Company" [width]="80">
+      </kendo-grid-column>
 
-        <kendo-grid-column field="Position" title="Position" width="80">
-        </kendo-grid-column>
+      <kendo-grid-column field="Position" title="Position" [width]="80">
+      </kendo-grid-column>
 
-    </kendo-grid>
-    <report-viewer #reportViewer1 style="width:58%; padding-left: 20px; "></report-viewer>
+  </kendo-grid>
+  <report-viewer #reportViewer1 style="width:58%; padding-left: 20px; "></report-viewer>
 </div>

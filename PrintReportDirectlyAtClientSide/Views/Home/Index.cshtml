@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<button onclick="printReport()">Print Report</button>
+
+<script>
+    function printReport() {
+        fetch("/Home/GenerateReportPDF?reportName=Barcodes Report.trdp")
+            .then(res => {
+                if (res.status === 200) {
+                    return res.blob();
+                } else {
+                    console.log("Could not retrieve PDF document.");
+                }
+            })
+            .then(blob => {
+                let objectURL = URL.createObjectURL(blob);
+
+                var iframe = document.createElement("iframe");
+                iframe.style.display = "none";
+                iframe.src = objectURL;
+                iframe.onload = function () {
+                    iframe.contentWindow.print();
+                }
+
+                document.body.appendChild(iframe);
+            });
+    }
+</script>

@@ -9,8 +9,18 @@
 
 
 
-public partial class Default {
-    
+public partial class Default
+{
+
+    /// <summary>
+    /// RadStyleSheetManager1 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::Telerik.Web.UI.RadStyleSheetManager RadStyleSheetManager1;
+
     /// <summary>
     /// form1 control.
     /// </summary>
@@ -19,7 +29,7 @@ public partial class Default {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-    
+
     /// <summary>
     /// RadScriptManager1 control.
     /// </summary>
@@ -28,7 +38,7 @@ public partial class Default {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::Telerik.Web.UI.RadScriptManager RadScriptManager1;
-    
+
     /// <summary>
     /// RadHtmlChart1 control.
     /// </summary>
@@ -37,7 +47,7 @@ public partial class Default {
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::Telerik.Web.UI.RadHtmlChart RadHtmlChart1;
-    
+
     /// <summary>
     /// reportViewer1 control.
     /// </summary>

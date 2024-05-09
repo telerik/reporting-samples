@@ -1,0 +1,33 @@
+{
+  "name": "kendo-react-reporting",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@progress/kendo-data-query": "^1.7.0",
+    "@progress/kendo-drawing": "^1.20.1",
+    "@progress/kendo-licensing": "^1.3.5",
+    "@progress/kendo-react-animation": "^7.4.0",
+    "@progress/kendo-react-buttons": "^7.4.0",
+    "@progress/kendo-react-data-tools": "^7.4.0",
+    "@progress/kendo-react-dateinputs": "^7.4.0",
+    "@progress/kendo-react-dropdowns": "^7.4.0",
+    "@progress/kendo-react-grid": "^7.4.0",
+    "@progress/kendo-react-inputs": "^7.4.0",
+    "@progress/kendo-react-intl": "^7.4.0",
+    "@progress/kendo-react-popup": "^7.4.0",
+    "@progress/kendo-react-treeview": "^7.4.0",
+    "@progress/kendo-svg-icons": "^2.3.0",
+    "@progress/kendo-theme-default": "^7.2.1",
+    "@progress/telerik-react-report-viewer": "^21.24.305",
+    "jquery": "^3.7.1",
+    "next": "14.2.3",
+    "react": "^18",
+    "react-dom": "^18"
+  }
+}

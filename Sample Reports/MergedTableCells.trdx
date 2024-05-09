@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="jsonDataSource1" Width="27.16cm" Name="Pk5_2" StyleName="Normal.TableNormal" ShowSnapGrid="True" xmlns="http://schemas.telerik.com/reporting/2023/3.0">
+  <DataSources>
+    <JsonDataSource Name="jsonDataSource1">
+      <Source>
+        <String>ew0KCSJ0YWJsZSI6IFsNCiAgICAgICAgew0KICAgICAgICAgICAgInF1ZXN0SUQiOiAxLA0KICAgICAgICAgICAgInF1ZXN0TmFtZSI6ICJRdWVzdCBBQkMiLA0KICAgICAgICAgICAgInF1ZXN0RGV0YWlsIjogIlRhcmdldCAxIiwNCiAgICAgICAgICAgICJyaXNrIjogIlJpc2sgMSIsDQogICAgICAgICAgICAiY29udHJvbEV4aXN0aW5nIjogImNvbnRyb2xFeGlzdGluZyAxIiwNCiAgICAgICAgICAgICJjb250cm9sRXZhIjogImNvbnRyb2xFdmEgMSIsDQogICAgICAgICAgICAicmlza0V4aXN0aW5nIjogInJpc2tFeGlzdGluZyAxIiwNCiAgICAgICAgICAgICJjb250cm9sSW1wcm92ZW1lbnQiOiAiY29udHJvbEltcHJvdmVtZW50IDEiLA0KICAgICAgICAgICAgInJlc3BvbnNpYmlsaXR5QWdlbmN5IjogInJlc3BvbnNpYmlsaXR5QWdlbmN5IDEiDQogICAgICAgIH0sDQogICAgICAgIHsNCiAgICAgICAgICAgICJxdWVzdElEIjogMSwNCiAgICAgICAgICAgICJxdWVzdE5hbWUiOiAiUXVlc3QgQUJDIiwNCiAgICAgICAgICAgICJxdWVzdERldGFpbCI6ICJUYXJnZXQgMSIsDQogICAgICAgICAgICAicmlzayI6ICJSaXNrIDEiLA0KICAgICAgICAgICAgImNvbnRyb2xFeGlzdGluZyI6ICJjb250cm9sRXhpc3RpbmcgMiIsDQogICAgICAgICAgICAiY29udHJvbEV2YSI6ICJjb250cm9sRXZhIDIiLA0KICAgICAgICAgICAgInJpc2tFeGlzdGluZyI6ICJyaXNrRXhpc3RpbmcgMiIsDQogICAgICAgICAgICAiY29udHJvbEltcHJvdmVtZW50IjogImNvbnRyb2xJbXByb3ZlbWVudCAyIiwNCiAgICAgICAgICAgICJyZXNwb25zaWJpbGl0eUFnZW5jeSI6ICJyZXNwb25zaWJpbGl0eUFnZW5jeSAxIg0KICAgICAgICB9LA0KICAgICAgICB7DQogICAgICAgICAgICAicXVlc3RJRCI6IDEsDQogICAgICAgICAgICAicXVlc3ROYW1lIjogIlF1ZXN0IEFCQyIsDQogICAgICAgICAgICAicXVlc3REZXRhaWwiOiAiVGFyZ2V0IDEiLA0KICAgICAgICAgICAgInJpc2siOiAiUmlzayAzIiwNCiAgICAgICAgICAgICJjb250cm9sRXhpc3RpbmciOiAiY29udHJvbEV4aXN0aW5nIDIiLA0KICAgICAgICAgICAgImNvbnRyb2xFdmEiOiAiY29udHJvbEV2YSAzIiwNCiAgICAgICAgICAgICJyaXNrRXhpc3RpbmciOiAicmlza0V4aXN0aW5nIDMiLA0KICAgICAgICAgICAgImNvbnRyb2xJbXByb3ZlbWVudCI6ICJjb250cm9sSW1wcm92ZW1lbnQgMyIsDQogICAgICAgICAgICAicmVzcG9uc2liaWxpdHlBZ2VuY3kiOiAicmVzcG9uc2liaWxpdHlBZ2VuY3kgMSINCiAgICAgICAgfSwNCg0KDQogICAgICAgIHsNCiAgICAgICAgICAgICJxdWVzdElEIjogMiwNCiAgICAgICAgICAgICJxdWVzdE5hbWUiOiAiUXVlc3QgWFlaIiwNCiAgICAgICAgICAgICJxdWVzdERldGFpbCI6ICJUYXJnZXQgMSIsDQogICAgICAgICAgICAicmlzayI6ICJSaXNrIDEiLA0KICAgICAgICAgICAgImNvbnRyb2xFeGlzdGluZyI6ICJjb250cm9sRXhpc3RpbmcgMSIsDQogICAgICAgICAgICAiY29udHJvbEV2YSI6ICJjb250cm9sRXZhIDEiLA0KICAgICAgICAgICAgInJpc2tFeGlzdGluZyI6ICJyaXNrRXhpc3RpbmcgMSIsDQogICAgICAgICAgICAiY29udHJvbEltcHJvdmVtZW50IjogImNvbnRyb2xJbXByb3ZlbWVudCAxIiwNCiAgICAgICAgICAgICJyZXNwb25zaWJpbGl0eUFnZW5jeSI6ICJyZXNwb25zaWJpbGl0eUFnZW5jeSAxIg0KICAgICAgICB9LA0KICAgICAgICB7DQogICAgICAgICAgICAicXVlc3RJRCI6IDIsDQogICAgICAgICAgICAicXVlc3ROYW1lIjogIlF1ZXN0IFhZWiIsDQogICAgICAgICAgICAicXVlc3REZXRhaWwiOiAiVGFyZ2V0IDEiLA0KICAgICAgICAgICAgInJpc2siOiAiUmlzayAyIiwNCiAgICAgICAgICAgICJjb250cm9sRXhpc3RpbmciOiAiY29udHJvbEV4aXN0aW5nIDIiLA0KICAgICAgICAgICAgImNvbnRyb2xFdmEiOiAiY29udHJvbEV2YSAyIiwNCiAgICAgICAgICAgICJyaXNrRXhpc3RpbmciOiAicmlza0V4aXN0aW5nIDEiLA0KICAgICAgICAgICAgImNvbnRyb2xJbXByb3ZlbWVudCI6ICJjb250cm9sSW1wcm92ZW1lbnQgMSIsDQogICAgICAgICAgICAicmVzcG9uc2liaWxpdHlBZ2VuY3kiOiAicmVzcG9uc2liaWxpdHlBZ2VuY3kgMiINCiAgICAgICAgfSwNCiAgICAgICAgew0KICAgICAgICAgICAgInF1ZXN0SUQiOiAyLA0KICAgICAgICAgICAgInF1ZXN0TmFtZSI6ICJRdWVzdCBYWVoiLA0KICAgICAgICAgICAgInF1ZXN0RGV0YWlsIjogIlRhcmdldCAxIiwNCiAgICAgICAgICAgICJyaXNrIjogIlJpc2sgMyIsDQogICAgICAgICAgICAiY29udHJvbEV4aXN0aW5nIjogImNvbnRyb2xFeGlzdGluZyAzIiwNCiAgICAgICAgICAgICJjb250cm9sRXZhIjogImNvbnRyb2xFdmEgMiIsDQogICAgICAgICAgICAicmlza0V4aXN0aW5nIjogInJpc2tFeGlzdGluZyAzIiwNCiAgICAgICAgICAgICJjb250cm9sSW1wcm92ZW1lbnQiOiAiY29udHJvbEltcHJvdmVtZW50IDMiLA0KICAgICAgICAgICAgInJlc3BvbnNpYmlsaXR5QWdlbmN5IjogInJlc3BvbnNpYmlsaXR5QWdlbmN5IDMiDQogICAgICAgIH0NCiAgICBdDQp9</String>
+      </Source>
+    </JsonDataSource>
+  </DataSources>
+  <Items>
+    <DetailSection Height="0.254cm" Name="detailSection1">
+      <Style Visible="False" />
+    </DetailSection>
+    <ReportHeaderSection Height="1.7in" Name="reportHeaderSection1">
+      <Items>
+        <Crosstab Width="10.302in" Height="0.4in" Left="0in" Top="1.3in" Name="crosstab1" StyleName="Office.TableNormal">
+          <Body>
+            <Cells>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.387in" Height="0.2in" Left="0in" Top="0in" Value="= If(Previous(Fields.riskExisting) is Not Null, (Fields.riskExisting = Previous(Fields.riskExisting)) ? '' : Fields.riskExisting,&#xD;&#xA;&#x9;If(Previous('risk', Fields.riskExisting) is Not Null, (Fields.riskExisting = Previous('risk', Last(Fields.riskExisting))) ? '' : Fields.riskExisting,&#xD;&#xA;&#x9;If(Previous('questDetail', Fields.riskExisting) is Not Null, (Fields.riskExisting = Previous('questDetail', Last(Fields.riskExisting))) ? '' : Fields.riskExisting,&#xD;&#xA;&#x9;Fields.riskExisting)))" Name="textBox12" StyleName="Office.TableBody">
+                    <Style>
+                      <BorderStyle Bottom="None" />
+                    </Style>
+                    <Bindings>
+                      <Binding Path="Style.BorderStyle.Top" Expression="= If(Previous(Fields.riskExisting) is Not Null, (Fields.riskExisting = Previous(Fields.riskExisting)) ? 'None' : 'Solid',&#xD;&#xA;&#x9;If(Previous('risk', Fields.riskExisting) is Not Null, (Fields.riskExisting = Previous('risk', Last(Fields.riskExisting))) ? 'None' : 'Solid',&#xD;&#xA;&#x9;If(Previous('questDetail', Fields.riskExisting) is Not Null, (Fields.riskExisting = Previous('questDetail', Last(Fields.riskExisting))) ? 'None' : 'Solid',&#xD;&#xA;&#x9;'Solid')))" />
+                    </Bindings>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.387in" Height="0.2in" Left="0in" Top="0in" Value="= If(Previous(Fields.controlEva) is Not Null, (Fields.controlEva = Previous(Fields.controlEva)) ? '' : Fields.controlEva,&#xD;&#xA;&#x9;If(Previous('risk', Fields.controlEva) is Not Null, (Fields.controlEva = Previous('risk', Last(Fields.controlEva))) ? '' : Fields.controlEva,&#xD;&#xA;&#x9;If(Previous('questDetail', Fields.controlEva) is Not Null, (Fields.controlEva = Previous('questDetail', Last(Fields.controlEva))) ? '' : Fields.controlEva,&#xD;&#xA;&#x9;Fields.controlEva)))" Name="textBox13" StyleName="Office.TableBody">
+                    <Style>
+                      <BorderStyle Bottom="None" />
+                    </Style>
+                    <Bindings>
+                      <Binding Path="Style.BorderStyle.Top" Expression="= If(Previous(Fields.controlEva) is Not Null, (Fields.controlEva = Previous(Fields.controlEva)) ? 'None' : 'Solid',&#xD;&#xA;&#x9;If(Previous('risk', Fields.controlEva) is Not Null, (Fields.controlEva = Previous('risk', Last(Fields.controlEva))) ? 'None' : 'Solid',&#xD;&#xA;&#x9;If(Previous('questDetail', Fields.controlEva) is Not Null, (Fields.controlEva = Previous('questDetail', Last(Fields.controlEva))) ? 'None' : 'Solid',&#xD;&#xA;&#x9;'Solid')))" />
+                    </Bindings>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.387in" Height="0.2in" Left="0in" Top="0in" Value="= If(Previous(Fields.controlExisting) is Not Null, (Fields.controlExisting = Previous(Fields.controlExisting)) ? '' : Fields.controlExisting,&#xD;&#xA;&#x9;If(Previous('risk', Fields.controlExisting) is Not Null, (Fields.controlExisting = Previous('risk', Last(Fields.controlExisting))) ? '' : Fields.controlExisting,&#xD;&#xA;&#x9;If(Previous('questDetail', Fields.controlExisting) is Not Null, (Fields.controlExisting = Previous('questDetail', Last(Fields.controlExisting))) ? '' : Fields.controlExisting,&#xD;&#xA;&#x9;Fields.controlExisting)))" Name="textBox14" StyleName="Office.TableBody">
+                    <Style>
+                      <BorderStyle Default="Solid" Bottom="None" />
+                    </Style>
+                    <Bindings>
+                      <Binding Path="Style.BorderStyle.Top" Expression="= If(Previous(Fields.controlExisting) is Not Null, (Fields.controlExisting = Previous(Fields.controlExisting)) ? 'None' : 'Solid',&#xD;&#xA;&#x9;If(Previous('risk', Fields.controlExisting) is Not Null, (Fields.controlExisting = Previous('risk', Last(Fields.controlExisting))) ? 'None' : 'Solid',&#xD;&#xA;&#x9;If(Previous('questDetail', Fields.controlExisting) is Not Null, (Fields.controlExisting = Previous('questDetail', Last(Fields.controlExisting))) ? 'None' : 'Solid',&#xD;&#xA;&#x9;'Solid')))" />
+                    </Bindings>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.387in" Height="0.2in" Left="0in" Top="0in" Value="= If(Previous(Fields.controlImprovement) is Not Null, (Fields.controlImprovement = Previous(Fields.controlImprovement)) ? '' : Fields.controlImprovement,&#xD;&#xA;&#x9;If(Previous('risk', Fields.controlImprovement) is Not Null, (Fields.controlImprovement = Previous('risk', Last(Fields.controlImprovement))) ? '' : Fields.controlImprovement,&#xD;&#xA;&#x9;If(Previous('questDetail', Fields.controlImprovement) is Not Null, (Fields.controlImprovement = Previous('questDetail', Last(Fields.controlImprovement))) ? '' : Fields.controlImprovement,&#xD;&#xA;&#x9;Fields.controlImprovement)))" Name="textBox15" StyleName="Office.TableBody">
+                    <Style>
+                      <BorderStyle Bottom="None" />
+                    </Style>
+                    <Bindings>
+                      <Binding Path="Style.BorderStyle.Top" Expression="= If(Previous(Fields.controlImprovement) is Not Null, (Fields.controlImprovement = Previous(Fields.controlImprovement)) ? 'None' : 'Solid',&#xD;&#xA;&#x9;If(Previous('risk', Fields.controlImprovement) is Not Null, (Fields.controlImprovement = Previous('risk', Last(Fields.controlImprovement))) ? 'None' : 'Solid',&#xD;&#xA;&#x9;If(Previous('questDetail', Fields.controlImprovement) is Not Null, (Fields.controlImprovement = Previous('questDetail', Last(Fields.controlImprovement))) ? 'None' : 'Solid',&#xD;&#xA;&#x9;'Solid')))" />
+                    </Bindings>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="4" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.387in" Height="0.2in" Left="0in" Top="0in" Value="= If(Previous(Fields.responsibilityAgency) is Not Null, (Fields.responsibilityAgency = Previous(Fields.responsibilityAgency)) ? '' : Fields.responsibilityAgency,&#xD;&#xA;&#x9;If(Previous('risk', Fields.responsibilityAgency) is Not Null, (Fields.responsibilityAgency = Previous('risk', Last(Fields.responsibilityAgency))) ? '' : Fields.responsibilityAgency,&#xD;&#xA;&#x9;If(Previous('questDetail', Fields.responsibilityAgency) is Not Null, (Fields.responsibilityAgency = Previous('questDetail', Last(Fields.responsibilityAgency))) ? '' : Fields.responsibilityAgency, Fields.responsibilityAgency)))" Name="textBox16" StyleName="Office.TableBody">
+                    <Style BackgroundColor="255, 255, 192">
+                      <BorderStyle Bottom="None" />
+                    </Style>
+                    <Bindings>
+                      <Binding Path="Style.BorderStyle.Top" Expression="= If(Previous(Fields.responsibilityAgency) is Not Null, (Fields.responsibilityAgency = Previous(Fields.responsibilityAgency)) ? 'None' : 'Solid',&#xD;&#xA;&#x9;If(Previous('risk', Fields.responsibilityAgency) is Not Null, (Fields.responsibilityAgency = Previous('risk', Last(Fields.responsibilityAgency))) ? 'None' : 'Solid',&#xD;&#xA;&#x9;If(Previous('questDetail', Fields.responsibilityAgency) is Not Null, (Fields.responsibilityAgency = Previous('questDetail', Last(Fields.responsibilityAgency))) ? 'None' : 'Solid', 'Solid')))" />
+                    </Bindings>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+            </Cells>
+            <Columns>
+              <Column Width="1.387in" />
+              <Column Width="1.387in" />
+              <Column Width="1.387in" />
+              <Column Width="1.387in" />
+              <Column Width="1.387in" />
+            </Columns>
+            <Rows>
+              <Row Height="0.2in" />
+            </Rows>
+          </Body>
+          <Corner>
+            <Cells>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.075in" Height="0.2in" Left="0in" Top="0in" Value="quest Name" Name="textBox9" StyleName="Office.TableHeader" />
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.387in" Height="0.2in" Left="0in" Top="0in" Value="quest Detail" Name="textBox10" StyleName="Office.TableHeader" />
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.905in" Height="0.2in" Left="0in" Top="0in" Value="risk" Name="textBox11" StyleName="Office.TableHeader" />
+                </ReportItem>
+              </TableCell>
+            </Cells>
+          </Corner>
+          <RowGroups>
+            <TableGroup Name="questName">
+              <ReportItem>
+                <TextBox Width="1.075in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.questName" Name="textBox6" StyleName="Office.TableGroup">
+                  <Style>
+                    <BorderStyle Bottom="None" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+              <ChildGroups>
+                <TableGroup Name="questDetail">
+                  <ReportItem>
+                    <TextBox Width="1.387in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.questDetail" Name="textBox7" StyleName="Office.TableGroup">
+                      <Style>
+                        <BorderStyle Bottom="None" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                  <ChildGroups>
+                    <TableGroup Name="risk">
+                      <ReportItem>
+                        <TextBox Width="0.905in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.risk" Name="textBox8" StyleName="Office.TableGroup">
+                          <Style>
+                            <BorderStyle Bottom="None" />
+                          </Style>
+                        </TextBox>
+                      </ReportItem>
+                      <ChildGroups>
+                        <TableGroup Name="detail">
+                          <Groupings>
+                            <Grouping />
+                          </Groupings>
+                        </TableGroup>
+                      </ChildGroups>
+                      <Groupings>
+                        <Grouping Expression="= Fields.risk" />
+                      </Groupings>
+                      <Sortings>
+                        <Sorting Expression="= Fields.risk" Direction="Asc" />
+                      </Sortings>
+                    </TableGroup>
+                  </ChildGroups>
+                  <Groupings>
+                    <Grouping Expression="= Fields.questDetail" />
+                  </Groupings>
+                  <Sortings>
+                    <Sorting Expression="= Fields.questDetail" Direction="Asc" />
+                  </Sortings>
+                </TableGroup>
+              </ChildGroups>
+              <Groupings>
+                <Grouping Expression="= Fields.questName" />
+              </Groupings>
+              <Sortings>
+                <Sorting Expression="= Fields.questName" Direction="Asc" />
+              </Sortings>
+            </TableGroup>
+          </RowGroups>
+          <ColumnGroups>
+            <TableGroup Name="riskExisting">
+              <ReportItem>
+                <TextBox Width="1.387in" Height="0.2in" Left="0in" Top="0in" Value="risk Existing" Name="textBox1" StyleName="Office.TableHeader" />
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="controlEva">
+              <ReportItem>
+                <TextBox Width="1.387in" Height="0.2in" Left="0in" Top="0in" Value="control Eva" Name="textBox2" StyleName="Office.TableHeader" />
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="controlExisting">
+              <ReportItem>
+                <TextBox Width="1.387in" Height="0.2in" Left="0in" Top="0in" Value="control Existing" Name="textBox3" StyleName="Office.TableHeader" />
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="controlImprovement">
+              <ReportItem>
+                <TextBox Width="1.387in" Height="0.2in" Left="0in" Top="0in" Value="control Improvement" Name="textBox4" StyleName="Office.TableHeader" />
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="responsibilityAgency">
+              <ReportItem>
+                <TextBox Width="1.387in" Height="0.2in" Left="0in" Top="0in" Value="responsibility Agency" Name="textBox5" StyleName="Office.TableHeader" />
+              </ReportItem>
+            </TableGroup>
+          </ColumnGroups>
+          <Bindings>
+            <Binding Path="DataSource" Expression="= Fields.table" />
+          </Bindings>
+        </Crosstab>
+        <TextBox Width="3.7in" Height="0.2in" Left="3.5in" Top="0in" Value="Crosstab only with groupings" Name="textBox71">
+          <Style TextAlign="Center" VerticalAlign="Middle" />
+        </TextBox>
+        <Crosstab Width="10.277in" Height="0.4in" Left="0in" Top="0.3in" Name="crosstab5" StyleName="Office.TableNormal">
+          <Body>
+            <Cells>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.363in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.riskExisting" Name="textBox83" StyleName="Office.TableBody" />
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.388in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.controlEva" Name="textBox84" StyleName="Office.TableBody" />
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.379in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.controlExisting" Name="textBox85" StyleName="Office.TableBody" />
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.388in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.controlImprovement" Name="textBox86" StyleName="Office.TableBody" />
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="4" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.371in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.responsibilityAgency" Name="textBox87" StyleName="Office.TableBody" />
+                </ReportItem>
+              </TableCell>
+            </Cells>
+            <Columns>
+              <Column Width="1.363in" />
+              <Column Width="1.388in" />
+              <Column Width="1.379in" />
+              <Column Width="1.388in" />
+              <Column Width="1.371in" />
+            </Columns>
+            <Rows>
+              <Row Height="0.2in" />
+            </Rows>
+          </Body>
+          <Corner>
+            <Cells>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.104in" Height="0.2in" Left="0in" Top="0in" Value="quest Name" Name="textBox80" StyleName="Office.TableHeader" />
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.363in" Height="0.2in" Left="0in" Top="0in" Value="quest Detail" Name="textBox81" StyleName="Office.TableHeader" />
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.921in" Height="0.2in" Left="0in" Top="0in" Value="risk" Name="textBox82" StyleName="Office.TableHeader" />
+                </ReportItem>
+              </TableCell>
+            </Cells>
+          </Corner>
+          <RowGroups>
+            <TableGroup Name="questName1">
+              <ReportItem>
+                <TextBox Width="1.104in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.questName" Name="textBox77" StyleName="Office.TableGroup" />
+              </ReportItem>
+              <ChildGroups>
+                <TableGroup Name="questDetail1">
+                  <ReportItem>
+                    <TextBox Width="1.363in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.questDetail" Name="textBox78" StyleName="Office.TableGroup" />
+                  </ReportItem>
+                  <ChildGroups>
+                    <TableGroup Name="risk1">
+                      <ReportItem>
+                        <TextBox Width="0.921in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.risk" Name="textBox79" StyleName="Office.TableGroup" />
+                      </ReportItem>
+                      <ChildGroups>
+                        <TableGroup Name="detail">
+                          <Groupings>
+                            <Grouping />
+                          </Groupings>
+                        </TableGroup>
+                      </ChildGroups>
+                      <Groupings>
+                        <Grouping Expression="= Fields.risk" />
+                      </Groupings>
+                      <Sortings>
+                        <Sorting Expression="= Fields.risk" Direction="Asc" />
+                      </Sortings>
+                    </TableGroup>
+                  </ChildGroups>
+                  <Groupings>
+                    <Grouping Expression="= Fields.questDetail" />
+                  </Groupings>
+                  <Sortings>
+                    <Sorting Expression="= Fields.questDetail" Direction="Asc" />
+                  </Sortings>
+                </TableGroup>
+              </ChildGroups>
+              <Groupings>
+                <Grouping Expression="= Fields.questName" />
+              </Groupings>
+              <Sortings>
+                <Sorting Expression="= Fields.questName" Direction="Asc" />
+              </Sortings>
+            </TableGroup>
+          </RowGroups>
+          <ColumnGroups>
+            <TableGroup Name="riskExisting1">
+              <ReportItem>
+                <TextBox Width="1.363in" Height="0.2in" Left="0in" Top="0in" Value="risk Existing" Name="textBox72" StyleName="Office.TableHeader" />
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="controlEva1">
+              <ReportItem>
+                <TextBox Width="1.388in" Height="0.2in" Left="0in" Top="0in" Value="control Eva" Name="textBox73" StyleName="Office.TableHeader" />
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="controlExisting1">
+              <ReportItem>
+                <TextBox Width="1.379in" Height="0.2in" Left="0in" Top="0in" Value="control Existing" Name="textBox74" StyleName="Office.TableHeader" />
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="controlImprovement1">
+              <ReportItem>
+                <TextBox Width="1.388in" Height="0.2in" Left="0in" Top="0in" Value="control Improvement" Name="textBox75" StyleName="Office.TableHeader" />
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="responsibilityAgency1">
+              <ReportItem>
+                <TextBox Width="1.371in" Height="0.2in" Left="0in" Top="0in" Value="responsibility Agency" Name="textBox76" StyleName="Office.TableHeader" />
+              </ReportItem>
+            </TableGroup>
+          </ColumnGroups>
+          <Bindings>
+            <Binding Path="DataSource" Expression="= Fields.table" />
+          </Bindings>
+        </Crosstab>
+        <TextBox Width="3.7in" Height="0.2in" Left="3.5in" Top="1in" Value="Added Merging for groups 'questDetail' and 'risk'" Name="textBox34">
+          <Style BackgroundColor="255, 255, 192" TextAlign="Center" VerticalAlign="Middle" />
+        </TextBox>
+      </Items>
+    </ReportHeaderSection>
+    <ReportFooterSection Height="0.8in" Name="reportFooterSection1">
+      <Items>
+        <Crosstab Width="10.302in" Height="0.4in" Left="0in" Top="0.4in" Name="crosstab2" StyleName="Office.TableNormal">
+          <Body>
+            <Cells>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.387in" Height="0.2in" Left="0in" Top="0in" Value="= If(Previous(Fields.riskExisting) is Not Null, (Fields.riskExisting = Previous(Fields.riskExisting)) ? '' : Fields.riskExisting,&#xD;&#xA;&#x9;If(Previous('risk', Fields.riskExisting) is Not Null, (Fields.riskExisting = Previous('risk', Last(Fields.riskExisting))) ? '' : Fields.riskExisting,&#xD;&#xA;&#x9;If(Previous('questDetail', Fields.riskExisting) is Not Null, (Fields.riskExisting = Previous('questDetail', Last(Fields.riskExisting))) ? '' : Fields.riskExisting,&#xD;&#xA;&#x9;If(Previous('questName', Fields.riskExisting) is Not Null, (Fields.riskExisting = Previous('questName', Last(Fields.riskExisting))) ? '' : Fields.riskExisting, Fields.riskExisting))))" Name="textBox17" StyleName="Office.TableBody">
+                    <Style>
+                      <BorderStyle Bottom="None" />
+                    </Style>
+                    <Bindings>
+                      <Binding Path="Style.BorderStyle.Top" Expression="= If(Previous(Fields.riskExisting) is Not Null, (Fields.riskExisting = Previous(Fields.riskExisting)) ? 'None' : 'Solid',&#xD;&#xA;&#x9;If(Previous('risk', Fields.riskExisting) is Not Null, (Fields.riskExisting = Previous('risk', Last(Fields.riskExisting))) ? 'None' : 'Solid',&#xD;&#xA;&#x9;If(Previous('questDetail', Fields.riskExisting) is Not Null, (Fields.riskExisting = Previous('questDetail', Last(Fields.riskExisting))) ? 'None' : 'Solid',&#xD;&#xA;&#x9;If(Previous('questName', Fields.riskExisting) is Not Null, (Fields.riskExisting = Previous('questName', Last(Fields.riskExisting))) ? 'None' : 'Solid', 'Solid'))))" />
+                    </Bindings>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.387in" Height="0.2in" Left="0in" Top="0in" Value="= If(Previous(Fields.controlEva) is Not Null, (Fields.controlEva = Previous(Fields.controlEva)) ? '' : Fields.controlEva,&#xD;&#xA;&#x9;If(Previous('risk', Fields.controlEva) is Not Null, (Fields.controlEva = Previous('risk', Last(Fields.controlEva))) ? '' : Fields.controlEva,&#xD;&#xA;&#x9;If(Previous('questDetail', Fields.controlEva) is Not Null, (Fields.controlEva = Previous('questDetail', Last(Fields.controlEva))) ? '' : Fields.controlEva,&#xD;&#xA;&#x9;If(Previous('questName', Fields.controlEva) is Not Null, (Fields.controlEva = Previous('questName', Last(Fields.controlEva))) ? '' : Fields.controlEva, Fields.controlEva))))" Name="textBox18" StyleName="Office.TableBody">
+                    <Style>
+                      <BorderStyle Bottom="None" />
+                    </Style>
+                    <Bindings>
+                      <Binding Path="Style.BorderStyle.Top" Expression="= If(Previous(Fields.controlEva) is Not Null, (Fields.controlEva = Previous(Fields.controlEva)) ? 'None' : 'Solid',&#xD;&#xA;&#x9;If(Previous('risk', Fields.controlEva) is Not Null, (Fields.controlEva = Previous('risk', Last(Fields.controlEva))) ? 'None' : 'Solid',&#xD;&#xA;&#x9;If(Previous('questDetail', Fields.controlEva) is Not Null, (Fields.controlEva = Previous('questDetail', Last(Fields.controlEva))) ? 'None' : 'Solid',&#xD;&#xA;&#x9;If(Previous('questName', Fields.controlEva) is Not Null, (Fields.controlEva = Previous('questName', Last(Fields.controlEva))) ? 'None' : 'Solid', 'Solid'))))" />
+                    </Bindings>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.387in" Height="0.2in" Left="0in" Top="0in" Value="= If(Previous(Fields.controlExisting) is Not Null, (Fields.controlExisting = Previous(Fields.controlExisting)) ? '' : Fields.controlExisting,&#xD;&#xA;&#x9;If(Previous('risk', Fields.controlExisting) is Not Null, (Fields.controlExisting = Previous('risk', Last(Fields.controlExisting))) ? '' : Fields.controlExisting,&#xD;&#xA;&#x9;If(Previous('questDetail', Fields.controlExisting) is Not Null, (Fields.controlExisting = Previous('questDetail', Last(Fields.controlExisting))) ? '' : Fields.controlExisting,&#xD;&#xA;&#x9;If(Previous('questName', Fields.controlExisting) is Not Null, (Fields.controlExisting = Previous('questName', Last(Fields.controlExisting))) ? '' : Fields.controlExisting, Fields.controlExisting))))" Name="textBox19" StyleName="Office.TableBody">
+                    <Style>
+                      <BorderStyle Default="Solid" Bottom="None" />
+                    </Style>
+                    <Bindings>
+                      <Binding Path="Style.BorderStyle.Top" Expression="= If(Previous(Fields.controlExisting) is Not Null, (Fields.controlExisting = Previous(Fields.controlExisting)) ? 'None' : 'Solid',&#xD;&#xA;&#x9;If(Previous('risk', Fields.controlExisting) is Not Null, (Fields.controlExisting = Previous('risk', Last(Fields.controlExisting))) ? 'None' : 'Solid',&#xD;&#xA;&#x9;If(Previous('questDetail', Fields.controlExisting) is Not Null, (Fields.controlExisting = Previous('questDetail', Last(Fields.controlExisting))) ? 'None' : 'Solid',&#xD;&#xA;&#x9;If(Previous('questName', Fields.controlExisting) is Not Null, (Fields.controlExisting = Previous('questName', Last(Fields.controlExisting))) ? 'None' : 'Solid', 'Solid'))))" />
+                    </Bindings>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="3" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.387in" Height="0.2in" Left="0in" Top="0in" Value="= If(Previous(Fields.controlImprovement) is Not Null, (Fields.controlImprovement = Previous(Fields.controlImprovement)) ? '' : Fields.controlImprovement,&#xD;&#xA;&#x9;If(Previous('risk', Fields.controlImprovement) is Not Null, (Fields.controlImprovement = Previous('risk', Last(Fields.controlImprovement))) ? '' : Fields.controlImprovement,&#xD;&#xA;&#x9;If(Previous('questDetail', Fields.controlImprovement) is Not Null, (Fields.controlImprovement = Previous('questDetail', Last(Fields.controlImprovement))) ? '' : Fields.controlImprovement,&#xD;&#xA;&#x9;If(Previous('questName', Fields.controlImprovement) is Not Null, (Fields.controlImprovement = Previous('questName', Last(Fields.controlImprovement))) ? '' : Fields.controlImprovement, Fields.controlImprovement))))" Name="textBox20" StyleName="Office.TableBody">
+                    <Style>
+                      <BorderStyle Bottom="None" />
+                    </Style>
+                    <Bindings>
+                      <Binding Path="Style.BorderStyle.Top" Expression="= If(Previous(Fields.controlImprovement) is Not Null, (Fields.controlImprovement = Previous(Fields.controlImprovement)) ? 'None' : 'Solid',&#xD;&#xA;&#x9;If(Previous('risk', Fields.controlImprovement) is Not Null, (Fields.controlImprovement = Previous('risk', Last(Fields.controlImprovement))) ? 'None' : 'Solid',&#xD;&#xA;&#x9;If(Previous('questDetail', Fields.controlImprovement) is Not Null, (Fields.controlImprovement = Previous('questDetail', Last(Fields.controlImprovement))) ? 'None' : 'Solid',&#xD;&#xA;&#x9;If(Previous('questName', Fields.controlImprovement) is Not Null, (Fields.controlImprovement = Previous('questName', Last(Fields.controlImprovement))) ? 'None' : 'Solid', 'Solid'))))" />
+                    </Bindings>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="4" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.387in" Height="0.2in" Left="0in" Top="0in" Value="= If(Previous(Fields.responsibilityAgency) is Not Null, (Fields.responsibilityAgency = Previous(Fields.responsibilityAgency)) ? '' : Fields.responsibilityAgency,&#xD;&#xA;&#x9;If(Previous('risk', Fields.responsibilityAgency) is Not Null, (Fields.responsibilityAgency = Previous('risk', Last(Fields.responsibilityAgency))) ? '' : Fields.responsibilityAgency,&#xD;&#xA;&#x9;If(Previous('questDetail', Fields.responsibilityAgency) is Not Null, (Fields.responsibilityAgency = Previous('questDetail', Last(Fields.responsibilityAgency))) ? '' : Fields.responsibilityAgency,&#xD;&#xA;&#x9;If(Previous('questName', Fields.responsibilityAgency) is Not Null, (Fields.responsibilityAgency = Previous('questName', Last(Fields.responsibilityAgency))) ? '' : Fields.responsibilityAgency, Fields.responsibilityAgency))))" Name="textBox21" StyleName="Office.TableBody">
+                    <Style BackgroundColor="192, 255, 192">
+                      <BorderStyle Bottom="None" />
+                    </Style>
+                    <Bindings>
+                      <Binding Path="Style.BorderStyle.Top" Expression="= If(Previous(Fields.responsibilityAgency) is Not Null, (Fields.responsibilityAgency = Previous(Fields.responsibilityAgency)) ? 'None' : 'Solid',&#xD;&#xA;&#x9;If(Previous('risk', Fields.responsibilityAgency) is Not Null, (Fields.responsibilityAgency = Previous('risk', Last(Fields.responsibilityAgency))) ? 'None' : 'Solid',&#xD;&#xA;&#x9;If(Previous('questDetail', Fields.responsibilityAgency) is Not Null, (Fields.responsibilityAgency = Previous('questDetail', Last(Fields.responsibilityAgency))) ? 'None' : 'Solid',&#xD;&#xA;&#x9;If(Previous('questName', Fields.responsibilityAgency) is Not Null, (Fields.responsibilityAgency = Previous('questName', Last(Fields.responsibilityAgency))) ? 'None' : 'Solid', 'Solid'))))" />
+                    </Bindings>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+            </Cells>
+            <Columns>
+              <Column Width="1.387in" />
+              <Column Width="1.387in" />
+              <Column Width="1.387in" />
+              <Column Width="1.387in" />
+              <Column Width="1.387in" />
+            </Columns>
+            <Rows>
+              <Row Height="0.2in" />
+            </Rows>
+          </Body>
+          <Corner>
+            <Cells>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.075in" Height="0.2in" Left="0in" Top="0in" Value="quest Name" Name="textBox27" StyleName="Office.TableHeader" />
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.387in" Height="0.2in" Left="0in" Top="0in" Value="quest Detail" Name="textBox28" StyleName="Office.TableHeader" />
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="0.905in" Height="0.2in" Left="0in" Top="0in" Value="risk" Name="textBox29" StyleName="Office.TableHeader" />
+                </ReportItem>
+              </TableCell>
+            </Cells>
+          </Corner>
+          <RowGroups>
+            <TableGroup Name="questName">
+              <ReportItem>
+                <TextBox Width="1.075in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.questName" Name="textBox30" StyleName="Office.TableGroup">
+                  <Style>
+                    <BorderStyle Bottom="None" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+              <ChildGroups>
+                <TableGroup Name="questDetail">
+                  <ReportItem>
+                    <TextBox Width="1.387in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.questDetail" Name="textBox31" StyleName="Office.TableGroup">
+                      <Style>
+                        <BorderStyle Bottom="None" />
+                      </Style>
+                    </TextBox>
+                  </ReportItem>
+                  <ChildGroups>
+                    <TableGroup Name="risk">
+                      <ReportItem>
+                        <TextBox Width="0.905in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.risk" Name="textBox32" StyleName="Office.TableGroup">
+                          <Style>
+                            <BorderStyle Bottom="None" />
+                          </Style>
+                        </TextBox>
+                      </ReportItem>
+                      <ChildGroups>
+                        <TableGroup Name="detail">
+                          <Groupings>
+                            <Grouping />
+                          </Groupings>
+                        </TableGroup>
+                      </ChildGroups>
+                      <Groupings>
+                        <Grouping Expression="= Fields.risk" />
+                      </Groupings>
+                      <Sortings>
+                        <Sorting Expression="= Fields.risk" Direction="Asc" />
+                      </Sortings>
+                    </TableGroup>
+                  </ChildGroups>
+                  <Groupings>
+                    <Grouping Expression="= Fields.questDetail" />
+                  </Groupings>
+                  <Sortings>
+                    <Sorting Expression="= Fields.questDetail" Direction="Asc" />
+                  </Sortings>
+                </TableGroup>
+              </ChildGroups>
+              <Groupings>
+                <Grouping Expression="= Fields.questName" />
+              </Groupings>
+              <Sortings>
+                <Sorting Expression="= Fields.questName" Direction="Asc" />
+              </Sortings>
+            </TableGroup>
+          </RowGroups>
+          <ColumnGroups>
+            <TableGroup Name="riskExisting">
+              <ReportItem>
+                <TextBox Width="1.387in" Height="0.2in" Left="0in" Top="0in" Value="risk Existing" Name="textBox22" StyleName="Office.TableHeader" />
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="controlEva">
+              <ReportItem>
+                <TextBox Width="1.387in" Height="0.2in" Left="0in" Top="0in" Value="control Eva" Name="textBox23" StyleName="Office.TableHeader" />
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="controlExisting">
+              <ReportItem>
+                <TextBox Width="1.387in" Height="0.2in" Left="0in" Top="0in" Value="control Existing" Name="textBox24" StyleName="Office.TableHeader" />
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="controlImprovement">
+              <ReportItem>
+                <TextBox Width="1.387in" Height="0.2in" Left="0in" Top="0in" Value="control Improvement" Name="textBox25" StyleName="Office.TableHeader" />
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="responsibilityAgency">
+              <ReportItem>
+                <TextBox Width="1.387in" Height="0.2in" Left="0in" Top="0in" Value="responsibility Agency" Name="textBox26" StyleName="Office.TableHeader" />
+              </ReportItem>
+            </TableGroup>
+          </ColumnGroups>
+          <Bindings>
+            <Binding Path="DataSource" Expression="= Fields.table" />
+          </Bindings>
+        </Crosstab>
+        <TextBox Width="5.733in" Height="0.2in" Left="2.467in" Top="0.1in" Value="Added Merging for all groups ('guestName', 'questDetail' and 'risk')" Name="textBox33">
+          <Style BackgroundColor="192, 255, 192" TextAlign="Center" VerticalAlign="Middle" />
+        </TextBox>
+      </Items>
+    </ReportFooterSection>
+  </Items>
+  <PageSettings PaperKind="A4" Landscape="True" ContinuousPaper="False">
+    <Margins>
+      <MarginsU Left="0.5in" Right="0.5in" Top="0.5in" Bottom="0.5in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black">
+        <Font Name="Tahoma" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="Table" StyleName="Normal.TableNormal" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <Font Name="Tahoma" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableBody" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <Font Name="Tahoma" Size="10pt" Bold="True" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.GrandTotal" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <Font Name="Tahoma" Size="10pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.SubTotal" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="10pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableHeader" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <Font Name="Tahoma" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableGroup" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="20, 34, 77">
+        <Font Name="Calibri" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="Table" StyleName="Office.TableNormal" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <Font Name="Calibri" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Office.TableBody" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style BackgroundColor="121, 167, 227" Color="20, 34, 77" VerticalAlign="Middle">
+        <Font Name="Calibri" Size="10pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Office.TableHeader" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style BackgroundColor="238, 244, 251" Color="20, 34, 77">
+        <Font Name="Calibri" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Office.TableGroup" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+</Report>

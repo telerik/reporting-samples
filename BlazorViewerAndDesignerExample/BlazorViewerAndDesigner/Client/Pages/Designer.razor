@@ -1,0 +1,17 @@
+﻿@page "/designer"
+@using Telerik.WebReportDesigner.Blazor
+<style>
+    #wrd1 {
+        position: relative;
+        width: 1300px;
+        height: 880px;
+        padding-right: 50px;
+    }
+</style>
+
+@* Create the WebReportDesignerWidget *@
+<WebReportDesigner DesignerId="wrd1"
+            ServiceUrl="/api/reportdesigner"
+            Report="WeatherReport.trdp"
+            ToolboxArea="new ToolboxAreaOptions() { Layout = ToolboxAreaLayout.List }"
+            PropertiesArea="new PropertiesAreaOptions() { Layout = PropertiesAreaLayout.Categorized }" />

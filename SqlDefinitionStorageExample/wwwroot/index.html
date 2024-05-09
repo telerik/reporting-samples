@@ -1,0 +1,55 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Telerik Web Report Designer Demo</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div id="webReportDesigner" class="">
+        loading...
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://reporting.cdn.telerik.com/16.2.22.1109/js/webReportDesigner.kendo.min.js"></script>
+
+    <script src="/api/reports/resources/js/telerikReportViewer"></script>
+
+    <script src="api/reportdesigner/designerresources/js/webReportDesigner-17.0.23.315.min.js/"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            // For a complete overview over all the options used to initialize Web Report Designer, check:
+            // https://docs.telerik.com/reporting/designing-reports/report-designer-tools/web-report-designer/web-report-designer-initialization
+            $("#webReportDesigner").telerik_WebReportDesigner({
+                toolboxArea: {
+                    layout: "list" //Change to "grid" to display the contents of the Components area in a flow grid layout.
+                },
+                serviceUrl: "api/reportdesigner/",
+                report: "SampleReport.trdp",
+                //report: "Product Catalog.trdp",
+
+                // Example of passing parameters to the embedded Report Viewer used when previewing documents.
+                // The example below demonstrates the currently available options.
+                // reportViewerOptions: {
+                //    scaleMode: telerikReportViewer.ScaleModes.SPECIFIC,
+                //    scale: 1.0,
+                //    templateUrl: "api/reportdesigner/resources/templates/telerikReportViewerTemplate.html/",
+                //    viewMode: telerikReportViewer.ViewModes.INTERACTIVE,
+                //    pageMode: telerikReportViewer.PageModes.CONTINUOUS_SCROLL
+                //    // Further explanation about how these options effect the Report Viewer can be found at:
+                //    // https://docs.telerik.com/reporting/embedding-reports/display-reports-in-applications/web-application/html5-report-viewer/api-reference/report-viewer-initialization
+                // }
+            }).data("telerik_WebDesigner");
+        });
+    </script>
+
+</body>
+</html>
