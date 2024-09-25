@@ -6,7 +6,7 @@
     <SccLocalPath>SAK</SccLocalPath>
   </PropertyGroup>
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="wwwroot\ReportViewer\**" />
@@ -16,10 +16,10 @@
   </ItemGroup>
   <ItemGroup>
     <!--The following lines are replaced with package refs during the product build-->
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.4" />
-    <PackageReference Include="Telerik.Reporting.OpenXmlRendering" Version="17.0.23.315" />
-    <PackageReference Include="Telerik.Reporting.Services.AspNetCore" Version="17.0.23.315" />
-    <PackageReference Include="Telerik.WebReportDesigner.Services" Version="17.0.23.315" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.8" />
+    <PackageReference Include="Telerik.Reporting.OpenXmlRendering" Version="18.2.24.924" />
+    <PackageReference Include="Telerik.Reporting.Services.AspNetCore" Version="18.2.24.924" />
+    <PackageReference Include="Telerik.WebReportDesigner.Services" Version="18.2.24.924" />
   </ItemGroup>
   <ItemGroup>
     <None Update="SampleReport.trdp">
