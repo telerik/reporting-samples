@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="mainDS" Width="8.004in" Name="Generic Check Layout" xmlns="http://schemas.telerik.com/reporting/2021/2.0">
+  <DataSources>
+    <JsonDataSource Name="mainDS">
+      <Source>
+        <String>W3sNCiJOdW1iZXIiOiAibnVtYmVyIDAiLA0KIkRhdGVJc3N1ZWQiOiAiMjAyNC0wNS0yNSIsDQoiUmVjaXBpZW50IjogInJlY2lwaWVudCAwMCIsDQoiTWVtbyI6ICJtZW1vIDAwMCIsDQoiQW1vdW50IjogMTAwLjExLA0KIkFtb3VudFN0cmluZyI6ICItMTAwLjExLSIsDQoiU3R1YkxpbmVzIjogW3sNCgkiSW5kZXgiOiAwLA0KCSJJbnZvaWNlRGF0ZSI6ICIyMDI0LTA1LTIzIiwNCgkiSW52b2ljZU51bWJlciI6ICJpbnZvaWNlIG51bWJlciAwMCIsDQoJIkRlc2NyaXB0aW9uIjogIkRlc2NyaXB0aW9uIDAwMCIsDQoJIkFjY291bnROdW1iZXIiOiAiQWNjb3VudE51bWJlciAwMDAiLA0KCSJBbW91bnQiOiAxMC4xMQ0KCX0sew0KCSJJbmRleCI6IDEsDQoJIkludm9pY2VEYXRlIjogIjIwMjQtMDUtMjQiLA0KCSJJbnZvaWNlTnVtYmVyIjogImludm9pY2UgbnVtYmVyIDAxIiwNCgkiRGVzY3JpcHRpb24iOiAiRGVzY3JpcHRpb24gMDAxIiwNCgkiQWNjb3VudE51bWJlciI6ICJBY2NvdW50TnVtYmVyIDAwMSIsDQoJIkFtb3VudCI6IDIwLjAwDQoJfSx7DQoJIkluZGV4IjogMiwNCgkiSW52b2ljZURhdGUiOiAiMjAyNC0wNS0yNSIsDQoJIkludm9pY2VOdW1iZXIiOiAiaW52b2ljZSBudW1iZXIgMDIiLA0KCSJEZXNjcmlwdGlvbiI6ICJEZXNjcmlwdGlvbiAwMDIiLA0KCSJBY2NvdW50TnVtYmVyIjogIkFjY291bnROdW1iZXIgMDAyIiwNCgkiQW1vdW50IjogNDAuMDANCgl9LHsNCgkiSW5kZXgiOiAzLA0KCSJJbnZvaWNlRGF0ZSI6ICIyMDI0LTA1LTI1IiwNCgkiSW52b2ljZU51bWJlciI6ICJpbnZvaWNlIG51bWJlciAwMyIsDQoJIkRlc2NyaXB0aW9uIjogIkRlc2NyaXB0aW9uIDAwMyIsDQoJIkFjY291bnROdW1iZXIiOiAiQWNjb3VudE51bWJlciAwMDMiLA0KCSJBbW91bnQiOiAyMC4wMA0KCX0sew0KCSJJbmRleCI6IDQsDQoJIkludm9pY2VEYXRlIjogIjIwMjQtMDUtMjUiLA0KCSJJbnZvaWNlTnVtYmVyIjogImludm9pY2UgbnVtYmVyIDA0IiwNCgkiRGVzY3JpcHRpb24iOiAiRGVzY3JpcHRpb24gMDA0IiwNCgkiQWNjb3VudE51bWJlciI6ICJBY2NvdW50TnVtYmVyIDAwNCIsDQoJIkFtb3VudCI6IDEwLjAwDQoJfQ0KXX0sew0KIk51bWJlciI6ICJudW1iZXIgMSIsDQoiRGF0ZUlzc3VlZCI6ICIyMDI0LTA1LTI3IiwNCiJSZWNpcGllbnQiOiAicmVjaXBpZW50IDAxIiwNCiJNZW1vIjogIm1lbW8gMDAxIiwNCiJBbW91bnQiOiAyMDAuMjIsDQoiQW1vdW50U3RyaW5nIjogIi0yMDAuMjItIiwNCiJTdHViTGluZXMiOiBbew0KCSJJbmRleCI6IDAsDQoJIkludm9pY2VEYXRlIjogIjIwMjQtMDUtMjMiLA0KCSJJbnZvaWNlTnVtYmVyIjogImludm9pY2UgbnVtYmVyIDEwIiwNCgkiRGVzY3JpcHRpb24iOiAiRGVzY3JpcHRpb24gMDEwIiwNCgkiQWNjb3VudE51bWJlciI6ICJBY2NvdW50TnVtYmVyIDAxMCIsDQoJIkFtb3VudCI6IDUwLjExDQoJfSx7DQoJIkluZGV4IjogMSwNCgkiSW52b2ljZURhdGUiOiAiMjAyNC0wNS0yNCIsDQoJIkludm9pY2VOdW1iZXIiOiAiaW52b2ljZSBudW1iZXIgMTEiLA0KCSJEZXNjcmlwdGlvbiI6ICJEZXNjcmlwdGlvbiAwMTEiLA0KCSJBY2NvdW50TnVtYmVyIjogIkFjY291bnROdW1iZXIgMDExIiwNCgkiQW1vdW50IjogMjAuMDANCgl9LHsNCgkiSW5kZXgiOiAyLA0KCSJJbnZvaWNlRGF0ZSI6ICIyMDI0LTA1LTI1IiwNCgkiSW52b2ljZU51bWJlciI6ICJpbnZvaWNlIG51bWJlciAxMiIsDQoJIkRlc2NyaXB0aW9uIjogIkRlc2NyaXB0aW9uIDAxMiIsDQoJIkFjY291bnROdW1iZXIiOiAiQWNjb3VudE51bWJlciAwMTIiLA0KCSJBbW91bnQiOiAxMzAuMTENCgl9DQpdfSx7DQoiTnVtYmVyIjogIm51bWJlciAyIiwNCiJEYXRlSXNzdWVkIjogIjIwMjQtMDUtMjgiLA0KIlJlY2lwaWVudCI6ICJyZWNpcGllbnQgMDIiLA0KIk1lbW8iOiAibWVtbyAwMDIiLA0KIkFtb3VudCI6IDE1MC4wMCwNCiJBbW91bnRTdHJpbmciOiAiLTE1MC4wMC0iLA0KIlN0dWJMaW5lcyI6IFt7DQoJIkluZGV4IjogMCwNCgkiSW52b2ljZURhdGUiOiAiMjAyNC0wNS0yMyIsDQoJIkludm9pY2VOdW1iZXIiOiAiaW52b2ljZSBudW1iZXIgMjAiLA0KCSJEZXNjcmlwdGlvbiI6ICJEZXNjcmlwdGlvbiAwMjAiLA0KCSJBY2NvdW50TnVtYmVyIjogIkFjY291bnROdW1iZXIgMDIwIiwNCgkiQW1vdW50IjogMTAuMDANCgl9LHsNCgkiSW5kZXgiOiAxLA0KCSJJbnZvaWNlRGF0ZSI6ICIyMDI0LTA1LTI0IiwNCgkiSW52b2ljZU51bWJlciI6ICJpbnZvaWNlIG51bWJlciAyMSIsDQoJIkRlc2NyaXB0aW9uIjogIkRlc2NyaXB0aW9uIDAyMSIsDQoJIkFjY291bnROdW1iZXIiOiAiQWNjb3VudE51bWJlciAwMjEiLA0KCSJBbW91bnQiOiA0MC4wMA0KCX0sew0KCSJJbmRleCI6IDIsDQoJIkludm9pY2VEYXRlIjogIjIwMjQtMDUtMjUiLA0KCSJJbnZvaWNlTnVtYmVyIjogImludm9pY2UgbnVtYmVyIDIyIiwNCgkiRGVzY3JpcHRpb24iOiAiRGVzY3JpcHRpb24gMDIyIiwNCgkiQWNjb3VudE51bWJlciI6ICJBY2NvdW50TnVtYmVyIDAyMiIsDQoJIkFtb3VudCI6IDEwMC4wMA0KCX0NCl19LHsNCiJOdW1iZXIiOiAibnVtYmVyIDMiLA0KIkRhdGVJc3N1ZWQiOiAiMjAyNC0wNS0yOSIsDQoiUmVjaXBpZW50IjogInJlY2lwaWVudCAwMyIsDQoiTWVtbyI6ICJtZW1vIDAwMyIsDQoiQW1vdW50IjogMTUuMDAsDQoiQW1vdW50U3RyaW5nIjogIi0xNS4wMC0iLA0KIlN0dWJMaW5lcyI6IFt7DQoJIkluZGV4IjogMCwNCgkiSW52b2ljZURhdGUiOiAiMjAyNC0wNS0yOSIsDQoJIkludm9pY2VOdW1iZXIiOiAiaW52b2ljZSBudW1iZXIgMzAiLA0KCSJEZXNjcmlwdGlvbiI6ICJEZXNjcmlwdGlvbiAwMzAiLA0KCSJBY2NvdW50TnVtYmVyIjogIkFjY291bnROdW1iZXIgMDMwIiwNCgkiQW1vdW50IjogMTUuMDANCgl9DQpdfV0NCg==</String>
+      </Source>
+    </JsonDataSource>
+    <JsonDataSource Name="subDS">
+      <Source>
+        <String>W3sNCgkiSW5kZXgiOiAwLA0KCSJJbnZvaWNlRGF0ZSI6ICIyMDI0LTA1LTIzIiwNCgkiSW52b2ljZU51bWJlciI6ICJpbnZvaWNlIG51bWJlciAwMCIsDQoJIkRlc2NyaXB0aW9uIjogIkRlc2NyaXB0aW9uIDAwMCIsDQoJIkFjY291bnROdW1iZXIiOiAiQWNjb3VudE51bWJlciAwMDAiLA0KCSJBbW91bnQiOiAxMC4xMQ0KfV0=</String>
+      </Source>
+    </JsonDataSource>
+  </DataSources>
+  <Items>
+    <DetailSection CanShrink="True" KeepTogether="False" Height="7.5in" Name="detailSection1">
+      <Items>
+        <List DataSourceName="subDS" Width="7.9in" Height="7.5in" Left="0.002in" Top="0in" Name="list1">
+          <Body>
+            <Cells>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <Panel Width="758.4px" Height="7.5in" Left="0in" Top="0in" CanShrink="True" Name="panel1">
+                    <Items>
+                      <Panel Width="7.9in" Height="2in" Left="0in" Top="5.5in" Name="Payment Stub Panel">
+                        <Style BackgroundColor="192, 255, 255" />
+                        <Items>
+                          <TextBox Width="1.2in" Height="0.2in" Left="0.2in" Top="0.1in" Value="Invoice Date" Name="textBox21">
+                            <Style>
+                              <Font Size="9pt" />
+                              <BorderStyle Bottom="Solid" />
+                            </Style>
+                          </TextBox>
+                          <TextBox Width="1.2in" Height="0.2in" Left="1.4in" Top="0.1in" Value="Invoice Number" Name="textBox20">
+                            <Style>
+                              <Font Size="9pt" />
+                              <BorderStyle Bottom="Solid" />
+                            </Style>
+                          </TextBox>
+                          <TextBox Width="2.9in" Height="0.2in" Left="2.6in" Top="0.1in" Value="Invoice Description" Name="textBox19">
+                            <Style>
+                              <Font Size="9pt" />
+                              <BorderStyle Bottom="Solid" />
+                            </Style>
+                          </TextBox>
+                          <TextBox Width="1.2in" Height="0.2in" Left="5.5in" Top="0.1in" Value="Account Number" Name="textBox18">
+                            <Style>
+                              <Font Size="9pt" />
+                              <BorderStyle Bottom="Solid" />
+                            </Style>
+                          </TextBox>
+                          <TextBox Width="1.2in" Height="0.2in" Left="6.7in" Top="0.1in" Value="Amount Paid" Name="textBox17">
+                            <Style TextAlign="Right">
+                              <Font Size="9pt" />
+                              <BorderStyle Bottom="Solid" />
+                            </Style>
+                          </TextBox>
+                          <List DataSourceName="subDS" Width="7.9in" Height="0.8in" Left="0in" Top="0.4in" Name="list3">
+                            <Body>
+                              <Cells>
+                                <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                                  <ReportItem>
+                                    <Panel Width="7.9in" Height="0.8in" Left="0in" Top="0in" Name="panel4">
+                                      <Items>
+                                        <TextBox Width="1.2in" Height="0.8in" Left="0.2in" Top="0in" Value="= Fields.Index + &quot; - &quot; + Fields.InvoiceDate" Format="{0:d}" Name="textBox12">
+                                          <Style>
+                                            <Font Size="9pt" />
+                                          </Style>
+                                        </TextBox>
+                                        <TextBox Width="1.2in" Height="0.8in" Left="1.4in" Top="0in" Value="= Fields.InvoiceNumber" Name="textBox13">
+                                          <Style>
+                                            <Font Size="9pt" />
+                                          </Style>
+                                        </TextBox>
+                                        <TextBox Width="2.9in" Height="0.8in" Left="2.6in" Top="0in" Value="= Fields.Description" Name="textBox14">
+                                          <Style>
+                                            <Font Size="9pt" />
+                                          </Style>
+                                        </TextBox>
+                                        <TextBox Width="1.2in" Height="0.8in" Left="5.5in" Top="0in" Value="= Fields.AccountNumber" Name="textBox15">
+                                          <Style>
+                                            <Font Size="9pt" />
+                                          </Style>
+                                        </TextBox>
+                                        <TextBox Width="1.2in" Height="0.8in" Left="6.7in" Top="0in" Value="= Fields.Amount" Format="{0:C2}" Name="textBox16">
+                                          <Style TextAlign="Right">
+                                            <Font Size="9pt" />
+                                          </Style>
+                                        </TextBox>
+                                      </Items>
+                                    </Panel>
+                                  </ReportItem>
+                                </TableCell>
+                              </Cells>
+                              <Columns>
+                                <Column Width="7.9in" />
+                              </Columns>
+                              <Rows>
+                                <Row Height="0.8in" />
+                              </Rows>
+                            </Body>
+                            <Corner />
+                            <RowGroups>
+                              <TableGroup Name="DetailGroup">
+                                <Groupings>
+                                  <Grouping />
+                                </Groupings>
+                              </TableGroup>
+                            </RowGroups>
+                            <ColumnGroups>
+                              <TableGroup Name="ColumnGroup" />
+                            </ColumnGroups>
+                            <Bindings>
+                              <Binding Path="DataSource" Expression="= ReportItem.DataObject" />
+                            </Bindings>
+                          </List>
+                          <TextBox Width="1.2in" Height="0.2in" Left="6.7in" Top="1.7in" Value="= Fields.Amount" Format="{0:C2}" Name="textBox23">
+                            <Style TextAlign="Right">
+                              <BorderStyle Top="Solid" />
+                              <BorderWidth Top="2pt" />
+                              <Padding Top="2pt" />
+                            </Style>
+                          </TextBox>
+                        </Items>
+                      </Panel>
+                      <Panel Width="7.9in" Height="2in" Left="0in" Top="3.5in" Name="panel2">
+                        <Style BackgroundColor="192, 255, 192" />
+                        <Items>
+                          <TextBox Width="1.2in" Height="0.2in" Left="0.2in" Top="0.1in" Value="Invoice Date" Name="textBox1">
+                            <Style>
+                              <Font Size="9pt" />
+                              <BorderStyle Bottom="Solid" />
+                            </Style>
+                          </TextBox>
+                          <TextBox Width="1.2in" Height="0.2in" Left="1.4in" Top="0.1in" Value="Invoice Number" Name="textBox3">
+                            <Style>
+                              <Font Size="9pt" />
+                              <BorderStyle Bottom="Solid" />
+                            </Style>
+                          </TextBox>
+                          <TextBox Width="2.9in" Height="0.2in" Left="2.6in" Top="0.1in" Value="Invoice Description" Name="textBox4">
+                            <Style>
+                              <Font Size="9pt" />
+                              <BorderStyle Bottom="Solid" />
+                            </Style>
+                          </TextBox>
+                          <TextBox Width="1.2in" Height="0.2in" Left="5.5in" Top="0.1in" Value="Account Number" Name="textBox5">
+                            <Style>
+                              <Font Size="9pt" />
+                              <BorderStyle Bottom="Solid" />
+                            </Style>
+                          </TextBox>
+                          <TextBox Width="1.2in" Height="0.2in" Left="6.7in" Top="0.1in" Value="Amount Paid" Name="textBox6">
+                            <Style TextAlign="Right">
+                              <Font Size="9pt" />
+                              <BorderStyle Bottom="Solid" />
+                            </Style>
+                          </TextBox>
+                          <List DataSourceName="subDS" Width="7.9in" Height="0.8in" Left="0in" Top="0.4in" Name="list2">
+                            <Body>
+                              <Cells>
+                                <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                                  <ReportItem>
+                                    <Panel Width="7.9in" Height="0.8in" Left="0in" Top="0in" Name="panel3">
+                                      <Items>
+                                        <TextBox Width="1.2in" Height="0.8in" Left="0.2in" Top="0in" Value="= Fields.Index + &quot; - &quot; + Fields.InvoiceDate" Format="{0:d}" Name="textBox7">
+                                          <Style>
+                                            <Font Size="9pt" />
+                                          </Style>
+                                        </TextBox>
+                                        <TextBox Width="1.2in" Height="0.8in" Left="1.4in" Top="0in" Value="= Fields.InvoiceNumber" Name="textBox8">
+                                          <Style>
+                                            <Font Size="9pt" />
+                                          </Style>
+                                        </TextBox>
+                                        <TextBox Width="2.9in" Height="0.8in" Left="2.6in" Top="0in" Value="= Fields.Description" Name="textBox9">
+                                          <Style>
+                                            <Font Size="9pt" />
+                                          </Style>
+                                        </TextBox>
+                                        <TextBox Width="1.2in" Height="0.8in" Left="5.5in" Top="0in" Value="= Fields.AccountNumber" Name="textBox10">
+                                          <Style>
+                                            <Font Size="9pt" />
+                                          </Style>
+                                        </TextBox>
+                                        <TextBox Width="1.2in" Height="0.8in" Left="6.7in" Top="0in" Value="= Fields.Amount" Format="{0:C2}" Name="textBox11">
+                                          <Style TextAlign="Right">
+                                            <Font Size="9pt" />
+                                          </Style>
+                                        </TextBox>
+                                      </Items>
+                                    </Panel>
+                                  </ReportItem>
+                                </TableCell>
+                              </Cells>
+                              <Columns>
+                                <Column Width="7.9in" />
+                              </Columns>
+                              <Rows>
+                                <Row Height="0.8in" />
+                              </Rows>
+                            </Body>
+                            <Corner />
+                            <RowGroups>
+                              <TableGroup Name="DetailGroup">
+                                <Groupings>
+                                  <Grouping />
+                                </Groupings>
+                              </TableGroup>
+                            </RowGroups>
+                            <ColumnGroups>
+                              <TableGroup Name="ColumnGroup" />
+                            </ColumnGroups>
+                            <Bindings>
+                              <Binding Path="DataSource" Expression="= ReportItem.DataObject" />
+                            </Bindings>
+                          </List>
+                          <TextBox Width="1.2in" Height="0.2in" Left="6.7in" Top="1.7in" Value="= Fields.Amount" Format="{0:C2}" Name="textBox22">
+                            <Style TextAlign="Right">
+                              <BorderStyle Top="Solid" />
+                              <BorderWidth Top="2pt" />
+                              <Padding Top="2pt" />
+                            </Style>
+                          </TextBox>
+                        </Items>
+                      </Panel>
+                      <Panel Width="7.9in" Height="3.5in" Left="0in" Top="0in" Name="panel5">
+                        <Style BackgroundColor="255, 255, 192" />
+                        <Items>
+                          <TextBox Width="5.8in" Height="3.5in" Left="1.1in" Top="0in" Value="V O I D" Name="textBox24">
+                            <Style TextAlign="Center" VerticalAlign="Middle">
+                              <Font Size="120pt" />
+                            </Style>
+                          </TextBox>
+                        </Items>
+                        <ConditionalFormatting>
+                          <FormattingRule>
+                            <Style Visible="False" />
+                            <Filters>
+                              <Filter Expression="= Fields.Index" Operator="Equal" Value="0" />
+                            </Filters>
+                          </FormattingRule>
+                        </ConditionalFormatting>
+                      </Panel>
+                    </Items>
+                  </Panel>
+                </ReportItem>
+              </TableCell>
+            </Cells>
+            <Columns>
+              <Column Width="758.4px" />
+            </Columns>
+            <Rows>
+              <Row Height="7.5in" />
+            </Rows>
+          </Body>
+          <Corner />
+          <RowGroups>
+            <TableGroup GroupKeepTogether="True" Name="DetailGroup">
+              <Groupings>
+                <Grouping Expression="= Fields.Index/ 2" />
+              </Groupings>
+            </TableGroup>
+          </RowGroups>
+          <ColumnGroups>
+            <TableGroup Name="ColumnGroup" />
+          </ColumnGroups>
+          <Bindings>
+            <Binding Path="DataSource" Expression="= Fields.StubLines" />
+          </Bindings>
+        </List>
+      </Items>
+    </DetailSection>
+  </Items>
+  <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+    <Margins>
+      <MarginsU Left="0.248in" Right="0.248in" Top="1in" Bottom="1in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black">
+        <Font Name="Tahoma" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="Table" StyleName="Normal.TableNormal" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <Font Name="Tahoma" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableBody" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="10pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableHeader" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <Groups>
+    <Group Name="group">
+      <GroupHeader>
+        <GroupHeaderSection Height="3.5in" Name="groupHeaderSection">
+          <Items>
+            <Panel Width="7.9in" Height="3.5in" Left="0.002in" Top="0in" Name="Check Panel">
+              <Style BackgroundColor="Yellow">
+                <BorderStyle Bottom="Dashed" />
+              </Style>
+              <Items>
+                <TextBox Width="6in" Height="0.25in" Left="0.6in" Top="0.8in" Value="= Fields.Recipient" Format="{0:d}" Multiline="False" Name="textBoxCheckRecipient">
+                  <Style TextAlign="Left" VerticalAlign="Middle">
+                    <BorderStyle Bottom="Solid" />
+                  </Style>
+                </TextBox>
+                <TextBox Width="0.6in" Height="0.3in" Left="0in" Top="0.8in" Value="Pay to the Order of" Name="textBoxPayToLabel">
+                  <Style>
+                    <Font Size="8pt" />
+                  </Style>
+                </TextBox>
+                <TextBox Width="1.3in" Height="0.2in" Left="6.6in" Top="0.5in" Value="= Fields.DateIssued" Format="{0:d}" Multiline="False" Name="textBoxCheckDate">
+                  <Style TextAlign="Center">
+                    <BorderStyle Bottom="Solid" />
+                  </Style>
+                </TextBox>
+                <TextBox Width="1.2in" Height="0.2in" Left="6.7in" Top="0.1in" Value="= Fields.Number" Multiline="False" Name="textBoxCheckNumber">
+                  <Style TextAlign="Right" />
+                </TextBox>
+                <TextBox Width="1.3in" Height="0.25in" Left="6.6in" Top="0.8in" Value="= Fields.Amount" Format="{0:C2}" Multiline="False" Name="textBoxCheckAmountNumber">
+                  <Style TextAlign="Left" VerticalAlign="Middle">
+                    <BorderStyle Bottom="Solid" />
+                  </Style>
+                </TextBox>
+                <TextBox Width="6.5in" Height="0.25in" Left="0.6in" Top="1.2in" Value="= Fields.AmountString" Format="{0:d}" Multiline="False" Name="textBoxCheckAmountText">
+                  <Style TextAlign="Left" VerticalAlign="Middle">
+                    <BorderStyle Bottom="Solid" />
+                  </Style>
+                </TextBox>
+                <TextBox Width="0.8in" Height="0.25in" Left="7.1in" Top="1.2in" Value="DOLLARS" Name="textBox2">
+                  <Style VerticalAlign="Middle" />
+                </TextBox>
+              </Items>
+            </Panel>
+          </Items>
+        </GroupHeaderSection>
+      </GroupHeader>
+      <GroupFooter>
+        <GroupFooterSection Height="0.2in" Name="groupFooterSection">
+          <Style Visible="False" />
+        </GroupFooterSection>
+      </GroupFooter>
+      <Groupings>
+        <Grouping Expression="= Fields.Number" />
+      </Groupings>
+    </Group>
+  </Groups>
+</Report>
