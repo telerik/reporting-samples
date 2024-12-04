@@ -114,7 +114,7 @@
                               <Binding Path="DataSource" Expression="= ReportItem.DataObject" />
                             </Bindings>
                           </List>
-                          <TextBox Width="1.2in" Height="0.2in" Left="6.7in" Top="1.7in" Value="= Fields.Amount" Format="{0:C2}" Name="textBox23">
+                          <TextBox Width="1.2in" Height="0.2in" Left="6.7in" Top="1.7in" Value="= Sum(Fields.Amount)" Format="{0:C2}" Name="textBox23">
                             <Style TextAlign="Right">
                               <BorderStyle Top="Solid" />
                               <BorderWidth Top="2pt" />
@@ -215,7 +215,7 @@
                               <Binding Path="DataSource" Expression="= ReportItem.DataObject" />
                             </Bindings>
                           </List>
-                          <TextBox Width="1.2in" Height="0.2in" Left="6.7in" Top="1.7in" Value="= Fields.Amount" Format="{0:C2}" Name="textBox22">
+                          <TextBox Width="1.2in" Height="0.2in" Left="6.7in" Top="1.7in" Value="= Sum(Fields.Amount)" Format="{0:C2}" Name="textBox22">
                             <Style TextAlign="Right">
                               <BorderStyle Top="Solid" />
                               <BorderWidth Top="2pt" />
