@@ -22,6 +22,8 @@ builder.Services.AddRazorPages()
 
 builder.Services.AddDbContext<SqlDefinitionStorageContext>();
 builder.Services.AddScoped<IDefinitionStorage, CustomDefinitionStorage>();
+builder.Services.AddScoped<ISharedDataSourceStorage, CustomSharedDataSourceStorage>();
+builder.Services.AddScoped<IResourceStorage, CustomResourceStorage>();
 builder.Services.AddScoped<IReportSourceResolver, CustomReportSourceResolver>();
 builder.Services.AddScoped<IReportDocumentResolver, CustomReportDocumentResolver>();
 
@@ -46,7 +48,9 @@ builder.Services.TryAddScoped<IReportServiceConfiguration>(sp =>
 builder.Services.TryAddScoped<IReportDesignerServiceConfiguration>(sp => new ReportDesignerServiceConfiguration
 {
     DefinitionStorage = sp.GetRequiredService<IDefinitionStorage>(),
-    ResourceStorage = new ResourceStorage(Path.Combine(reportsPath, "Resources")),
+    ResourceStorage = sp.GetRequiredService<IResourceStorage>(),
+    //ResourceStorage = new ResourceStorage(Path.Combine(reportsPath, "Resources")),
+    //SharedDataSourceStorage = sp.GetRequiredService<ISharedDataSourceStorage>(),
     SharedDataSourceStorage = new FileSharedDataSourceStorage(Path.Combine(reportsPath, "Shared Data Sources")),
     SettingsStorage = new FileSettingsStorage(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Telerik Reporting"))
 });
@@ -65,6 +69,12 @@ using (var serviceScope = app.Services.CreateScope())
         .GetService<SqlDefinitionStorageContext>()
         .Database
         .EnsureCreated();
+
+    // Initialize the paths for the custom SharedDataSource resolver.            
+    // Shows how to initialize a custom ISharedDataSourceResolver implementation with the folder used for reports and shared data sources.
+    // This step is not mandatory and is added for demonstration purposes only.
+    CustomSharedDataSourceResolver.Configuration.Instance.Init(reportsPath,
+                                                       Path.Combine(reportsPath, "Shared Data Sources"), serviceScope.ServiceProvider.GetService<SqlDefinitionStorageContext>());
 }
 
 app.UseStaticFiles();
@@ -79,12 +89,6 @@ app.UseEndpoints(endpoints =>
 // This step is not mandatory and is added for demonstration purposes only.
 CustomResourceResolver.Configuration.Instance.Init(reportsPath,
                                                    Path.Combine(reportsPath, "Resources"));
-
-// Initialize the paths for the custom SharedDataSource resolver.            
-// Shows how to initialize a custom ISharedDataSourceResolver implementation with the folder used for reports and shared data sources.
-// This step is not mandatory and is added for demonstration purposes only.
-CustomSharedDataSourceResolver.Configuration.Instance.Init(reportsPath,
-                                                   Path.Combine(reportsPath, "Shared Data Sources"));
 
 // Add initial data to database
 app.Seed();

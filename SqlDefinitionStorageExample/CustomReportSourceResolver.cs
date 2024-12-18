@@ -18,7 +18,7 @@ namespace SqlDefinitionStorageExample
         public ReportSource Resolve(string uri, OperationOrigin operationOrigin, IDictionary<string, object> currentParameterValues)
         {
             var reportPackager = new ReportPackager();
-            var report = this._dbContext.Reports.FirstOrDefault(r => r.Uri == uri.Replace("/", "\\"));
+            var report = this._dbContext.Resources.FirstOrDefault(r => r.Uri == uri.Replace("/", "\\"));
 
             if (report == null)
             {

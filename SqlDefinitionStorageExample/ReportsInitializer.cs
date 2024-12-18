@@ -18,19 +18,17 @@ namespace SqlDefinitionStorageExample
 
             try {
 
-                if (!context.Reports.Any())
+                if (!context.Resources.Any())
                 {
-                        var saveResourceModel = new SaveResourceModel()
-                        {
-                            Name = "SampleReport.trdp",
-                            ParentUri = string.Empty
-                        };
+                    var sampleReport = CreateResource("SampleReport.trdp", "Reports");
+                    var reportsFolder = CreateFolderModel("Reports", string.Empty);
+                    var resourcesFolder = CreateFolderModel("Resources", string.Empty);
 
-                        var reportBytes = System.IO.File.ReadAllBytes("SampleReport.trdp");
-                        var entity = saveResourceModel.ToDbReportModel(reportBytes);
+                    context.Resources.Add(sampleReport.ToDbResourceModel(System.IO.File.ReadAllBytes("SampleReport.trdp")));
+                    context.ResourceFolders.Add(reportsFolder.ToDbResourceFolderModel());
+                    context.ResourceFolders.Add(resourcesFolder.ToDbResourceFolderModel());
 
-                        context.Reports.Add(entity);
-                        context.SaveChanges();
+                    context.SaveChanges();
                 }
 
                 return app;
@@ -40,5 +38,17 @@ namespace SqlDefinitionStorageExample
                 throw;
             }
         }
+
+        public static CreateFolderModel CreateFolderModel(string name, string parentUri) => new()
+        {
+            Name = name,
+            ParentUri = parentUri
+        };
+
+        public static SaveResourceModel CreateResource(string name, string parentUri) => new()
+        {
+            Name = name,
+            ParentUri = parentUri
+        };
     }
 }

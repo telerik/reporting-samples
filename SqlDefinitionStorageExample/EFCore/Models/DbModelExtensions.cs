@@ -5,7 +5,7 @@ namespace SqlDefinitionStorageExample.EFCore.Models
 {
     public static class DbModelExtensions
     {
-        public static ResourceFileModel ToResourceFileModel(this EFCore.Models.Report dbReportModel)
+        public static ResourceFileModel ToResourceFileModel(this EFCore.Models.Resource dbReportModel)
         {
             if (dbReportModel == null)
             {
@@ -23,7 +23,25 @@ namespace SqlDefinitionStorageExample.EFCore.Models
             };
         }
 
-        public static ResourceFolderModel ToResourceFolderModel(this EFCore.Models.ReportFolder dbReportFolderModel)
+        public static SharedDataSourceModel ToSharedDataSourceModel(this EFCore.Models.SharedDataSource dbSharedDataSource)
+        {
+            if (dbSharedDataSource == null)
+            {
+                return null;
+            }
+
+            return new SharedDataSourceModel() {
+                FileName = dbSharedDataSource.Name,
+                ParentPath = dbSharedDataSource.ParentUri,
+                Uri = dbSharedDataSource.Uri,
+                Size = dbSharedDataSource.Bytes.Length / 1024f,
+                CreatedOn = dbSharedDataSource.CreatedOn,
+                ModifiedOn = dbSharedDataSource.ModifiedOn,
+                Description = dbSharedDataSource.Description ?? string.Empty
+            };
+        }
+
+        public static ResourceFolderModel ToResourceFolderModel(this EFCore.Models.ResourceFolder dbReportFolderModel)
         {
             if (dbReportFolderModel == null)
             {
@@ -41,9 +59,9 @@ namespace SqlDefinitionStorageExample.EFCore.Models
             };
         }
 
-        public static EFCore.Models.ReportFolder ToDbReportFolderModel(this CreateFolderModel createFolderModel)
+        public static EFCore.Models.ResourceFolder ToDbResourceFolderModel(this CreateFolderModel createFolderModel)
         {
-            return new EFCore.Models.ReportFolder() {
+            return new EFCore.Models.ResourceFolder() {
                 Name = createFolderModel.Name,
                 ParentUri = createFolderModel.ParentUri,
                 Uri = (string.IsNullOrEmpty(createFolderModel.ParentUri) 
@@ -54,9 +72,9 @@ namespace SqlDefinitionStorageExample.EFCore.Models
             };
         }
 
-        public static EFCore.Models.Report ToDbReportModel(this SaveResourceModel saveResourceModel, byte[] data)
+        public static EFCore.Models.Resource ToDbResourceModel(this SaveResourceModel saveResourceModel, byte[] data)
         {
-            return new Models.Report()
+            return new Models.Resource()
             {
                 Name = saveResourceModel.Name,
                 Bytes = data,
@@ -66,6 +84,22 @@ namespace SqlDefinitionStorageExample.EFCore.Models
                     : saveResourceModel.ParentUri + "\\") + saveResourceModel.Name,
                 Size = data.Length,
                 CreatedOn = DateTime.Now, 
+                ModifiedOn = DateTime.Now
+            };
+        }
+
+        public static EFCore.Models.SharedDataSource ToDbSharedDataSource(this SaveResourceModel saveResourceModel, byte[] data)
+        {
+            return new Models.SharedDataSource()
+            {
+                Name = saveResourceModel.Name,
+                Bytes = data,
+                ParentUri = saveResourceModel.ParentUri,
+                Uri = (string.IsNullOrEmpty(saveResourceModel.ParentUri)
+                    ? saveResourceModel.ParentUri
+                    : saveResourceModel.ParentUri + "\\") + saveResourceModel.Name,
+                Size = data.Length,
+                CreatedOn = DateTime.Now,
                 ModifiedOn = DateTime.Now
             };
         }
