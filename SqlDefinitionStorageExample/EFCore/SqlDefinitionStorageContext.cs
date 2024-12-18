@@ -18,7 +18,7 @@ namespace SqlDefinitionStorageExample.EFCore
         {
             if (!optionsBuilder.IsConfigured)
             {
-                var connectionString = @"Server=.\SQLEXPRESS;Database=DefinitionStorage;Trusted_Connection=True;TrustServerCertificate=True;";
+                var connectionString = @"Server=.\SQLEXPRESS;Database=ResourcesStorage;Trusted_Connection=True;TrustServerCertificate=True;";
                 optionsBuilder.UseSqlServer(connectionString);
             }
         }
