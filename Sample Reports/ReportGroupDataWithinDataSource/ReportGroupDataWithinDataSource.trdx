@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report Width="17cm" Name="GroupDemo" xmlns="http://schemas.telerik.com/reporting/2023/1.0">
+  <DataSources>
+    <CsvDataSource RecordSeparators="&#xD;&#xA;" FieldSeparators="," HasHeaders="True" Name="csvDataSource1">
+      <Source>
+        <String>RGF0ZSxTdGF0ZSxGZW1hbGUsTWFsZQ0KMDEgMDIgMDgsQWxhYmFtYSw2NywxNA0KMDEgMDIgMDgsQ2FsaWZvcm5pYSwzMCwxNQ0KMDEgMDIgMTAsQWxhc2thLDM5LDUNCjAxIDAyIDEwLEZsb3JpZGEsMTAsOQ0KMDEgMDIgMTgsR2VvcmdpYSwyNCwxMQ0KMDEgMDIgMTgsSGF3YWlpLDEzLDc=</String>
+      </Source>
+      <Columns>
+        <DataColumn Name="Date" />
+        <DataColumn Name="State" />
+        <DataColumn Name="Female" Type="Integer" />
+        <DataColumn Name="Male" Type="Integer" />
+      </Columns>
+    </CsvDataSource>
+  </DataSources>
+  <Items>
+    <DetailSection Height="4.7cm" Name="detailSection1">
+      <Items>
+        <List DataSourceName="csvDataSource1" Width="12.724cm" Height="2.849cm" Left="0.5cm" Top="0.5cm" Name="list1">
+          <Body>
+            <Cells>
+              <TableCell RowIndex="1" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <Panel Width="12.165cm" Height="0.55cm" Left="0cm" Top="0cm" Name="panel1">
+                    <Style Visible="False" />
+                  </Panel>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <Panel Width="12.165cm" Height="2.299cm" Left="7.5cm" Top="3.4cm" Name="panel2" StyleName="">
+                    <Items>
+                      <TextBox Width="12.165cm" Height="0.6cm" Left="0cm" Top="0cm" Value="{Fields.Date}   {Fields.State}" Name="textBox2">
+                        <Style TextAlign="Left" VerticalAlign="Middle">
+                          <Font Bold="True" />
+                        </Style>
+                      </TextBox>
+                      <Table Width="12.165cm" Height="1.699cm" Left="0cm" Top="0.6cm" Name="table1" StyleName="Normal.TableNormal">
+                        <Body>
+                          <Cells>
+                            <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                              <ReportItem>
+                                <TextBox Width="3.254cm" Height="0.582cm" Left="0cm" Top="0cm" Value="= Fields.Female" Name="textBox5" StyleName="Normal.TableBody">
+                                  <Style TextAlign="Center" VerticalAlign="Middle">
+                                    <BorderStyle Default="None" />
+                                  </Style>
+                                </TextBox>
+                              </ReportItem>
+                            </TableCell>
+                            <TableCell RowIndex="1" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                              <ReportItem>
+                                <TextBox Width="3.254cm" Height="0.613cm" Left="0cm" Top="0cm" Value="= Fields.Male" Name="textBox6" StyleName="Normal.TableBody">
+                                  <Style TextAlign="Center" VerticalAlign="Middle">
+                                    <BorderStyle Default="None" />
+                                  </Style>
+                                </TextBox>
+                              </ReportItem>
+                            </TableCell>
+                            <TableCell RowIndex="0" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                              <ReportItem>
+                                <TextBox Width="3.899cm" Height="0.582cm" Left="0cm" Top="0cm" Value="= Sum(Fields.Female)" Name="textBox7" StyleName="Normal.TableBody">
+                                  <Style TextAlign="Center" VerticalAlign="Middle">
+                                    <BorderStyle Default="None" />
+                                  </Style>
+                                </TextBox>
+                              </ReportItem>
+                            </TableCell>
+                            <TableCell RowIndex="1" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                              <ReportItem>
+                                <TextBox Width="3.899cm" Height="0.613cm" Left="0cm" Top="0cm" Value="= Sum(Fields.Male)" Name="textBox8" StyleName="Normal.TableBody">
+                                  <Style TextAlign="Center" VerticalAlign="Middle">
+                                    <BorderStyle Default="None" />
+                                  </Style>
+                                </TextBox>
+                              </ReportItem>
+                            </TableCell>
+                            <TableCell RowIndex="2" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                              <ReportItem>
+                                <TextBox Width="3.254cm" Height="0.504cm" Left="0cm" Top="0cm" Value="= Fields.Male + Fields.Female" Name="textBox10" StyleName="Normal.TableBody">
+                                  <Style TextAlign="Center" VerticalAlign="Middle">
+                                    <Font Bold="True" />
+                                    <BorderStyle Default="None" />
+                                  </Style>
+                                </TextBox>
+                              </ReportItem>
+                            </TableCell>
+                            <TableCell RowIndex="2" ColumnIndex="2" RowSpan="1" ColumnSpan="1">
+                              <ReportItem>
+                                <TextBox Width="3.899cm" Height="0.504cm" Left="0cm" Top="0cm" Value="= Sum(Fields.Male + Fields.Female)" Name="textBox11" StyleName="Normal.TableBody">
+                                  <Style TextAlign="Center" VerticalAlign="Middle">
+                                    <Font Bold="True" />
+                                    <BorderStyle Default="None" />
+                                  </Style>
+                                </TextBox>
+                              </ReportItem>
+                            </TableCell>
+                            <TableCell RowIndex="0" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                              <ReportItem>
+                                <TextBox Width="3.164cm" Height="0.582cm" Left="0cm" Top="0cm" Value="= Fields.Female" Format="{0:#.00}" Name="textBox12" StyleName="Normal.TableBody">
+                                  <Style TextAlign="Center" VerticalAlign="Middle">
+                                    <BorderStyle Default="None" />
+                                  </Style>
+                                </TextBox>
+                              </ReportItem>
+                            </TableCell>
+                            <TableCell RowIndex="1" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                              <ReportItem>
+                                <TextBox Width="3.164cm" Height="0.613cm" Left="0cm" Top="0cm" Value="= Fields.Male" Format="{0:#.00}" Name="textBox13" StyleName="Normal.TableBody">
+                                  <Style TextAlign="Center" VerticalAlign="Middle">
+                                    <BorderStyle Default="None" />
+                                  </Style>
+                                </TextBox>
+                              </ReportItem>
+                            </TableCell>
+                            <TableCell RowIndex="2" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                              <ReportItem>
+                                <TextBox Width="3.164cm" Height="0.504cm" Left="0cm" Top="0cm" Value="= Fields.Male + Fields.Female" Format="{0:#.00}" Name="textBox14" StyleName="Normal.TableBody">
+                                  <Style TextAlign="Center" VerticalAlign="Middle">
+                                    <Font Bold="True" />
+                                    <BorderStyle Default="None" />
+                                  </Style>
+                                </TextBox>
+                              </ReportItem>
+                            </TableCell>
+                          </Cells>
+                          <Columns>
+                            <Column Width="3.254cm" />
+                            <Column Width="3.164cm" />
+                            <Column Width="3.899cm" />
+                          </Columns>
+                          <Rows>
+                            <Row Height="0.582cm" />
+                            <Row Height="0.613cm" />
+                            <Row Height="0.504cm" />
+                          </Rows>
+                        </Body>
+                        <Corner />
+                        <Style>
+                          <BorderStyle Default="None" />
+                        </Style>
+                        <RowGroups>
+                          <TableGroup Name="female">
+                            <ReportItem>
+                              <TextBox Width="1.848cm" Height="0.582cm" Left="0cm" Top="0cm" Value="Female:" Name="textBox3" StyleName="Normal.TableHeader">
+                                <Style TextAlign="Right">
+                                  <BorderStyle Default="None" />
+                                </Style>
+                              </TextBox>
+                            </ReportItem>
+                          </TableGroup>
+                          <TableGroup Name="male">
+                            <ReportItem>
+                              <TextBox Width="1.848cm" Height="0.613cm" Left="0cm" Top="0cm" Value="Male:" Name="textBox4" StyleName="Normal.TableHeader">
+                                <Style TextAlign="Right">
+                                  <BorderStyle Default="None" />
+                                </Style>
+                              </TextBox>
+                            </ReportItem>
+                          </TableGroup>
+                          <TableGroup Name="group2">
+                            <ReportItem>
+                              <TextBox Width="1.848cm" Height="0.504cm" Left="0cm" Top="0cm" Value="Total:" Name="textBox9" StyleName="Normal.TableHeader">
+                                <Style TextAlign="Right">
+                                  <Font Bold="True" />
+                                  <BorderStyle Default="None" />
+                                </Style>
+                              </TextBox>
+                            </ReportItem>
+                          </TableGroup>
+                        </RowGroups>
+                        <ColumnGroups>
+                          <TableGroup Name="detail">
+                            <ChildGroups>
+                              <TableGroup Name="group3" />
+                              <TableGroup Name="group4" />
+                            </ChildGroups>
+                            <Groupings>
+                              <Grouping />
+                            </Groupings>
+                          </TableGroup>
+                          <TableGroup Name="group1" />
+                        </ColumnGroups>
+                        <Bindings>
+                          <Binding Path="DataSource" Expression="= ReportItem.DataObject" />
+                        </Bindings>
+                      </Table>
+                    </Items>
+                    <ConditionalFormatting>
+                      <FormattingRule>
+                        <Style BackgroundColor="AppWorkspace" />
+                        <Filters>
+                          <Filter Expression="= RowNumber('list1') % 2" Operator="Equal" Value="= 1" />
+                        </Filters>
+                      </FormattingRule>
+                    </ConditionalFormatting>
+                  </Panel>
+                </ReportItem>
+              </TableCell>
+            </Cells>
+            <Columns>
+              <Column Width="12.165cm" />
+            </Columns>
+            <Rows>
+              <Row Height="2.299cm" />
+              <Row Height="0.55cm" />
+            </Rows>
+          </Body>
+          <Corner />
+          <RowGroups>
+            <TableGroup Name="district">
+              <ReportItem>
+                <TextBox Width="0.559cm" Height="2.849cm" Left="0cm" Top="0cm" Value="" Name="textBox1" StyleName="">
+                  <Style Visible="False" />
+                </TextBox>
+              </ReportItem>
+              <ChildGroups>
+                <TableGroup Name="group" />
+                <TableGroup Name="DetailGroup">
+                  <Groupings>
+                    <Grouping />
+                  </Groupings>
+                </TableGroup>
+              </ChildGroups>
+              <Groupings>
+                <Grouping Expression="= Fields.State" />
+              </Groupings>
+            </TableGroup>
+          </RowGroups>
+          <ColumnGroups>
+            <TableGroup Name="ColumnGroup" />
+          </ColumnGroups>
+          <Sortings>
+            <Sorting Expression="= Fields.State" Direction="Asc" />
+          </Sortings>
+        </List>
+      </Items>
+    </DetailSection>
+  </Items>
+  <PageSettings PaperKind="A4" Landscape="False">
+    <Margins>
+      <MarginsU Left="2cm" Right="2cm" Top="2cm" Bottom="2cm" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black">
+        <Font Name="Tahoma" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="Table" StyleName="Normal.TableNormal" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <Font Name="Tahoma" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableBody" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="10pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableHeader" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+</Report>
