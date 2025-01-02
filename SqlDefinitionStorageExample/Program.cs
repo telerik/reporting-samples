@@ -24,6 +24,7 @@ builder.Services.AddDbContext<SqlDefinitionStorageContext>();
 builder.Services.AddScoped<IDefinitionStorage, CustomDefinitionStorage>();
 builder.Services.AddScoped<ISharedDataSourceStorage, CustomSharedDataSourceStorage>();
 builder.Services.AddScoped<IResourceStorage, CustomResourceStorage>();
+builder.Services.AddScoped<ISharedDataSourceStorage, CustomSharedDataSourceStorage>();
 builder.Services.AddScoped<IReportSourceResolver, CustomReportSourceResolver>();
 builder.Services.AddScoped<IReportDocumentResolver, CustomReportDocumentResolver>();
 
@@ -49,9 +50,8 @@ builder.Services.TryAddScoped<IReportDesignerServiceConfiguration>(sp => new Rep
 {
     DefinitionStorage = sp.GetRequiredService<IDefinitionStorage>(),
     ResourceStorage = sp.GetRequiredService<IResourceStorage>(),
-    //ResourceStorage = new ResourceStorage(Path.Combine(reportsPath, "Resources")),
-    //SharedDataSourceStorage = sp.GetRequiredService<ISharedDataSourceStorage>(),
-    SharedDataSourceStorage = new FileSharedDataSourceStorage(Path.Combine(reportsPath, "Shared Data Sources")),
+    SharedDataSourceStorage = sp.GetRequiredService<ISharedDataSourceStorage>(),
+    //SharedDataSourceStorage = new FileSharedDataSourceStorage(Path.Combine(reportsPath, "Shared Data Sources")),
     SettingsStorage = new FileSettingsStorage(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Telerik Reporting"))
 });
 

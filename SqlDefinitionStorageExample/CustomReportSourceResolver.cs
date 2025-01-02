@@ -1,4 +1,5 @@
 ﻿using SqlDefinitionStorageExample.EFCore;
+using SqlDefinitionStorageExample.EFCore.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -12,13 +13,19 @@ namespace SqlDefinitionStorageExample
 
         private SqlDefinitionStorageContext _dbContext { get; }
         public CustomReportSourceResolver(SqlDefinitionStorageContext context) {
-            this._dbContext = context;
+            _dbContext = context;
         }
 
         public ReportSource Resolve(string uri, OperationOrigin operationOrigin, IDictionary<string, object> currentParameterValues)
         {
             var reportPackager = new ReportPackager();
-            var report = this._dbContext.Resources.FirstOrDefault(r => r.Uri == uri.Replace("/", "\\"));
+
+            if (!uri.Contains("Reports\\"))
+            {
+                uri = $"Reports\\{uri}";
+            }
+
+            var report = _dbContext.Resources.FirstOrDefault(r => r.Uri == uri.Replace("/", "\\"));
 
             if (report == null)
             {
@@ -26,11 +33,11 @@ namespace SqlDefinitionStorageExample
             }
 
             MemoryStream stream = new(report.Bytes);
-            Telerik.Reporting.Report report1 = (Telerik.Reporting.Report)reportPackager.UnpackageDocument(stream);
+            Telerik.Reporting.Report reportDocument = (Telerik.Reporting.Report)reportPackager.UnpackageDocument(stream);
             
             var instanceReportSource = new InstanceReportSource
             {
-                ReportDocument = report1
+                ReportDocument = reportDocument
             };
 
             return instanceReportSource;

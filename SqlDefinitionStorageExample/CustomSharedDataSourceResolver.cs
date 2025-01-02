@@ -30,7 +30,7 @@
                 throw new NullReferenceException($"The path {sharedDataSourcePath} cannot be resolved.");
             }
 
-            var sds = context.SharedDataSources.FirstOrDefault(m => m.Uri == sharedDataSourcePath);
+            var sds = context.Resources.FirstOrDefault(m => m.Uri == sharedDataSourcePath);
             using (var ms = new MemoryStream(sds.Bytes))
             {
                     return (Telerik.Reporting.DataSource)new Telerik.Reporting.XmlSerialization.ReportXmlSerializer()

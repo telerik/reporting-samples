@@ -10,15 +10,13 @@ namespace SqlDefinitionStorageExample.EFCore
 
         public DbSet<ResourceFolder> ResourceFolders { get; set; }
 
-        public DbSet<SharedDataSource> SharedDataSources { get; set; }
-
         public SqlDefinitionStorageContext(DbContextOptions<SqlDefinitionStorageContext> options) : base(options) { }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                var connectionString = @"Server=.\SQLEXPRESS;Database=ResourcesStorage;Trusted_Connection=True;TrustServerCertificate=True;";
+                var connectionString = @"Server=.\SQLEXPRESS;Database=ResourceStorage;Trusted_Connection=True;TrustServerCertificate=True;";
                 optionsBuilder.UseSqlServer(connectionString);
             }
         }

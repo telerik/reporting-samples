@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.InteropServices;
 
 namespace SqlDefinitionStorageExample.EFCore.Models
 {
@@ -39,5 +40,8 @@ namespace SqlDefinitionStorageExample.EFCore.Models
 
         [Column("Uri")]
         public string Uri { get; set; }
+
+        [Column("Description")]
+        public string? Description {get;set;}
     }
 }
