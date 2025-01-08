@@ -1,5 +1,6 @@
 ﻿using SqlDefinitionStorageExample.EFCore.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace SqlDefinitionStorageExample.EFCore
 {
@@ -16,9 +17,23 @@ namespace SqlDefinitionStorageExample.EFCore
         {
             if (!optionsBuilder.IsConfigured)
             {
-                var connectionString = @"Server=.\SQLEXPRESS;Database=ResourceStorage;Trusted_Connection=True;TrustServerCertificate=True;";
+                var connectionString = @"Server=.\SQLEXPRESS;Database=WebDesignerStorage;Trusted_Connection=True;TrustServerCertificate=True;";
                 optionsBuilder.UseSqlServer(connectionString);
             }
+        }
+
+        public bool IsDisposed { get; set; }
+
+        public override void Dispose()
+        {
+            IsDisposed = true;
+            base.Dispose();
+        }
+
+        public override ValueTask DisposeAsync()
+        {
+            IsDisposed = true;
+            return base.DisposeAsync();
         }
     }
 }

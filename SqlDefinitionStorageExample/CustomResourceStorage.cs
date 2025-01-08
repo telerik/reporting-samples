@@ -94,7 +94,15 @@ namespace SqlDefinitionStorageExample
 
         public byte[] GetByUri(string uri)
         {
-            return DbContext.Resources.FirstOrDefault(r => r.Uri == uri).Bytes;
+            uri = uri.Replace("/", "\\");
+            var resource = DbContext.Resources.FirstOrDefault(r => r.Uri == uri);
+
+            if (resource == null)
+            {
+                throw new ResourceNotFoundException($"The resource located at {uri} cannot be found.");
+            }
+
+            return resource.Bytes;
         }
 
         public ResourceFileModel GetModelByName(string resourceName)

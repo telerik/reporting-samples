@@ -25,13 +25,7 @@ namespace SqlDefinitionStorageExample
                 uri = $"Reports\\{uri}";
             }
 
-            var report = _dbContext.Resources.FirstOrDefault(r => r.Uri == uri.Replace("/", "\\"));
-
-            if (report == null)
-            {
-                throw new FileNotFoundException();
-            }
-
+            var report = _dbContext.Resources.FirstOrDefault(r => r.Uri == uri.Replace("/", "\\")) ?? throw new FileNotFoundException();
             MemoryStream stream = new(report.Bytes);
             Telerik.Reporting.Report reportDocument = (Telerik.Reporting.Report)reportPackager.UnpackageDocument(stream);
             

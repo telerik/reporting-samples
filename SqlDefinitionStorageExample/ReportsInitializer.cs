@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using SqlDefinitionStorageExample.EFCore;
 using SqlDefinitionStorageExample.EFCore.Models;

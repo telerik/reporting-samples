@@ -44,10 +44,6 @@ namespace SqlDefinitionStorageExample
 
         public new Task<IEnumerable<ResourceModelBase>> GetFolderContentsAsync(string uri)
         {
-            //var newUri = string.IsNullOrEmpty(uri)
-            //    ? Root
-            //    : Root + "\\" + (uri ?? "");
-
             return base.GetFolderContentsAsync(PrepareResourceUri(uri));
         }
 

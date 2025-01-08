@@ -5,8 +5,6 @@
     using System.Linq.Expressions;
     using System.Threading.Tasks;
     using System.Xml.XPath;
-    using Telerik.Reporting.Interfaces;
-    using Telerik.WebReportDesigner.Services.Models;
 
     class SharedDataSourceDescriptionHelper
     {

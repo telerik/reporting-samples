@@ -17,29 +17,24 @@ namespace SqlDefinitionStorageExample
 
         protected string Root { get; set; } = rootFolder;
 
-        protected DbSet<ResourceFolder> Folders { get; set; } = dbContext.ResourceFolders;
-
-        protected DbSet<Resource> Files { get; set; } = dbContext.Resources;
-
-
         // IF PARENT URI DOES NOT END WITH
-        static string FixParentUri(string uri) => uri.EndsWith("\\") ? uri : uri + "\\";
+        public static string FixParentUri(string uri) => uri.EndsWith('\\') ? uri : uri + "\\";
 
         #region Base Implementations
 
         protected Task<ResourceFolderModel> CreateFolderAsync(CreateFolderModel model)
         {
 
-            if (this.Folders.Any(f => f.Uri == FixParentUri(model.ParentUri) + model.Name))
+            if (DbContext.ResourceFolders.Any(f => f.Uri == FixParentUri(model.ParentUri) + model.Name))
             {
                 throw new ResourceFolderAlreadyExistsException();
             }
 
-            var entityEntry = this.Folders.Add(model.ToDbResourceFolderModel());
+            var entityEntry = DbContext.ResourceFolders.Add(model.ToDbResourceFolderModel());
 
             if (!string.IsNullOrEmpty(model.ParentUri))
             {
-                var parentFolder = this.Folders.FirstOrDefault(f => f.Uri == model.ParentUri);
+                var parentFolder = DbContext.ResourceFolders.FirstOrDefault(f => f.Uri == model.ParentUri);
 
                 if (parentFolder != null)
                 {
@@ -54,9 +49,9 @@ namespace SqlDefinitionStorageExample
 
         protected Task<IEnumerable<ResourceModelBase>> GetFolderContentsAsync(string uri)
         {
-            var resources = this.Files.Where(r => r.ParentUri == uri)
+            var resources = DbContext.Resources.Where(r => r.ParentUri == uri)
                 .Select(r => r.ToResourceFileModel()).AsEnumerable<ResourceModelBase>();
-            var folders = this.Folders.Where(f => f.ParentUri == uri)
+            var folders = DbContext.ResourceFolders.Where(f => f.ParentUri == uri)
                 .Select(f => f.ToResourceFolderModel()).AsEnumerable<ResourceModelBase>();
 
             var result = folders.Union(resources);
@@ -66,9 +61,9 @@ namespace SqlDefinitionStorageExample
 
         protected Task DeleteAsync(string uri)
         {
-            var report = this.Files
+            var report = DbContext.Resources
                 .FirstOrDefault(r => r.Uri == uri) ?? throw new ReportNotFoundException();
-            this.Files.Remove(report);
+            DbContext.Resources.Remove(report);
 
             DbContext.SaveChanges();
             return Task.CompletedTask;
@@ -78,17 +73,17 @@ namespace SqlDefinitionStorageExample
         {
             try
             {
-                var folderForDeletion = this.Folders.FirstOrDefault(f => f.Uri == uri);
+                var folderForDeletion = DbContext.ResourceFolders.FirstOrDefault(f => f.Uri == uri);
                 var parentUri = folderForDeletion.ParentUri;
                 if (folderForDeletion != null)
                 {
                     DeleteResourceFolder(folderForDeletion);
                     DbContext.SaveChanges();
-                    var subFoldersCount = this.Folders.Count(f => f.ParentUri == parentUri);
+                    var subFoldersCount = DbContext.ResourceFolders.Count(f => f.ParentUri == parentUri);
                     if (subFoldersCount > 0)
                     {
                         var parentFolderName = parentUri.Split("\\").Last();
-                        var parentFolder = this.Folders.FirstOrDefault(f => f.Name == parentFolderName);
+                        var parentFolder = DbContext.ResourceFolders.FirstOrDefault(f => f.Name == parentFolderName);
                         if (parentFolder != null) parentFolder.HasSubFolders = false;
                         DbContext.SaveChanges();
                     }
@@ -105,7 +100,7 @@ namespace SqlDefinitionStorageExample
 
         protected Task<ResourceFileModel> SaveAsync(SaveResourceModel model, byte[] resource)
         {
-            var entity = this.Files.FirstOrDefault(r => r.Uri == FixParentUri(model.ParentUri) + model.Name);
+            var entity = DbContext.Resources.FirstOrDefault(r => r.Uri == FixParentUri(model.ParentUri) + model.Name);
 
             if (entity != null)
             {
@@ -115,7 +110,7 @@ namespace SqlDefinitionStorageExample
                 return Task.FromResult(entity.ToResourceFileModel());
             }
 
-            var entityEntry = this.Files.Add(model.ToDbResourceModel(resource));
+            var entityEntry = DbContext.Resources.Add(model.ToDbResourceModel(resource));
             DbContext.SaveChanges();
 
             return Task.FromResult(entityEntry.Entity.ToResourceFileModel());
@@ -123,7 +118,7 @@ namespace SqlDefinitionStorageExample
 
         protected Task<byte[]> GetAsync(string resourceName)
         {
-            var resourceBytes = this.GetDbResourceModel(resourceName)?.Bytes;
+            var resourceBytes = GetDbResourceModel(resourceName)?.Bytes;
             return resourceBytes == null ? throw new ResourceNotFoundException() : Task.FromResult(resourceBytes);
         }
 
@@ -135,8 +130,13 @@ namespace SqlDefinitionStorageExample
 
         protected Task<ResourceFileModel> RenameAsync(RenameResourceModel model)
         {
+            if (!model.OldUri.Contains($"{Root}\\"))
+            {
+                model.OldUri = $"{Root}\\{model.OldUri}";
+            }
+
             string oldName = model.OldUri.Split("\\").Last();
-            var report = this.Files.FirstOrDefault(r => r.Uri == model.OldUri);
+            var report = DbContext.Resources.FirstOrDefault(r => r.Uri == model.OldUri);
             if (report != null)
             {
                 report.Name = model.Name;
@@ -152,7 +152,7 @@ namespace SqlDefinitionStorageExample
 
         protected async Task<ResourceFolderModel> RenameFolderAsync(RenameFolderModel model)
         {
-            var folder = this.Folders.FirstOrDefault(r => r.Uri == model.OldUri);
+            var folder = DbContext.ResourceFolders.FirstOrDefault(r => r.Uri == model.OldUri);
             if (folder != null)
             {
                 await RenameFolderAndSubFolders(folder, model);
@@ -171,8 +171,8 @@ namespace SqlDefinitionStorageExample
         {
             DeleteResourcesInFolder(folder);
 
-            var subfolders = this.Folders.Where(f => f.ParentUri == folder.Uri).ToList();
-            this.Folders.Remove(folder);
+            var subfolders = DbContext.ResourceFolders.Where(f => f.ParentUri == folder.Uri).ToList();
+            DbContext.ResourceFolders.Remove(folder);
 
             if (subfolders.Count == 0)
             {
@@ -188,12 +188,12 @@ namespace SqlDefinitionStorageExample
 
         protected void DeleteResourcesInFolder(ResourceFolder folder)
         {
-            var reports = this.Files.Where(r => r.ParentUri == folder.Uri).ToList();
+            var reports = DbContext.Resources.Where(r => r.ParentUri == folder.Uri).ToList();
             if (reports.Count > 0)
             {
                 reports.ForEach(r =>
                 {
-                    this.Files.Remove(r);
+                    DbContext.Resources.Remove(r);
                     DbContext.SaveChanges();
                 });
             }
@@ -201,7 +201,7 @@ namespace SqlDefinitionStorageExample
 
         protected async Task UpdateResourceParentUriAfterFolderRename(string oldName, RenameFolderModel model)
         {
-            await this.Files.ForEachAsync(r =>
+            await DbContext.Resources.ForEachAsync(r =>
             {
                 if (r.ParentUri.Contains(model.OldUri))
                 {
@@ -225,7 +225,7 @@ namespace SqlDefinitionStorageExample
                 return;
             }
 
-            await this.Folders
+            await DbContext.ResourceFolders
                 .Where(f => f.ParentUri.Contains(model.OldUri))
                 .ForEachAsync(f =>
                 {
@@ -236,17 +236,18 @@ namespace SqlDefinitionStorageExample
 
         protected EFCore.Models.Resource GetDbResourceModel(string uri)
         {
-            if (this.Files.Any())
-            {
-                return this.Files.FirstOrDefault(r => r.Uri == uri);
+            if (DbContext.IsDisposed) {
+                var optionsBuilder = new DbContextOptionsBuilder<SqlDefinitionStorageContext>();
+                using SqlDefinitionStorageContext dbContext = new(optionsBuilder.Options);
+                return dbContext.Resources.FirstOrDefault(r => r.Uri == uri) ?? null;
             }
 
-            return null;
+            return DbContext.Resources.FirstOrDefault(r => r.Uri == uri) ?? null;
         }
 
         protected Task<ResourceFolderModel> GetFolderAsync(string uri)
         {
-            var folder = this.Folders.FirstOrDefault(f => f.Uri == uri);
+            var folder = DbContext.ResourceFolders.FirstOrDefault(f => f.Uri == uri);
             if (folder == null)
             {
                 if (uri.IsNullOrEmpty())
