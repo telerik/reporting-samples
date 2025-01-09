@@ -1,0 +1,24 @@
+﻿<Window x:Class="MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:tr="http://schemas.telerik.com/wpf"
+        xmlns:telerikControls="clr-namespace:Telerik.Windows.Controls;assembly=Telerik.Windows.Controls"
+        xmlns:telerikReporting="clr-namespace:Telerik.Reporting;assembly=Telerik.Reporting"
+        xmlns:local="clr-namespace:WPFViewerNet8"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <tr:ReportViewer Grid.Row="1" x:Name="ReportViewer1" HorizontalAlignment="Stretch">
+            <tr:ReportViewer.ReportSource>
+                <telerikReporting:UriReportSource Uri="Reports\SampleReport.trdp">
+                    <telerikReporting:ReportSource.Parameters>
+                        <telerikReporting:Parameter Name="ParameterName_01" Value="ParameterValue_01"/>
+                        <telerikReporting:Parameter Name="ParameterName_02" Value="ParameterValue_02"/>
+                    </telerikReporting:ReportSource.Parameters>
+                </telerikReporting:UriReportSource>
+            </tr:ReportViewer.ReportSource>
+        </tr:ReportViewer>
+    </Grid>
+</Window>

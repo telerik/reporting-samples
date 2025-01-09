@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>WPFViewerNet8</RootNamespace>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Import Include="System.Windows" />
+    <Import Include="System.Windows.Controls" />
+    <Import Include="System.Windows.Data" />
+    <Import Include="System.Windows.Documents" />
+    <Import Include="System.Windows.Input" />
+    <Import Include="System.Windows.Media" />
+    <Import Include="System.Windows.Media.Imaging" />
+    <Import Include="System.Windows.Navigation" />
+    <Import Include="System.Windows.Shapes" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Telerik.ReportViewer.Wpf" Version="18.3.24.1218" />
+    <PackageReference Include="Telerik.ReportViewer.Wpf.Themes" Version="18.3.24.1218" />
+    <PackageReference Include="Telerik.Windows.Controls.Input.for.Wpf" Version="2024.4.1213" />
+    <PackageReference Include="Telerik.Windows.Controls.Navigation.for.Wpf" Version="2024.4.1213" />
+    <PackageReference Include="Telerik.Windows.Data.for.Wpf" Version="2024.4.1213" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Reports\SampleReport.trdp">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
