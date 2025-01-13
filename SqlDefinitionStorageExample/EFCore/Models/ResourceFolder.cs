@@ -1,12 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SqlDefinitionStorageExample.EFCore.Models
 {
-    public class ReportFolder
+    public class ResourceFolder : ResourceFolderBase
+    {
+    }
+
+    public class ResourceFolderBase
     {
 
         [Column("Id")]

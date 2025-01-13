@@ -1,81 +1,35 @@
 ﻿namespace SqlDefinitionStorageExample
 {
-    using System;
+    using Microsoft.EntityFrameworkCore;
+    using SqlDefinitionStorageExample.EFCore;
     using System.IO;
-    using Telerik.Reporting.Processing;
+    using System.Linq;
     using Telerik.WebReportDesigner.Services;
     using Data = Telerik.Reporting.Processing.Data;
 
-    /// <summary>
-    /// An example of a custom implementation of <see cref="Data.ISharedDataSourceResolver"/>.
-    /// The relative sharedDataSourcePath is resolved to absolute path using the <see cref="Configuration.Instance"/> paths.
-    /// If at any of the locations the requested .sdsx file, is found, the <see cref="CustomSharedDataSourceResolver"/> deserializes the file contents of the provided path and instantiates a DataSource class.
-    /// The CustomSharedDataSourceResolver needs to be registered in application's configuration file appsettings.json.
-    /// </summary>
     class CustomSharedDataSourceResolver : Data.ISharedDataSourceResolver
     {
-        /// <summary>
-        /// Resolves and returns a DataSource instance from the provided <paramref name="sharedDataSourcePath"/> parameter.
-        /// </summary>
-        /// <param name="sharedDataSourcePath">The value of the Path property obtained from the report definition. Might be relative or absolute.</param>
-        /// <returns></returns>
+
+        readonly string _root = "Shared Data Sources";
         Telerik.Reporting.DataSource Data.ISharedDataSourceResolver.Resolve(string sharedDataSourcePath)
         {
-            ValidateConfiguration();
 
-            var absolutePathToSharedDataSourceDefinition =
-                GetExistingFilePath(Configuration.Instance.ReportsPath, sharedDataSourcePath)
-                ?? GetExistingFilePath(Configuration.Instance.SharedDataSourcesPath, sharedDataSourcePath);
-
-            if (string.IsNullOrEmpty(absolutePathToSharedDataSourceDefinition))
+            if (!sharedDataSourcePath.Contains($"{_root}\\"))
             {
-                throw new NullReferenceException($"The path {sharedDataSourcePath} cannot be resolved.");
+                sharedDataSourcePath = $"{_root}\\{sharedDataSourcePath}";
             }
 
-            using (var fs = new FileStream(absolutePathToSharedDataSourceDefinition, FileMode.Open, FileAccess.Read, FileShare.Read))
-            {
-                return (Telerik.Reporting.DataSource)new Telerik.Reporting.XmlSerialization.ReportXmlSerializer()
-                    .Deserialize(fs);
-            }
-        }
+            sharedDataSourcePath = sharedDataSourcePath.Replace("/", "\\");
 
-        static string GetExistingFilePath(string basePath, string sharedDataSourcePath)
-        {
-            var sharedDataSourceAbsolutePath = new PathResourceResolver(basePath)
-                .Resolve(sharedDataSourcePath) as string;
+            var optionsBuilder = new DbContextOptionsBuilder<SqlDefinitionStorageContext>();
+            // It is necessary to initialize a new dbContent because this code will be executed in a new thread
+            using SqlDefinitionStorageContext dbContext = new(optionsBuilder.Options);
 
-            if (!string.IsNullOrEmpty(sharedDataSourceAbsolutePath) && File.Exists(sharedDataSourceAbsolutePath))
-            {
-                return sharedDataSourceAbsolutePath;
-            }
+            var sds = dbContext.Resources.FirstOrDefault(m => m.Uri == sharedDataSourcePath) ?? throw new ResourceNotFoundException();
+            using var ms = new MemoryStream(sds.Bytes);
 
-            return null;
-        }
-
-        static void ValidateConfiguration()
-        {
-            if (string.IsNullOrEmpty(Configuration.Instance.ReportsPath) || string.IsNullOrEmpty(Configuration.Instance.SharedDataSourcesPath))
-            {
-                throw new NullReferenceException("The configuration of the CustomSharedDataSourceResolver is not initialized. Please make sure you've called \"Configuration.Instance.Init(string reportsPath, string sharedDataSourcesPath)\" method and have provided valid paths as arguments.");
-            }
-        }
-
-        /// <summary>
-        /// Class that stores the paths to Reports and Shared Data Sources folders.
-        /// </summary>
-        internal class Configuration
-        {
-            public static Configuration Instance = new();
-
-            public string ReportsPath { get; private set; }
-
-            public string SharedDataSourcesPath { get; private set; }
-
-            public void Init(string reportsPath, string sharedDataSourcesPath)
-            {
-                this.ReportsPath = reportsPath;
-                this.SharedDataSourcesPath = sharedDataSourcesPath;
-            }
+            return (Telerik.Reporting.DataSource)new Telerik.Reporting.XmlSerialization.ReportXmlSerializer()
+                .Deserialize(ms);
         }
     }
 }

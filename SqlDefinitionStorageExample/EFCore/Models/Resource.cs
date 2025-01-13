@@ -4,7 +4,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SqlDefinitionStorageExample.EFCore.Models
 {
-    public class Report
+    public class Resource : ResourceBase
+    {
+    }
+
+    public class ResourceBase
     {
         [Column("Id")]
         [Required]
@@ -15,7 +19,7 @@ namespace SqlDefinitionStorageExample.EFCore.Models
         [Column("Name")]
         [Required]
         public string Name { get; set; }
-        
+
         [Column("Bytes")]
         [Required]
         public byte[] Bytes { get; set; }
@@ -35,5 +39,8 @@ namespace SqlDefinitionStorageExample.EFCore.Models
 
         [Column("Uri")]
         public string Uri { get; set; }
+
+        [Column("Description")]
+        public string? Description {get;set;}
     }
 }
