@@ -26,76 +26,41 @@ namespace SqlDefinitionStorageExample
             }
 
             return base.CreateFolderAsync(model);
-        }
-
-        public new Task DeleteAsync(string uri)
-        {
-            return base.DeleteAsync(this.PrepareResourceUri(uri));
-        }
-
-        public new Task<ResourceFolderModel> GetFolderAsync(string uri)
-        {
-            var newUri = string.IsNullOrEmpty(uri) 
-                ? Root 
-                : Root + "\\" + (uri ?? "");
-
-            return base.GetFolderAsync(newUri);
-        }
-
-        public new Task<IEnumerable<ResourceModelBase>> GetFolderContentsAsync(string uri)
-        {
-            return base.GetFolderContentsAsync(PrepareResourceUri(uri));
-        }
-
+        } 
+        
         public new Task<ResourceFileModel> SaveAsync(SaveResourceModel model, byte[] resource)
         {
-            if (string.IsNullOrEmpty(model.ParentUri))
-            {
-                model.ParentUri = Root;
-            }
+            model.ParentUri = PrepareResourceUri(model.ParentUri);
 
             return base.SaveAsync(model, resource);
         }
 
-        Task IAssetsStorage.DeleteFolderAsync(string uri)
-        {
-            return base.DeleteFolderAsync(PrepareResourceUri(uri));
-        }
+        public new Task<ResourceFolderModel> GetFolderAsync(string uri) => base.GetFolderAsync(PrepareResourceUri(uri));
+        public new Task DeleteAsync(string uri) => base.DeleteAsync(PrepareResourceUri(uri));
 
-        Task<byte[]> IAssetsStorage.GetAsync(string resourceName)
+        public new Task<IEnumerable<ResourceModelBase>> GetFolderContentsAsync(string uri) => base.GetFolderContentsAsync(PrepareResourceUri(uri));
+
+        Task IAssetsStorage.DeleteFolderAsync(string uri) => DeleteFolderAsync(PrepareResourceUri(uri));
+
+        Task<byte[]> IAssetsStorage.GetAsync(string resourceName) => GetAsync(PrepareResourceUri(resourceName));
+
+        Task<ResourceFileModel> IAssetsStorage.GetModelAsync(string uri) => GetModelAsync(PrepareResourceUri(uri));
+
+        Task<ResourceFileModel> IAssetsStorage.RenameAsync(RenameResourceModel model) => RenameAsync(model);
+
+        Task<ResourceFolderModel> IAssetsStorage.RenameFolderAsync(RenameFolderModel model) => RenameFolderAsync(model);
+        
+        protected string PrepareResourceUri(string uri)
         {
-            if (!resourceName.Contains($"{Root}\\"))
+            if (string.IsNullOrEmpty(uri))
             {
-                resourceName = $"{Root}\\{resourceName}";
+                return Root;
             }
 
-            return base.GetAsync(PrepareResourceUri(resourceName));
-        }
+            uri = uri.Replace("/", "\\");
+            uri = uri.Contains($"{Root}\\") ? uri : $"{Root}\\{uri}";
 
-        Task<ResourceFileModel> IAssetsStorage.GetModelAsync(string uri)
-        {
-            return base.GetModelAsync(PrepareResourceUri(uri));
-        }
-
-        Task<ResourceFileModel> IAssetsStorage.RenameAsync(RenameResourceModel model)
-        {
-            return base.RenameAsync(model);
-        }
-
-        Task<ResourceFolderModel> IAssetsStorage.RenameFolderAsync(RenameFolderModel model)
-        {
-            return base.RenameFolderAsync(model);
-        }
-
-        string PrepareResourceUri(string resourceName)
-        {
-            if (string.IsNullOrEmpty(resourceName))
-            {
-                resourceName = Root;
-            }
-
-            resourceName = resourceName.Replace("/", "\\");
-            return resourceName;
+            return uri;
         }
     }
 }

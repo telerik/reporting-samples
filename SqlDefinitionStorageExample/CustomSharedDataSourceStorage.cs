@@ -1,7 +1,6 @@
 ﻿using SqlDefinitionStorageExample.EFCore;
 using SqlDefinitionStorageExample.EFCore.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Telerik.WebReportDesigner.Services;
@@ -26,19 +25,18 @@ namespace SqlDefinitionStorageExample
             return Task.FromResult(RenameCore(model));
         }
 
+        Task<ResourceFileModel> IAssetsStorage.RenameAsync(RenameResourceModel model)
+        {
+            return Task.FromResult(RenameCore(model) as ResourceFileModel);
+        }
         public new Task<ResourceFileModel> SaveAsync(SaveResourceModel model, byte[] resource)
         {
             return Task.FromResult(SaveCore(model, resource) as ResourceFileModel);
         }
 
-        Task<ResourceFileModel> IAssetsStorage.RenameAsync(RenameResourceModel model)
-        {
-            return Task.FromResult(RenameCore(model) as ResourceFileModel);
-        }
-
         public new ResourceFileModel Overwrite(OverwriteResourceModel model, byte[] resource)
         {
-            var entity = DbContext.Resources.FirstOrDefault(r => r.Uri == $"Shared Data Sources\\{model.Uri}") ?? throw new ResourceNotFoundException();
+            var entity = DbContext.Resources.FirstOrDefault(r => r.Uri == $"{Root}\\{model.Uri}") ?? throw new ResourceNotFoundException();
             entity.Bytes = resource;
             entity.ModifiedOn = DateTime.Now;
             entity.Description = SharedDataSourceDescriptionHelper.Read(resource);
@@ -61,7 +59,7 @@ namespace SqlDefinitionStorageExample
 
         SharedDataSourceModel SaveCore(SaveResourceModel model, byte[] resource)
         {
-            model.ParentUri = string.IsNullOrEmpty(model.ParentUri) ? "Shared Data Sources" : $"Shared Data Sources\\{model.ParentUri}";
+            model.ParentUri = string.IsNullOrEmpty(model.ParentUri) ? Root : $"{Root}\\{model.ParentUri}";
             model.ParentUri = model.ParentUri.Replace("/", "\\");
 
             if (model.ParentUri.EndsWith('\\'))
@@ -69,20 +67,18 @@ namespace SqlDefinitionStorageExample
                 model.ParentUri = model.ParentUri.Remove(model.ParentUri.Length - 1);
             }
 
-            var entity = DbContext.Resources.FirstOrDefault(r => r.Uri == ResourceStorageBase.FixParentUri(model.ParentUri) + model.Name);
+            var entity = DbContext.Resources.FirstOrDefault(r => r.Uri == FixParentUri(model.ParentUri) + model.Name);
 
             if (entity != null)
             {
                 entity.Bytes = resource;
                 entity.ModifiedOn = DateTime.Now;
                 entity.Description = SharedDataSourceDescriptionHelper.Read(resource);
+                DbContext.SaveChanges();
+
                 return entity.ToSharedDataSourceModel();
             }
 
-            if (string.IsNullOrEmpty(model.ParentUri))
-            {
-                model.ParentUri = Root;
-            }
             var entityEntry = DbContext.Resources.Add(model.ToDbResourceModel(resource));
             DbContext.SaveChanges();
 

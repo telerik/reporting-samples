@@ -17,6 +17,7 @@ namespace SqlDefinitionStorageExample.EFCore.Models
                 FileName = dbReportModel.Name,
                 ParentPath = dbReportModel.ParentUri,
                 Uri = dbReportModel.Uri,
+                FullPath = dbReportModel.Uri,
                 Size = dbReportModel.Bytes.Length / 1024f,
                 CreatedOn = dbReportModel.CreatedOn,
                 ModifiedOn = dbReportModel.ModifiedOn

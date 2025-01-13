@@ -3,7 +3,6 @@ using SqlDefinitionStorageExample.EFCore.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Telerik.WebReportDesigner.Services;
 using Telerik.WebReportDesigner.Services.Models;
 
@@ -50,11 +49,6 @@ namespace SqlDefinitionStorageExample
 
         #endregion
 
-        public new Task<IEnumerable<ResourceModelBase>> GetFolderContentsAsync(string uri)
-        {
-            return base.GetFolderContentsAsync(uri);
-        }
-
         public ResourceFileDataModel GetFile(string resourceUri)
         {
             var file = DbContext.Resources.FirstOrDefault(r => r.Uri == resourceUri);
@@ -66,22 +60,7 @@ namespace SqlDefinitionStorageExample
                 MimeType = null // Currently MIME-type is not supported. To be implemented based on file extension and/or containing parent folder.
             };
         }
-
-        public ResourceFolderModel GetFolderByName(string folderName)
-        {
-            return DbContext.ResourceFolders.FirstOrDefault(x => x.Name == folderName).ToResourceFolderModel();
-        }
-
-        public bool ResourceExists(string uri)
-        {
-            return DbContext.Resources.Any(r => r.Name == uri);
-        }
-
-        public bool ResourceNameExists(string resourceName)
-        {
-            return DbContext.Resources.Any(r => r.Name == resourceName);
-        }
-
+        
         public IEnumerable<ResourceModelBase> Search(SearchResourcesModel model)
         {
             return DbContext.Resources.Where(r => r.ParentUri == model.ResourceFolderUri && r.Name.Contains(model.SearchPattern)).Select(r => r.ToResourceFileModel()); 
@@ -89,25 +68,22 @@ namespace SqlDefinitionStorageExample
 
         public IEnumerable<ResourceFileModel> GetAllByExtension(string[] extensions)
         { 
-            return DbContext.Resources.Where(r => extensions.Any(ex => r.Name.Contains(ex.Substring(1)))).Select(r => r.ToResourceFileModel()).AsEnumerable<ResourceFileModel>();  
+            return DbContext.Resources.Where(r => extensions.Any(ex => r.Name.Contains(ex.Substring(1)))).Select(r => r.ToResourceFileModel()).AsEnumerable();  
         }
 
         public byte[] GetByUri(string uri)
         {
-            uri = uri.Replace("/", "\\");
-            var resource = DbContext.Resources.FirstOrDefault(r => r.Uri == uri);
+            var resource = DbContext.Resources.FirstOrDefault(r => r.Uri == uri.Replace("/", "\\"));
 
-            if (resource == null)
-            {
-                throw new ResourceNotFoundException($"The resource located at {uri} cannot be found.");
-            }
-
-            return resource.Bytes;
+            return resource == null ? throw new ResourceNotFoundException($"The resource located at {uri} cannot be found.") : resource.Bytes;
         }
 
-        public ResourceFileModel GetModelByName(string resourceName)
-        {
-            return DbContext.Resources.FirstOrDefault(r => r.Uri == resourceName).ToResourceFileModel();
-        }
+        public ResourceFileModel GetModelByName(string resourceName) => DbContext.Resources.FirstOrDefault(r => r.Uri == resourceName).ToResourceFileModel();
+
+        public ResourceFolderModel GetFolderByName(string folderName) => DbContext.ResourceFolders.FirstOrDefault(x => x.Name == folderName).ToResourceFolderModel();
+
+        public bool ResourceExists(string uri) => DbContext.Resources.Any(r => r.Name == uri);
+
+        public bool ResourceNameExists(string resourceName) => DbContext.Resources.Any(r => r.Name == resourceName);
     }
 }

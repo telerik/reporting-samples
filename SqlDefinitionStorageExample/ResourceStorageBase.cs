@@ -15,7 +15,7 @@ namespace SqlDefinitionStorageExample
     {
         protected SqlDefinitionStorageContext DbContext { get; } = dbContext;
 
-        protected string Root { get; set; } = rootFolder;
+        protected string Root { get; } = rootFolder;
 
         // IF PARENT URI DOES NOT END WITH
         public static string FixParentUri(string uri) => uri.EndsWith('\\') ? uri : uri + "\\";
@@ -119,7 +119,7 @@ namespace SqlDefinitionStorageExample
         protected Task<byte[]> GetAsync(string resourceName)
         {
             var resourceBytes = GetDbResourceModel(resourceName)?.Bytes;
-            return resourceBytes == null ? throw new ResourceNotFoundException() : Task.FromResult(resourceBytes);
+            return resourceBytes == null ? throw new ReportNotFoundException() : Task.FromResult(resourceBytes);
         }
 
         protected Task<ResourceFileModel> GetModelAsync(string uri)
