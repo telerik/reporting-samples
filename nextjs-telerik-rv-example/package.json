@@ -1,0 +1,18 @@
+{
+  "name": "nextjs-telerik-rv-example",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@progress/telerik-react-report-viewer": "^24.24.1218",
+    "jquery": "^3.7.1",
+    "next": "15.1.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}
