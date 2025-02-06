@@ -1,0 +1,303 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ReportViewer_ClientExpired" xml:space="preserve">
+    <value>Натиснете 'Опресни' за да възстановите сесията.</value>
+  </data>
+  <data name="ReportViewer_ErrorCreatingReportDocument" xml:space="preserve">
+    <value>Грешка при създаване на документа (Репорт = '{0}'; Формат = '{1}').</value>
+  </data>
+  <data name="ReportViewer_ErrorSendingDocument" xml:space="preserve">
+    <value>Грешка при изпращане на документ (Репорт = '{0}').</value>
+  </data>
+  <data name="ReportViewer_InvalidParameter" xml:space="preserve">
+    <value>Моля въведете валидна стойност.</value>
+  </data>
+  <data name="ReportViewer_LoadedReportPagesComplete" xml:space="preserve">
+    <value>Завършено. {0} страници заредени.</value>
+  </data>
+  <data name="ReportViewer_LoadingReport" xml:space="preserve">
+    <value>Зареждане на репорт...</value>
+  </data>
+  <data name="ReportViewer_LoadingReportPagesInProgress" xml:space="preserve">
+    <value>{0} страници заредени до момента...</value>
+  </data>
+  <data name="ReportViewer_MissingOrInvalidParameter" xml:space="preserve">
+    <value>Липсващ или невалиден параметър. Моля въведете валидна стойност.</value>
+  </data>
+  <data name="ReportViewer_NoPageToDisplay" xml:space="preserve">
+    <value>Няма страници за показване</value>
+  </data>
+  <data name="ReportViewer_ParameterEditorSelectAll" xml:space="preserve">
+    <value>избери всички</value>
+  </data>
+  <data name="ReportViewer_ParameterEditorSelectNone" xml:space="preserve">
+    <value>изчисти</value>
+  </data>
+  <data name="ReportViewer_ParametersAreaPreviewButton" xml:space="preserve">
+    <value>Прегледай</value>
+  </data>
+  <data name="ReportViewer_PromisesChainStopError" xml:space="preserve">
+    <value>Грешка.</value>
+  </data>
+  <data name="ReportViewer_SendEmailDialogCancelLabel" xml:space="preserve">
+    <value>Откажи</value>
+  </data>
+  <data name="ReportViewer_SendEmailDialogCCLabel" xml:space="preserve">
+    <value>CC:</value>
+  </data>
+  <data name="ReportViewer_SendEmailDialogClose" xml:space="preserve">
+    <value>Затвори</value>
+  </data>
+  <data name="ReportViewer_SendEmailDialogFormatLabel" xml:space="preserve">
+    <value>Формат:</value>
+  </data>
+  <data name="ReportViewer_SendEmailDialogFromLabel" xml:space="preserve">
+    <value>От:</value>
+  </data>
+  <data name="ReportViewer_SendEmailDialogSendLabel" xml:space="preserve">
+    <value>Изпрати</value>
+  </data>
+  <data name="ReportViewer_SendEmailDialogSubjectLabel" xml:space="preserve">
+    <value>Тема:</value>
+  </data>
+  <data name="ReportViewer_SendEmailDialogTitle" xml:space="preserve">
+    <value>Изпрати Email</value>
+  </data>
+  <data name="ReportViewer_SendEmailDialogToLabel" xml:space="preserve">
+    <value>За:</value>
+  </data>
+  <data name="ReportViewer_SendEmailDialogValidationEmailFormat" xml:space="preserve">
+    <value>Email форматът е невалиден</value>
+  </data>
+  <data name="ReportViewer_SendEmailDialogValidationEmailRequired" xml:space="preserve">
+    <value>Email полето е задължително</value>
+  </data>
+  <data name="ReportViewer_SendEmailDialogValidationFormatRequired" xml:space="preserve">
+    <value>Формат полето е задължително</value>
+  </data>
+  <data name="ReportViewer_ToolbarToggleDocumentMapTitle" xml:space="preserve">
+    <value>Покажи/Скрий Навигация</value>
+  </data>
+  <data name="ReportViewer_ToolbarExportTitle" xml:space="preserve">
+    <value>Експорт</value>
+  </data>
+  <data name="ReportViewer_ToolbarFirstPageTitle" xml:space="preserve">
+    <value>Първа страница</value>
+  </data>
+  <data name="ReportViewer_ToolbarLastPageTitle" xml:space="preserve">
+    <value>Последна страница</value>
+  </data>
+  <data name="ReportViewer_ToolbarNextPageTitle" xml:space="preserve">
+    <value>Следваща страница</value>
+  </data>
+  <data name="ReportViewer_ToolbarToggleScaleModeTitle" xml:space="preserve">
+    <value>Превключи FullPage/PageWidth</value>
+  </data>
+  <data name="ReportViewer_ToolbarToggleParametersAreaTitle" xml:space="preserve">
+    <value>Покажи/Скрий Параметрите</value>
+  </data>
+  <data name="ReportViewer_ToolbarPreviousPageTitle" xml:space="preserve">
+    <value>Предишна страница</value>
+  </data>
+  <data name="ReportViewer_ToolbarTogglePrintPreviewTitle" xml:space="preserve">
+    <value>Включи/Изключи Print Preview</value>
+  </data>
+  <data name="ReportViewer_ToolbarPrintTitle" xml:space="preserve">
+    <value>Принт</value>
+  </data>
+  <data name="ReportViewer_ToolbarRefreshTitle" xml:space="preserve">
+    <value>Опресни</value>
+  </data>
+  <data name="ReportViewer_ToolbarStopRenderingTitle" xml:space="preserve">
+    <value>Спри рендерирането</value>
+  </data>
+  <data name="ReportViewer_ToolbarSendMailTitle" xml:space="preserve">
+    <value>Изпрати email</value>
+  </data>
+  <data name="ReportViewer_ToolbarZoomInTitle" xml:space="preserve">
+    <value>Уголеми</value>
+  </data>
+  <data name="ReportViewer_ToolbarZoomOutTitle" xml:space="preserve">
+    <value>Смали</value>
+  </data>
+  <data name="ReportViewer_UnableToGetReportParameters" xml:space="preserve">
+    <value>Параметрите на репорта не могат да бъдат заредени.</value>
+  </data>
+  <data name="ReportViewer_RenderingCancelled" xml:space="preserve">
+    <value>Рендерирането на репорта беше спряно.</value>
+  </data>
+  <data name="ReportViewer_PreparingDownload" xml:space="preserve">
+    <value>Приготвяне на документ за сваляне. Моля изчакайте...</value>
+  </data>
+  <data name="ReportViewer_PreparingPrint" xml:space="preserve">
+    <value>Приготвяне на документ за принтиране. Моля изчакайте...</value>
+  </data>
+  <data name="ReportViewer_ToolbarNavigateBackwardTitle" xml:space="preserve">
+    <value>Навигирай Назад</value>
+  </data>
+  <data name="ReportViewer_ToolbarNavigateForwardTitle" xml:space="preserve">
+    <value>Навигирай Напред</value>
+  </data>
+  <data name="ReportViewer_SearchDialogCaptionText" xml:space="preserve">
+    <value>Намери</value>
+  </data>
+  <data name="ReportViewer_SearchDialogMatchCaseTitle" xml:space="preserve">
+    <value>Сравнявай Главни Букви</value>
+  </data>
+  <data name="ReportViewer_SearchDialogMatchWholeWordTitle" xml:space="preserve">
+    <value>Сравнявай Цели Думи</value>
+  </data>
+  <data name="ReportViewer_SearchDialogNavigateDownTitle" xml:space="preserve">
+    <value>Надолу</value>
+  </data>
+  <data name="ReportViewer_SearchDialogNavigateUpTitle" xml:space="preserve">
+    <value>Нагоре</value>
+  </data>
+  <data name="ReportViewer_SearchDialogNoResultsLabel" xml:space="preserve">
+    <value>Няма резултати</value>
+  </data>
+  <data name="ReportViewer_SearchDialogPageText" xml:space="preserve">
+    <value>страница</value>
+  </data>
+  <data name="ReportViewer_SearchDialogResultsFormatLabel" xml:space="preserve">
+    <value>Резултат {0} от {1}</value>
+  </data>
+  <data name="ReportViewer_SearchDialogSearchInProggress" xml:space="preserve">
+    <value>търсене...</value>
+  </data>
+  <data name="ReportViewer_SearchDialogClearTitle" xml:space="preserve">
+    <value>Изчисти</value>
+  </data>
+  <data name="ReportViewer_SearchDialogTitle" xml:space="preserve">
+    <value>Търсене в репорт</value>
+  </data>
+  <data name="ReportViewer_SearchDialogUseRegexTitle" xml:space="preserve">
+    <value>Използвай Regex</value>
+  </data>
+  <data name="ReportViewer_ToolbarSearchTitle" xml:space="preserve">
+    <value>Пусни Търсачка</value>
+  </data>
+  <data name="ReportViewer_SearchDialogResultsLimitLabel" xml:space="preserve">
+    <value>Показване на първите {0} резултата.</value>
+  </data>
+  <data name="ReportViewer_NoReport" xml:space="preserve">
+    <value>Няма репорт.</value>
+  </data>
+</root>
