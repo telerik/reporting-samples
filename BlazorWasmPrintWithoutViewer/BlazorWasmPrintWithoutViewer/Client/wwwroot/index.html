@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>BlazorWasmPrintWithoutViewer V2</title>
+    <base href="/" />
+    <link href="css/app.css" rel="stylesheet" />
+    
+    <!-- If you add any scoped CSS files, uncomment the following to load them
+    <link href="BlazorWasmPrintWithoutViewer.Client.styles.css" rel="stylesheet" /> -->
+</head>
+
+<body>
+    <div id="app">Loading...</div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+
+    <!-- Used for printing using Javascript -->
+    <script>
+        window.printReport = function (reportName, authToken) {
+            fetch(`/report?reportName=${reportName}&authToken=${authToken}`)
+                .then(res => {
+                    if (res.status === 200) {
+                        return res.blob();
+                    } else {
+                        console.log("Could not retrieve PDF document.");
+                    }
+                })
+                .then(blob => {
+                    let objectURL = URL.createObjectURL(blob);
+
+                    var iframe = document.createElement("iframe");
+                    iframe.style.display = "none";
+                    iframe.src = objectURL;
+                    iframe.onload = function () {
+                        iframe.contentWindow.print();
+                    }
+
+                    document.body.appendChild(iframe);
+                });
+        }
+    </script>
+
+    <!-- Used for printing using Blazor / Javascript -->
+    <script>
+        window.printPdfFromBytes = function (byteArray) {
+            let blob = new Blob([new Uint8Array(byteArray)], { type: "application/pdf" });
+            let objectURL = URL.createObjectURL(blob);
+
+            let iframe = document.createElement("iframe");
+            iframe.style.display = "none";
+            iframe.src = objectURL;
+            iframe.onload = function () {
+                iframe.contentWindow.print();
+            };
+
+            document.body.appendChild(iframe);
+        };
+    </script>
+
+
+    <script src="_framework/blazor.webassembly.js"></script>
+</body>
+
+</html>
