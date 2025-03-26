@@ -26,7 +26,7 @@
     "@progress/kendo-theme-default": "^7.2.1",
     "@progress/telerik-react-report-viewer": "^21.24.305",
     "jquery": "^3.7.1",
-    "next": "14.2.21",
+    "next": "14.2.25",
     "react": "^18",
     "react-dom": "^18"
   }
