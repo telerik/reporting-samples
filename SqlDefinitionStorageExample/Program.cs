@@ -23,7 +23,6 @@ builder.Services.AddDbContext<SqlDefinitionStorageContext>();
 builder.Services.AddScoped<IDefinitionStorage, CustomDefinitionStorage>();
 builder.Services.AddScoped<ISharedDataSourceStorage, CustomSharedDataSourceStorage>();
 builder.Services.AddScoped<IResourceStorage, CustomResourceStorage>();
-builder.Services.AddScoped<ISharedDataSourceStorage, CustomSharedDataSourceStorage>();
 builder.Services.AddScoped<IReportSourceResolver, CustomReportSourceResolver>();
 builder.Services.AddScoped<IReportDocumentResolver, CustomReportDocumentResolver>();
 
