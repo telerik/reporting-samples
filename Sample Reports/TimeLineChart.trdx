@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="jsonDataSource1" Width="6.5in" Name="TimeLineChart" Zoom="2" xmlns="http://schemas.telerik.com/reporting/2025/2.0">
+  <DataSources>
+    <JsonDataSource Name="jsonDataSource1">
+      <Source>
+        <String>Ww0KCXsNCgkJIkdyb3VwIjogIkdyb3VwXzEiLA0KCQkiRGV0YWlscyI6Ww0KCQkgIHsNCgkJCSJJbmRleCI6IDAsDQoJCQkiQ29sb3IiOiAiV2hpdGUiLA0KCQkJIkxlbmd0aCI6IDYNCgkJICB9LA0KCQkgIHsNCgkJCSJJbmRleCI6IDEsDQoJCQkiQ29sb3IiOiAiR3JlZW4iLA0KCQkJIkxlbmd0aCI6IDUNCgkJICB9LA0KCQkgIHsNCgkJCSJJbmRleCI6IDIsDQoJCQkiQ29sb3IiOiAiV2hpdGUiLA0KCQkJIkxlbmd0aCI6IDAuNQ0KCQkgIH0sDQoJCSAgew0KCQkJIkluZGV4IjogMywNCgkJCSJDb2xvciI6ICJHcmVlbiIsDQoJCQkiTGVuZ3RoIjogNQ0KCQkgIH0sDQoJCSAgew0KCQkJIkluZGV4IjogNCwNCgkJCSJDb2xvciI6ICJXaGl0ZSIsDQoJCQkiTGVuZ3RoIjogNy41DQoJCSAgfV0sDQoJCSAgIkF0dGVuZGFuY2UiOlsNCgkJICB7DQoJCQkiSW5kZXgiOiAwLA0KCQkJIkNvbG9yIjogIldoaXRlIiwNCgkJCSJMZW5ndGgiOiA2DQoJCSAgfSwNCgkJICB7DQoJCQkiSW5kZXgiOiAxLA0KCQkJIkNvbG9yIjogIkJsdWUiLA0KCQkJIkxlbmd0aCI6IDUNCgkJICB9LA0KCQkgIHsNCgkJCSJJbmRleCI6IDIsDQoJCQkiQ29sb3IiOiAiUmVkIiwNCgkJCSJMZW5ndGgiOiAwLjUNCgkJICB9LA0KCQkgIHsNCgkJCSJJbmRleCI6IDMsDQoJCQkiQ29sb3IiOiAiQmx1ZSIsDQoJCQkiTGVuZ3RoIjogNQ0KCQkgIH0sDQoJCSAgew0KCQkJIkluZGV4IjogNCwNCgkJCSJDb2xvciI6ICJXaGl0ZSIsDQoJCQkiTGVuZ3RoIjogNy41DQoJfV19LA0KCXsNCgkJIkdyb3VwIjogIkdyb3VwXzIiLA0KCQkiRGV0YWlscyI6Ww0KCQkgIHsNCgkJCSJJbmRleCI6IDAsDQoJCQkiQ29sb3IiOiAiV2hpdGUiLA0KCQkJIkxlbmd0aCI6IDYNCgkJICB9LA0KCQkgIHsNCgkJCSJJbmRleCI6IDEsDQoJCQkiQ29sb3IiOiAiUmVkIiwNCgkJCSJMZW5ndGgiOiA1DQoJCSAgfSwNCgkJICB7DQoJCQkiSW5kZXgiOiAyLA0KCQkJIkNvbG9yIjogIldoaXRlIiwNCgkJCSJMZW5ndGgiOiAwLjUNCgkJICB9LA0KCQkgIHsNCgkJCSJJbmRleCI6IDMsDQoJCQkiQ29sb3IiOiAiUmVkIiwNCgkJCSJMZW5ndGgiOiAyLjc1DQoJCSAgfSwNCgkJICB7DQoJCQkiSW5kZXgiOiA0LA0KCQkJIkNvbG9yIjogIkdyZWVuIiwNCgkJCSJMZW5ndGgiOiAyDQoJCSAgfSwNCgkJICB7DQoJCQkiSW5kZXgiOiA1LA0KCQkJIkNvbG9yIjogIldoaXRlIiwNCgkJCSJMZW5ndGgiOiA3Ljc1DQoJCSAgfV0sDQoJCSJBdHRlbmRhbmNlIjpbDQoJCSAgew0KCQkJIkluZGV4IjogMCwNCgkJCSJDb2xvciI6ICJXaGl0ZSIsDQoJCQkiTGVuZ3RoIjogMTQuMjUNCgkJICB9LA0KCQkgIHsNCgkJCSJJbmRleCI6IDEsDQoJCQkiQ29sb3IiOiAiQmx1ZSIsDQoJCQkiTGVuZ3RoIjogMg0KCQkgIH0sDQoJCSAgew0KCQkJIkluZGV4IjogMiwNCgkJCSJDb2xvciI6ICJXaGl0ZSIsDQoJCQkiTGVuZ3RoIjogNy43NQ0KCX1dfV0NCg==</String>
+      </Source>
+    </JsonDataSource>
+    <CsvDataSource RecordSeparators="&#xD;&#xA;" FieldSeparators="," HasHeaders="True" Name="csvDataSource1">
+      <Source>
+        <String>SW5kZXgsQ29sb3IsTGVuZ3RoDQowLHdoaXRlLDYNCjEsZ3JlZW4sNQ0KMix3aGl0ZSwwLjUNCjMsZ3JlZW4sNQ0KNCx3aGl0ZSw3LjU=</String>
+      </Source>
+      <Columns>
+        <DataColumn Name="Index" Type="Integer" />
+        <DataColumn Name="Color" />
+        <DataColumn Name="Length" Type="Float" />
+      </Columns>
+    </CsvDataSource>
+    <CsvDataSource RecordSeparators="&#xD;&#xA;" FieldSeparators="," HasHeaders="True" Name="csvDataSource2">
+      <Source>
+        <String>SW5kZXgsQ29sb3IsTGVuZ3RoDQowLHdoaXRlLDYNCjEsYmx1ZSw1DQoyLHJlZCwwLjUNCjMsYmx1ZSw1DQo0LHdoaXRlLDcuNQ==</String>
+      </Source>
+      <Columns>
+        <DataColumn Name="Index" Type="Integer" />
+        <DataColumn Name="Color" />
+        <DataColumn Name="Length" Type="Float" />
+      </Columns>
+    </CsvDataSource>
+  </DataSources>
+  <Items>
+    <DetailSection Height="1.3in" Name="detailSection1">
+      <Items>
+        <Panel Width="6.4in" Height="1in" Left="0in" Top="0in" Name="panel1">
+          <Items>
+            <PictureBox Image="iVBORw0KGgoAAAANSUhEUgAABWgAAABoCAMAAABblenRAAAABGdBTUEAALGPC/xhBQAAALRQTFRF//////+2ZgAAZrb//9u2Zjo6AAAAAAA6Oma22//////bkGY6ZpC2/7Zm25A6tpBmOgAAOmaQAABmtv//tmY6ZrbbZjoA/9uQADpmAGa2tmYAkDoAADqQ27aQOpDbkNv/ttv/kDo6kJBmZgA627ZmOjoA2//bZpDb29uQtv/bOjpmkGYAZmYAOjo6kLbb2/+229vbtra2kGZmOpC2/9vbOmZmtrbb29u2tv+2ADo6tpA6ttu2Nv0k4gAAAAlwSFlzAAAOvwAADr8BOAVTJAAAABh0RVh0U29mdHdhcmUAUGFpbnQuTkVUIDUuMS44G2nqqAAADThJREFUeF7tnGt71MgRRrEhcjDYa7yAYYBdkkCS3ZD7dZP//7+ilnrGbmhMV/mUmt7nPR+Ag6bfapVqZFs23BNCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhIjj6Pj+/OuDX0zTyS8frn/lZE0y4i18+mhe99i14bPJvs/zacG68PSbi2l6Yt3l0fFabbr8Nv9NK6dPLzxdWZr5LEsj69VOJ2gtmOekYVz6zmaH0fTMpnM0fbO5+Wh6ZvOrHM2j5+kSXc09n3lh7d5N1iQj3sJzscTLrBbmkvZ97pZy1oWnr5ZVr7ea5lzP2pVcz7QsX+21L56VDeOyvqTXbHYYTdds+kbTOZtbj6ZnNvPF/rpG88380vupC/PHjAevpu/yXztYk4y4C59P88eRB89Pvs/eTrrijn1ab5YL59OLt/62npv3eTa9nusdW7uyS8tOn1rK5at9tpyg6S6WVzaMS9/Z7DCartl0jubdZnOz0XTM5tc4mqe/ml78el5xdLzc+PNvHvZJRryF83TZr/e85sS/TyOnr5aP+862Xl2Yl50vc3xmfPMcHS/NPH3VXO9wtXdLQcNO88qGcek9m966dxhN12w6G3On2dxsNOf9GWfz6xzNo988fnjjqdCy4t379QnT7vVvH00nv1uekXz5KcRHSUacw/L7Y/OTovlS33fs8+rC84HftyqT3wkmvDfatfu75k+N9lc731QMn1TllQ3j8uls7i5/eDpNP741jubdZnPD0fTNpnPI7jKb242mfTb7jObhrnnLbN5YkdqQH61/N6/4Q/rDs+XZSlN7vrC9WzD3PzHvdP6qwkhqimOfZ9Pj59P0xFhuLvTGsWzl3NGTq4v09Zn1q9bDZw2mt0/q4uFtYF55/dtt3HjJPCK7yw9pFk++t49mS7E6242mczZ9o5kKuWdzu9H0zWZq4rajebhr3nLbvF4x9+Lh0fHl3Pqr+fSWhyNvLtKv79oemTdsr04qnP9oYPdH+7eZlr479pkbaRyTs2ne4ozpWmfyhBl5d5F2aT29XfrYe/rUts/Uxe2mOY3Ibjr5U9rmS/tothSrsuFoOmfTN5pzIfdsbjmartlMTdx0NP98uGuuz5Srs3lYcXWxXqy//PVv7+eXLM841o8kjZ9/N2yvyr6wnXPrdzGXJ2eOfe6mvy+X21bubErL/vHI/r3WtNbxmVT6emWm4cvpgvWbpyfvzTO52TQvI7I+dZtH8oN5NFuK1dhwNL2z6RvNuZB7NrccTddspiZuO5qHu+Y6pNXZ3K9Yvgu5P7F0o71+beyNNhf2YPuKIp1cGhHnPu3l8kRaly3YBiSzf9NZ3wjpxwF/fGufya2meR2RXOV8fdeZRrOlWIUNR/OOs2kud4fZ3HQ0PbOZmrjtaB7ummu96myuK05frZ/nHh1P/3z8r3+nRwefXfE5Grb3KfvCPozXPH+ZZf9CK2Msd3WxNsS4LLGfExN5kevG3nyV96SrnZc4Vl7/dhvlbOY2bnaj3XQ07zqb1nL+2ewwms2XeWXz0by+a679rM7msmJesH6oWdenpzCfX/E5Grb3CYfCNvJjoiPj93a9w3x4JN/UhwN3mC5PL9311jeb8SvCZYfmn6FJ5HNrOMXlJYcRuX50YB7NlmIfs+1oemfTOZp3mE1HK+9QzjObyw63HM319cul+MKNdrdPPptepp+2nu/T29xoD4WNLM/InT9u7dins9x+meliL6w/DWNkvu5zPfvzuvN00d8YH0cuXXT8VPih/w2XYXnJYUR2qVg6O/tothT7mB6j6dint5x7NjcdTddsLk3ccjSv75pfuNHmRwzTdPmf/E/sLr/d5EZ7XXguZiH/y7ymfX2MY5/OcvlfY1pPbmbpvpncTus7IZ+d7a26dtHx7xz3/W+4DOkl1yPy4eT98rtjNB3XvMtoOvbpLeeezU1H0zWbaxM3HM09c2duv9Ge5RfOr5zvy9NPz+bPuze50d4onP+mlfRdTOf/3OHY570Hqdz8MdlI+p800odyK633j49J23T8bGRq5k/PsjSydvH0v/b/uSP3v+EypJdcj8iHyx/mfT657bOGz2K/5l1G07FP72h6Z3Pj0fTM5trELUfzf/u7pmc2hfiq8H0qJYQQohndaIUQIhjdaIUQIhjdaIUQQgghhBBCCCGEEEIIIYQQQgghhLg3TfkPNpzLtl738y6nbVZRV2qoKzW2KzfGiQ2yTXWlyhjbVFdqqCs1HMvGOLFBtqmuVBljm+pKDXWlhmPZGCc2yDbVlSpjbFNdqaGu1HAsG+PEBtmmulJljG2qKzXUlRqOZWOc2CDbVFeqjLFNdaWGulLDsWyMExtkm+pKlTG2qa7UUFdqOJaNcWKDbFNdqTLGNtWVGupKDceyMU5skG2qK1XG2Ka6UkNdqeFYNsaJDbJNdaXKGNtUV2qoKzUcy8Y4sUG2qa5UGWOb6koNdaWGY9kYJzbINtWVKmNsU12poa7UcCwrlzSbc1mEISGMISERhoQwhoQwhoREGBLCGBLCGBLCWHmoCaRSV0NCGENCIgwJYQwJYQwJiTAkhDEkhDEkhLHyUBNIpa6GhDCGhEQYEsIYEsIYEhJhSAhjSAhjSAhj5aEmkEpdDQlhDAmJMCSEMSSEMSQkwpAQxpAQxpAQxspDTSCVuhoSwhgSEmFICGNICGNISIQhIYwhIYwhIYyVh5pAKnU1JIQxJCTCkBDGkBDGkJAIQ0IYQ0IYQ0IYKw81gVTqakgIY0hIhCEhjCEhjCEhEYaEMIaEMIaEMFYeagKp1NWQEMaQkAhDQhhDQhhDQiIMCWEMCWEMCWGsPNQEUqmrISGMISERhoQwhoQwhoREGBLCGBLCGBLCWHmoCaRSV0NCGENCIgwJYQwJYQwJiTAkhDEkhDEkhLHyUBNIpa6GhDCGhEQYEsIYEsIYEhJhSAhjSAhjSAhj5aEmkEpdDQlhDAmJMCSEMSSEMSQkwpAQxpAQxpAQxspDTSCVuhoSwhgSEmFICGNICGNISIQhIYwhIYwhIYyVh5pAKnU1JIQxJCTCkBDGkBDGkJAIQ0IYQ0IYQ0IYKw81gVTqakgIY0hIhCEhjCEhjCEhEYaEMIaEMIaEMFYeagKp1NWQEMaQkAhDQhhDQhhDQiIMCWEMCWEMCWGsPNQEUqmrISGMISERhoQwhoQwhoREGBLCGBLCGBLCWHmoCaRSV0NCGENCIgwJYQwJYQwJiTAkhDEkhDEkhLHyUBNIpa6GhDCGhEQYEsIYEsIYEhJhSAhjSAhjSAhj5aEmkEpdDQlhDAmJMCSEMSSEMSQkwpAQxpAQxpAQxspDTUxCCCFM5NtnO3mdEEKIRvLts51bPj++zZzLIgwJYQwJiTAkhDEkhDEkJMKQEMaQEMaQEMbKQ00glboaEsIYEhJhSAhjSAhjSEiEISGMISGMISGMlYeaQCp1NSSEMSQkwpAQxpAQxpCQCENCGENCGENCGCsPNYFU6mpICGNISIQhIYwhIYwhIRGGhDCGhDCGhDBWHmoCqdTVkBDGkJAIQ0IYQ0IYQ0IiDAlhDAlhDAlhrDzUBFKpqyEhjCEhEYaEMIaEMIaERBgSwhgSwhgSwlh5qAmkUldDQhhDQiIMCWEMCWEMCYkwJIQxJIQxJISx8lATSKWuhoQwhoREGBLCGBLCGBISYUgIY0gIY0gIY+WhJpBKXQ0JYQwJiTAkhDEkhDEkJMKQEMaQEMaQEMbKQ00glboaEsIYEhJhSAhjSAhjSEiEISGMISGMISGMlYeaQCp1NSSEMSQkwpAQxpAQxpCQCENCGENCGENCGCsPNYFU6mpICGNISIQhIYwhIYwhIRGGhDCGhDCGhDBWHmoCqdTVkBDGkJAIQ0IYQ0IYQ0IiDAlhDAlhDAlhrDzUBFKpqyEhjCEhEYaEMIaEMIaERBgSwhgSwhgSwlh5qAmkUldDQhhDQiIMCWEMCWEMCYkwJIQxJIQxJISx8lATSKWuhoQwhoREGBLCGBLCGBISYUgIY0gIY0gIY+WhJpBKXQ0JYQwJiTAkhDEkhDEkJMKQEMaQEMaQEMbKQ00glboaEsIYEhJhSAhjSAhjSEiEISGMISGMISGMlYeaQCp1NSSEMSQkwpAQxpAQxpCQCENCGENCGENCGCsPNYFU6mpICGNISIQhIYwhIYwhIRGGhDCGhDCGhDBWHmrCsSThXLb1up93OW2zirpSQ12psV25MU5skG2qK1XG2Ka6UkNdqeFYNsaJDbJNdaXKGNtUV2qoKzUcy8Y4sUG2qa5UGWOb6koNdaWGY9kYJzbINtWVKmNsU12poa7UcCwb48QG2aa6UmWMbaorNdSVGo5lY5zYINtUV6qMsU11pYa6UsOxbIwTG2Sb6kqVMbaprtRQV2o4lo1xYoNsU12pMsY21ZUa6koNx7IxTmyQbaorVcbYprpSQ12p4Vg2xokNsk11pcoY21RXaqgrNRzLxjixQbaprlQZY5vqSg11pYa3nBBCCCGEEEIIIYQQQgghhBBjcu/e/wHSJbFRNBOCdwAAAABJRU5ErkJggg==" Width="6.221in" Height="0.6in" Left="0.079in" Top="0in" Sizing="Stretch" MimeType="image/png" Name="pictureBox2" />
+            <List DataSourceName="csvDataSource1" Width="0.104in" Height="0.139in" Left="0.2in" Top="0.6in" Name="list1">
+              <Body>
+                <Cells>
+                  <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <Panel Width="0.104in" Height="0.139in" Left="0in" Top="0in" Name="panel3">
+                        <Bindings>
+                          <Binding Path="Style.BackgroundColor" Expression="= Fields.Color" />
+                          <Binding Path="Width" Expression="= Fields.Length * 0.25 + &quot;in&quot;" />
+                        </Bindings>
+                      </Panel>
+                    </ReportItem>
+                  </TableCell>
+                </Cells>
+                <Columns>
+                  <Column Width="0.104in" />
+                </Columns>
+                <Rows>
+                  <Row Height="0.139in" />
+                </Rows>
+              </Body>
+              <Corner />
+              <RowGroups>
+                <TableGroup Name="DetailGroup">
+                  <Groupings>
+                    <Grouping Expression="1" />
+                  </Groupings>
+                </TableGroup>
+              </RowGroups>
+              <ColumnGroups>
+                <TableGroup Name="ColumnGroup">
+                  <Groupings>
+                    <Grouping Expression="= Fields.Index" />
+                  </Groupings>
+                </TableGroup>
+              </ColumnGroups>
+              <Bindings>
+                <Binding Path="DataSource" Expression="= Fields.Details" />
+              </Bindings>
+            </List>
+            <List DataSourceName="csvDataSource2" Width="0.104in" Height="0.139in" Left="0.2in" Top="0.8in" Name="list2">
+              <Body>
+                <Cells>
+                  <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                    <ReportItem>
+                      <Panel Width="0.104in" Height="0.139in" Left="0in" Top="0in" Name="panel4">
+                        <Bindings>
+                          <Binding Path="Style.BackgroundColor" Expression="= Fields.Color" />
+                          <Binding Path="Width" Expression="= Fields.Length * 0.25 + &quot;in&quot;" />
+                        </Bindings>
+                      </Panel>
+                    </ReportItem>
+                  </TableCell>
+                </Cells>
+                <Columns>
+                  <Column Width="0.104in" />
+                </Columns>
+                <Rows>
+                  <Row Height="0.139in" />
+                </Rows>
+              </Body>
+              <Corner />
+              <RowGroups>
+                <TableGroup Name="DetailGroup">
+                  <Groupings>
+                    <Grouping Expression="1" />
+                  </Groupings>
+                </TableGroup>
+              </RowGroups>
+              <ColumnGroups>
+                <TableGroup Name="ColumnGroup">
+                  <Groupings>
+                    <Grouping Expression="= Fields.Index" />
+                  </Groupings>
+                </TableGroup>
+              </ColumnGroups>
+              <Bindings>
+                <Binding Path="DataSource" Expression="= Fields.Attendance" />
+              </Bindings>
+            </List>
+          </Items>
+        </Panel>
+      </Items>
+    </DetailSection>
+  </Items>
+  <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+    <Margins>
+      <MarginsU Left="1in" Right="1in" Top="1in" Bottom="1in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+</Report>
