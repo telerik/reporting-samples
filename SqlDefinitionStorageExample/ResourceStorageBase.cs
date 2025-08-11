@@ -250,7 +250,7 @@ namespace SqlDefinitionStorageExample
             var folder = DbContext.ResourceFolders.FirstOrDefault(f => f.Uri == uri);
             if (folder == null)
             {
-                if (uri.IsNullOrEmpty())
+                if (!uri.IsNullOrEmpty())
                 {
                     CreateFolderModel model = new() { ParentUri = uri, Name = Root };
                     return this.CreateFolderAsync(model);
