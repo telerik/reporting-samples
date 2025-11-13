@@ -14,7 +14,7 @@
     <PackageReference Include="Telerik.Reporting.Services.AspNetCore" Version="19.1.25.521" />
     <PackageReference Include="Telerik.Reporting.WebServiceDataSource" Version="19.1.25.521" />
     <PackageReference Include="Telerik.ReportViewer.BlazorNative" Version="19.1.25.521" />
-    <PackageReference Include="Telerik.UI.for.Blazor" Version="10.0.0" />
+    <PackageReference Include="Telerik.UI.for.Blazor" Version="12.0.0" />
   </ItemGroup>
 
   <ItemGroup>
