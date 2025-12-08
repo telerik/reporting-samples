@@ -1,0 +1,1249 @@
+{
+  "Categories": [
+    {
+      "CategoryID": 1,
+      "CategoryName": "Electronics",
+      "Products": [
+        {
+          "ProductID": 100,
+          "ProductName": "Electronics Item 100",
+          "Price": 146.34,
+          "Orders": [
+            {
+              "OrderID": 5000,
+              "Quantity": 10,
+              "Customer": "Frank"
+            }
+          ]
+        },
+        {
+          "ProductID": 101,
+          "ProductName": "Electronics Item 101",
+          "Price": 1470.37,
+          "Orders": [
+            {
+              "OrderID": 5001,
+              "Quantity": 9,
+              "Customer": "Bob"
+            },
+            {
+              "OrderID": 5002,
+              "Quantity": 7,
+              "Customer": "Eve"
+            },
+            {
+              "OrderID": 5003,
+              "Quantity": 9,
+              "Customer": "Diana"
+            },
+            {
+              "OrderID": 5004,
+              "Quantity": 10,
+              "Customer": "Nick"
+            }
+          ]
+        },
+        {
+          "ProductID": 102,
+          "ProductName": "Electronics Item 102",
+          "Price": 934.91,
+          "Orders": [
+            {
+              "OrderID": 5005,
+              "Quantity": 9,
+              "Customer": "Ivy"
+            },
+            {
+              "OrderID": 5006,
+              "Quantity": 5,
+              "Customer": "Mia"
+            },
+            {
+              "OrderID": 5007,
+              "Quantity": 9,
+              "Customer": "Quinn"
+            },
+            {
+              "OrderID": 5008,
+              "Quantity": 5,
+              "Customer": "Alice"
+            }
+          ]
+        },
+        {
+          "ProductID": 103,
+          "ProductName": "Electronics Item 103",
+          "Price": 334.59,
+          "Orders": [
+            {
+              "OrderID": 5009,
+              "Quantity": 5,
+              "Customer": "Diana"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "CategoryID": 2,
+      "CategoryName": "Home Appliances",
+      "Products": [
+        {
+          "ProductID": 104,
+          "ProductName": "Home Appliances Item 104",
+          "Price": 1019.39,
+          "Orders": [
+            {
+              "OrderID": 5010,
+              "Quantity": 8,
+              "Customer": "Frank"
+            },
+            {
+              "OrderID": 5011,
+              "Quantity": 10,
+              "Customer": "Alice"
+            },
+            {
+              "OrderID": 5012,
+              "Quantity": 7,
+              "Customer": "Quinn"
+            },
+            {
+              "OrderID": 5013,
+              "Quantity": 6,
+              "Customer": "Paul"
+            }
+          ]
+        },
+        {
+          "ProductID": 105,
+          "ProductName": "Home Appliances Item 105",
+          "Price": 1374.47,
+          "Orders": [
+            {
+              "OrderID": 5014,
+              "Quantity": 5,
+              "Customer": "Mia"
+            },
+            {
+              "OrderID": 5015,
+              "Quantity": 6,
+              "Customer": "Paul"
+            }
+          ]
+        },
+        {
+          "ProductID": 106,
+          "ProductName": "Home Appliances Item 106",
+          "Price": 1128.34,
+          "Orders": [
+            {
+              "OrderID": 5016,
+              "Quantity": 2,
+              "Customer": "Sam"
+            },
+            {
+              "OrderID": 5017,
+              "Quantity": 5,
+              "Customer": "Hank"
+            }
+          ]
+        },
+        {
+          "ProductID": 107,
+          "ProductName": "Home Appliances Item 107",
+          "Price": 1009.11,
+          "Orders": [
+            {
+              "OrderID": 5018,
+              "Quantity": 1,
+              "Customer": "Bob"
+            },
+            {
+              "OrderID": 5019,
+              "Quantity": 4,
+              "Customer": "Frank"
+            },
+            {
+              "OrderID": 5020,
+              "Quantity": 6,
+              "Customer": "Quinn"
+            },
+            {
+              "OrderID": 5021,
+              "Quantity": 8,
+              "Customer": "Grace"
+            }
+          ]
+        },
+        {
+          "ProductID": 108,
+          "ProductName": "Home Appliances Item 108",
+          "Price": 1355.37,
+          "Orders": [
+            {
+              "OrderID": 5022,
+              "Quantity": 10,
+              "Customer": "Ivy"
+            }
+          ]
+        },
+        {
+          "ProductID": 109,
+          "ProductName": "Home Appliances Item 109",
+          "Price": 386.92,
+          "Orders": [
+            {
+              "OrderID": 5023,
+              "Quantity": 10,
+              "Customer": "Grace"
+            },
+            {
+              "OrderID": 5024,
+              "Quantity": 2,
+              "Customer": "Bob"
+            },
+            {
+              "OrderID": 5025,
+              "Quantity": 2,
+              "Customer": "Karen"
+            },
+            {
+              "OrderID": 5026,
+              "Quantity": 6,
+              "Customer": "Grace"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "CategoryID": 3,
+      "CategoryName": "Books",
+      "Products": [
+        {
+          "ProductID": 110,
+          "ProductName": "Books Item 110",
+          "Price": 297.85,
+          "Orders": [
+            {
+              "OrderID": 5027,
+              "Quantity": 8,
+              "Customer": "Mia"
+            }
+          ]
+        },
+        {
+          "ProductID": 111,
+          "ProductName": "Books Item 111",
+          "Price": 859.17,
+          "Orders": [
+            {
+              "OrderID": 5028,
+              "Quantity": 10,
+              "Customer": "Ivy"
+            },
+            {
+              "OrderID": 5029,
+              "Quantity": 10,
+              "Customer": "Charlie"
+            },
+            {
+              "OrderID": 5030,
+              "Quantity": 7,
+              "Customer": "Diana"
+            },
+            {
+              "OrderID": 5031,
+              "Quantity": 3,
+              "Customer": "Jack"
+            }
+          ]
+        },
+        {
+          "ProductID": 112,
+          "ProductName": "Books Item 112",
+          "Price": 653.25,
+          "Orders": [
+            {
+              "OrderID": 5032,
+              "Quantity": 5,
+              "Customer": "Alice"
+            },
+            {
+              "OrderID": 5033,
+              "Quantity": 2,
+              "Customer": "Olivia"
+            },
+            {
+              "OrderID": 5034,
+              "Quantity": 3,
+              "Customer": "Karen"
+            },
+            {
+              "OrderID": 5035,
+              "Quantity": 8,
+              "Customer": "Eve"
+            }
+          ]
+        },
+        {
+          "ProductID": 113,
+          "ProductName": "Books Item 113",
+          "Price": 804.12,
+          "Orders": [
+            {
+              "OrderID": 5036,
+              "Quantity": 7,
+              "Customer": "Karen"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "CategoryID": 4,
+      "CategoryName": "Sports Equipment",
+      "Products": [
+        {
+          "ProductID": 114,
+          "ProductName": "Sports Equipment Item 114",
+          "Price": 1214.35,
+          "Orders": [
+            {
+              "OrderID": 5037,
+              "Quantity": 10,
+              "Customer": "Hank"
+            },
+            {
+              "OrderID": 5038,
+              "Quantity": 6,
+              "Customer": "Rita"
+            },
+            {
+              "OrderID": 5039,
+              "Quantity": 10,
+              "Customer": "Jack"
+            }
+          ]
+        },
+        {
+          "ProductID": 115,
+          "ProductName": "Sports Equipment Item 115",
+          "Price": 536.52,
+          "Orders": [
+            {
+              "OrderID": 5040,
+              "Quantity": 4,
+              "Customer": "Nick"
+            },
+            {
+              "OrderID": 5041,
+              "Quantity": 1,
+              "Customer": "Diana"
+            },
+            {
+              "OrderID": 5042,
+              "Quantity": 8,
+              "Customer": "Alice"
+            },
+            {
+              "OrderID": 5043,
+              "Quantity": 4,
+              "Customer": "Nick"
+            }
+          ]
+        },
+        {
+          "ProductID": 116,
+          "ProductName": "Sports Equipment Item 116",
+          "Price": 306.3,
+          "Orders": [
+            {
+              "OrderID": 5044,
+              "Quantity": 2,
+              "Customer": "Quinn"
+            },
+            {
+              "OrderID": 5045,
+              "Quantity": 3,
+              "Customer": "Rita"
+            },
+            {
+              "OrderID": 5046,
+              "Quantity": 9,
+              "Customer": "Bob"
+            }
+          ]
+        },
+        {
+          "ProductID": 117,
+          "ProductName": "Sports Equipment Item 117",
+          "Price": 979.68,
+          "Orders": [
+            {
+              "OrderID": 5047,
+              "Quantity": 2,
+              "Customer": "Sam"
+            },
+            {
+              "OrderID": 5048,
+              "Quantity": 9,
+              "Customer": "Alice"
+            }
+          ]
+        },
+        {
+          "ProductID": 118,
+          "ProductName": "Sports Equipment Item 118",
+          "Price": 133.04,
+          "Orders": [
+            {
+              "OrderID": 5049,
+              "Quantity": 9,
+              "Customer": "Olivia"
+            }
+          ]
+        },
+        {
+          "ProductID": 119,
+          "ProductName": "Sports Equipment Item 119",
+          "Price": 1400.83,
+          "Orders": [
+            {
+              "OrderID": 5050,
+              "Quantity": 3,
+              "Customer": "Grace"
+            },
+            {
+              "OrderID": 5051,
+              "Quantity": 7,
+              "Customer": "Sam"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "CategoryID": 5,
+      "CategoryName": "Clothing",
+      "Products": [
+        {
+          "ProductID": 120,
+          "ProductName": "Clothing Item 120",
+          "Price": 762.63,
+          "Orders": [
+            {
+              "OrderID": 5052,
+              "Quantity": 4,
+              "Customer": "Rita"
+            },
+            {
+              "OrderID": 5053,
+              "Quantity": 7,
+              "Customer": "Hank"
+            },
+            {
+              "OrderID": 5054,
+              "Quantity": 5,
+              "Customer": "Charlie"
+            },
+            {
+              "OrderID": 5055,
+              "Quantity": 9,
+              "Customer": "Jack"
+            }
+          ]
+        },
+        {
+          "ProductID": 121,
+          "ProductName": "Clothing Item 121",
+          "Price": 585.2,
+          "Orders": [
+            {
+              "OrderID": 5056,
+              "Quantity": 10,
+              "Customer": "Diana"
+            },
+            {
+              "OrderID": 5057,
+              "Quantity": 4,
+              "Customer": "Nick"
+            },
+            {
+              "OrderID": 5058,
+              "Quantity": 10,
+              "Customer": "Olivia"
+            },
+            {
+              "OrderID": 5059,
+              "Quantity": 6,
+              "Customer": "Frank"
+            }
+          ]
+        },
+        {
+          "ProductID": 122,
+          "ProductName": "Clothing Item 122",
+          "Price": 993.66,
+          "Orders": [
+            {
+              "OrderID": 5060,
+              "Quantity": 3,
+              "Customer": "Hank"
+            },
+            {
+              "OrderID": 5061,
+              "Quantity": 10,
+              "Customer": "Grace"
+            },
+            {
+              "OrderID": 5062,
+              "Quantity": 2,
+              "Customer": "Alice"
+            },
+            {
+              "OrderID": 5063,
+              "Quantity": 9,
+              "Customer": "Tina"
+            }
+          ]
+        },
+        {
+          "ProductID": 123,
+          "ProductName": "Clothing Item 123",
+          "Price": 590.06,
+          "Orders": [
+            {
+              "OrderID": 5064,
+              "Quantity": 5,
+              "Customer": "Tina"
+            }
+          ]
+        },
+        {
+          "ProductID": 124,
+          "ProductName": "Clothing Item 124",
+          "Price": 872.36,
+          "Orders": [
+            {
+              "OrderID": 5065,
+              "Quantity": 3,
+              "Customer": "Paul"
+            },
+            {
+              "OrderID": 5066,
+              "Quantity": 9,
+              "Customer": "Diana"
+            },
+            {
+              "OrderID": 5067,
+              "Quantity": 8,
+              "Customer": "Nick"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "CategoryID": 6,
+      "CategoryName": "Toys",
+      "Products": [
+        {
+          "ProductID": 125,
+          "ProductName": "Toys Item 125",
+          "Price": 1015.3,
+          "Orders": [
+            {
+              "OrderID": 5068,
+              "Quantity": 3,
+              "Customer": "Karen"
+            }
+          ]
+        },
+        {
+          "ProductID": 126,
+          "ProductName": "Toys Item 126",
+          "Price": 847.52,
+          "Orders": [
+            {
+              "OrderID": 5069,
+              "Quantity": 6,
+              "Customer": "Alice"
+            }
+          ]
+        },
+        {
+          "ProductID": 127,
+          "ProductName": "Toys Item 127",
+          "Price": 1149.1,
+          "Orders": [
+            {
+              "OrderID": 5070,
+              "Quantity": 5,
+              "Customer": "Mia"
+            }
+          ]
+        },
+        {
+          "ProductID": 128,
+          "ProductName": "Toys Item 128",
+          "Price": 377.03,
+          "Orders": [
+            {
+              "OrderID": 5071,
+              "Quantity": 9,
+              "Customer": "Rita"
+            },
+            {
+              "OrderID": 5072,
+              "Quantity": 9,
+              "Customer": "Jack"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "CategoryID": 7,
+      "CategoryName": "Furniture",
+      "Products": [
+        {
+          "ProductID": 129,
+          "ProductName": "Furniture Item 129",
+          "Price": 625.45,
+          "Orders": [
+            {
+              "OrderID": 5073,
+              "Quantity": 9,
+              "Customer": "Ivy"
+            },
+            {
+              "OrderID": 5074,
+              "Quantity": 9,
+              "Customer": "Rita"
+            },
+            {
+              "OrderID": 5075,
+              "Quantity": 3,
+              "Customer": "Leo"
+            },
+            {
+              "OrderID": 5076,
+              "Quantity": 10,
+              "Customer": "Karen"
+            }
+          ]
+        },
+        {
+          "ProductID": 130,
+          "ProductName": "Furniture Item 130",
+          "Price": 53.62,
+          "Orders": [
+            {
+              "OrderID": 5077,
+              "Quantity": 4,
+              "Customer": "Mia"
+            },
+            {
+              "OrderID": 5078,
+              "Quantity": 9,
+              "Customer": "Alice"
+            }
+          ]
+        },
+        {
+          "ProductID": 131,
+          "ProductName": "Furniture Item 131",
+          "Price": 350.66,
+          "Orders": [
+            {
+              "OrderID": 5079,
+              "Quantity": 7,
+              "Customer": "Bob"
+            }
+          ]
+        },
+        {
+          "ProductID": 132,
+          "ProductName": "Furniture Item 132",
+          "Price": 656.79,
+          "Orders": [
+            {
+              "OrderID": 5080,
+              "Quantity": 7,
+              "Customer": "Bob"
+            },
+            {
+              "OrderID": 5081,
+              "Quantity": 8,
+              "Customer": "Diana"
+            },
+            {
+              "OrderID": 5082,
+              "Quantity": 10,
+              "Customer": "Sam"
+            },
+            {
+              "OrderID": 5083,
+              "Quantity": 6,
+              "Customer": "Sam"
+            }
+          ]
+        },
+        {
+          "ProductID": 133,
+          "ProductName": "Furniture Item 133",
+          "Price": 1180.03,
+          "Orders": [
+            {
+              "OrderID": 5084,
+              "Quantity": 2,
+              "Customer": "Quinn"
+            },
+            {
+              "OrderID": 5085,
+              "Quantity": 3,
+              "Customer": "Charlie"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "CategoryID": 8,
+      "CategoryName": "Groceries",
+      "Products": [
+        {
+          "ProductID": 134,
+          "ProductName": "Groceries Item 134",
+          "Price": 417.0,
+          "Orders": [
+            {
+              "OrderID": 5086,
+              "Quantity": 10,
+              "Customer": "Quinn"
+            }
+          ]
+        },
+        {
+          "ProductID": 135,
+          "ProductName": "Groceries Item 135",
+          "Price": 253.3,
+          "Orders": [
+            {
+              "OrderID": 5087,
+              "Quantity": 6,
+              "Customer": "Mia"
+            },
+            {
+              "OrderID": 5088,
+              "Quantity": 1,
+              "Customer": "Jack"
+            },
+            {
+              "OrderID": 5089,
+              "Quantity": 5,
+              "Customer": "Tina"
+            },
+            {
+              "OrderID": 5090,
+              "Quantity": 1,
+              "Customer": "Leo"
+            }
+          ]
+        },
+        {
+          "ProductID": 136,
+          "ProductName": "Groceries Item 136",
+          "Price": 753.06,
+          "Orders": [
+            {
+              "OrderID": 5091,
+              "Quantity": 10,
+              "Customer": "Charlie"
+            },
+            {
+              "OrderID": 5092,
+              "Quantity": 8,
+              "Customer": "Eve"
+            }
+          ]
+        },
+        {
+          "ProductID": 137,
+          "ProductName": "Groceries Item 137",
+          "Price": 251.52,
+          "Orders": [
+            {
+              "OrderID": 5093,
+              "Quantity": 8,
+              "Customer": "Charlie"
+            },
+            {
+              "OrderID": 5094,
+              "Quantity": 10,
+              "Customer": "Charlie"
+            },
+            {
+              "OrderID": 5095,
+              "Quantity": 6,
+              "Customer": "Alice"
+            },
+            {
+              "OrderID": 5096,
+              "Quantity": 7,
+              "Customer": "Tina"
+            }
+          ]
+        },
+        {
+          "ProductID": 138,
+          "ProductName": "Groceries Item 138",
+          "Price": 1223.21,
+          "Orders": [
+            {
+              "OrderID": 5097,
+              "Quantity": 3,
+              "Customer": "Leo"
+            },
+            {
+              "OrderID": 5098,
+              "Quantity": 8,
+              "Customer": "Olivia"
+            },
+            {
+              "OrderID": 5099,
+              "Quantity": 3,
+              "Customer": "Eve"
+            },
+            {
+              "OrderID": 5100,
+              "Quantity": 2,
+              "Customer": "Mia"
+            }
+          ]
+        },
+        {
+          "ProductID": 139,
+          "ProductName": "Groceries Item 139",
+          "Price": 243.45,
+          "Orders": [
+            {
+              "OrderID": 5101,
+              "Quantity": 6,
+              "Customer": "Frank"
+            },
+            {
+              "OrderID": 5102,
+              "Quantity": 7,
+              "Customer": "Eve"
+            },
+            {
+              "OrderID": 5103,
+              "Quantity": 2,
+              "Customer": "Hank"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "CategoryID": 9,
+      "CategoryName": "Beauty",
+      "Products": [
+        {
+          "ProductID": 140,
+          "ProductName": "Beauty Item 140",
+          "Price": 1074.05,
+          "Orders": [
+            {
+              "OrderID": 5104,
+              "Quantity": 2,
+              "Customer": "Diana"
+            },
+            {
+              "OrderID": 5105,
+              "Quantity": 8,
+              "Customer": "Grace"
+            },
+            {
+              "OrderID": 5106,
+              "Quantity": 10,
+              "Customer": "Quinn"
+            }
+          ]
+        },
+        {
+          "ProductID": 141,
+          "ProductName": "Beauty Item 141",
+          "Price": 78.65,
+          "Orders": [
+            {
+              "OrderID": 5107,
+              "Quantity": 6,
+              "Customer": "Eve"
+            },
+            {
+              "OrderID": 5108,
+              "Quantity": 2,
+              "Customer": "Diana"
+            },
+            {
+              "OrderID": 5109,
+              "Quantity": 10,
+              "Customer": "Olivia"
+            }
+          ]
+        },
+        {
+          "ProductID": 142,
+          "ProductName": "Beauty Item 142",
+          "Price": 599.66,
+          "Orders": [
+            {
+              "OrderID": 5110,
+              "Quantity": 6,
+              "Customer": "Grace"
+            }
+          ]
+        },
+        {
+          "ProductID": 143,
+          "ProductName": "Beauty Item 143",
+          "Price": 1389.31,
+          "Orders": [
+            {
+              "OrderID": 5111,
+              "Quantity": 9,
+              "Customer": "Ivy"
+            },
+            {
+              "OrderID": 5112,
+              "Quantity": 9,
+              "Customer": "Bob"
+            },
+            {
+              "OrderID": 5113,
+              "Quantity": 2,
+              "Customer": "Quinn"
+            },
+            {
+              "OrderID": 5114,
+              "Quantity": 6,
+              "Customer": "Frank"
+            }
+          ]
+        },
+        {
+          "ProductID": 144,
+          "ProductName": "Beauty Item 144",
+          "Price": 641.79,
+          "Orders": [
+            {
+              "OrderID": 5115,
+              "Quantity": 8,
+              "Customer": "Eve"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "CategoryID": 10,
+      "CategoryName": "Automotive",
+      "Products": [
+        {
+          "ProductID": 145,
+          "ProductName": "Automotive Item 145",
+          "Price": 730.1,
+          "Orders": [
+            {
+              "OrderID": 5116,
+              "Quantity": 8,
+              "Customer": "Grace"
+            },
+            {
+              "OrderID": 5117,
+              "Quantity": 5,
+              "Customer": "Mia"
+            },
+            {
+              "OrderID": 5118,
+              "Quantity": 7,
+              "Customer": "Olivia"
+            },
+            {
+              "OrderID": 5119,
+              "Quantity": 2,
+              "Customer": "Olivia"
+            }
+          ]
+        },
+        {
+          "ProductID": 146,
+          "ProductName": "Automotive Item 146",
+          "Price": 575.65,
+          "Orders": [
+            {
+              "OrderID": 5120,
+              "Quantity": 3,
+              "Customer": "Eve"
+            },
+            {
+              "OrderID": 5121,
+              "Quantity": 3,
+              "Customer": "Paul"
+            },
+            {
+              "OrderID": 5122,
+              "Quantity": 3,
+              "Customer": "Alice"
+            },
+            {
+              "OrderID": 5123,
+              "Quantity": 1,
+              "Customer": "Ivy"
+            }
+          ]
+        },
+        {
+          "ProductID": 147,
+          "ProductName": "Automotive Item 147",
+          "Price": 1492.48,
+          "Orders": [
+            {
+              "OrderID": 5124,
+              "Quantity": 4,
+              "Customer": "Sam"
+            },
+            {
+              "OrderID": 5125,
+              "Quantity": 9,
+              "Customer": "Ivy"
+            }
+          ]
+        },
+        {
+          "ProductID": 148,
+          "ProductName": "Automotive Item 148",
+          "Price": 458.11,
+          "Orders": [
+            {
+              "OrderID": 5126,
+              "Quantity": 5,
+              "Customer": "Olivia"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "CategoryID": 11,
+      "CategoryName": "Garden",
+      "Products": [
+        {
+          "ProductID": 149,
+          "ProductName": "Garden Item 149",
+          "Price": 386.51,
+          "Orders": [
+            {
+              "OrderID": 5127,
+              "Quantity": 2,
+              "Customer": "Bob"
+            },
+            {
+              "OrderID": 5128,
+              "Quantity": 10,
+              "Customer": "Olivia"
+            }
+          ]
+        },
+        {
+          "ProductID": 150,
+          "ProductName": "Garden Item 150",
+          "Price": 701.12,
+          "Orders": [
+            {
+              "OrderID": 5129,
+              "Quantity": 8,
+              "Customer": "Frank"
+            },
+            {
+              "OrderID": 5130,
+              "Quantity": 5,
+              "Customer": "Karen"
+            },
+            {
+              "OrderID": 5131,
+              "Quantity": 7,
+              "Customer": "Mia"
+            }
+          ]
+        },
+        {
+          "ProductID": 151,
+          "ProductName": "Garden Item 151",
+          "Price": 1303.69,
+          "Orders": [
+            {
+              "OrderID": 5132,
+              "Quantity": 3,
+              "Customer": "Rita"
+            },
+            {
+              "OrderID": 5133,
+              "Quantity": 2,
+              "Customer": "Eve"
+            },
+            {
+              "OrderID": 5134,
+              "Quantity": 9,
+              "Customer": "Hank"
+            }
+          ]
+        },
+        {
+          "ProductID": 152,
+          "ProductName": "Garden Item 152",
+          "Price": 843.61,
+          "Orders": [
+            {
+              "OrderID": 5135,
+              "Quantity": 6,
+              "Customer": "Leo"
+            },
+            {
+              "OrderID": 5136,
+              "Quantity": 3,
+              "Customer": "Jack"
+            },
+            {
+              "OrderID": 5137,
+              "Quantity": 2,
+              "Customer": "Jack"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "CategoryID": 12,
+      "CategoryName": "Music",
+      "Products": [
+        {
+          "ProductID": 153,
+          "ProductName": "Music Item 153",
+          "Price": 572.32,
+          "Orders": [
+            {
+              "OrderID": 5138,
+              "Quantity": 6,
+              "Customer": "Mia"
+            }
+          ]
+        },
+        {
+          "ProductID": 154,
+          "ProductName": "Music Item 154",
+          "Price": 47.16,
+          "Orders": [
+            {
+              "OrderID": 5139,
+              "Quantity": 10,
+              "Customer": "Olivia"
+            },
+            {
+              "OrderID": 5140,
+              "Quantity": 1,
+              "Customer": "Eve"
+            },
+            {
+              "OrderID": 5141,
+              "Quantity": 6,
+              "Customer": "Quinn"
+            }
+          ]
+        },
+        {
+          "ProductID": 155,
+          "ProductName": "Music Item 155",
+          "Price": 874.79,
+          "Orders": [
+            {
+              "OrderID": 5142,
+              "Quantity": 3,
+              "Customer": "Alice"
+            },
+            {
+              "OrderID": 5143,
+              "Quantity": 2,
+              "Customer": "Diana"
+            },
+            {
+              "OrderID": 5144,
+              "Quantity": 3,
+              "Customer": "Diana"
+            },
+            {
+              "OrderID": 5145,
+              "Quantity": 8,
+              "Customer": "Eve"
+            }
+          ]
+        },
+        {
+          "ProductID": 156,
+          "ProductName": "Music Item 156",
+          "Price": 67.67,
+          "Orders": [
+            {
+              "OrderID": 5146,
+              "Quantity": 6,
+              "Customer": "Charlie"
+            }
+          ]
+        },
+        {
+          "ProductID": 157,
+          "ProductName": "Music Item 157",
+          "Price": 454.15,
+          "Orders": [
+            {
+              "OrderID": 5147,
+              "Quantity": 2,
+              "Customer": "Hank"
+            },
+            {
+              "OrderID": 5148,
+              "Quantity": 1,
+              "Customer": "Quinn"
+            },
+            {
+              "OrderID": 5149,
+              "Quantity": 2,
+              "Customer": "Nick"
+            },
+            {
+              "OrderID": 5150,
+              "Quantity": 3,
+              "Customer": "Leo"
+            }
+          ]
+        },
+        {
+          "ProductID": 158,
+          "ProductName": "Music Item 158",
+          "Price": 1113.97,
+          "Orders": [
+            {
+              "OrderID": 5151,
+              "Quantity": 7,
+              "Customer": "Tina"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}    
