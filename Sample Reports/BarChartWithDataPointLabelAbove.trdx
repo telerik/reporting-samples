@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report Width="6.5in" Name="Report1" xmlns="http://schemas.telerik.com/reporting/2021/2.0">
+  <DataSources>
+    <CsvDataSource RecordSeparators="&#xD;&#xA;" FieldSeparators="," HasHeaders="True" Name="csvDataSource1">
+      <Source>
+        <String>Q2F0ZWdvcnksU2VyaWVzLFZhbHVlDQpBLFMxLDEwDQpBLFRleHRTZXJpZXMsMTANCkIsUzEsMjANCkIsVGV4dFNlcmllcywyMA0KQyxTMSwxNQ0KQyxUZXh0U2VyaWVzLDE1</String>
+      </Source>
+      <Columns>
+        <DataColumn Name="Category" />
+        <DataColumn Name="Series" />
+        <DataColumn Name="Value" Type="Integer" />
+      </Columns>
+    </CsvDataSource>
+  </DataSources>
+  <Items>
+    <PageHeaderSection Height="1in" Name="pageHeaderSection1" />
+    <DetailSection Height="3.1in" Name="detailSection1">
+      <Items>
+        <Graph DataSourceName="csvDataSource1" Width="5.2in" Height="3.1in" Left="0.6in" Top="0in" Name="graph1">
+          <PlotAreaStyle LineWidth="0in" LineColor="LightGray" />
+          <Axes>
+            <GraphAxis Name="graphAxis1">
+              <MajorGridLineStyle LineWidth="1px" LineColor="LightGray" />
+              <MinorGridLineStyle Visible="False" LineWidth="1px" LineColor="LightGray" />
+              <Scale>
+                <NumericalScale Minimum="0" />
+              </Scale>
+            </GraphAxis>
+            <GraphAxis Name="graphAxis2">
+              <MajorGridLineStyle LineWidth="1px" LineColor="LightGray" />
+              <MinorGridLineStyle Visible="False" LineWidth="1px" LineColor="LightGray" />
+              <Scale>
+                <CategoryScale />
+              </Scale>
+            </GraphAxis>
+          </Axes>
+          <CoordinateSystems>
+            <CartesianCoordinateSystem XAxis="graphAxis1" YAxis="graphAxis2" Name="cartesianCoordinateSystem1" />
+          </CoordinateSystems>
+          <Legend>
+            <Style LineWidth="0in" LineColor="LightGray" />
+          </Legend>
+          <Style>
+            <Padding Left="10px" Right="10px" Top="10px" Bottom="10px" />
+          </Style>
+          <SeriesGroups>
+            <GraphGroup Name="seriesGroup">
+              <Groupings>
+                <Grouping Expression="= Fields.Series" />
+              </Groupings>
+              <Sortings>
+                <Sorting Expression="= Fields.Series" Direction="Asc" />
+              </Sortings>
+            </GraphGroup>
+          </SeriesGroups>
+          <CategoryGroups>
+            <GraphGroup Name="categoryGroup">
+              <Groupings>
+                <Grouping Expression="= Fields.Category" />
+              </Groupings>
+              <Sortings>
+                <Sorting Expression="= Fields.Category" Direction="Asc" />
+              </Sortings>
+            </GraphGroup>
+          </CategoryGroups>
+          <Series>
+            <BarSeries CoordinateSystem="cartesianCoordinateSystem1" CategoryGroup="categoryGroup" SeriesGroup="seriesGroup" DataPointLabelAlignment="InsideBase" DataPointLabelOffset="2in" X="= Sum(Fields.Value)" DataPointLabel="= Sum(Fields.Value)" Name="barSeries1">
+              <DataPointStyle Visible="True" LineWidth="0in" />
+              <LegendItem Value="= Fields.Series">
+                <ConditionalFormatting>
+                  <FormattingRule>
+                    <Style Visible="False" />
+                    <Filters>
+                      <Filter Expression="= Fields.Series" Operator="Equal" Value="TextSeries" />
+                    </Filters>
+                  </FormattingRule>
+                </ConditionalFormatting>
+              </LegendItem>
+              <DataPointLabelConnectorStyle Visible="False">
+                <Padding Top="2pt" Bottom="2pt" />
+              </DataPointLabelConnectorStyle>
+              <MergedDataPoints />
+              <DataPointLabelConditionalFormatting>
+                <FormattingRule>
+                  <Style Visible="False" />
+                  <Filters>
+                    <Filter Expression="= Fields.Series" Operator="NotEqual" Value="TextSeries" />
+                  </Filters>
+                </FormattingRule>
+              </DataPointLabelConditionalFormatting>
+              <ToolTip Title="= Fields.Series" Text="= Sum(Fields.Value)" />
+              <DataPointConditionalFormatting>
+                <FormattingRule>
+                  <Style BackgroundColor="Transparent" />
+                  <Filters>
+                    <Filter Expression="= Fields.Series" Operator="Equal" Value="TextSeries" />
+                  </Filters>
+                </FormattingRule>
+              </DataPointConditionalFormatting>
+            </BarSeries>
+          </Series>
+          <Titles>
+            <GraphTitle Text="graph1" Position="TopCenter">
+              <Style LineWidth="0in" LineColor="LightGray" />
+            </GraphTitle>
+          </Titles>
+        </Graph>
+      </Items>
+    </DetailSection>
+    <PageFooterSection Height="1in" Name="pageFooterSection1" />
+  </Items>
+  <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+    <Margins>
+      <MarginsU Left="1in" Right="1in" Top="1in" Bottom="1in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+
+</Report>
