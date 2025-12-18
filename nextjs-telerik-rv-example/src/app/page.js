@@ -1,12 +1,14 @@
 "use client"
 
-import { TelerikReportViewer } from '@progress/telerik-react-report-viewer'
+import dynamic from 'next/dynamic'
+
+const TelerikReportViewer = dynamic(() => import('@progress/telerik-react-report-viewer')
+                          .then(types => types.TelerikReportViewer), { ssr: false })
 
 export default function Home() {
   return (
     <>
-        <link href="https://kendo.cdn.telerik.com/2022.3.913/styles/kendo.common.min.css" rel="stylesheet" />
-        <link href="https://kendo.cdn.telerik.com/2022.3.913/styles/kendo.blueopal.min.css" rel="stylesheet" />
+        <link href="https://kendo.cdn.telerik.com/themes/12.0.0/classic/classic-opal.css" rel="stylesheet" />
 
       <TelerikReportViewer
         serviceUrl="https://demos.telerik.com/reporting/api/reports/"
