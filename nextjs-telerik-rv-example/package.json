@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@progress/telerik-react-report-viewer": "^24.24.1218",
+    "@progress/telerik-react-report-viewer": "^28.25.1119",
     "jquery": "^3.7.1",
     "next": "15.4.10",
     "react": "^19.0.0",
