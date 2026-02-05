@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report Width="6.5in" Name="RepeatingGroupHeadersFootersMain" xmlns="http://schemas.telerik.com/reporting/2026/1.0">
+  <DataSources>
+    <CsvDataSource RecordSeparators="&#xD;&#xA;" FieldSeparators="," EscapeFormat="Quotes" Quote="&quot;" HasHeaders="True" Name="AWProductsCSV">
+      <Source>
+        <String>UFJPRFVDVENBVEVHT1JZLFBST0RVQ1RTVUJDQVRFR09SWSxQUk9EVUNUTkFNRSxMSVNUUFJJQ0UNCkNvbXBvbmVudHMsUm9hZCBGcmFtZXMsIkhMIFJvYWQgRnJhbWUgLSBCbGFjaywgNTgiLDE0MzEuNTAwMA0KQ29tcG9uZW50cyxSb2FkIEZyYW1lcywiSEwgUm9hZCBGcmFtZSAtIFJlZCwgNTgiLDE0MzEuNTAwMA0KQWNjZXNzb3JpZXMsSGVsbWV0cywiU3BvcnQtMTAwIEhlbG1ldCwgUmVkIiwzNC45OTAwDQpBY2Nlc3NvcmllcyxIZWxtZXRzLCJTcG9ydC0xMDAgSGVsbWV0LCBCbGFjayIsMzQuOTkwMA0KQ2xvdGhpbmcsU29ja3MsIk1vdW50YWluIEJpa2UgU29ja3MsIE0iLDkuNTAwMA0KQ2xvdGhpbmcsU29ja3MsIk1vdW50YWluIEJpa2UgU29ja3MsIEwiLDkuNTAwMA0KQWNjZXNzb3JpZXMsSGVsbWV0cywiU3BvcnQtMTAwIEhlbG1ldCwgQmx1ZSIsMzQuOTkwMA0KQ2xvdGhpbmcsQ2FwcyxBV0MgTG9nbyBDYXAsOC45OTAwDQpDbG90aGluZyxKZXJzZXlzLCJMb25nLVNsZWV2ZSBMb2dvIEplcnNleSwgUyIsNDkuOTkwMA0KQ2xvdGhpbmcsSmVyc2V5cywiTG9uZy1TbGVldmUgTG9nbyBKZXJzZXksIE0iLDQ5Ljk5MDANCkNsb3RoaW5nLEplcnNleXMsIkxvbmctU2xlZXZlIExvZ28gSmVyc2V5LCBMIiw0OS45OTAwDQpDbG90aGluZyxKZXJzZXlzLCJMb25nLVNsZWV2ZSBMb2dvIEplcnNleSwgWEwiLDQ5Ljk5MDANCkNvbXBvbmVudHMsUm9hZCBGcmFtZXMsIkhMIFJvYWQgRnJhbWUgLSBSZWQsIDYyIiwxNDMxLjUwMDANCkNvbXBvbmVudHMsUm9hZCBGcmFtZXMsIkhMIFJvYWQgRnJhbWUgLSBSZWQsIDQ0IiwxNDMxLjUwMDANCkNvbXBvbmVudHMsUm9hZCBGcmFtZXMsIkhMIFJvYWQgRnJhbWUgLSBSZWQsIDQ4IiwxNDMxLjUwMDANCkNvbXBvbmVudHMsUm9hZCBGcmFtZXMsIkhMIFJvYWQgRnJhbWUgLSBSZWQsIDUyIiwxNDMxLjUwMDANCkNvbXBvbmVudHMsUm9hZCBGcmFtZXMsIkhMIFJvYWQgRnJhbWUgLSBSZWQsIDU2IiwxNDMxLjUwMDANCkNvbXBvbmVudHMsUm9hZCBGcmFtZXMsIkxMIFJvYWQgRnJhbWUgLSBCbGFjaywgNTgiLDMzNy4yMjAwDQpDb21wb25lbnRzLFJvYWQgRnJhbWVzLCJMTCBSb2FkIEZyYW1lIC0gQmxhY2ssIDYwIiwzMzcuMjIwMA0KQ29tcG9uZW50cyxSb2FkIEZyYW1lcywiTEwgUm9hZCBGcmFtZSAtIEJsYWNrLCA2MiIsMzM3LjIyMDANCkNvbXBvbmVudHMsUm9hZCBGcmFtZXMsIkxMIFJvYWQgRnJhbWUgLSBSZWQsIDQ0IiwzMzcuMjIwMA0KQ29tcG9uZW50cyxSb2FkIEZyYW1lcywiTEwgUm9hZCBGcmFtZSAtIFJlZCwgNDgiLDMzNy4yMjAwDQpDb21wb25lbnRzLFJvYWQgRnJhbWVzLCJMTCBSb2FkIEZyYW1lIC0gUmVkLCA1MiIsMzM3LjIyMDANCkNvbXBvbmVudHMsUm9hZCBGcmFtZXMsIkxMIFJvYWQgRnJhbWUgLSBSZWQsIDU4IiwzMzcuMjIwMA0KQ29tcG9uZW50cyxSb2FkIEZyYW1lcywiTEwgUm9hZCBGcmFtZSAtIFJlZCwgNjAiLDMzNy4yMjAwDQpDb21wb25lbnRzLFJvYWQgRnJhbWVzLCJMTCBSb2FkIEZyYW1lIC0gUmVkLCA2MiIsMzM3LjIyMDANCkNvbXBvbmVudHMsUm9hZCBGcmFtZXMsIk1MIFJvYWQgRnJhbWUgLSBSZWQsIDQ0Iiw1OTQuODMwMA0KQ29tcG9uZW50cyxSb2FkIEZyYW1lcywiTUwgUm9hZCBGcmFtZSAtIFJlZCwgNDgiLDU5NC44MzAwDQpDb21wb25lbnRzLFJvYWQgRnJhbWVzLCJNTCBSb2FkIEZyYW1lIC0gUmVkLCA1MiIsNTk0LjgzMDANCkNvbXBvbmVudHMsUm9hZCBGcmFtZXMsIk1MIFJvYWQgRnJhbWUgLSBSZWQsIDU4Iiw1OTQuODMwMA0KQ29tcG9uZW50cyxSb2FkIEZyYW1lcywiTUwgUm9hZCBGcmFtZSAtIFJlZCwgNjAiLDU5NC44MzAwDQpDb21wb25lbnRzLFJvYWQgRnJhbWVzLCJMTCBSb2FkIEZyYW1lIC0gQmxhY2ssIDQ0IiwzMzcuMjIwMA0KQ29tcG9uZW50cyxSb2FkIEZyYW1lcywiTEwgUm9hZCBGcmFtZSAtIEJsYWNrLCA0OCIsMzM3LjIyMDANCkNvbXBvbmVudHMsUm9hZCBGcmFtZXMsIkxMIFJvYWQgRnJhbWUgLSBCbGFjaywgNTIiLDMzNy4yMjAwDQpDb21wb25lbnRzLE1vdW50YWluIEZyYW1lcywiSEwgTW91bnRhaW4gRnJhbWUgLSBTaWx2ZXIsIDQyIiwxMzY0LjUwMDANCkNvbXBvbmVudHMsTW91bnRhaW4gRnJhbWVzLCJITCBNb3VudGFpbiBGcmFtZSAtIFNpbHZlciwgNDQiLDEzNjQuNTAwMA0KQ29tcG9uZW50cyxNb3VudGFpbiBGcmFtZXMsIkhMIE1vdW50YWluIEZyYW1lIC0gU2lsdmVyLCA0OCIsMTM2NC41MDAwDQpDb21wb25lbnRzLE1vdW50YWluIEZyYW1lcywiSEwgTW91bnRhaW4gRnJhbWUgLSBTaWx2ZXIsIDQ2IiwxMzY0LjUwMDANCkNvbXBvbmVudHMsTW91bnRhaW4gRnJhbWVzLCJITCBNb3VudGFpbiBGcmFtZSAtIEJsYWNrLCA0MiIsMTM0OS42MDAwDQpDb21wb25lbnRzLE1vdW50YWluIEZyYW1lcywiSEwgTW91bnRhaW4gRnJhbWUgLSBCbGFjaywgNDQiLDEzNDkuNjAwMA0KQ29tcG9uZW50cyxNb3VudGFpbiBGcmFtZXMsIkhMIE1vdW50YWluIEZyYW1lIC0gQmxhY2ssIDQ4IiwxMzQ5LjYwMDANCkNvbXBvbmVudHMsTW91bnRhaW4gRnJhbWVzLCJITCBNb3VudGFpbiBGcmFtZSAtIEJsYWNrLCA0NiIsMTM0OS42MDAwDQpDb21wb25lbnRzLE1vdW50YWluIEZyYW1lcywiSEwgTW91bnRhaW4gRnJhbWUgLSBCbGFjaywgMzgiLDEzNDkuNjAwMA0KQ29tcG9uZW50cyxNb3VudGFpbiBGcmFtZXMsIkhMIE1vdW50YWluIEZyYW1lIC0gU2lsdmVyLCAzOCIsMTM2NC41MDAwDQpCaWtlcyxSb2FkIEJpa2VzLCJSb2FkLTE1MCBSZWQsIDYyIiwzNTc4LjI3MDANCkJpa2VzLFJvYWQgQmlrZXMsIlJvYWQtMTUwIFJlZCwgNDQiLDM1NzguMjcwMA0KQmlrZXMsUm9hZCBCaWtlcywiUm9hZC0xNTAgUmVkLCA0OCIsMzU3OC4yNzAwDQpCaWtlcyxSb2FkIEJpa2VzLCJSb2FkLTE1MCBSZWQsIDUyIiwzNTc4LjI3MDANCkJpa2VzLFJvYWQgQmlrZXMsIlJvYWQtMTUwIFJlZCwgNTYiLDM1NzguMjcwMA0KQmlrZXMsUm9hZCBCaWtlcywiUm9hZC00NTAgUmVkLCA1OCIsMTQ1Ny45OTAwDQpCaWtlcyxSb2FkIEJpa2VzLCJSb2FkLTQ1MCBSZWQsIDYwIiwxNDU3Ljk5MDANCkJpa2VzLFJvYWQgQmlrZXMsIlJvYWQtNDUwIFJlZCwgNDQiLDE0NTcuOTkwMA0KQmlrZXMsUm9hZCBCaWtlcywiUm9hZC00NTAgUmVkLCA0OCIsMTQ1Ny45OTAwDQpCaWtlcyxSb2FkIEJpa2VzLCJSb2FkLTQ1MCBSZWQsIDUyIiwxNDU3Ljk5MDANCkJpa2VzLFJvYWQgQmlrZXMsIlJvYWQtNjUwIFJlZCwgNTgiLDc4Mi45OTAwDQpCaWtlcyxSb2FkIEJpa2VzLCJSb2FkLTY1MCBSZWQsIDYwIiw3ODIuOTkwMA0KQmlrZXMsUm9hZCBCaWtlcywiUm9hZC02NTAgUmVkLCA2MiIsNzgyLjk5MDANCkJpa2VzLFJvYWQgQmlrZXMsIlJvYWQtNjUwIFJlZCwgNDQiLDc4Mi45OTAwDQpCaWtlcyxSb2FkIEJpa2VzLCJSb2FkLTY1MCBSZWQsIDQ4Iiw3ODIuOTkwMA0KQmlrZXMsUm9hZCBCaWtlcywiUm9hZC02NTAgUmVkLCA1MiIsNzgyLjk5MDANCkJpa2VzLFJvYWQgQmlrZXMsIlJvYWQtNjUwIEJsYWNrLCA1OCIsNzgyLjk5MDANCkJpa2VzLFJvYWQgQmlrZXMsIlJvYWQtNjUwIEJsYWNrLCA2MCIsNzgyLjk5MDANCkJpa2VzLFJvYWQgQmlrZXMsIlJvYWQtNjUwIEJsYWNrLCA2MiIsNzgyLjk5MDANCkJpa2VzLFJvYWQgQmlrZXMsIlJvYWQtNjUwIEJsYWNrLCA0NCIsNzgyLjk5MDANCkJpa2VzLFJvYWQgQmlrZXMsIlJvYWQtNjUwIEJsYWNrLCA0OCIsNzgyLjk5MDANCkJpa2VzLFJvYWQgQmlrZXMsIlJvYWQtNjUwIEJsYWNrLCA1MiIsNzgyLjk5MDANCkJpa2VzLE1vdW50YWluIEJpa2VzLCJNb3VudGFpbi0xMDAgU2lsdmVyLCAzOCIsMzM5OS45OTAwDQpCaWtlcyxNb3VudGFpbiBCaWtlcywiTW91bnRhaW4tMTAwIFNpbHZlciwgNDIiLDMzOTkuOTkwMA0KQmlrZXMsTW91bnRhaW4gQmlrZXMsIk1vdW50YWluLTEwMCBTaWx2ZXIsIDQ0IiwzMzk5Ljk5MDANCkJpa2VzLE1vdW50YWluIEJpa2VzLCJNb3VudGFpbi0xMDAgU2lsdmVyLCA0OCIsMzM5OS45OTAwDQpCaWtlcyxNb3VudGFpbiBCaWtlcywiTW91bnRhaW4tMTAwIEJsYWNrLCAzOCIsMzM3NC45OTAwDQpCaWtlcyxNb3VudGFpbiBCaWtlcywiTW91bnRhaW4tMTAwIEJsYWNrLCA0MiIsMzM3NC45OTAwDQpCaWtlcyxNb3VudGFpbiBCaWtlcywiTW91bnRhaW4tMTAwIEJsYWNrLCA0NCIsMzM3NC45OTAwDQpCaWtlcyxNb3VudGFpbiBCaWtlcywiTW91bnRhaW4tMTAwIEJsYWNrLCA0OCIsMzM3NC45OTAwDQpCaWtlcyxNb3VudGFpbiBCaWtlcywiTW91bnRhaW4tMjAwIFNpbHZlciwgMzgiLDIzMTkuOTkwMA0KQmlrZXMsTW91bnRhaW4gQmlrZXMsIk1vdW50YWluLTIwMCBTaWx2ZXIsIDQyIiwyMzE5Ljk5MDANCkJpa2VzLE1vdW50YWluIEJpa2VzLCJNb3VudGFpbi0yMDAgU2lsdmVyLCA0NiIsMjMxOS45OTAwDQpCaWtlcyxNb3VudGFpbiBCaWtlcywiTW91bnRhaW4tMjAwIEJsYWNrLCAzOCIsMjI5NC45OTAwDQpCaWtlcyxNb3VudGFpbiBCaWtlcywiTW91bnRhaW4tMjAwIEJsYWNrLCA0MiIsMjI5NC45OTAwDQpCaWtlcyxNb3VudGFpbiBCaWtlcywiTW91bnRhaW4tMjAwIEJsYWNrLCA0NiIsMjI5NC45OTAwDQpCaWtlcyxNb3VudGFpbiBCaWtlcywiTW91bnRhaW4tMzAwIEJsYWNrLCAzOCIsMTA3OS45OTAwDQpCaWtlcyxNb3VudGFpbiBCaWtlcywiTW91bnRhaW4tMzAwIEJsYWNrLCA0MCIsMTA3OS45OTAwDQpCaWtlcyxNb3VudGFpbiBCaWtlcywiTW91bnRhaW4tMzAwIEJsYWNrLCA0NCIsMTA3OS45OTAwDQpCaWtlcyxNb3VudGFpbiBCaWtlcywiTW91bnRhaW4tMzAwIEJsYWNrLCA0OCIsMTA3OS45OTAwDQpCaWtlcyxSb2FkIEJpa2VzLCJSb2FkLTI1MCBSZWQsIDQ0IiwyNDQzLjM1MDANCkJpa2VzLFJvYWQgQmlrZXMsIlJvYWQtMjUwIFJlZCwgNDgiLDI0NDMuMzUwMA0KQmlrZXMsUm9hZCBCaWtlcywiUm9hZC0yNTAgUmVkLCA1MiIsMjQ0My4zNTAwDQpCaWtlcyxSb2FkIEJpa2VzLCJSb2FkLTI1MCBSZWQsIDU4IiwyNDQzLjM1MDANCkJpa2VzLFJvYWQgQmlrZXMsIlJvYWQtMjUwIEJsYWNrLCA0NCIsMjQ0My4zNTAwDQpCaWtlcyxSb2FkIEJpa2VzLCJSb2FkLTI1MCBCbGFjaywgNDgiLDI0NDMuMzUwMA0KQmlrZXMsUm9hZCBCaWtlcywiUm9hZC0yNTAgQmxhY2ssIDUyIiwyNDQzLjM1MDANCkJpa2VzLFJvYWQgQmlrZXMsIlJvYWQtMjUwIEJsYWNrLCA1OCIsMjQ0My4zNTAwDQpCaWtlcyxSb2FkIEJpa2VzLCJSb2FkLTU1MC1XIFllbGxvdywgMzgiLDExMjAuNDkwMA0KQmlrZXMsUm9hZCBCaWtlcywiUm9hZC01NTAtVyBZZWxsb3csIDQwIiwxMTIwLjQ5MDANCkJpa2VzLFJvYWQgQmlrZXMsIlJvYWQtNTUwLVcgWWVsbG93LCA0MiIsMTEyMC40OTAwDQpCaWtlcyxSb2FkIEJpa2VzLCJSb2FkLTU1MC1XIFllbGxvdywgNDQiLDExMjAuNDkwMA0KQmlrZXMsUm9hZCBCaWtlcywiUm9hZC01NTAtVyBZZWxsb3csIDQ4IiwxMTIwLjQ5MDANCkNvbXBvbmVudHMsRm9ya3MsTEwgRm9yaywxNDguMjIwMA0KQ29tcG9uZW50cyxGb3JrcyxNTCBGb3JrLDE3NS40OTAwDQpDb21wb25lbnRzLEZvcmtzLEhMIEZvcmssMjI5LjQ5MDANCkNvbXBvbmVudHMsSGVhZHNldHMsTEwgSGVhZHNldCwzNC4yMDAwDQpDb21wb25lbnRzLEhlYWRzZXRzLE1MIEhlYWRzZXQsMTAyLjI5MDANCkNvbXBvbmVudHMsSGVhZHNldHMsSEwgSGVhZHNldCwxMjQuNzMwMA0KQ29tcG9uZW50cyxIYW5kbGViYXJzLExMIE1vdW50YWluIEhhbmRsZWJhcnMsNDQuNTQwMA0KQ29tcG9uZW50cyxIYW5kbGViYXJzLE1MIE1vdW50YWluIEhhbmRsZWJhcnMsNjEuOTIwMA0KQ29tcG9uZW50cyxIYW5kbGViYXJzLEhMIE1vdW50YWluIEhhbmRsZWJhcnMsMTIwLjI3MDANCkNvbXBvbmVudHMsSGFuZGxlYmFycyxMTCBSb2FkIEhhbmRsZWJhcnMsNDQuNTQwMA0KQ29tcG9uZW50cyxIYW5kbGViYXJzLE1MIFJvYWQgSGFuZGxlYmFycyw2MS45MjAwDQpDb21wb25lbnRzLEhhbmRsZWJhcnMsSEwgUm9hZCBIYW5kbGViYXJzLDEyMC4yNzAwDQpDb21wb25lbnRzLE1vdW50YWluIEZyYW1lcywiTUwgTW91bnRhaW4gRnJhbWUgLSBCbGFjaywgMzgiLDM0OC43NjAwDQpDb21wb25lbnRzLFdoZWVscyxMTCBNb3VudGFpbiBGcm9udCBXaGVlbCw2MC43NDUwDQpDb21wb25lbnRzLFdoZWVscyxNTCBNb3VudGFpbiBGcm9udCBXaGVlbCwyMDkuMDI1MA0KQ29tcG9uZW50cyxXaGVlbHMsSEwgTW91bnRhaW4gRnJvbnQgV2hlZWwsMzAwLjIxNTANCkNvbXBvbmVudHMsV2hlZWxzLExMIFJvYWQgRnJvbnQgV2hlZWwsODUuNTY1MA0KQ29tcG9uZW50cyxXaGVlbHMsTUwgUm9hZCBGcm9udCBXaGVlbCwyNDguMzg1MA0KQ29tcG9uZW50cyxXaGVlbHMsSEwgUm9hZCBGcm9udCBXaGVlbCwzMzAuMDYwMA0KQ29tcG9uZW50cyxXaGVlbHMsVG91cmluZyBGcm9udCBXaGVlbCwyMTguMDEwMA0KQ29tcG9uZW50cyxSb2FkIEZyYW1lcywiTUwgUm9hZCBGcmFtZS1XIC0gWWVsbG93LCAzOCIsNTk0LjgzMDANCkNvbXBvbmVudHMsV2hlZWxzLExMIE1vdW50YWluIFJlYXIgV2hlZWwsODcuNzQ1MA0KQ29tcG9uZW50cyxXaGVlbHMsTUwgTW91bnRhaW4gUmVhciBXaGVlbCwyMzYuMDI1MA0KQ29tcG9uZW50cyxXaGVlbHMsSEwgTW91bnRhaW4gUmVhciBXaGVlbCwzMjcuMjE1MA0KQ29tcG9uZW50cyxXaGVlbHMsTEwgUm9hZCBSZWFyIFdoZWVsLDExMi41NjUwDQpDb21wb25lbnRzLFdoZWVscyxNTCBSb2FkIFJlYXIgV2hlZWwsMjc1LjM4NTANCkNvbXBvbmVudHMsV2hlZWxzLEhMIFJvYWQgUmVhciBXaGVlbCwzNTcuMDYwMA0KQ29tcG9uZW50cyxXaGVlbHMsVG91cmluZyBSZWFyIFdoZWVsLDI0NS4wMTAwDQpDb21wb25lbnRzLE1vdW50YWluIEZyYW1lcywiTUwgTW91bnRhaW4gRnJhbWUgLSBCbGFjaywgNDAiLDM0OC43NjAwDQpDb21wb25lbnRzLE1vdW50YWluIEZyYW1lcywiTUwgTW91bnRhaW4gRnJhbWUgLSBCbGFjaywgNDQiLDM0OC43NjAwDQpDb21wb25lbnRzLE1vdW50YWluIEZyYW1lcywiTUwgTW91bnRhaW4gRnJhbWUgLSBCbGFjaywgNDgiLDM0OC43NjAwDQpDb21wb25lbnRzLFJvYWQgRnJhbWVzLCJNTCBSb2FkIEZyYW1lLVcgLSBZZWxsb3csIDQwIiw1OTQuODMwMA0KQ29tcG9uZW50cyxSb2FkIEZyYW1lcywiTUwgUm9hZCBGcmFtZS1XIC0gWWVsbG93LCA0MiIsNTk0LjgzMDANCkNvbXBvbmVudHMsUm9hZCBGcmFtZXMsIk1MIFJvYWQgRnJhbWUtVyAtIFllbGxvdywgNDQiLDU5NC44MzAwDQpDb21wb25lbnRzLFJvYWQgRnJhbWVzLCJNTCBSb2FkIEZyYW1lLVcgLSBZZWxsb3csIDQ4Iiw1OTQuODMwMA0KQ29tcG9uZW50cyxSb2FkIEZyYW1lcywiSEwgUm9hZCBGcmFtZSAtIEJsYWNrLCA2MiIsMTQzMS41MDAwDQpDb21wb25lbnRzLFJvYWQgRnJhbWVzLCJITCBSb2FkIEZyYW1lIC0gQmxhY2ssIDQ0IiwxNDMxLjUwMDANCkNvbXBvbmVudHMsUm9hZCBGcmFtZXMsIkhMIFJvYWQgRnJhbWUgLSBCbGFjaywgNDgiLDE0MzEuNTAwMA0KQ29tcG9uZW50cyxSb2FkIEZyYW1lcywiSEwgUm9hZCBGcmFtZSAtIEJsYWNrLCA1MiIsMTQzMS41MDAwDQpDbG90aGluZyxTaG9ydHMsIk1lbidzIFNwb3J0cyBTaG9ydHMsIFMiLDU5Ljk5MDANCkFjY2Vzc29yaWVzLFBhbm5pZXJzLCJUb3VyaW5nLVBhbm5pZXJzLCBMYXJnZSIsMTI1LjAwMDANCkFjY2Vzc29yaWVzLExvY2tzLENhYmxlIExvY2ssMjUuMDAwMA0KQWNjZXNzb3JpZXMsUHVtcHMsTWluaXB1bXAsMTkuOTkwMA0KQWNjZXNzb3JpZXMsUHVtcHMsTW91bnRhaW4gUHVtcCwyNC45OTAwDQpBY2Nlc3NvcmllcyxMaWdodHMsVGFpbGxpZ2h0cyAtIEJhdHRlcnktUG93ZXJlZCwxMy45OTAwDQpBY2Nlc3NvcmllcyxMaWdodHMsSGVhZGxpZ2h0cyAtIER1YWwtQmVhbSwzNC45OTAwDQpBY2Nlc3NvcmllcyxMaWdodHMsSGVhZGxpZ2h0cyAtIFdlYXRoZXJwcm9vZiw0NC45OTAwDQpDbG90aGluZyxTaG9ydHMsIk1lbidzIFNwb3J0cyBTaG9ydHMsIE0iLDU5Ljk5MDANCkNsb3RoaW5nLFNob3J0cywiTWVuJ3MgU3BvcnRzIFNob3J0cywgTCIsNTkuOTkwMA0KQ2xvdGhpbmcsU2hvcnRzLCJNZW4ncyBTcG9ydHMgU2hvcnRzLCBYTCIsNTkuOTkwMA0KQ2xvdGhpbmcsVGlnaHRzLCJXb21lbidzIFRpZ2h0cywgUyIsNzQuOTkwMA0KQ2xvdGhpbmcsVGlnaHRzLCJXb21lbidzIFRpZ2h0cywgTSIsNzQuOTkwMA0KQ2xvdGhpbmcsVGlnaHRzLCJXb21lbidzIFRpZ2h0cywgTCIsNzQuOTkwMA0KQ2xvdGhpbmcsQmliLVNob3J0cywiTWVuJ3MgQmliLVNob3J0cywgUyIsODkuOTkwMA0KQ2xvdGhpbmcsQmliLVNob3J0cywiTWVuJ3MgQmliLVNob3J0cywgTSIsODkuOTkwMA0KQ2xvdGhpbmcsQmliLVNob3J0cywiTWVuJ3MgQmliLVNob3J0cywgTCIsODkuOTkwMA0KQ2xvdGhpbmcsR2xvdmVzLCJIYWxmLUZpbmdlciBHbG92ZXMsIFMiLDI0LjQ5MDANCkNsb3RoaW5nLEdsb3ZlcywiSGFsZi1GaW5nZXIgR2xvdmVzLCBNIiwyNC40OTAwDQpDbG90aGluZyxHbG92ZXMsIkhhbGYtRmluZ2VyIEdsb3ZlcywgTCIsMjQuNDkwMA0KQ2xvdGhpbmcsR2xvdmVzLCJGdWxsLUZpbmdlciBHbG92ZXMsIFMiLDM3Ljk5MDANCkNsb3RoaW5nLEdsb3ZlcywiRnVsbC1GaW5nZXIgR2xvdmVzLCBNIiwzNy45OTAwDQpDbG90aGluZyxHbG92ZXMsIkZ1bGwtRmluZ2VyIEdsb3ZlcywgTCIsMzcuOTkwMA0KQ2xvdGhpbmcsVmVzdHMsIkNsYXNzaWMgVmVzdCwgUyIsNjMuNTAwMA0KQ2xvdGhpbmcsVmVzdHMsIkNsYXNzaWMgVmVzdCwgTSIsNjMuNTAwMA0KQ2xvdGhpbmcsVmVzdHMsIkNsYXNzaWMgVmVzdCwgTCIsNjMuNTAwMA0KQ2xvdGhpbmcsU2hvcnRzLCJXb21lbidzIE1vdW50YWluIFNob3J0cywgUyIsNjkuOTkwMA0KQ2xvdGhpbmcsU2hvcnRzLCJXb21lbidzIE1vdW50YWluIFNob3J0cywgTSIsNjkuOTkwMA0KQ2xvdGhpbmcsU2hvcnRzLCJXb21lbidzIE1vdW50YWluIFNob3J0cywgTCIsNjkuOTkwMA0KQWNjZXNzb3JpZXMsQm90dGxlcyBhbmQgQ2FnZXMsV2F0ZXIgQm90dGxlIC0gMzAgb3ouLDQuOTkwMA0KQWNjZXNzb3JpZXMsQm90dGxlcyBhbmQgQ2FnZXMsTW91bnRhaW4gQm90dGxlIENhZ2UsOS45OTAwDQpBY2Nlc3NvcmllcyxCb3R0bGVzIGFuZCBDYWdlcyxSb2FkIEJvdHRsZSBDYWdlLDguOTkwMA0KQWNjZXNzb3JpZXMsVGlyZXMgYW5kIFR1YmVzLFBhdGNoIEtpdC84IFBhdGNoZXMsMi4yOTAwDQpDbG90aGluZyxTb2NrcywiUmFjaW5nIFNvY2tzLCBNIiw4Ljk5MDANCkNsb3RoaW5nLFNvY2tzLCJSYWNpbmcgU29ja3MsIEwiLDguOTkwMA0KQWNjZXNzb3JpZXMsQmlrZSBSYWNrcyxIaXRjaCBSYWNrIC0gNC1CaWtlLDEyMC4wMDAwDQpBY2Nlc3NvcmllcyxDbGVhbmVycyxCaWtlIFdhc2ggLSBEaXNzb2x2ZXIsNy45NTAwDQpBY2Nlc3NvcmllcyxGZW5kZXJzLEZlbmRlciBTZXQgLSBNb3VudGFpbiwyMS45ODAwDQpBY2Nlc3NvcmllcyxCaWtlIFN0YW5kcyxBbGwtUHVycG9zZSBCaWtlIFN0YW5kLDE1OS4wMDAwDQpBY2Nlc3NvcmllcyxIeWRyYXRpb24gUGFja3MsSHlkcmF0aW9uIFBhY2sgLSA3MCBvei4sNTQuOTkwMA0KQ2xvdGhpbmcsSmVyc2V5cywiU2hvcnQtU2xlZXZlIENsYXNzaWMgSmVyc2V5LCBTIiw1My45OTAwDQpDbG90aGluZyxKZXJzZXlzLCJTaG9ydC1TbGVldmUgQ2xhc3NpYyBKZXJzZXksIE0iLDUzLjk5MDANCkNsb3RoaW5nLEplcnNleXMsIlNob3J0LVNsZWV2ZSBDbGFzc2ljIEplcnNleSwgTCIsNTMuOTkwMA0KQ2xvdGhpbmcsSmVyc2V5cywiU2hvcnQtU2xlZXZlIENsYXNzaWMgSmVyc2V5LCBYTCIsNTMuOTkwMA0KQ29tcG9uZW50cyxUb3VyaW5nIEZyYW1lcywiSEwgVG91cmluZyBGcmFtZSAtIFllbGxvdywgNjAiLDEwMDMuOTEwMA0KQ29tcG9uZW50cyxUb3VyaW5nIEZyYW1lcywiTEwgVG91cmluZyBGcmFtZSAtIFllbGxvdywgNjIiLDMzMy40MjAwDQpDb21wb25lbnRzLFRvdXJpbmcgRnJhbWVzLCJITCBUb3VyaW5nIEZyYW1lIC0gWWVsbG93LCA0NiIsMTAwMy45MTAwDQpDb21wb25lbnRzLFRvdXJpbmcgRnJhbWVzLCJITCBUb3VyaW5nIEZyYW1lIC0gWWVsbG93LCA1MCIsMTAwMy45MTAwDQpDb21wb25lbnRzLFRvdXJpbmcgRnJhbWVzLCJITCBUb3VyaW5nIEZyYW1lIC0gWWVsbG93LCA1NCIsMTAwMy45MTAwDQpDb21wb25lbnRzLFRvdXJpbmcgRnJhbWVzLCJITCBUb3VyaW5nIEZyYW1lIC0gQmx1ZSwgNDYiLDEwMDMuOTEwMA0KQ29tcG9uZW50cyxUb3VyaW5nIEZyYW1lcywiSEwgVG91cmluZyBGcmFtZSAtIEJsdWUsIDUwIiwxMDAzLjkxMDANCkNvbXBvbmVudHMsVG91cmluZyBGcmFtZXMsIkhMIFRvdXJpbmcgRnJhbWUgLSBCbHVlLCA1NCIsMTAwMy45MTAwDQpDb21wb25lbnRzLFRvdXJpbmcgRnJhbWVzLCJITCBUb3VyaW5nIEZyYW1lIC0gQmx1ZSwgNjAiLDEwMDMuOTEwMA0KQ29tcG9uZW50cyxEZXJhaWxsZXVycyxSZWFyIERlcmFpbGxldXIsMTIxLjQ2MDANCkNvbXBvbmVudHMsVG91cmluZyBGcmFtZXMsIkxMIFRvdXJpbmcgRnJhbWUgLSBCbHVlLCA1MCIsMzMzLjQyMDANCkNvbXBvbmVudHMsVG91cmluZyBGcmFtZXMsIkxMIFRvdXJpbmcgRnJhbWUgLSBCbHVlLCA1NCIsMzMzLjQyMDANCkNvbXBvbmVudHMsVG91cmluZyBGcmFtZXMsIkxMIFRvdXJpbmcgRnJhbWUgLSBCbHVlLCA1OCIsMzMzLjQyMDANCkNvbXBvbmVudHMsVG91cmluZyBGcmFtZXMsIkxMIFRvdXJpbmcgRnJhbWUgLSBCbHVlLCA2MiIsMzMzLjQyMDANCkNvbXBvbmVudHMsVG91cmluZyBGcmFtZXMsIkxMIFRvdXJpbmcgRnJhbWUgLSBZZWxsb3csIDQ0IiwzMzMuNDIwMA0KQ29tcG9uZW50cyxUb3VyaW5nIEZyYW1lcywiTEwgVG91cmluZyBGcmFtZSAtIFllbGxvdywgNTAiLDMzMy40MjAwDQpDb21wb25lbnRzLFRvdXJpbmcgRnJhbWVzLCJMTCBUb3VyaW5nIEZyYW1lIC0gWWVsbG93LCA1NCIsMzMzLjQyMDANCkNvbXBvbmVudHMsVG91cmluZyBGcmFtZXMsIkxMIFRvdXJpbmcgRnJhbWUgLSBZZWxsb3csIDU4IiwzMzMuNDIwMA0KQ29tcG9uZW50cyxUb3VyaW5nIEZyYW1lcywiTEwgVG91cmluZyBGcmFtZSAtIEJsdWUsIDQ0IiwzMzMuNDIwMA0KQ29tcG9uZW50cyxNb3VudGFpbiBGcmFtZXMsIk1MIE1vdW50YWluIEZyYW1lLVcgLSBTaWx2ZXIsIDQwIiwzNjQuMDkwMA0KQ29tcG9uZW50cyxNb3VudGFpbiBGcmFtZXMsIk1MIE1vdW50YWluIEZyYW1lLVcgLSBTaWx2ZXIsIDQyIiwzNjQuMDkwMA0KQ29tcG9uZW50cyxNb3VudGFpbiBGcmFtZXMsIk1MIE1vdW50YWluIEZyYW1lLVcgLSBTaWx2ZXIsIDQ2IiwzNjQuMDkwMA0KQ29tcG9uZW50cyxCcmFrZXMsUmVhciBCcmFrZXMsMTA2LjUwMDANCkNvbXBvbmVudHMsU2FkZGxlcyxMTCBNb3VudGFpbiBTZWF0L1NhZGRsZSwyNy4xMjAwDQpDb21wb25lbnRzLFNhZGRsZXMsTUwgTW91bnRhaW4gU2VhdC9TYWRkbGUsMzkuMTQwMA0KQ29tcG9uZW50cyxTYWRkbGVzLEhMIE1vdW50YWluIFNlYXQvU2FkZGxlLDUyLjY0MDANCkNvbXBvbmVudHMsU2FkZGxlcyxMTCBSb2FkIFNlYXQvU2FkZGxlLDI3LjEyMDANCkNvbXBvbmVudHMsU2FkZGxlcyxNTCBSb2FkIFNlYXQvU2FkZGxlLDM5LjE0MDANCkNvbXBvbmVudHMsU2FkZGxlcyxITCBSb2FkIFNlYXQvU2FkZGxlLDUyLjY0MDANCkNvbXBvbmVudHMsU2FkZGxlcyxMTCBUb3VyaW5nIFNlYXQvU2FkZGxlLDI3LjEyMDANCkNvbXBvbmVudHMsU2FkZGxlcyxNTCBUb3VyaW5nIFNlYXQvU2FkZGxlLDM5LjE0MDANCkNvbXBvbmVudHMsU2FkZGxlcyxITCBUb3VyaW5nIFNlYXQvU2FkZGxlLDUyLjY0MDANCkNvbXBvbmVudHMsTW91bnRhaW4gRnJhbWVzLCJMTCBNb3VudGFpbiBGcmFtZSAtIFNpbHZlciwgNDIiLDI2NC4wNTAwDQpDb21wb25lbnRzLE1vdW50YWluIEZyYW1lcywiTEwgTW91bnRhaW4gRnJhbWUgLSBTaWx2ZXIsIDQ0IiwyNjQuMDUwMA0KQ29tcG9uZW50cyxNb3VudGFpbiBGcmFtZXMsIkxMIE1vdW50YWluIEZyYW1lIC0gU2lsdmVyLCA0OCIsMjY0LjA1MDANCkNvbXBvbmVudHMsTW91bnRhaW4gRnJhbWVzLCJMTCBNb3VudGFpbiBGcmFtZSAtIFNpbHZlciwgNTIiLDI2NC4wNTAwDQpBY2Nlc3NvcmllcyxUaXJlcyBhbmQgVHViZXMsTW91bnRhaW4gVGlyZSBUdWJlLDQuOTkwMA0KQWNjZXNzb3JpZXMsVGlyZXMgYW5kIFR1YmVzLFJvYWQgVGlyZSBUdWJlLDMuOTkwMA0KQWNjZXNzb3JpZXMsVGlyZXMgYW5kIFR1YmVzLFRvdXJpbmcgVGlyZSBUdWJlLDQuOTkwMA0KQ29tcG9uZW50cyxNb3VudGFpbiBGcmFtZXMsIkxMIE1vdW50YWluIEZyYW1lIC0gQmxhY2ssIDQyIiwyNDkuNzkwMA0KQ29tcG9uZW50cyxNb3VudGFpbiBGcmFtZXMsIkxMIE1vdW50YWluIEZyYW1lIC0gQmxhY2ssIDQ0IiwyNDkuNzkwMA0KQ29tcG9uZW50cyxNb3VudGFpbiBGcmFtZXMsIkxMIE1vdW50YWluIEZyYW1lIC0gQmxhY2ssIDQ4IiwyNDkuNzkwMA0KQ29tcG9uZW50cyxNb3VudGFpbiBGcmFtZXMsIkxMIE1vdW50YWluIEZyYW1lIC0gQmxhY2ssIDUyIiwyNDkuNzkwMA0KQWNjZXNzb3JpZXMsVGlyZXMgYW5kIFR1YmVzLExMIE1vdW50YWluIFRpcmUsMjQuOTkwMA0KQWNjZXNzb3JpZXMsVGlyZXMgYW5kIFR1YmVzLE1MIE1vdW50YWluIFRpcmUsMjkuOTkwMA0KQWNjZXNzb3JpZXMsVGlyZXMgYW5kIFR1YmVzLEhMIE1vdW50YWluIFRpcmUsMzUuMDAwMA0KQWNjZXNzb3JpZXMsVGlyZXMgYW5kIFR1YmVzLExMIFJvYWQgVGlyZSwyMS40OTAwDQpBY2Nlc3NvcmllcyxUaXJlcyBhbmQgVHViZXMsTUwgUm9hZCBUaXJlLDI0Ljk5MDANCkFjY2Vzc29yaWVzLFRpcmVzIGFuZCBUdWJlcyxITCBSb2FkIFRpcmUsMzIuNjAwMA0KQWNjZXNzb3JpZXMsVGlyZXMgYW5kIFR1YmVzLFRvdXJpbmcgVGlyZSwyOC45OTAwDQpDb21wb25lbnRzLFBlZGFscyxMTCBNb3VudGFpbiBQZWRhbCw0MC40OTAwDQpDb21wb25lbnRzLFBlZGFscyxNTCBNb3VudGFpbiBQZWRhbCw2Mi4wOTAwDQpDb21wb25lbnRzLFBlZGFscyxITCBNb3VudGFpbiBQZWRhbCw4MC45OTAwDQpDb21wb25lbnRzLFBlZGFscyxMTCBSb2FkIFBlZGFsLDQwLjQ5MDANCkNvbXBvbmVudHMsUGVkYWxzLE1MIFJvYWQgUGVkYWwsNjIuMDkwMA0KQ29tcG9uZW50cyxQZWRhbHMsSEwgUm9hZCBQZWRhbCw4MC45OTAwDQpDb21wb25lbnRzLFBlZGFscyxUb3VyaW5nIFBlZGFsLDgwLjk5MDANCkNvbXBvbmVudHMsTW91bnRhaW4gRnJhbWVzLCJNTCBNb3VudGFpbiBGcmFtZS1XIC0gU2lsdmVyLCAzOCIsMzY0LjA5MDANCkNvbXBvbmVudHMsTW91bnRhaW4gRnJhbWVzLCJMTCBNb3VudGFpbiBGcmFtZSAtIEJsYWNrLCA0MCIsMjQ5Ljc5MDANCkNvbXBvbmVudHMsTW91bnRhaW4gRnJhbWVzLCJMTCBNb3VudGFpbiBGcmFtZSAtIFNpbHZlciwgNDAiLDI2NC4wNTAwDQpDb21wb25lbnRzLERlcmFpbGxldXJzLEZyb250IERlcmFpbGxldXIsOTEuNDkwMA0KQ29tcG9uZW50cyxIYW5kbGViYXJzLExMIFRvdXJpbmcgSGFuZGxlYmFycyw0Ni4wOTAwDQpDb21wb25lbnRzLEhhbmRsZWJhcnMsSEwgVG91cmluZyBIYW5kbGViYXJzLDkxLjU3MDANCkNvbXBvbmVudHMsQnJha2VzLEZyb250IEJyYWtlcywxMDYuNTAwMA0KQ29tcG9uZW50cyxDcmFua3NldHMsTEwgQ3JhbmtzZXQsMTc1LjQ5MDANCkNvbXBvbmVudHMsQ3JhbmtzZXRzLE1MIENyYW5rc2V0LDI1Ni40OTAwDQpDb21wb25lbnRzLENyYW5rc2V0cyxITCBDcmFua3NldCw0MDQuOTkwMA0KQ29tcG9uZW50cyxDaGFpbnMsQ2hhaW4sMjAuMjQwMA0KQmlrZXMsVG91cmluZyBCaWtlcywiVG91cmluZy0yMDAwIEJsdWUsIDYwIiwxMjE0Ljg1MDANCkJpa2VzLFRvdXJpbmcgQmlrZXMsIlRvdXJpbmctMTAwMCBZZWxsb3csIDQ2IiwyMzg0LjA3MDANCkJpa2VzLFRvdXJpbmcgQmlrZXMsIlRvdXJpbmctMTAwMCBZZWxsb3csIDUwIiwyMzg0LjA3MDANCkJpa2VzLFRvdXJpbmcgQmlrZXMsIlRvdXJpbmctMTAwMCBZZWxsb3csIDU0IiwyMzg0LjA3MDANCkJpa2VzLFRvdXJpbmcgQmlrZXMsIlRvdXJpbmctMTAwMCBZZWxsb3csIDYwIiwyMzg0LjA3MDANCkJpa2VzLFRvdXJpbmcgQmlrZXMsIlRvdXJpbmctMzAwMCBCbHVlLCA1NCIsNzQyLjM1MDANCkJpa2VzLFRvdXJpbmcgQmlrZXMsIlRvdXJpbmctMzAwMCBCbHVlLCA1OCIsNzQyLjM1MDANCkJpa2VzLFRvdXJpbmcgQmlrZXMsIlRvdXJpbmctMzAwMCBCbHVlLCA2MiIsNzQyLjM1MDANCkJpa2VzLFRvdXJpbmcgQmlrZXMsIlRvdXJpbmctMzAwMCBZZWxsb3csIDQ0Iiw3NDIuMzUwMA0KQmlrZXMsVG91cmluZyBCaWtlcywiVG91cmluZy0zMDAwIFllbGxvdywgNTAiLDc0Mi4zNTAwDQpCaWtlcyxUb3VyaW5nIEJpa2VzLCJUb3VyaW5nLTMwMDAgWWVsbG93LCA1NCIsNzQyLjM1MDANCkJpa2VzLFRvdXJpbmcgQmlrZXMsIlRvdXJpbmctMzAwMCBZZWxsb3csIDU4Iiw3NDIuMzUwMA0KQmlrZXMsVG91cmluZyBCaWtlcywiVG91cmluZy0zMDAwIFllbGxvdywgNjIiLDc0Mi4zNTAwDQpCaWtlcyxUb3VyaW5nIEJpa2VzLCJUb3VyaW5nLTEwMDAgQmx1ZSwgNDYiLDIzODQuMDcwMA0KQmlrZXMsVG91cmluZyBCaWtlcywiVG91cmluZy0xMDAwIEJsdWUsIDUwIiwyMzg0LjA3MDANCkJpa2VzLFRvdXJpbmcgQmlrZXMsIlRvdXJpbmctMTAwMCBCbHVlLCA1NCIsMjM4NC4wNzAwDQpCaWtlcyxUb3VyaW5nIEJpa2VzLCJUb3VyaW5nLTEwMDAgQmx1ZSwgNjAiLDIzODQuMDcwMA0KQmlrZXMsVG91cmluZyBCaWtlcywiVG91cmluZy0yMDAwIEJsdWUsIDQ2IiwxMjE0Ljg1MDANCkJpa2VzLFRvdXJpbmcgQmlrZXMsIlRvdXJpbmctMjAwMCBCbHVlLCA1MCIsMTIxNC44NTAwDQpCaWtlcyxUb3VyaW5nIEJpa2VzLCJUb3VyaW5nLTIwMDAgQmx1ZSwgNTQiLDEyMTQuODUwMA0KQmlrZXMsUm9hZCBCaWtlcywiUm9hZC0zNTAtVyBZZWxsb3csIDQwIiwxNzAwLjk5MDANCkJpa2VzLFJvYWQgQmlrZXMsIlJvYWQtMzUwLVcgWWVsbG93LCA0MiIsMTcwMC45OTAwDQpCaWtlcyxSb2FkIEJpa2VzLCJSb2FkLTM1MC1XIFllbGxvdywgNDQiLDE3MDAuOTkwMA0KQmlrZXMsUm9hZCBCaWtlcywiUm9hZC0zNTAtVyBZZWxsb3csIDQ4IiwxNzAwLjk5MDANCkJpa2VzLFJvYWQgQmlrZXMsIlJvYWQtNzUwIEJsYWNrLCA1OCIsNTM5Ljk5MDANCkJpa2VzLFRvdXJpbmcgQmlrZXMsIlRvdXJpbmctMzAwMCBCbHVlLCA0NCIsNzQyLjM1MDANCkJpa2VzLFRvdXJpbmcgQmlrZXMsIlRvdXJpbmctMzAwMCBCbHVlLCA1MCIsNzQyLjM1MDANCkJpa2VzLE1vdW50YWluIEJpa2VzLCJNb3VudGFpbi00MDAtVyBTaWx2ZXIsIDM4Iiw3NjkuNDkwMA0KQmlrZXMsTW91bnRhaW4gQmlrZXMsIk1vdW50YWluLTQwMC1XIFNpbHZlciwgNDAiLDc2OS40OTAwDQpCaWtlcyxNb3VudGFpbiBCaWtlcywiTW91bnRhaW4tNDAwLVcgU2lsdmVyLCA0MiIsNzY5LjQ5MDANCkJpa2VzLE1vdW50YWluIEJpa2VzLCJNb3VudGFpbi00MDAtVyBTaWx2ZXIsIDQ2Iiw3NjkuNDkwMA0KQmlrZXMsTW91bnRhaW4gQmlrZXMsIk1vdW50YWluLTUwMCBTaWx2ZXIsIDQwIiw1NjQuOTkwMA0KQmlrZXMsTW91bnRhaW4gQmlrZXMsIk1vdW50YWluLTUwMCBTaWx2ZXIsIDQyIiw1NjQuOTkwMA0KQmlrZXMsTW91bnRhaW4gQmlrZXMsIk1vdW50YWluLTUwMCBTaWx2ZXIsIDQ0Iiw1NjQuOTkwMA0KQmlrZXMsTW91bnRhaW4gQmlrZXMsIk1vdW50YWluLTUwMCBTaWx2ZXIsIDQ4Iiw1NjQuOTkwMA0KQmlrZXMsTW91bnRhaW4gQmlrZXMsIk1vdW50YWluLTUwMCBTaWx2ZXIsIDUyIiw1NjQuOTkwMA0KQmlrZXMsTW91bnRhaW4gQmlrZXMsIk1vdW50YWluLTUwMCBCbGFjaywgNDAiLDUzOS45OTAwDQpCaWtlcyxNb3VudGFpbiBCaWtlcywiTW91bnRhaW4tNTAwIEJsYWNrLCA0MiIsNTM5Ljk5MDANCkJpa2VzLE1vdW50YWluIEJpa2VzLCJNb3VudGFpbi01MDAgQmxhY2ssIDQ0Iiw1MzkuOTkwMA0KQmlrZXMsTW91bnRhaW4gQmlrZXMsIk1vdW50YWluLTUwMCBCbGFjaywgNDgiLDUzOS45OTAwDQpCaWtlcyxNb3VudGFpbiBCaWtlcywiTW91bnRhaW4tNTAwIEJsYWNrLCA1MiIsNTM5Ljk5MDANCkNvbXBvbmVudHMsQm90dG9tIEJyYWNrZXRzLExMIEJvdHRvbSBCcmFja2V0LDUzLjk5MDANCkNvbXBvbmVudHMsQm90dG9tIEJyYWNrZXRzLE1MIEJvdHRvbSBCcmFja2V0LDEwMS4yNDAwDQpDb21wb25lbnRzLEJvdHRvbSBCcmFja2V0cyxITCBCb3R0b20gQnJhY2tldCwxMjEuNDkwMA0KQmlrZXMsUm9hZCBCaWtlcywiUm9hZC03NTAgQmxhY2ssIDQ0Iiw1MzkuOTkwMA0KQmlrZXMsUm9hZCBCaWtlcywiUm9hZC03NTAgQmxhY2ssIDQ4Iiw1MzkuOTkwMA0KQmlrZXMsUm9hZCBCaWtlcywiUm9hZC03NTAgQmxhY2ssIDUyIiw1MzkuOTkwMA==</String>
+      </Source>
+      <Columns>
+        <DataColumn Name="PRODUCTCATEGORY" />
+        <DataColumn Name="PRODUCTSUBCATEGORY" />
+        <DataColumn Name="PRODUCTNAME" />
+        <DataColumn Name="LISTPRICE" Type="Decimal" />
+      </Columns>
+    </CsvDataSource>
+  </DataSources>
+  <Items>
+    <DetailSection Height="2in" Name="detailSection1">
+      <Items>
+        <Table DataSourceName="AWProductsCSV" Width="6.3in" Height="1.799in" Left="0.1in" Top="0.1in" ColumnHeadersPrintOnEveryPage="True" Name="table1" StyleName="Normal.TableNormal">
+          <Body>
+            <Cells>
+              <TableCell RowIndex="2" ColumnIndex="0" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="4.985in" Height="0.257in" Left="0in" Top="0in" Value="= Fields.ProductName" Name="textBox3" StyleName="Normal.TableBody">
+                    <Style VerticalAlign="Middle">
+                      <Font Name="Open Sans" Bold="False" Italic="False" Underline="False" Strikeout="False" />
+                      <Padding Left="4pt" Top="2pt" Bottom="2pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="2" ColumnIndex="1" RowSpan="1" ColumnSpan="1">
+                <ReportItem>
+                  <TextBox Width="1.315in" Height="0.257in" Left="0in" Top="0in" Value="= Fields.ListPrice" Format="{0:C2}" Name="textBox4" StyleName="Normal.TableBody">
+                    <Style TextAlign="Left" VerticalAlign="Middle">
+                      <Font Name="Open Sans" />
+                      <Padding Left="4pt" Top="2pt" Bottom="2pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="1" ColumnIndex="0" RowSpan="1" ColumnSpan="2">
+                <ReportItem>
+                  <TextBox Width="6.3in" Height="0.257in" Left="0in" Top="0in" Value="Subcategory: {Fields.ProductSubCategory}{ReportItem.IsRepeated ? &quot;.........&quot; : &quot;&quot;}" Name="textBox7" StyleName="Normal.TableBody">
+                    <Style BackgroundColor="217, 217, 217" VerticalAlign="Middle">
+                      <Font Name="Open Sans" Size="10pt" Bold="False" />
+                      <Padding Left="4pt" Top="2pt" Bottom="2pt" />
+                    </Style>
+                    <ConditionalFormatting>
+                      <FormattingRule>
+                        <Style>
+                          <Font Italic="True" />
+                        </Style>
+                        <Filters>
+                          <Filter Expression="= ReportItem.IsRepeated" Operator="Equal" Value="= True" />
+                        </Filters>
+                      </FormattingRule>
+                    </ConditionalFormatting>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="0" ColumnIndex="0" RowSpan="1" ColumnSpan="2">
+                <ReportItem>
+                  <TextBox Width="6.3in" Height="0.257in" Left="0in" Top="0in" Value="Category: {Fields.ProductCategory}{ReportItem.IsRepeated ? &quot;.........&quot; : &quot;&quot;}" Name="textBox11" StyleName="Normal.TableBody">
+                    <Style BackgroundColor="166, 166, 166" VerticalAlign="Middle">
+                      <Font Name="Open Sans" Size="11pt" Bold="False" />
+                      <Padding Left="4pt" Top="2pt" Bottom="2pt" />
+                    </Style>
+                    <Bindings>
+                      <Binding Path="Style.Font.Italic" Expression="= ReportItem.IsRepeated" />
+                    </Bindings>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="5" ColumnIndex="0" RowSpan="1" ColumnSpan="2">
+                <ReportItem>
+                  <TextBox Width="6.3in" Height="0.257in" Left="0in" Top="0in" Value="Total: {Count(Fields.ProductName)} products for {Format(&quot;{{0:C2}}&quot;,Sum(Fields.ListPrice))}" Name="textBox10" StyleName="Normal.TableBody">
+                    <Style BackgroundColor="147, 137, 83" VerticalAlign="Middle">
+                      <Font Name="Open Sans" Size="12pt" Bold="True" />
+                      <Padding Left="4pt" Top="2pt" Bottom="2pt" />
+                    </Style>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="3" ColumnIndex="0" RowSpan="1" ColumnSpan="2">
+                <ReportItem>
+                  <TextBox Width="6.3in" Height="0.257in" Left="0in" Top="0in" Value="Total price of products in {Fields.ProductSubCategory}: {Format(&quot;{{0:C2}}&quot;,Sum(Fields.ListPrice))}{ReportItem.IsRepeated ? &quot;.........&quot; : &quot;&quot;}" Name="textBox5" StyleName="Normal.TableBody">
+                    <Style Visible="True" BackgroundColor="221, 217, 194" VerticalAlign="Middle">
+                      <Font Name="Open Sans" Size="10pt" />
+                      <Padding Left="4pt" Top="2pt" Bottom="2pt" />
+                    </Style>
+                    <ConditionalFormatting>
+                      <FormattingRule>
+                        <Style>
+                          <Font Italic="True" />
+                        </Style>
+                        <Filters>
+                          <Filter Expression="= ReportItem.IsRepeated" Operator="Equal" Value="= True" />
+                        </Filters>
+                      </FormattingRule>
+                    </ConditionalFormatting>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+              <TableCell RowIndex="4" ColumnIndex="0" RowSpan="1" ColumnSpan="2">
+                <ReportItem>
+                  <TextBox Width="6.3in" Height="0.257in" Left="0in" Top="0in" Value="Total price of products in {Fields.ProductCategory}: {Format(&quot;{{0:C2}}&quot;,Sum(Fields.ListPrice))}{ReportItem.IsRepeated ? &quot;.........&quot; : &quot;&quot;}" Name="textBox6" StyleName="Normal.TableBody">
+                    <Style BackgroundColor="196, 189, 150" VerticalAlign="Middle">
+                      <Font Name="Open Sans" Size="11pt" />
+                      <Padding Left="4pt" Top="2pt" Bottom="2pt" />
+                    </Style>
+                    <Bindings>
+                      <Binding Path="Style.Font.Italic" Expression="= ReportItem.IsRepeated" />
+                    </Bindings>
+                  </TextBox>
+                </ReportItem>
+              </TableCell>
+            </Cells>
+            <Columns>
+              <Column Width="4.985in" />
+              <Column Width="1.315in" />
+            </Columns>
+            <Rows>
+              <Row Height="0.257in" />
+              <Row Height="0.257in" />
+              <Row Height="0.257in" />
+              <Row Height="0.257in" />
+              <Row Height="0.257in" />
+              <Row Height="0.257in" />
+            </Rows>
+          </Body>
+          <Corner />
+          <Style BackgroundColor="Transparent">
+            <BorderStyle Default="None" />
+            <BorderWidth Default="2px" />
+          </Style>
+          <RowGroups>
+            <TableGroup GroupKeepTogether="True" Name="productCategory">
+              <ChildGroups>
+                <TableGroup Name="group1">
+                  <ChildGroups>
+                    <TableGroup PrintOnEveryPage="True" Name="group2" />
+                  </ChildGroups>
+                </TableGroup>
+                <TableGroup GroupKeepTogether="True" Name="productSubCategory">
+                  <ChildGroups>
+                    <TableGroup PrintOnEveryPage="True" Name="group" />
+                    <TableGroup Name="detail">
+                      <Groupings>
+                        <Grouping />
+                      </Groupings>
+                    </TableGroup>
+                    <TableGroup Name="group3" />
+                  </ChildGroups>
+                  <Groupings>
+                    <Grouping Expression="= Fields.ProductSubCategory" />
+                  </Groupings>
+                  <Sortings>
+                    <Sorting Expression="= Fields.ProductSubCategory" Direction="Asc" />
+                  </Sortings>
+                </TableGroup>
+                <TableGroup Name="group4">
+                  <ChildGroups>
+                    <TableGroup Name="group5" />
+                  </ChildGroups>
+                </TableGroup>
+              </ChildGroups>
+              <Groupings>
+                <Grouping Expression="= Fields.ProductCategory" />
+              </Groupings>
+              <Sortings>
+                <Sorting Expression="= Fields.ProductCategory" Direction="Asc" />
+              </Sortings>
+            </TableGroup>
+            <TableGroup Name="group6">
+              <ChildGroups>
+                <TableGroup Name="group7">
+                  <ChildGroups>
+                    <TableGroup Name="group8" />
+                  </ChildGroups>
+                </TableGroup>
+              </ChildGroups>
+            </TableGroup>
+          </RowGroups>
+          <ColumnGroups>
+            <TableGroup Name="productName">
+              <ReportItem>
+                <TextBox Width="4.985in" Height="0.257in" Left="0in" Top="0in" Value="Product Name" Name="textBox1" StyleName="Normal.TableHeader">
+                  <Style BackgroundColor="Gray" Color="Black">
+                    <Font Name="Open Sans" Size="12pt" Bold="True" />
+                    <BorderWidth Default="1px" />
+                    <Padding Left="4pt" Top="2pt" Bottom="2pt" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+            <TableGroup Name="listPrice">
+              <ReportItem>
+                <TextBox Width="1.315in" Height="0.257in" Left="0in" Top="0in" Value="List Price" Name="textBox2" StyleName="Normal.TableHeader">
+                  <Style BackgroundColor="Gray" Color="Black">
+                    <Font Name="Open Sans" Size="12pt" Bold="True" />
+                    <BorderWidth Default="1px" />
+                    <Padding Left="4pt" Top="2pt" Bottom="2pt" />
+                  </Style>
+                </TextBox>
+              </ReportItem>
+            </TableGroup>
+          </ColumnGroups>
+        </Table>
+      </Items>
+    </DetailSection>
+  </Items>
+  <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+    <Margins>
+      <MarginsU Left="1in" Right="1in" Top="1in" Bottom="1in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style Color="Black">
+        <Font Name="Tahoma" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <StyleSelector Type="Table" StyleName="Normal.TableNormal" />
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style>
+        <Font Name="Tahoma" Size="9pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableBody" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+    <StyleRule>
+      <Style VerticalAlign="Middle">
+        <Font Name="Tahoma" Size="10pt" />
+        <BorderStyle Default="Solid" />
+        <BorderColor Default="Black" />
+        <BorderWidth Default="1px" />
+      </Style>
+      <Selectors>
+        <DescendantSelector>
+          <Selectors>
+            <TypeSelector Type="Table" />
+            <StyleSelector Type="ReportItem" StyleName="Normal.TableHeader" />
+          </Selectors>
+        </DescendantSelector>
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+</Report>
