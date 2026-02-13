@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report Width="6.5in" Name="ErrorBarStyleGraphReport" xmlns="http://schemas.telerik.com/reporting/2026/1.0">
+  <DataSources>
+    <CsvDataSource RecordSeparators="&#xD;&#xA;" FieldSeparators="," HasHeaders="True" Name="csvDataSource1">
+      <Source>
+        <String>WCxoaWdoLGxvdyxvcGVuLGNsb3NlDQotMiwxMTUsMTEwLDExNSwxMTANCjAsMTEwLDk1LDExMCw5NQ0KMiwxMTMsMTAwLDExMywxMDANCjQsMTEwLDEwMiwxMTAsMTAy</String>
+      </Source>
+      <Columns>
+        <DataColumn Name="X" Type="Float" />
+        <DataColumn Name="high" Type="Float" />
+        <DataColumn Name="low" Type="Float" />
+        <DataColumn Name="open" Type="Float" />
+        <DataColumn Name="close" Type="Float" />
+      </Columns>
+    </CsvDataSource>
+  </DataSources>
+  <Items>
+    <DetailSection Height="3.4in" Name="detailSection1">
+      <Items>
+        <Graph DataSourceName="csvDataSource1" Width="5.2in" Height="3.1in" Left="0.6in" Top="0.1in" Name="graph1">
+          <PlotAreaStyle LineWidth="0in" LineColor="LightGray" />
+          <Axes>
+            <GraphAxis Name="graphAxis1">
+              <MajorGridLineStyle LineWidth="1px" LineColor="LightGray" />
+              <MinorGridLineStyle Visible="False" LineWidth="1px" LineColor="LightGray" />
+              <Scale>
+                <NumericalScale Minimum="-3" Maximum="5">
+                  <CrossAxisPositions>
+                    <NumericalScaleCrossAxisPosition Value="0" Position="AtMinimum" />
+                  </CrossAxisPositions>
+                </NumericalScale>
+              </Scale>
+            </GraphAxis>
+            <GraphAxis Name="graphAxis2">
+              <MajorGridLineStyle LineWidth="1px" LineColor="LightGray" />
+              <MinorGridLineStyle Visible="False" LineWidth="1px" LineColor="LightGray" />
+              <Scale>
+                <NumericalScale Minimum="90" Maximum="120" />
+              </Scale>
+            </GraphAxis>
+          </Axes>
+          <CoordinateSystems>
+            <CartesianCoordinateSystem XAxis="graphAxis1" YAxis="graphAxis2" Name="cartesianCoordinateSystem1" />
+          </CoordinateSystems>
+          <Legend>
+            <Style Visible="False" LineWidth="0in" LineColor="LightGray" />
+          </Legend>
+          <Style>
+            <Padding Left="10px" Right="10px" Top="10px" Bottom="10px" />
+          </Style>
+          <SeriesGroups>
+            <GraphGroup Name="seriesGroup" />
+          </SeriesGroups>
+          <CategoryGroups>
+            <GraphGroup Name="xGroup">
+              <Groupings>
+                <Grouping Expression="= Fields.X" />
+              </Groupings>
+              <Sortings>
+                <Sorting Expression="= Fields.X" Direction="Asc" />
+              </Sortings>
+            </GraphGroup>
+          </CategoryGroups>
+          <Series>
+            <OhlcSeries CoordinateSystem="cartesianCoordinateSystem1" CategoryGroup="xGroup" SeriesGroup="seriesGroup" MarkerType="Bar" MinMarkerWidth="6px" X="= Fields.X" DataPointLabel="O: {Sum(Fields.open)}&#xD;&#xA;H: {Sum(Fields.high)}&#xD;&#xA;L: {Sum(Fields.low)}&#xD;&#xA;C: {Sum(Fields.close)}" Name="ohlcSeries1">
+              <DataPointStyle Visible="True" />
+              <DataPointLabelStyle Visible="False" />
+              <LegendItem Value="Series 1" />
+              <Y Open="= Sum(Fields.open)" High="= Sum(Fields.high)" Low="= Sum(Fields.low)" Close="= Sum(Fields.close)" />
+              <ToolTip Title="Series 1" Text="O: {Sum(Fields.open)}&#xD;&#xA;H: {Sum(Fields.high)}&#xD;&#xA;L: {Sum(Fields.low)}&#xD;&#xA;C: {Sum(Fields.close)}" />
+              <ColorPalette>
+                <MonochromaticPalette BaseColor="Black" />
+              </ColorPalette>
+            </OhlcSeries>
+            <LineSeries CoordinateSystem="cartesianCoordinateSystem1" CategoryGroup="xGroup" SeriesGroup="seriesGroup" Size="null" MarkerType="Minus" MarkerSize="25px" MarkerMinSize="5px" MarkerMaxSize="50px" X="= Fields.X" Y="= Fields.high" Name="lineHigh">
+              <LineStyle Visible="False" LineWidth="1px" />
+              <DataPointStyle Visible="True" />
+              <LegendItem />
+              <MissingValuesLineStyle LineWidth="1px" />
+              <ColorPalette>
+                <MonochromaticPalette BaseColor="Black" />
+              </ColorPalette>
+            </LineSeries>
+            <LineSeries CoordinateSystem="cartesianCoordinateSystem1" CategoryGroup="xGroup" SeriesGroup="seriesGroup" Size="null" MarkerType="Minus" MarkerSize="25px" MarkerMinSize="5px" MarkerMaxSize="50px" X="= Fields.X" Y="= Fields.low" Name="lineLow">
+              <LineStyle Visible="False" LineWidth="1px" />
+              <DataPointStyle Visible="True" />
+              <LegendItem />
+              <MissingValuesLineStyle LineWidth="1px" />
+              <ColorPalette>
+                <MonochromaticPalette BaseColor="Black" />
+              </ColorPalette>
+            </LineSeries>
+            <LineSeries CoordinateSystem="cartesianCoordinateSystem1" CategoryGroup="xGroup" SeriesGroup="seriesGroup" Size="null" MarkerType="Circle" MarkerSize="5px" MarkerMinSize="5px" MarkerMaxSize="50px" X="= Fields.X" Y="= (Fields.high + Fields.low)/2.0" Name="lineMiddle">
+              <LineStyle Visible="False" LineWidth="1px" />
+              <DataPointStyle Visible="True" />
+              <LegendItem />
+              <MissingValuesLineStyle LineWidth="1px" />
+              <ColorPalette>
+                <MonochromaticPalette BaseColor="Firebrick" />
+              </ColorPalette>
+            </LineSeries>
+          </Series>
+          <Titles>
+            <GraphTitle Text="Error Bar Style Graph" Position="TopCenter">
+              <Style LineWidth="0in" LineColor="LightGray" />
+            </GraphTitle>
+          </Titles>
+        </Graph>
+      </Items>
+    </DetailSection>
+  </Items>
+  <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+    <Margins>
+      <MarginsU Left="1in" Right="1in" Top="1in" Bottom="1in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+</Report>
