@@ -8,13 +8,13 @@
     <SccLocalPath>SAK</SccLocalPath>
   </PropertyGroup>
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.3.9" />
     <!--The following lines are replaced with package refs during the product build-->
-    <PackageReference Include="Telerik.Reporting.OpenXmlRendering" Version="18.0.24.305" />
-    <PackageReference Include="Telerik.WebReportDesigner.Services" Version="18.0.24.305" />
+    <PackageReference Include="Telerik.Reporting.OpenXmlRendering" Version="20.0.26.304" />
+    <PackageReference Include="Telerik.WebReportDesigner.Services" Version="20.0.26.304" />
   </ItemGroup>
   <ItemGroup>
     <None Update="Reports\Speakers Report.trdp">
