@@ -18,8 +18,7 @@ builder.Services.AddCors(c =>
     c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 });
 builder.Services.AddControllers();
-builder.Services.AddRazorPages()
-    .AddNewtonsoftJson();
+builder.Services.AddRazorPages();
 
 var reportsPath = System.IO.Path.Combine(builder.Environment.ContentRootPath, "Reports");
 

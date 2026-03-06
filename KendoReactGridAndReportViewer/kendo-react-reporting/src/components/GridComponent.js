@@ -4,6 +4,18 @@ import { MultiSelect } from '@progress/kendo-react-dropdowns';
 import { categories } from "../data/categories";
 
 
+
+
+const PhotoCell = (props) => (
+    <td>
+        <img
+            style={{ width: 50, height: 50 }}
+            src={props.dataItem.ImageUrl}
+            alt={props.dataItem.Name}
+        />
+    </td>
+);
+
 class GridComponent extends Component {
     constructor(props) {
         super(props);
@@ -75,24 +87,18 @@ class GridComponent extends Component {
                     data={this.props.data}
                     {...this.props.dataState}
                     onDataStateChange={this.handleGridDataStateChange}
-                    style={{ height: "30%", width: "45%", left: "52%", top: "6%" }}
+                    style={{ height: "30%", width: "45%", left: "52%", top: "6%", fontFamily: "Arial, sans-serif" }}
                     >
                     <GridColumn
                         field="ImageUrl"
                         title="Photo"
                         width="75%"
-                        cell={props => (
-                            <td>
-                                <img 
-                                    style={{ width: 50, height: 50 }}
-                                    src={props.dataItem.ImageUrl} />
-                            </td>
-                        )}
+                        cells={{ data: PhotoCell }}
                     />
                     <GridColumn field="Name" title="Name" width="150%" />
-                    <GridColumn field="Company" title="Company" width="130%" />
+                    <GridColumn field="Company" title="Company" width="150%" />
                     <GridColumn field="Position" title="Position" width="220%" />
-                    <GridColumn field="DaySpeaking" title="Day Speaking" width="123%" />
+                    <GridColumn field="DaySpeaking" title="Day Speaking" width="150%" />
                 </Grid>
             </div>
         );
