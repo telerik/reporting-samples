@@ -1,5 +1,4 @@
-import { Component, OnInit, Input, OnDestroy, ViewChild, ElementRef } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, ViewChild } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
 import { TelerikReportViewerComponent, TelerikReportingModule } from '@progress/telerik-angular-report-viewer';
@@ -7,7 +6,7 @@ import { TelerikReportViewerComponent, TelerikReportingModule } from '@progress/
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatTabsModule, MatButtonModule, TelerikReportingModule],
+  imports: [ MatTabsModule, MatButtonModule, TelerikReportingModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
