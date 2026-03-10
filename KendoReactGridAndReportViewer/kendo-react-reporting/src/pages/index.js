@@ -3,7 +3,8 @@ import { speakersData } from "../data/speakers";
 import dynamic from 'next/dynamic'
 import { process } from '@progress/kendo-data-query';
 import { useState } from "react";
-import '@progress/kendo-theme-default/dist/all.css';
+
+import "@progress/kendo-theme-default/dist/all.css";
 
 const ViewerComponent = dynamic(() => import('../components/ViewerComponent'), {
   ssr: false,
