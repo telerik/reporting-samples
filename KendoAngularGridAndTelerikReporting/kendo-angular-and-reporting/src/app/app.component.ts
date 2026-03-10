@@ -1,5 +1,4 @@
 import { Component, ViewChild } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { GridModule } from '@progress/kendo-angular-grid';
 import { filterBy, CompositeFilterDescriptor } from '@progress/kendo-data-query';
 import { speakersData } from '../data/speakers';
@@ -11,7 +10,7 @@ const distinctCategories = (data: any[]) => data
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, GridModule, ReportViewerComponent],
+  imports: [GridModule, ReportViewerComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
