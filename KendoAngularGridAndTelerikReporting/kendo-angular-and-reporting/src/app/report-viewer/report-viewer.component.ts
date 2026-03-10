@@ -35,8 +35,7 @@ export class ReportViewerComponent implements AfterViewInit {
 
   viewerContainerStyle = {
     width: '100%',
-    height: '980px',
-    ['font-family']: 'ms sans serif'
+    height: '95vh',
   };
 
   ready() {
