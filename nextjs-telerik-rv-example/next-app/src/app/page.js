@@ -8,17 +8,17 @@ const TelerikReportViewer = dynamic(() => import('@progress/telerik-react-report
 export default function Home() {
   return (
     <>
-        <link href="https://kendo.cdn.telerik.com/themes/12.0.0/classic/classic-opal.css" rel="stylesheet" />
+        <link href="https://kendo.cdn.telerik.com/themes/12.3.0/classic/classic-opal.css" rel="stylesheet" />
 
       <TelerikReportViewer
-        serviceUrl="https://demos.telerik.com/reporting/api/reports/"
+        serviceUrl="http://localhost:5292/api/reports/"
         reportSource={{
-            report: 'Dashboard.trdx',
+            report: 'SampleReport.trdp',
             parameters: {}
         }}
         viewerContainerStyle = {{
             position: 'absolute',
-            inset: '5px'
+            inset: '100px'
         }}
         viewMode="INTERACTIVE"
         scaleMode="SPECIFIC"

@@ -1,0 +1,21 @@
+{
+  "name": "nextjs-telerik-rv-example",
+  "version": "0.1.0",
+  "private": true,
+  "config": {
+    "path": "../reporting-service/reporting-service.csproj"
+  },
+  "scripts": {
+    "dev": "start npm run service && next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "service": "dotnet run --project %npm_package_config_path%"
+  },
+  "dependencies": {
+    "@progress/telerik-react-report-viewer": "29.26.211",
+    "next": "16.1.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}
