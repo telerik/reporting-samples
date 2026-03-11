@@ -1,5 +1,4 @@
-import { Component, OnInit, Input, OnDestroy, ViewChild, ElementRef } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, ViewChild } from '@angular/core';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatButtonModule } from '@angular/material/button';
 import { TelerikReportViewerComponent, TelerikReportingModule } from '@progress/telerik-angular-report-viewer';
@@ -7,7 +6,7 @@ import { TelerikReportViewerComponent, TelerikReportingModule } from '@progress/
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MatTabsModule, MatButtonModule, TelerikReportingModule],
+  imports: [ MatTabsModule, MatButtonModule, TelerikReportingModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -24,11 +23,11 @@ export class AppComponent {
   viewerContainerStyle: any;
 
   constructor() {
-    this.reportServerUrl = 'https://demos.telerik.com/reporting/api/reports';
+    this.reportServerUrl = 'http://localhost:5292/api/reports/';
     this.viewerContainerStyle = {
       "position": 'relative',
       "width": '75vw',
-      "height": '90vh',
+      "height": '85vh',
       ['font-family']: 'ms sans serif'
     };
   }
@@ -36,7 +35,7 @@ export class AppComponent {
   onLoad1Click() {
 
     var reportSource = {
-      report: "Report Catalog.trdx",
+      report: "SampleReport.trdp",
     };
 
     if (this.rptViewer1) {
@@ -47,7 +46,7 @@ export class AppComponent {
   onLoad2Click() {
 
     var reportSource = {
-      report: "Dashboard.trdx",
+      report: "SampleReport.trdp",
     };
 
     if (this.rptViewer2) {
