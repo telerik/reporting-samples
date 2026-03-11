@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Report DataSourceName="csvDataSource1" Width="6.5in" Name="Report1" xmlns="http://schemas.telerik.com/reporting/2021/2.0">
+<Report DataSourceName="csvDataSource1" Width="6.5in" Name="Report1" xmlns="http://schemas.telerik.com/reporting/2026/1.0">
   <DataSources>
     <CsvDataSource RecordSeparators="&#xD;&#xA;" FieldSeparators="," Name="csvDataSource1">
       <Source>
@@ -13,10 +13,10 @@
   <Items>
     <DetailSection Height="1.2in" Name="detailSection1">
       <Items>
-        <TextBox Width="3.9in" Height="0.2in" Left="0.5in" Top="0.2in" Value="= IsNull(Exec(&quot;group&quot;,Previous(Fields.Column1)),0)" Name="textBox1">
+        <TextBox Width="3.9in" Height="0.2in" Left="0.5in" Top="0.2in" Value="= &quot;Previous Group: &quot; + IsNull(Exec(&quot;group&quot;,Previous(Fields.Column1)),0)" Name="textBox1">
           <Style BackgroundColor="235, 241, 222" />
         </TextBox>
-        <TextBox Width="2.3in" Height="0.2in" Left="0.5in" Top="0.6in" Value="= Fields.Column1" Name="textBox2">
+        <TextBox Width="3.9in" Height="0.2in" Left="0.5in" Top="0.6in" Value="= &quot;Current Group: &quot; + Fields.Column1 + &quot; Random value - &quot; + Random()" Name="textBox2">
           <Style BackgroundColor="219, 238, 244" />
         </TextBox>
       </Items>
