@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report DataSourceName="csvDataSource1" Width="6.5in" Name="Report1" xmlns="http://schemas.telerik.com/reporting/2021/2.0">
+  <DataSources>
+    <CsvDataSource RecordSeparators="&#xD;&#xA;" FieldSeparators="," Name="csvDataSource1">
+      <Source>
+        <String>MQ0KMg0KMw0KNA0KNQ==</String>
+      </Source>
+      <Columns>
+        <DataColumn Name="Column1" />
+      </Columns>
+    </CsvDataSource>
+  </DataSources>
+  <Items>
+    <DetailSection Height="0.2in" Name="detailSection1">
+      <Style BackgroundColor="220, 230, 242" />
+      <Items>
+        <TextBox Width="1.2in" Height="0.2in" Left="0in" Top="0in" Value="= Fields.Column1" Name="textBox2" />
+      </Items>
+    </DetailSection>
+    <PageFooterSection Height="1in" Name="pageFooterSection1" />
+    <PageHeaderSection Height="1in" Name="pageHeaderSection1" />
+    <ReportHeaderSection Height="1in" Name="reportHeaderSection1">
+      <Items>
+        <TextBox Width="1.2in" Height="0.2in" Left="2.7in" Top="0.4in" Value="No data" Name="textBox1">
+          <Style Visible="False" />
+          <ConditionalFormatting>
+            <FormattingRule>
+              <Style Visible="True" />
+              <Filters>
+                <Filter Expression="=Count(1)" Operator="Equal" Value="=0" />
+              </Filters>
+            </FormattingRule>
+          </ConditionalFormatting>
+        </TextBox>
+      </Items>
+    </ReportHeaderSection>
+  </Items>
+  <PageSettings PaperKind="Letter" Landscape="False" ColumnCount="1" ColumnSpacing="0in">
+    <Margins>
+      <MarginsU Left="1in" Right="1in" Top="1in" Bottom="1in" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+  <Filters>
+    <Filter Expression="= Fields.Column1" Operator="Equal" Value="b" />
+  </Filters>
+  <ReportParameters>
+    <ReportParameter Name="companyId" Text="companyId">
+      <Value>
+        <String>= 1</String>
+      </Value>
+    </ReportParameter>
+  </ReportParameters>
+</Report>
