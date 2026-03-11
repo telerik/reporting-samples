@@ -23,11 +23,11 @@ export class AppComponent {
   viewerContainerStyle: any;
 
   constructor() {
-    this.reportServerUrl = 'https://demos.telerik.com/reporting/api/reports';
+    this.reportServerUrl = 'http://localhost:5292/api/reports/';
     this.viewerContainerStyle = {
       "position": 'relative',
       "width": '75vw',
-      "height": '90vh',
+      "height": '85vh',
       ['font-family']: 'ms sans serif'
     };
   }
@@ -35,7 +35,7 @@ export class AppComponent {
   onLoad1Click() {
 
     var reportSource = {
-      report: "Report Catalog.trdx",
+      report: "SampleReport.trdp",
     };
 
     if (this.rptViewer1) {
@@ -46,7 +46,7 @@ export class AppComponent {
   onLoad2Click() {
 
     var reportSource = {
-      report: "Dashboard.trdx",
+      report: "SampleReport.trdp",
     };
 
     if (this.rptViewer2) {

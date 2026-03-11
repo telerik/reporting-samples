@@ -1,12 +1,16 @@
 {
   "name": "my-app",
   "version": "0.0.0",
+  "config": {
+    "path": "../reporting-service/reporting-service.csproj"
+  },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "start npm run service && ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "service": "dotnet run --project %npm_package_config_path%"
   },
   "private": true,
   "dependencies": {
@@ -20,7 +24,7 @@
     "@angular/platform-browser": "^21.2.1",
     "@angular/platform-browser-dynamic": "^21.2.1",
     "@angular/router": "^21.2.1",
-    "@progress/telerik-angular-report-viewer": "^29.26.304",
+    "@progress/telerik-angular-report-viewer": "29.26.304",
     "jquery": "^3.7.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
