@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@progress/telerik-react-report-viewer": "29.26.211",
-    "next": "16.1.5",
+    "next": "16.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   }
