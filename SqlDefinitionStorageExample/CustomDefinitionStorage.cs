@@ -7,12 +7,8 @@ using System;
 
 namespace SqlDefinitionStorageExample
 {
-    public class CustomDefinitionStorage : ResourceStorageBase, IDefinitionStorage, IAssetsStorage
+    public class CustomDefinitionStorage(SqlDefinitionStorageContext dbContext, string rootFolder = "Reports") : ResourceStorageBase(dbContext, rootFolder), IDefinitionStorage, IAssetsStorage
     {
-        public CustomDefinitionStorage(SqlDefinitionStorageContext dbContext, string rootFolder = "Reports" ) : base(dbContext, rootFolder)
-        {
-        }
-
         public new Task<ResourceFolderModel> CreateFolderAsync(CreateFolderModel model)
         {
             if(model.Name == Root)
@@ -49,7 +45,22 @@ namespace SqlDefinitionStorageExample
         Task<ResourceFileModel> IAssetsStorage.RenameAsync(RenameResourceModel model) => RenameAsync(model);
 
         Task<ResourceFolderModel> IAssetsStorage.RenameFolderAsync(RenameFolderModel model) => RenameFolderAsync(model);
-        
+
+        protected virtual Task<ResourceFileModel> SaveAsync<TDefinitionNotFoundException>(SaveResourceModel model, byte[] resource) where TDefinitionNotFoundException : Exception
+        {
+            return Task.FromResult(WrapException<ResourceFileModel, TDefinitionNotFoundException, ResourceNotFoundException>(() => SaveAsync(model, resource).ToResult()));
+        }
+        protected virtual Task<ResourceFileModel> RenameAsync<TInvalidDefinitionNameException>(RenameResourceModel model) where TInvalidDefinitionNameException : Exception
+        {
+            return Task.FromResult(WrapException<ResourceFileModel, TInvalidDefinitionNameException, InvalidResourceNameException>(() => RenameAsync(model).ToResult()));
+        }
+
+        protected virtual Task<byte[]> GetAsync<TDefinitionNotFoundException>(string resourceName) where TDefinitionNotFoundException : Exception
+        {
+            return Task.FromResult(WrapException<byte[], TDefinitionNotFoundException, ResourceNotFoundException>(() => GetAsync(PrepareResourceUri(resourceName)).ToResult()));
+        }
+
+
         protected string PrepareResourceUri(string uri)
         {
             if (string.IsNullOrEmpty(uri))
@@ -61,6 +72,18 @@ namespace SqlDefinitionStorageExample
             uri = uri.Contains($"{Root}\\") ? uri : $"{Root}\\{uri}";
 
             return uri;
+        }
+
+        protected TResult WrapException<TResult, TDefinitionException, TResourceException>(Func<TResult> callback) where TDefinitionException : Exception where TResourceException : Exception
+        {
+            try
+            {
+                return callback();
+            }
+            catch (TResourceException ex)
+            {
+                throw (TDefinitionException)Activator.CreateInstance(typeof(TDefinitionException), ex.Message, ex);
+            }
         }
     }
 }

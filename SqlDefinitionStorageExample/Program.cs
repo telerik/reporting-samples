@@ -16,11 +16,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
-builder.Services.AddRazorPages()
-                .AddNewtonsoftJson();
+builder.Services.AddRazorPages();
 
 builder.Services.AddDbContext<SqlDefinitionStorageContext>();
-builder.Services.AddScoped<IDefinitionStorage, CustomDefinitionStorage>();
+builder.Services.AddScoped<CustomDefinitionStorage>();
+builder.Services.AddScoped<CustomTemplateDefinitionStorage>();
 builder.Services.AddScoped<ISharedDataSourceStorage, CustomSharedDataSourceStorage>();
 builder.Services.AddScoped<IResourceStorage, CustomResourceStorage>();
 builder.Services.AddScoped<ISharedDataSourceStorage, CustomSharedDataSourceStorage>();
@@ -41,7 +41,8 @@ builder.Services.TryAddScoped<IReportServiceConfiguration>(sp =>
 // Configure dependencies for ReportDesignerController.
 builder.Services.TryAddScoped<IReportDesignerServiceConfiguration>(sp => new ReportDesignerServiceConfiguration
 {
-    DefinitionStorage = sp.GetRequiredService<IDefinitionStorage>(),
+    DefinitionStorage = sp.GetRequiredService<CustomDefinitionStorage>(),
+    TemplateDefinitionStorage = sp.GetRequiredService<CustomTemplateDefinitionStorage>(),
     ResourceStorage = sp.GetRequiredService<IResourceStorage>(),
     SharedDataSourceStorage = sp.GetRequiredService<ISharedDataSourceStorage>(),
     SettingsStorage = new FileSettingsStorage(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), "Telerik Reporting"))
@@ -65,10 +66,7 @@ using (var serviceScope = app.Services.CreateScope())
 
 app.UseStaticFiles();
 app.UseRouting();
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllers();
-});
+app.MapControllers();
 
 // Add initial data to database
 app.Seed();
