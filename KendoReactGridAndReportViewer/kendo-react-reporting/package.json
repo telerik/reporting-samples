@@ -12,7 +12,7 @@
     "@progress/kendo-react-grid": "^13.3.0",
     "@progress/kendo-theme-default": "^12.3.0",
     "@progress/telerik-react-report-viewer": "^29.26.304",
-    "next": "16.1.5",
+    "next": "16.1.7",
     "react": "^18",
     "react-dom": "^18"
   }
