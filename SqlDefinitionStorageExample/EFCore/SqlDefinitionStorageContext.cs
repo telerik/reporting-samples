@@ -1,17 +1,16 @@
 ﻿using SqlDefinitionStorageExample.EFCore.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
+using System;
 
 namespace SqlDefinitionStorageExample.EFCore
 {
-    public class SqlDefinitionStorageContext : DbContext
+    public class SqlDefinitionStorageContext(DbContextOptions<SqlDefinitionStorageContext> options) : DbContext(options)
     {
 
         public DbSet<Resource> Resources { get; set; }
 
         public DbSet<ResourceFolder> ResourceFolders { get; set; }
-
-        public SqlDefinitionStorageContext(DbContextOptions<SqlDefinitionStorageContext> options) : base(options) { }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -28,11 +27,13 @@ namespace SqlDefinitionStorageExample.EFCore
         {
             IsDisposed = true;
             base.Dispose();
+            GC.SuppressFinalize(this);
         }
 
         public override ValueTask DisposeAsync()
         {
             IsDisposed = true;
+            GC.SuppressFinalize(this);
             return base.DisposeAsync();
         }
     }

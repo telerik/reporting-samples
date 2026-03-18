@@ -16,11 +16,11 @@
         loading...
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://reporting.cdn.telerik.com/18.2.24.924/js/webReportDesigner.kendo.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://reporting.cdn.telerik.com/20.0.26.304/js/webReportDesigner.kendo.min.js"></script>
 
     <script src="/api/reports/resources/js/telerikReportViewer"></script>
-    <script src="/api/reportdesigner/designerresources/js/webReportDesigner-18.2.24.924.min.js/"></script>
+    <script src="/api/reportdesigner/designerresources/js/webReportDesigner"></script>
 
     <script type="text/javascript">
         $(document).ready(function () {
@@ -33,19 +33,6 @@
                 },
                 serviceUrl: "api/reportdesigner/",
                 report: "SampleReport.trdp",
-                //report: "Product Catalog.trdp",
-
-                // Example of passing parameters to the embedded Report Viewer used when previewing documents.
-                // The example below demonstrates the currently available options.
-                // reportViewerOptions: {
-                //    scaleMode: telerikReportViewer.ScaleModes.SPECIFIC,
-                //    scale: 1.0,
-                //    templateUrl: "api/reportdesigner/resources/templates/telerikReportViewerTemplate.html/",
-                //    viewMode: telerikReportViewer.ViewModes.INTERACTIVE,
-                //    pageMode: telerikReportViewer.PageModes.CONTINUOUS_SCROLL
-                //    // Further explanation about how these options effect the Report Viewer can be found at:
-                //    // https://docs.telerik.com/reporting/embedding-reports/display-reports-in-applications/web-application/html5-report-viewer/api-reference/report-viewer-initialization
-                // }
             }).data("telerik_WebDesigner");
         });
     </script>

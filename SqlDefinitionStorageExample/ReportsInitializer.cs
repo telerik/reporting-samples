@@ -22,10 +22,12 @@ namespace SqlDefinitionStorageExample
                     var sampleReport = CreateResource("SampleReport.trdp", "Reports");
                     var reportsFolder = CreateFolderModel("Reports", string.Empty);
                     var resourcesFolder = CreateFolderModel("Resources", string.Empty);
+                    var templatesFolder = CreateFolderModel("Templates", string.Empty);
 
                     context.Resources.Add(sampleReport.ToDbResourceModel(System.IO.File.ReadAllBytes("SampleReport.trdp")));
                     context.ResourceFolders.Add(reportsFolder.ToDbResourceFolderModel());
                     context.ResourceFolders.Add(resourcesFolder.ToDbResourceFolderModel());
+                    context.ResourceFolders.Add(templatesFolder.ToDbResourceFolderModel());
 
                     context.SaveChanges();
                 }
