@@ -12,7 +12,7 @@ The project is also used in the [Telerik UI for Blazor live demos](https://demos
 
 ### Instructions
 
-This project uses Dev (licensed) packages, if you want to use the Trial ones, you need to make the following changes:
+This project uses Dev (licensed) packages. If you want to use the Trial ones, you need to make the following changes:
 - BlazorGridAndReport.csproj - add ".Trial" to the Telerik NuGet packages;
 - _Host.cshtml - Add ".Trial" to the Telerik references in the file, example:
  <script src="_content/Telerik.UI.for.Blazor.Trial/js/telerik-blazor.js" defer></script>

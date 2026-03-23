@@ -7,7 +7,7 @@
 
 The project can also be executed with `TRIAL` packages after adding a `.TRIAL` suffix at the end of the Telerik Reporting packages referenced in the project and restoring them.
 
-For details on how to use the Telerik feed to restore the packages, see [Adding the Telerik Private NuGet Feed to Visual Studio](https://docs.telerik.com/reporting/getting-started/installation/adding-private-nuget-feed)
+For details on how to use the Telerik feed to restore the packages, see [Adding the Telerik Private NuGet Feed to Visual Studio](https://docs.telerik.com/reporting/getting-started/installation/adding-private-nuget-feed).
 
 ## How to run
 
