@@ -7,12 +7,12 @@ There are lots of projects in this repository that target an older version of Te
 workaround/solution to a breaking change for a specific version of the product - [Telerik Reporting Release History](https://www.telerik.com/support/whats-new/reporting/release-history).
 For the above reason, most of the projects in this repository will *not* be kept up to date with regards to the used Telerik Reporting or .NET version.
 
-## Nuget Package Manager
+## NuGet Package Manager
 Before attempting to run any of the projects, it is recommended to set up the Telerik private NuGet feed as described in the [Adding the Telerik Private NuGet Feed to Visual Studio](https://docs.telerik.com/reporting/getting-started/installation/adding-private-nuget-feed) article.
 
-## Trial / Dev Nuget Packages
+## Trial / Dev NuGet Packages
 The projects in this repository use either the `Trial` or `Dev` Telerik Reporting NuGet packages. With that being said, a `Trial` user should be able to use any project
-created with `Dev` packages as long as the `.Trial` suffix is added to the end of the package name, the reverse is also true(removing the suffix).
+created with `Dev` packages as long as the `.Trial` suffix is added to the end of the package name, the reverse is also true (removing the suffix).
 
 For example, if the `DEV` name of a Telerik Reporting package is `Telerik.Reporting`, change it to `Telerik.Reporting.Trial` in the `.csproj` file of the given project.  
 
