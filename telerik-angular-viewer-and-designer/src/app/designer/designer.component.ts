@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { loadScript } from '../script-loader';
 
-declare var $: any;
+declare const $: any;
 
 @Component({
   selector: 'app-designer',
@@ -8,34 +9,26 @@ declare var $: any;
   styleUrls: ['./designer.component.css']
 })
 
-export class DesignerComponent {
+export class DesignerComponent implements OnInit {
+  // For local services, use, for example: http://localhost:5000/api/reportdesigner/
+  private readonly serviceUrl = 'https://demos.telerik.com/reporting/api/reportdesigner/';
 
-  designer: any;
-  
+  private designer: any;
+
   ngOnInit(): void {
-    this.designer = $("#webReportDesigner").telerik_WebReportDesigner({
-      serviceUrl: "https://demos.telerik.com/reporting/api/reportdesigner/",
-      report: "Product Catalog.trdx"
-    }).data("telerik_WebDesigner");
+    this.loadScripts().then(() => {
+      this.designer = $("#webReportDesigner").telerik_WebReportDesigner({
+        serviceUrl: this.serviceUrl,
+        useExternalTheme: true,
+        report: 'Business/Dashboard.trdx'
+      }).data("telerik_WebDesigner");
+    });
   }
 
-  ngOnDestroy(): void {
-    var webReportDesignerTheme = $("link[href*='ext_styles/webReportDesignerTheme']");
-    var webReportDesigner = $("link[href*='styles/webReportDesigner']");
-    var fonticons = $("link[href*='font/fonticons']");
-
-    //Telerik Web Report Designer loads all required styles when the widget is loaded.
-    //In order to prevent them from dublication, remove the last instance  
-    if (webReportDesignerTheme.length > 1) {
-      webReportDesignerTheme.last().remove();
-    }
-
-    if (webReportDesigner.length > 1) {
-      webReportDesigner.last().remove();
-    }
-
-    if (fonticons.length > 1) {
-      fonticons.last().remove();
-    }
+  private loadScripts(): Promise<void> {
+    return loadScript('https://code.jquery.com/jquery-3.7.1.min.js')
+      .then(() => loadScript('https://reporting.cdn.telerik.com/20.2.26.812/js/webReportDesigner.kendo.min.js'))
+      .then(() => loadScript('https://reporting.cdn.telerik.com/20.2.26.812/js/telerikReportViewer.min.js'))
+      .then(() => loadScript('https://reporting.cdn.telerik.com/20.2.26.812/js/webReportDesigner.min.js'));
   }
 }
