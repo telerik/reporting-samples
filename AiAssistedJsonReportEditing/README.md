@@ -5,7 +5,7 @@ The helper project and AI skill illustrate how to combine Telerik Reporting sche
 This sample contains the following assets:
 
 - [ReportingJsonTools](ReportingJsonTools/ReportingJsonTools.csproj), a standalone .NET console project for type discovery, schema retrieval, and JSON definition validation.
-- [reporting-json-author](reporting-json-author/SKILL.md), an example skill for targeted edits to existing JSON reports. It is not installed or activated automatically.
+- [reporting-json-editor](reporting-json-editor/SKILL.md), an example skill for targeted edits to existing JSON reports. It is not installed or activated automatically.
 
 The sample workflow is separate from the Telerik Reporting AI Coding Assistant. Its instructions guide your selected assistant; they do not enforce its behavior or provide a security boundary.
 
@@ -79,13 +79,13 @@ For validation, check both the exit code and the JSON result. Require exit `0` w
 
 ## Installing and Trying the Skill
 
-For a GitHub Copilot workspace, review and copy the sample's `reporting-json-author` folder into your workspace's `.github/skills/` folder. Preserve the folder name and YAML header in [SKILL.md](reporting-json-author/SKILL.md). For another assistant, use a skill location that it supports.
+For a GitHub Copilot workspace, review and copy the sample's `reporting-json-editor` folder into your workspace's `.github/skills/` folder. Preserve the folder name and YAML header in [SKILL.md](reporting-json-editor/SKILL.md). For another assistant, use a skill location that it supports.
 
 Build the helper and run its commands successfully before you ask the assistant to use the skill. Supply the actual compiled helper path in your prompt. The assistant needs permission to read the selected files and execute the helper. If it cannot execute commands, run them yourself and supply the results; validation remains pending until you do so.
 
 Use a prompt such as the following after you install the skill. Replace the example paths with paths in your own workspace:
 
-> Use the reporting-json-author skill. In reports/QuarterlySales.trdj, update the title to “Quarterly Revenue — Q3 2026” and set its font size to 18 pt and bold. Use the helper at tools/ReportingJsonTools/bin/Release/net10.0/ReportingJsonTools.dll, validate the complete edited report, and save it as reports/QuarterlySales.edited.trdj. Leave the original unchanged.
+> Use the reporting-json-editor skill. In reports/QuarterlySales.trdj, update the title to “Quarterly Revenue — Q3 2026” and set its font size to 18 pt and bold. Use the helper at tools/ReportingJsonTools/bin/Release/net10.0/ReportingJsonTools.dll, validate the complete edited report, and save it as reports/QuarterlySales.edited.trdj. Leave the original unchanged.
 
 The helper path in that prompt assumes you copied the project into your workspace's tools folder. You can instead supply its absolute build-output path. For data-bound changes, also supply exact field names and types.
 

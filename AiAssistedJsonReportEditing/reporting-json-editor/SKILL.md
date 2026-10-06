@@ -1,5 +1,5 @@
 ---
-name: reporting-json-author
+name: reporting-json-editor
 description: "Example skill for targeted edits to existing Telerik Reporting .trdj reports with schemas and local validation. Not for complete reports from scratch or ReportBooks."
 ---
 
@@ -53,7 +53,7 @@ Follow these file-handling rules:
 - Replace the input file only if the user explicitly asks to update that same
     file. Keep a backup of the original before replacing it with validated content.
 
-Use retrieved schemas, these rules, and supplied context as authoring sources.
+Use retrieved schemas, these rules, and supplied context to guide the requested edits.
 Ask about a specific missing behavior rather than invent properties or tools.
 
 ## 1. Classify the Request
