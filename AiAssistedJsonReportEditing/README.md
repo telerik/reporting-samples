@@ -42,7 +42,7 @@ To build and run the helper, configure the following prerequisites:
 
 The project pins `Telerik.Reporting.Schema` to `20.2.26.1007`. Use a package version available to you that provides the documented APIs, and align it with the Reporting model version used by your application. If you change the package version, build the helper and verify its commands again.
 
-In the pinned package, the helper uses `ReportModelTypeRegistry.GetKnownTypeNames()`, `ReportingSchemaBuilder.GetSchema()`, and `ReportDefinitionValidator.ValidateDeep()`. API names in other versions can differ. Check the installed package's API surface before adapting examples that use `ReportSchemaService`.
+In the pinned package, the helper uses `ReportSchemaService.GetKnownTypeNames()`, `ReportSchemaService.GetSchema()`, and `ReportSchemaService.ValidateDeep()`. API names in other versions can differ, so check the installed package's API surface when changing the package version.
 
 ## Building and Running the Helper
 

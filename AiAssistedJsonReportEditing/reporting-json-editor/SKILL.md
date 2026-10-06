@@ -34,7 +34,7 @@ processing failure. Use the configured SDK helper for all validation.
 For report edits, verify Report support through type discovery, schema retrieval,
 and a real `validate Report <report-file>` call on the supplied report.
 The sample helper reads the entire file and calls
-ReportDefinitionValidator.ValidateDeep with Report as the root type, recursively
+ReportSchemaService.ValidateDeep with Report as the root type, recursively
 validating nested definitions. If unsupported, stop for helper/package setup
 correction.
 
