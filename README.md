@@ -18,6 +18,7 @@ For example, if the `DEV` name of a Telerik Reporting package is `Telerik.Report
 
 ## Up-to-date Telerik Reporting Examples
 
-For those that wish to experience the latest of Telerik Reporting, we recommend having a look at the *Integration* demo projects shipped with the installation of the product.
+These sample applications and SDK demos for Telerik Reporting were created using the product version available at the time of publication. As Telerik Reporting continues to evolve, some UI elements, features, and APIs may differ from those in your current version.
 
-For example, with a default installation, the path to the folder with the examples will be:  `C:\Program Files (x86)\Progress\Telerik Reporting R1 2023\Examples`
+If you would like to explore the latest Telerik Reporting capabilities, we recommend reviewing the *Integration* demo projects that are installed with product.
+For example, with a default installation, the demo projects are located at:  `C:\Program Files (x86)\Progress\Telerik Reporting R1 2023\Examples`
