@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net10.0;net462</TargetFrameworks>
+    <AssemblyName>StrictResourceResolver.Tests</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\StrictResourceResolver\StrictResourceResolver.csproj" />
+    <PackageReference Include="Telerik.Reporting" Version="20.3.26.1110" />
+    <None Include="..\Examples\app.config" Link="Examples\app.config" CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\Examples\appsettings.json" Link="Examples\appsettings.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net462'">
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Configuration" />
+  </ItemGroup>
+</Project>
