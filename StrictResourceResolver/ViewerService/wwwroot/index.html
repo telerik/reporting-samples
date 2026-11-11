@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Strict Resource Resolver Sample</title>
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/themes/12.0.1/default/default-main.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/api/reports/resources/js/telerikReportViewer"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 16px; }
+        #reportViewer { position: absolute; top: 150px; bottom: 16px; left: 16px; right: 16px; }
+    </style>
+</head>
+<body>
+    <h1>Strict Resource Resolver</h1>
+    <p>The CSV data in Reports/TrustedImage.trdp contains allowed local and HTTPS images, plus existing untrusted HTTPS and local images. Only the two approved images display.</p>
+    <div id="reportViewer">Loading the report viewer...</div>
+    <script>
+        $(function () {
+            $("#reportViewer").telerik_ReportViewer({
+                serviceUrl: "/api/reports",
+                reportSource: { report: "TrustedImage.trdp" },
+                viewMode: telerikReportViewer.ViewModes.INTERACTIVE,
+                scaleMode: telerikReportViewer.ScaleModes.FIT_PAGE_WIDTH,
+                sendEmail: { enabled: false }
+            });
+        });
+    </script>
+</body>
+</html>

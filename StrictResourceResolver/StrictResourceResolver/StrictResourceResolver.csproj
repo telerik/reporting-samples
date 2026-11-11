@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>StrictResourceResolver</AssemblyName>
+    <RootNamespace>StrictResourceResolver</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Telerik.Reporting" Version="20.3.26.1110" />
+  </ItemGroup>
+</Project>
