@@ -44,8 +44,7 @@ namespace BlazorGridAndReport
             });
 
             services.AddControllers();
-            services.AddRazorPages().AddNewtonsoftJson(); ;
-            services.AddServerSideBlazor();
+            services.AddRazorPages();
             services.AddTelerikBlazor();
             services.AddAntiforgery(options => options.SuppressXFrameOptionsHeader = true);
             services.Configure<IISServerOptions>(options =>
@@ -53,7 +52,9 @@ namespace BlazorGridAndReport
                 options.AllowSynchronousIO = true;
             });
 
-            services.AddRazorComponents().AddInteractiveServerComponents();
+            services.AddRazorComponents()
+                .AddInteractiveServerComponents()
+                .AddHubOptions(options => options.MaximumReceiveMessageSize = 1024 * 1024);
 
             services.AddSingleton<IReportServiceConfiguration>(sp =>
                 new ReportServiceConfiguration
