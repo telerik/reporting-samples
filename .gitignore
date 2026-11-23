@@ -1,6 +1,7 @@
 bin/
 obj/
 .vs/
+dist/
 !packages/repositories.config
 packages/
 node_modules/
