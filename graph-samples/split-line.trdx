@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report Width="17cm" Name="split-line" SnapGridSize="0.1cm" xmlns="http://schemas.telerik.com/reporting/2026/3.1">
+  <DataSources>
+    <JsonDataSource Name="graph-data">
+      <Source>
+        <String>Ww0KICB7ICJtb250aCI6IDEsICJsYWJlbCI6ICJKYW4iLCAiYWN0dWFsIjogNzIwMDAsICJ0YXJnZXQiOiAxMDAwMDAgfSwNCiAgeyAibW9udGgiOiAyLCAibGFiZWwiOiAiRmViIiwgImFjdHVhbCI6IDgxMDAwLCAidGFyZ2V0IjogMTAwMDAwIH0sDQogIHsgIm1vbnRoIjogMywgImxhYmVsIjogIk1hciIsICJhY3R1YWwiOiA4OTAwMCwgInRhcmdldCI6IDEwMDAwMCB9LA0KICB7ICJtb250aCI6IDQsICJsYWJlbCI6ICJBcHIiLCAiYWN0dWFsIjogOTUwMDAsICJ0YXJnZXQiOiAxMDAwMDAgfSwNCiAgeyAibW9udGgiOiA1LCAibGFiZWwiOiAiTWF5IiwgImFjdHVhbCI6IDkyMDAwLCAidGFyZ2V0IjogMTAwMDAwIH0sDQogIHsgIm1vbnRoIjogNiwgImxhYmVsIjogIkp1biIsICJhY3R1YWwiOiAxMDUwMDAsICJ0YXJnZXQiOiAxMDAwMDAgfSwNCiAgeyAibW9udGgiOiA3LCAibGFiZWwiOiAiSnVsIiwgImFjdHVhbCI6IDk4MDAwLCAidGFyZ2V0IjogMTAwMDAwIH0sDQogIHsgIm1vbnRoIjogOCwgImxhYmVsIjogIkF1ZyIsICJhY3R1YWwiOiAxMTIwMDAsICJ0YXJnZXQiOiAxMDAwMDAgfSwNCiAgeyAibW9udGgiOiA5LCAibGFiZWwiOiAiU2VwIiwgImFjdHVhbCI6IDk2MDAwLCAidGFyZ2V0IjogMTAwMDAwIH0sDQogIHsgIm1vbnRoIjogMTAsICJsYWJlbCI6ICJPY3QiLCAiYWN0dWFsIjogMTE4MDAwLCAidGFyZ2V0IjogMTAwMDAwIH0NCl0=</String>
+      </Source>
+    </JsonDataSource>
+  </DataSources>
+  <Items>
+    <DetailSection Height="8.8cm" Name="detailSection1">
+      <Items>
+        <Graph DataSource="graph-data" Width="15.4cm" Height="8cm" Left="1cm" Top="0.4cm" Name="graph1">
+          <PlotAreaStyle LineWidth="0cm" LineColor="LightGray" />
+          <Axes>
+            <GraphAxis Name="graphAxis2">
+              <MajorGridLineStyle LineWidth="1px" LineColor="LightGray" />
+              <MinorGridLineStyle Visible="False" LineWidth="1px" LineColor="LightGray" />
+              <Scale>
+                <CategoryScale />
+              </Scale>
+            </GraphAxis>
+            <GraphAxis Name="graphAxis1" LabelFormat="{0:C2}">
+              <MajorGridLineStyle LineWidth="1px" LineColor="LightGray" />
+              <MinorGridLineStyle Visible="False" LineWidth="1px" LineColor="LightGray" />
+              <Scale>
+                <NumericalScale Minimum="50000" Maximum="140000" />
+              </Scale>
+            </GraphAxis>
+          </Axes>
+          <CoordinateSystems>
+            <CartesianCoordinateSystem XAxis="graphAxis2" YAxis="graphAxis1" Name="cartesianCoordinateSystem1" />
+          </CoordinateSystems>
+          <Legend IsInsidePlotArea="False">
+            <TitleStyle Visible="False" />
+            <Style LineWidth="0cm" LineColor="LightGray" />
+          </Legend>
+          <Style>
+            <Padding Left="10px" Right="10px" Top="10px" Bottom="10px" />
+          </Style>
+          <SeriesGroups>
+            <GraphGroup Name="seriesGroup" />
+          </SeriesGroups>
+          <CategoryGroups>
+            <GraphGroup Name="labelGroup">
+              <Groupings>
+                <Grouping Expression="= Fields.label" />
+              </Groupings>
+              <Sortings>
+                <Sorting Expression="= Fields.label" Direction="Asc" />
+              </Sortings>
+            </GraphGroup>
+          </CategoryGroups>
+          <Series>
+            <BarSeries CoordinateSystem="cartesianCoordinateSystem1" CategoryGroup="labelGroup" SeriesGroup="seriesGroup" Y="= Sum(Fields.actual)" DataPointLabel="= Sum(Fields.actual)" Name="barSeries1">
+              <DataPointStyle Visible="True" LineWidth="0cm" />
+              <DataPointLabelStyle Visible="False" />
+              <LegendItem Value="Income">
+                <MarkStyle Visible="True">
+                  <Padding Top="2px" />
+                </MarkStyle>
+              </LegendItem>
+              <MergedDataPoints />
+              <ToolTip Title="actual" Text="= Sum(Fields.actual)" />
+            </BarSeries>
+            <LineSeries CoordinateSystem="cartesianCoordinateSystem1" CategoryGroup="labelGroup" SeriesGroup="seriesGroup" Size="null" LineType="Stepped" MarkerSize="5px" MarkerMinSize="5px" MarkerMaxSize="50px" Y="= Fields.target">
+              <LineStyle LineWidth="1px" />
+              <DataPointStyle Visible="False" />
+              <LegendItem Value="Target">
+                <Style>
+                  <Padding Top="-2px" />
+                </Style>
+              </LegendItem>
+              <MissingValuesLineStyle LineWidth="1px" />
+              <ColorPalette>
+                <ColorPalette>
+                  <Colors>
+                    <String>DeepPink</String>
+                  </Colors>
+                </ColorPalette>
+              </ColorPalette>
+            </LineSeries>
+          </Series>
+          <Titles>
+            <GraphTitle Text="Strip Line Chart" Position="TopCenter">
+              <Style LineWidth="0cm" LineColor="LightGray" />
+            </GraphTitle>
+          </Titles>
+          <ColorPalette>
+            <ColorPalette>
+              <Colors>
+                <String>DodgerBlue</String>
+              </Colors>
+            </ColorPalette>
+          </ColorPalette>
+        </Graph>
+      </Items>
+    </DetailSection>
+  </Items>
+  <PageSettings PaperKind="A4" Landscape="False">
+    <Margins>
+      <MarginsU Left="2cm" Right="2cm" Top="2cm" Bottom="2cm" />
+    </Margins>
+  </PageSettings>
+  <StyleSheet>
+    <StyleRule>
+      <Style>
+        <Padding Left="2pt" Right="2pt" />
+      </Style>
+      <Selectors>
+        <TypeSelector Type="TextItemBase" />
+        <TypeSelector Type="HtmlTextBox" />
+      </Selectors>
+    </StyleRule>
+  </StyleSheet>
+</Report>
