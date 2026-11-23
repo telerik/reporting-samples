@@ -1,19 +1,19 @@
 {
-  "name": "kendo-react-reporting",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@progress/kendo-react-grid": "^13.3.0",
-    "@progress/kendo-theme-default": "^12.3.0",
-    "@progress/telerik-react-report-viewer": "^29.26.304",
-    "next": "16.1.7",
-    "react": "^18",
-    "react-dom": "^18"
-  }
+    "name": "kendo-react-reporting",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "@progress/kendo-react-grid": "^13.3.0",
+        "@progress/kendo-theme-default": "^12.3.0",
+        "@progress/telerik-react-report-viewer": "^29.26.304",
+        "next": "16.4.5",
+        "react": "^18",
+        "react-dom": "^18"
+    }
 }
